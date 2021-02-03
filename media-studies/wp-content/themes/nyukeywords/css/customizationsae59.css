@@ -1,0 +1,478 @@
+/* Customizations for .site-1 */
+	.site-1 .home #content {
+		background-image: url("../../../../../wp-content/uploads/2015/03/wrench_25.jpg");
+	}
+	
+	.site-1 body,
+	.site-1 a.button,
+	.site-1 .button,
+	.site-1 header .subsite-header,
+	.site-1 #page-actions a,
+	.site-1 nav,
+	.site-1 #comments,
+	.site-1 #cite-box,
+	.site-1 #scroll-help a,
+	article.site-1 .highlighted-term {
+		background: #481776;
+	}
+	
+	.site-1 .home h1,
+	.site-1 h1,
+	.site-1 .h1,
+	.site-1 a,
+	.site-1 #share-links a,
+	.site-1 #share-links i,
+	.site-1 #page-actions a:hover:after,
+	.site-1 #breadcrumbs,
+	.site-1 #results-count,
+	.site-1 #results-pagination,
+	.site-1 #respond input[type=submit]:hover,
+	.site-1 .navigation,
+	.site-1 .navigation a,
+	.site-1 .navigation a:hover,
+	.site-1 footer ul.menu a,
+	article.site-1:before, 
+	article.site-1 h1, 
+	article.site-1 a {
+		color: #481776;
+	}
+
+	article.site-1 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-1 a:hover,
+	article.site-1 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-2 */
+	.site-2 .home #content {
+		background-image: url("../../../../../american-cultural-studies/wp-content/uploads/sites/2/2015/04/wrench_25.jpg");
+	}
+	
+	.site-2 body,
+	.site-2 a.button,
+	.site-2 .button,
+	.site-2 header .subsite-header,
+	.site-2 #page-actions a,
+	.site-2 nav,
+	.site-2 #comments,
+	.site-2 #cite-box,
+	.site-2 #scroll-help a,
+	article.site-2 .highlighted-term {
+		background: #d73c3c;
+	}
+	
+	.site-2 .home h1,
+	.site-2 h1,
+	.site-2 .h1,
+	.site-2 a,
+	.site-2 #share-links a,
+	.site-2 #share-links i,
+	.site-2 #page-actions a:hover:after,
+	.site-2 #breadcrumbs,
+	.site-2 #results-count,
+	.site-2 #results-pagination,
+	.site-2 #respond input[type=submit]:hover,
+	.site-2 .navigation,
+	.site-2 .navigation a,
+	.site-2 .navigation a:hover,
+	.site-2 footer ul.menu a,
+	article.site-2:before, 
+	article.site-2 h1, 
+	article.site-2 a {
+		color: #d73c3c;
+	}
+
+	article.site-2 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-2 a:hover,
+	article.site-2 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-4 */
+	.site-4 .home #content {
+		background-image: url("../../../../../asian-american-studies/wp-content/uploads/sites/4/2015/04/wrench_25.jpg");
+	}
+	
+	.site-4 body,
+	.site-4 a.button,
+	.site-4 .button,
+	.site-4 header .subsite-header,
+	.site-4 #page-actions a,
+	.site-4 nav,
+	.site-4 #comments,
+	.site-4 #cite-box,
+	.site-4 #scroll-help a,
+	article.site-4 .highlighted-term {
+		background: #679fb6;
+	}
+	
+	.site-4 .home h1,
+	.site-4 h1,
+	.site-4 .h1,
+	.site-4 a,
+	.site-4 #share-links a,
+	.site-4 #share-links i,
+	.site-4 #page-actions a:hover:after,
+	.site-4 #breadcrumbs,
+	.site-4 #results-count,
+	.site-4 #results-pagination,
+	.site-4 #respond input[type=submit]:hover,
+	.site-4 .navigation,
+	.site-4 .navigation a,
+	.site-4 .navigation a:hover,
+	.site-4 footer ul.menu a,
+	article.site-4:before, 
+	article.site-4 h1, 
+	article.site-4 a {
+		color: #679fb6;
+	}
+
+	article.site-4 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-4 a:hover,
+	article.site-4 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-5 */
+	.site-5 .home #content {
+		background-image: url("../../../../../disability-studies/wp-content/uploads/sites/5/2015/05/wrench_25-300x168.jpg");
+	}
+	
+	.site-5 body,
+	.site-5 a.button,
+	.site-5 .button,
+	.site-5 header .subsite-header,
+	.site-5 #page-actions a,
+	.site-5 nav,
+	.site-5 #comments,
+	.site-5 #cite-box,
+	.site-5 #scroll-help a,
+	article.site-5 .highlighted-term {
+		background: #f37022;
+	}
+	
+	.site-5 .home h1,
+	.site-5 h1,
+	.site-5 .h1,
+	.site-5 a,
+	.site-5 #share-links a,
+	.site-5 #share-links i,
+	.site-5 #page-actions a:hover:after,
+	.site-5 #breadcrumbs,
+	.site-5 #results-count,
+	.site-5 #results-pagination,
+	.site-5 #respond input[type=submit]:hover,
+	.site-5 .navigation,
+	.site-5 .navigation a,
+	.site-5 .navigation a:hover,
+	.site-5 footer ul.menu a,
+	article.site-5:before, 
+	article.site-5 h1, 
+	article.site-5 a {
+		color: #f37022;
+	}
+
+	article.site-5 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-5 a:hover,
+	article.site-5 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-9 */
+	.site-9 .home #content {
+		background-image: url("../../../../../childrens-literature/wp-content/uploads/sites/9/2015/06/Background-Image_wrench.jpg");
+	}
+	
+	.site-9 body,
+	.site-9 a.button,
+	.site-9 .button,
+	.site-9 header .subsite-header,
+	.site-9 #page-actions a,
+	.site-9 nav,
+	.site-9 #comments,
+	.site-9 #cite-box,
+	.site-9 #scroll-help a,
+	article.site-9 .highlighted-term {
+		background: #fdb813;
+	}
+	
+	.site-9 .home h1,
+	.site-9 h1,
+	.site-9 .h1,
+	.site-9 a,
+	.site-9 #share-links a,
+	.site-9 #share-links i,
+	.site-9 #page-actions a:hover:after,
+	.site-9 #breadcrumbs,
+	.site-9 #results-count,
+	.site-9 #results-pagination,
+	.site-9 #respond input[type=submit]:hover,
+	.site-9 .navigation,
+	.site-9 .navigation a,
+	.site-9 .navigation a:hover,
+	.site-9 footer ul.menu a,
+	article.site-9:before, 
+	article.site-9 h1, 
+	article.site-9 a {
+		color: #fdb813;
+	}
+
+	article.site-9 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-9 a:hover,
+	article.site-9 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-10 */
+	.site-10 .home #content {
+		background-image: url("../../../../../childrens-literature/wp-content/themes/nyukeywords/images/default_bg.jpg");
+	}
+	
+	.site-10 body,
+	.site-10 a.button,
+	.site-10 .button,
+	.site-10 header .subsite-header,
+	.site-10 #page-actions a,
+	.site-10 nav,
+	.site-10 #comments,
+	.site-10 #cite-box,
+	.site-10 #scroll-help a,
+	article.site-10 .highlighted-term {
+		background: #006900;
+	}
+	
+	.site-10 .home h1,
+	.site-10 h1,
+	.site-10 .h1,
+	.site-10 a,
+	.site-10 #share-links a,
+	.site-10 #share-links i,
+	.site-10 #page-actions a:hover:after,
+	.site-10 #breadcrumbs,
+	.site-10 #results-count,
+	.site-10 #results-pagination,
+	.site-10 #respond input[type=submit]:hover,
+	.site-10 .navigation,
+	.site-10 .navigation a,
+	.site-10 .navigation a:hover,
+	.site-10 footer ul.menu a,
+	article.site-10:before, 
+	article.site-10 h1, 
+	article.site-10 a {
+		color: #006900;
+	}
+
+	article.site-10 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-10 a:hover,
+	article.site-10 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-11 */
+	.site-11 .home #content {
+		background-image: url("../../../../../childrens-literature/wp-content/themes/nyukeywords/images/default_bg.jpg");
+	}
+	
+	.site-11 body,
+	.site-11 a.button,
+	.site-11 .button,
+	.site-11 header .subsite-header,
+	.site-11 #page-actions a,
+	.site-11 nav,
+	.site-11 #comments,
+	.site-11 #cite-box,
+	.site-11 #scroll-help a,
+	article.site-11 .highlighted-term {
+		background: #89898b;
+	}
+	
+	.site-11 .home h1,
+	.site-11 h1,
+	.site-11 .h1,
+	.site-11 a,
+	.site-11 #share-links a,
+	.site-11 #share-links i,
+	.site-11 #page-actions a:hover:after,
+	.site-11 #breadcrumbs,
+	.site-11 #results-count,
+	.site-11 #results-pagination,
+	.site-11 #respond input[type=submit]:hover,
+	.site-11 .navigation,
+	.site-11 .navigation a,
+	.site-11 .navigation a:hover,
+	.site-11 footer ul.menu a,
+	article.site-11:before, 
+	article.site-11 h1, 
+	article.site-11 a {
+		color: #89898b;
+	}
+
+	article.site-11 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-11 a:hover,
+	article.site-11 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-12 */
+	.site-12 .home #content {
+		background-image: url("../../../../../childrens-literature/wp-content/themes/nyukeywords/images/default_bg.jpg");
+	}
+	
+	.site-12 body,
+	.site-12 a.button,
+	.site-12 .button,
+	.site-12 header .subsite-header,
+	.site-12 #page-actions a,
+	.site-12 nav,
+	.site-12 #comments,
+	.site-12 #cite-box,
+	.site-12 #scroll-help a,
+	article.site-12 .highlighted-term {
+		background: #0272ba;
+	}
+	
+	.site-12 .home h1,
+	.site-12 h1,
+	.site-12 .h1,
+	.site-12 a,
+	.site-12 #share-links a,
+	.site-12 #share-links i,
+	.site-12 #page-actions a:hover:after,
+	.site-12 #breadcrumbs,
+	.site-12 #results-count,
+	.site-12 #results-pagination,
+	.site-12 #respond input[type=submit]:hover,
+	.site-12 .navigation,
+	.site-12 .navigation a,
+	.site-12 .navigation a:hover,
+	.site-12 footer ul.menu a,
+	article.site-12:before, 
+	article.site-12 h1, 
+	article.site-12 a {
+		color: #0272ba;
+	}
+
+	article.site-12 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-12 a:hover,
+	article.site-12 a:hover {
+		color: #333;
+	}
+
+	/* Customizations for .site-13 */
+	.site-13 .home #content {
+		background-image: url("../../../../../childrens-literature/wp-content/themes/nyukeywords/images/default_bg.jpg");
+	}
+	
+	.site-13 body,
+	.site-13 a.button,
+	.site-13 .button,
+	.site-13 header .subsite-header,
+	.site-13 #page-actions a,
+	.site-13 nav,
+	.site-13 #comments,
+	.site-13 #cite-box,
+	.site-13 #scroll-help a,
+	article.site-13 .highlighted-term {
+		background: #730302;
+	}
+	
+	.site-13 .home h1,
+	.site-13 h1,
+	.site-13 .h1,
+	.site-13 a,
+	.site-13 #share-links a,
+	.site-13 #share-links i,
+	.site-13 #page-actions a:hover:after,
+	.site-13 #breadcrumbs,
+	.site-13 #results-count,
+	.site-13 #results-pagination,
+	.site-13 #respond input[type=submit]:hover,
+	.site-13 .navigation,
+	.site-13 .navigation a,
+	.site-13 .navigation a:hover,
+	.site-13 footer ul.menu a,
+	article.site-13:before, 
+	article.site-13 h1, 
+	article.site-13 a {
+		color: #730302;
+	}
+
+	article.site-13 a .highlighted-term {
+		color: #fff;
+	}
+	
+	.site-13 a:hover,
+	article.site-13 a:hover {
+		color: #333;
+	}
+
+	@media screen and (max-width: 767px) {
+		/* Customizations for .site-1 */
+		.site-1 .icon-cart a:after {
+			color: #481776;
+		}
+	
+		/* Customizations for .site-2 */
+		.site-2 .icon-cart a:after {
+			color: #d73c3c;
+		}
+	
+		/* Customizations for .site-4 */
+		.site-4 .icon-cart a:after {
+			color: #679fb6;
+		}
+	
+		/* Customizations for .site-5 */
+		.site-5 .icon-cart a:after {
+			color: #f37022;
+		}
+	
+		/* Customizations for .site-9 */
+		.site-9 .icon-cart a:after {
+			color: #fdb813;
+		}
+	
+		/* Customizations for .site-10 */
+		.site-10 .icon-cart a:after {
+			color: #006900;
+		}
+	
+		/* Customizations for .site-11 */
+		.site-11 .icon-cart a:after {
+			color: #89898b;
+		}
+	
+		/* Customizations for .site-12 */
+		.site-12 .icon-cart a:after {
+			color: #0272ba;
+		}
+	
+		/* Customizations for .site-13 */
+		.site-13 .icon-cart a:after {
+			color: #730302;
+		}
+	}
