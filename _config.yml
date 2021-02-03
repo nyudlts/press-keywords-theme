@@ -4,7 +4,7 @@ title: Keywords
 permalink: pretty
 incremental: true
 url: ''
-baseurl: ''
+baseurl: '/keywords'
 
 collections:
   books:
