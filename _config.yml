@@ -1,8 +1,22 @@
 long_title: 'Keywords: NYU Press'
 title: Keywords
+
 permalink: pretty
 incremental: true
+url: ''
+baseurl: ''
+
 collections:
   books:
     output: true
-    permalink: :title
+    layout: book
+    permalink: /:slug/
+  essays:
+    output: true
+    layout: essay
+  pages:
+    output: true
+    permalink: /:slug/
+  authors:
+    output: true
+    layout: author

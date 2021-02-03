@@ -1,0 +1,22 @@
+<div class="master-header">
+  <ul id="master-menu" class="menu">
+    <li class="menu-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
+    <li class="menu-item"><a href="{{ 'blog' | absolute_url }}">Blog</a></li>
+    <li class="menu-item menu-item-has-children"><a href="#">Books</a>
+      <ul class="sub-menu">
+        <li class="menu-item"><a href="{{ 'african-american-studies' | absolute_url }}">African American Studies</a></li>
+        <li class="menu-item"><a href="{{ 'american-cultural-studies' | absolute_url }}">American Cultural Studies</a></li>
+        <li class="menu-item"><a href="{{ 'asian-american-studies' | absolute_url }}">Asian American Studies</a></li>
+        <li class="menu-item"><a href="{{ 'childrens-literature' | absolute_url }}">Children&#8217;s Literature</a></li>
+        <li class="menu-item"><a href="{{ 'disability-studies' | absolute_url }}">Disability Studies</a></li>
+        <li class="menu-item"><a href="{{ 'environmental-studies' | absolute_url }}">Environmental Studies</a></li>
+        <li class="menu-item"><a href="{{ 'latina-latino-studies' | absolute_url }}">Latina/o Studies</a></li>
+        <li class="menu-item"><a href="{{ 'media-studies' | absolute_url }}">Media Studies</a></li>
+      </ul>
+    </li>
+    <li class="icon-search menu-item"><a href="#"><span>Search</span></a></li>
+  </ul>
+  <div id="logo">
+    <a href="{{ '/' | absolute_url }}" title="{{ site.title }}">{{ site.title }}</a>
+  </div>
+</div>

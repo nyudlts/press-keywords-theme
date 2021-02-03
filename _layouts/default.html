@@ -6,15 +6,16 @@
 <body class="home page-template-default page page-id-16 custom-background site-1 mastersite">
   <!--[if lte IE 8 ]><noscript><strong>JavaScript is required for this website to be displayed correctly. Please enable JavaScript before continuing...</strong></noscript><![endif]-->
   <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
-  <!-- TODO: MOVE THIS HERE WITH JS -->
+  {% if page.layout == 'book' %}
+    {% include access-nav.html %}
+  {% endif %}
 
   <div id="everything">
     {% include header.html %}
     <div id="clickoverlay"></div>
     <section id="content" role="main">
-      {% include subhead.html %}
+      {% include headers/subhead.html %}
       <div class="wrapper">
-        <h1 class="main-site-title">{{ site.title }}</h1>
         {{ content }}
       </div> <!-- .wrapper -->
 
@@ -25,7 +26,7 @@
 
     <footer>
       <div class="wrapper">
-        <a href="http://nyupress.org/" target="_blank"><img src="wp-content/themes/nyukeywords/images/logo-nyupress.png" alt="NYU Press" /></a>
+        <a href="http://nyupress.org/" target="_blank"><img src="{{ 'wp-content/themes/nyukeywords/images/logo-nyupress.png' | absolute_url }}" alt="NYU Press" /></a>
       </div>
     </footer><!-- footer -->
 
@@ -36,8 +37,8 @@
       <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
     </div>
 
-    <script type='text/javascript' src='wp-includes/js/comment-reply.min8d9d.js?ver=4.9.16'></script>
-    <script type='text/javascript' src='wp-includes/js/wp-embed.min8d9d.js?ver=4.9.16'></script>
+    <script type='text/javascript' src="{{ 'wp-includes/js/comment-reply.min8d9d.js?ver=4.9.16' | absolute_url }}"></script>
+    <script type='text/javascript' src="{{ 'wp-includes/js/wp-embed.min8d9d.js?ver=4.9.16' | absolute_url }}"></script>
   </div>
   <div id="clickoverlay2"></div>
   <script>

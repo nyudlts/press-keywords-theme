@@ -1,0 +1,16 @@
+{% for book in site.books %}
+  <article class="selfclearing site-list">
+    <a href="{{ book.url | absolute_url }}">
+      <img src="{{ book.img | absolute_url }}" alt="Image for Keywords for {{ book.title }}" />
+    </a>
+    <div class="site-details">
+      <h1><a href="{{ book.url | absolute_url }}" style="color: {{ book.color }}">Keywords for {{ book.title }}</a></h1>
+      <span>Edited by
+        {% for editor in book.editors %}
+          <a href="{{ editor.link }}" style="color: {{ book.color }}">{{ editor.name }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </span>
+      {% if book._date %}<span>Date: {{ book._date }}</span>{% endif %}
+    </div>
+  </article>
+{% endfor %}
