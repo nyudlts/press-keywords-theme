@@ -1,0 +1,8 @@
+long_title: 'Keywords: NYU Press'
+title: Keywords
+permalink: pretty
+incremental: true
+collections:
+  books:
+    output: true
+    permalink: :title
