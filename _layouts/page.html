@@ -1,0 +1,96 @@
+---
+layout: default
+---
+<style>
+.site-2 .home h1,
+.site-2 h1,
+.site-2 .h1,
+.site-2 a,
+.site-2 #share-links ul li a,
+.site-2 #share-links i,
+.site-2 #page-actions a:hover:after,
+.site-2 #breadcrumbs,
+.site-2 #results-count,
+.site-2 #results-pagination,
+.site-2 #respond input[type=submit]:hover,
+.site-2 .navigation,
+.site-2 .navigation a,
+.site-2 .navigation a:hover,
+.site-2 footer ul.menu a,
+article.site-2:before,
+#share-links a i,
+article.site-2 h1,
+#page-actions a:hover:after,
+article.site-2 a {
+  color: {{ page.book.color }} !important;
+}
+header .subsite-header{
+background-color: {{ page.book.color }} !important;
+}
+#access, #secondary-access, nav, #page-actions a, #scroll-help a{
+  background: {{ page.book.color }} !important;
+}
+.wrapper a {
+  color: {{ page.book.color }} !important;
+}
+</style>
+<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+    {% include access-nav.html %}
+<div id="everything">
+  <header>
+    {% include headers/master-header.html %}
+    {% include headers/search-overlay.html %}
+    {% include headers/subsite-header.html %} <!-- menu con los essay -->
+  </header>
+  <div id="clickoverlay"></div>
+<section id="content" role="main">
+  {% include headers/subhead-page.html %}
+  <div class="wrapper">
+    <article id="post-335" class="site-2  post-335 essay type-essay status-publish hentry availability-toc availability-online book-keywords-in-american-cultural-studies">
+      <h1>{{ page.title }}</h1>
+        <div class="meta-info">
+          <div class="author_list">by
+            {% for author in page.authors %}
+            <span class="author vcard"><a class="url fn n" href="{{ author.url }}" title="View all posts by {{ author.title }}">{{ author.title }}{% unless forloop.last %}, {% endunless %}</a>
+            </span>
+            {% endfor %}
+          </div>
+        </div><!-- .entry-meta -->
+       <p class="p1"> {{ content }}<p>
+     </article><!-- #post-## -->
+  </div>
+</section>
+  {% include footer.html %}
+                 <div id="scroll-help">
+                         <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
+                         <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
+                         <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
+                         </div>
+
+                         <script type='text/javascript' src='../../wp-includes/js/comment-reply.min8d9d.js?ver=4.9.16'></script>
+                         <script type='text/javascript' src='../../wp-includes/js/wp-embed.min8d9d.js?ver=4.9.16'></script>
+                         </div>
+                         <div id="clickoverlay2"></div>
+                         <script>
+                         if (Modernizr.touch) {
+
+                             /* cache dom references */
+                             var $body = jQuery('body');
+
+                             /* bind events */
+                             jQuery(document)
+                             .on('focus', 'input', function(e) {
+                                 $body.addClass('fixfixed');
+                             })
+                             .on('blur', 'input', function(e) {
+                                 $body.removeClass('fixfixed');
+                             });
+                         jQuery(document)
+                             .on('focus', 'textarea', function(e) {
+                                 $body.addClass('fixfixed');
+                             })
+                             .on('blur', 'textarea', function(e) {
+                                 $body.removeClass('fixfixed');
+                             });
+                         }
+                         </script>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+{% include head.html %}
+{% if page.layout == 'essay' or page.layout == 'page' or page.layout == 'person'%}
+<body class="essay-template-default subsite single single-essay">
+{% else %}
+<body class="home page-template-default page page-id-16 custom-background site-1 {%if page.layout == 'book'%} subsite {% else %}mastersite {% endif %}">
+{% endif %}
+  {{ content }}
+{% if page.layout == 'home'%}
+{% include footer-home.html %}
+{% endif %}
+</body>
+</html>

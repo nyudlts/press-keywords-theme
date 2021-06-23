@@ -1,0 +1,43 @@
+---
+layout: default
+---
+{%- assign book = site.posts | where: 'layout', 'book' -%}
+<style>
+  .wrapper a {
+    color: {{ page.color }} !important;
+  }
+  .wrapper .button {
+    color: white !important;
+    background-color: {{ page.color }} !important;
+  }
+  .home #content {
+ background-image: url('../wp-content/themes/nyukeywords/images/default_bg.jpg')!important;
+}
+.site-1 #share-links a i {
+  color: {{ page.color }} !important;
+}
+.site-1 #page-actions a {
+  background: {{ page.color }} !important;
+}
+</style>
+<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+    {% include access-nav.html %}
+<div id="everything">
+  {% include header.html %}
+  <div id="clickoverlay"></div>
+<section id="content" role="main">
+    {% include headers/subhead-book.html %}
+<div class="wrapper">
+<h1 style="color: {{ page.color }}">Keywords for <span>{{ page.title }}</span></h1>
+  <h2>Edited by
+    {% for editor in page.editors %}
+      {{ editor.title }}{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </h2>
+    <p>{{ content}} <a href="{{ page.about.url }}" style="color: {{ page.color }}">Read More...</a></p>
+    <p style="text-align: center;">
+      <a class="button" href="#" style="color: {{ page.color }}">Read the Essays</a>
+    </p>
+  </div>
+</section>
+{% include footer.html %}

@@ -1,0 +1,48 @@
+<nav id="access" style="background-color: {{ page.color }}">
+  <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+
+  <ul id="menu-left-flyout-nav" class="menu-left">
+    <li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-163 current_page_item menu-item-195"><a href="{{ page.book.url }}">Home</a></li>
+    <li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-198"><a href="{{ page.book.url }}introduction/">Introduction</a></li>
+    <li id="menu-item-203" class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children menu-item-203">
+      <a href="{{ essay.permalink }}">Web Essays</a><!--<a href="availability/online/index.html">Web Essays</a>-->
+      <ul class="sub-menu">
+        {% for essay in page.essays %}
+          {% if essay.availability == 'Web Essays'%}
+            <li><a href="{{ essay.url }}">{{ essay.title }},
+              {% for author in essay.authors %}
+                <span>{{ author.title }}</span></a>
+            </li>
+              {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    <li id="menu-item-202" class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children menu-item-202"><a href="{{ essay.permalink }}">Print Essays</a>
+      <ul class="sub-menu">
+        {% for essay in page.essays %}
+          {% if essay.availability == 'Print Essays'%}
+            <li><a href="{{ essay.url }}">{{ essay.title }},
+              {% for author in essay.authors %}
+                <span>{{ author.title }}</span></a>
+            </li>
+              {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    <li id="menu-item-1245" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1245"><a href="{{ page.book.url }}works_cited">Works Cited</a></li>
+    <li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-200"><a href="{{ page.book.url }}contributors">Contributors</a></li>
+    <li id="menu-item-201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-201"><a href="{{ page.book.url }}acknowledgements">Acknowledgments</a></li>
+  </ul>
+</nav>
+
+<nav id="secondary-access" style="background-color: {{ page.color }}">
+  <ul id="menu-right-flyout-nav" class="menu-right">
+    <li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-209"><a href="{{ page.book.url }}in-the-classroom">In the Classroom</a>
+      <ul class="sub-menu">
+        <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="{{ page.book.url }}in-the-classroom/classroom-use">Note on Classroom Use</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

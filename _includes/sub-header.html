@@ -1,0 +1,11 @@
+{% if page.layout == 'home' %}
+  {% include headers/subhead-print.html %}
+{% endif %}
+{% if page.layout == 'person' %}
+  {% include headers/subsite-header.html %}
+  {% include headers/subhead-person.html %}
+{% endif %}
+{% if page.layout == 'essay' %}
+  {% include headers/subsite-header.html %}
+  {% include headers/subhead-essay.html %}
+{% endif %}
