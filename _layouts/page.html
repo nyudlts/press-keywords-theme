@@ -5,7 +5,6 @@ layout: default
 .site-2 .home h1,
 .site-2 h1,
 .site-2 .h1,
-.site-2 a,
 .site-2 #share-links ul li a,
 .site-2 #share-links i,
 .site-2 #page-actions a:hover:after,
@@ -30,9 +29,6 @@ background-color: {{ page.book.color }} !important;
 #access, #secondary-access, nav, #page-actions a, #scroll-help a{
   background: {{ page.book.color }} !important;
 }
-.wrapper a {
-  color: {{ page.book.color }} !important;
-}
 </style>
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
     {% include access-nav.html %}
@@ -48,6 +44,8 @@ background-color: {{ page.book.color }} !important;
   <div class="wrapper">
     <article id="post-335" class="site-2  post-335 essay type-essay status-publish hentry availability-toc availability-online book-keywords-in-american-cultural-studies">
       <h1>{{ page.title }}</h1>
+{% if page.layout == 'contributor' or page.title == 'Rights' or page.layout == 'works_cited' or page.title == 'Courses'  %}
+{% else %}
         <div class="meta-info">
           <div class="author_list">by
             {% for author in page.authors %}
@@ -56,6 +54,7 @@ background-color: {{ page.book.color }} !important;
             {% endfor %}
           </div>
         </div><!-- .entry-meta -->
+{% endif %}
        <p class="p1"> {{ content }}<p>
      </article><!-- #post-## -->
   </div>

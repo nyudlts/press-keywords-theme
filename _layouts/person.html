@@ -3,12 +3,13 @@ layout: default
 ---
 <!--{%- assign person = site.posts | where: 'layout', 'person' -%}-->
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
-    {% include access-nav.html %}
 <div id="everything">
-  {% include header.html %}
+  <header>
+    {% include headers/master-header.html %}
+  </header>
   <div id="clickoverlay"></div>
 <section id="content" role="main">
-	{% include headers/subhead-person.html %}
+	{% include headers/subhead-page.html %}
 <div class="wrapper">
 	<h1>{{ page.title }}</h1>
 		<div id="entry-author-info">
