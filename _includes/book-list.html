@@ -1,11 +1,11 @@
 {%- assign books = site.posts | where: 'layout', 'book' -%}
 {% for book in books %}
   <article class="selfclearing site-list">
-    <a href="{{ book.permalink | absolute_url }}">
-      <img src="{{ book.image.path }}" alt="Image for Keywords for {{ book.title }}" />
+    <a href="{{ book.url }}">
+      <img src="{{ book.image }}" alt="Image for Keywords for {{ book.title }}" />
     </a>
     <div class="site-details">
-      <h1><a href="{{ book.permalink | absolute_url }}" style="color: {{ book.color }}">Keywords for {{ book.title }}</a></h1>
+      <h1><a href="{{ book.url }}" style="color: {{ book.color }}">Keywords for {{ book.title }}</a></h1>
       <span>Edited by
         {% for editors in book.editors %}
           <a href="{{ editors.permalink }}" style="color: {{ book.color }}">{{ editors.title }}</a>{% unless forloop.last %}, {% endunless %}
