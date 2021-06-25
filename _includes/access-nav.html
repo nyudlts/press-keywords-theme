@@ -1,3 +1,8 @@
+{% if page.layout == 'book' %}
+  {% assign book = page %}
+{% elsif page.book %}
+  {% assign book = page.book %}
+{% endif %}
 <nav id="access" style="background-color: {{ page.color }}">
   <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
 
@@ -7,7 +12,7 @@
     <li id="menu-item-203" class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children menu-item-203">
       <a href="{{ essay.permalink }}">Web Essays</a><!--<a href="availability/online/index.html">Web Essays</a>-->
       <ul class="sub-menu">
-        {% for essay in page.essays %}
+        {% for essay in book.essays %}
           {% if essay.availability == 'Web Essays'%}
             <li><a href="{{ essay.url }}">{{ essay.title }},
               {% for author in essay.authors %}
@@ -20,7 +25,7 @@
     </li>
     <li id="menu-item-202" class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children menu-item-202"><a href="{{ essay.permalink }}">Print Essays</a>
       <ul class="sub-menu">
-        {% for essay in page.essays %}
+        {% for essay in book.essays %}
           {% if essay.availability == 'Print Essays'%}
             <li><a href="{{ essay.url }}">{{ essay.title }},
               {% for author in essay.authors %}
@@ -31,17 +36,24 @@
         {% endfor %}
       </ul>
     </li>
-    <li id="menu-item-1245" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1245"><a href="{{ page.book.url }}works_cited">Works Cited</a></li>
-    <li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-200"><a href="{{ page.book.url }}contributors">Contributors</a></li>
-    <li id="menu-item-201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-201"><a href="{{ page.book.url }}acknowledgements">Acknowledgments</a></li>
+    <li id="menu-item-1245" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1245">
+      <a href="{{ book.url }}works_cited">Works Cited</a></li>
+    <li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-200">
+      <a href="{{ book.url }}contributors">Contributors</a></li>
+    <li id="menu-item-201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-201">
+      <a href="{{ book.acknowledgements }}">Acknowledgments</a></li>
   </ul>
 </nav>
 
-<nav id="secondary-access" style="background-color: {{ page.color }}">
+<nav id="secondary-access" style="background-color: {{ book.color }}">
   <ul id="menu-right-flyout-nav" class="menu-right">
-    <li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-209"><a href="{{ page.book.url }}in-the-classroom">In the Classroom</a>
+    <li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-209"><a href="{{ book.url }}in-the-classroom">In the Classroom</a>
       <ul class="sub-menu">
-        <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210"><a href="{{ page.book.url }}in-the-classroom/classroom-use">Note on Classroom Use</a></li>
+        {% for courses in book.courses %}
+          <li id="menu-item-210" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-210">
+            <a href="{{ courses.url }}">{{ courses.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </li>
   </ul>
