@@ -1,14 +1,18 @@
-<div class="subsite-header" style="background-color: {{ page.color }}">
+{% if page.layout == 'book' %}
+  {% assign book = page %}
+{% elsif page.book %}
+  {% assign book = page.book %}
+{% endif %}
+<div class="subsite-header" style="background-color: {{ book.color }}">
   <ul id="main-menu" class="menu">
     <li id="menu-item-204" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-163 current_page_item menu-item-204"><a href="index.html">Essays</a></li>
-    <li id="menu-item-205" class="icon-cart menu-item menu-item-type-custom menu-item-object-custom menu-item-205"><a href="https://nyupress.org/books/9781479854899/"><span> Buy </span></a></li>
-    <li id="menu-item-208" class="arrow-right menu-item menu-item-type-post_type menu-item-object-page menu-item-208"><a href="courses/index.html">Courses</a></li>
+    <li id="menu-item-205" class="icon-cart menu-item menu-item-type-custom menu-item-object-custom menu-item-205">
+      <a href="{{ book.buy }}"><span> Buy </span></a>
+    </li>
+    <li id="menu-item-208" class="arrow-right menu-item menu-item-type-post_type menu-item-object-page menu-item-208">
+      <a href="courses/index.html">Courses</a></li>
   </ul>
   <div id="sublogo">
-{% if page.layout == 'book'%}
-    <a href="{{ page.book.url }}" title="{{ page.book.title }}">{{ page.title }}</a>
-{% else %}
-    <a href="{{ page.book.url }}" title="{{ page.book.title }}">{{ page.book.title }}</a>
-{%endif%}
+    <a href="{{ book.url }}" title="{{ book.title }}">{{ book.title }}</a>
   </div>
 </div>
