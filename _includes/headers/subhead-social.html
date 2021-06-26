@@ -1,12 +1,28 @@
 <div id="subhead">
   <ul id="share-links">
-    <li><a class="addthis_button_facebook" aria-label="Share this page on Facebook"><i class="fa fa-facebook"></i></a></li>
-    <li><a class="addthis_button_twitter" aria-label="Share this page on Twitter"><i class="fa fa-twitter"></i></a></li>
-    <li><a href="https://plus.google.com/share?url=keywords.nyupress.org/african-american-studies/" target="_blank" aria-label="Share this page on Google Plus"><i class="fa fa-google-plus"></i></a></li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | uri_escape }}" target="_blank" class="addthis_button_facebook" aria-label="Share this page on Facebook">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url | uri_escape }}" class="addthis_button_twitter" aria-label="Share this page on Twitter" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url | uri_escape }}" target="_blank" aria-label="Share this page on Google Plus">
+        <i class="fa fa-google-plus"></i>
+      </a>
+    </li>
     <li><a class="addthis_button_email" aria-label="Email this page"><i class="fa fa-envelope-o"></i></a></li>
   </ul>
   <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js"></script>
   <ul id="page-actions">
-    <li><a class="action-print" href="javascript:print()" aria-label="Print"><i class="fa fa-print"></i></a></li>
+    <li>
+      <a class="action-print" href="javascript:print()" aria-label="Print">
+        <i class="fa fa-print"></i>
+      </a>
+    </li>
   </ul>
 </div>
