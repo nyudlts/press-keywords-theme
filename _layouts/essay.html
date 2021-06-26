@@ -13,7 +13,6 @@ layout: default
 .site-2 #share-links ul li a,
 .site-2 #share-links i,
 .site-2 #page-actions a:hover:after,
-.site-2 #breadcrumbs,
 .site-2 #results-count,
 .site-2 #results-pagination,
 .site-2 #respond input[type=submit]:hover,
@@ -30,7 +29,7 @@ article.site-2 a {
 header .subsite-header{
 background-color: {{ book.color }} !important;
 }
-#access, #secondary-access, nav, #page-actions a, #scroll-help a{
+#access, #cite-box, #secondary-access, nav, #page-actions a, #scroll-help a{
   background: {{ book.color }} !important;
 }
 
@@ -62,16 +61,40 @@ background-color: {{ book.color }} !important;
               </span>
               {% endfor %}
             </div>
-        </div><!-- .entry-meta -->
-       <p class="p1"> {{ content }}<p>
+        </div>
+        {% if page.availability == 'Print Essays'%}
+        <p class="p1">{{ page.excerpt | strip_html | truncatewords: 200 }}<p>
+        <div class="meta-entry">
+					<p><strong>This essay may be found on page {{ page.page }} of the printed volume.</strong></p>
+        </div>
+        {% else %}
+        <p class="p1">{{ content }}<p>
+        {% endif%}
           <div class="meta-entry">
             <a href="{{ book.works_cited }}">Works Cited</a><br />
             <a href="{{ essay.url }}">Permanent Link to this Essay</a>
           </div>
-     </article><!-- #post-## -->
+     </article>
   </div>
 </section>
   {% include footer.html %}
+  <div id="cite-box-overlay" style="display: none;"></div>
+  <div id="cite-box" style="display: none;">
+  	<button>
+  		<span>close</span>
+  	</button>
+  	<div>
+  {% for author in page.authors %}
+    {{ author.last_name }}, {{ author.first_name }}.
+  {% endfor %}
+    "{{ page.title }}." <em>Keywords for {{ book.title }}</em>.
+    Eds.
+      {% for editors in book.editors %}
+        {{ editors.title }} {% unless forloop.last %}, {% endunless %}
+      {% endfor %}.
+    New York: New York University Press,
+    {{ book.date | date: "%Y"}}. {{ page.page }}. Print.</div>
+  </div>
                  <div id="scroll-help">
                          <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
                          <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
