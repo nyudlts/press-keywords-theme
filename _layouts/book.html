@@ -3,20 +3,29 @@ layout: default
 ---
 {%- assign book = site.posts | where: 'layout', 'book' -%}
 <style>
-  .wrapper a {
-    color: {{ page.color }} !important;
-  }
-  .wrapper .button {
-    color: white !important;
-    background-color: {{ page.color }} !important;
-  }
-  .home #content {
- background-image: url('../wp-content/themes/nyukeywords/images/default_bg.jpg')!important;
-}
-.site-1 #share-links a i {
+.site-1 .home h1,
+.site-1 h1,
+.site-1 .h1,
+.site-1 #share-links ul li a,
+.site-1 #share-links i,
+.site-1 #page-actions a:hover:after,
+.site-1 #results-count,
+.site-1 #results-pagination,
+.site-1 #respond input[type=submit]:hover,
+.site-1 .navigation,
+.site-1 .navigation a,
+.site-1 .navigation a:hover,
+.site-1 footer ul.menu a,
+article.site-1:before,
+#share-links a i,
+article.site-1 h1,
+article.site-1 a {
   color: {{ page.color }} !important;
 }
-.site-1 #page-actions a {
+header .subsite-header{
+background-color: {{ page.color }} !important;
+}
+#access, #cite-box, #secondary-access, nav, #page-actions a,.site-1 a.button, .site-1 .button, #scroll-help a{
   background: {{ page.color }} !important;
 }
 </style>
