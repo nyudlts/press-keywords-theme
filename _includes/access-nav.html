@@ -84,8 +84,8 @@
   </ul>
 </nav>
 
-{% if book.courses and book.courses != empty %}
-  <nav id="secondary-access" style="background-color: {{ book.color }}">
+<nav id="secondary-access" style="background-color: {{ book.color }}">
+  {% if book.courses and book.courses != empty %}
     <ul id="menu-right-flyout-nav" class="menu-right">
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
         In the Classroom
@@ -99,5 +99,5 @@
         </ul>
       </li>
     </ul>
-  </nav>
-{% endif %}
+  {% endif %}
+</nav>
