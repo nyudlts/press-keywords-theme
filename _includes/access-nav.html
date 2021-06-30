@@ -1,5 +1,4 @@
 {% assign book = include.book %}
-{% assign all_essays = book.essays | where: 'availability', 'All Essays' %}
 {% assign web_essays = book.essays | where: 'availability', 'Web Essays' %}
 {% assign print_essays = book.essays | where: 'availability', 'Print Essays' %}
 {% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' %}
@@ -13,22 +12,6 @@
     {% if book.introduction %}
       <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.introduction.url }}">{{ book.introduction.title }}</a></li>
     {% endif %}
-
-    {% unless all_essays == empty %}
-      <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
-        <a href="#todo">All Essays</a>
-
-        <ul class="sub-menu">
-          {% for essay in all_essays %}
-            <li>
-              <a href="{{ essay.url }}">
-                {{ essay.title }}, <span>{% include people.html people=essay.authors plain=true %}</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
-    {% endunless %}
 
     {% unless web_essays == empty %}
       <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
@@ -65,8 +48,8 @@
     <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ book.works_cited.url }}">{{ book.works_cited.title }}</a></li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.contributors.url }}">{{ book.contributors.title }}</a></li>
 
-    {% if book.acknowledgements %}
-      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgements.url }}">{{ book.acknowledgements.title }}</a></li>
+    {% if book.acknowledgments %}
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgments.url }}">{{ book.acknowledgments.title }}</a></li>
     {% endif %}
 
     {% unless keywords_now == empty %}
