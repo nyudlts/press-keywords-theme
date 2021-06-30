@@ -10,9 +10,11 @@
       </li>
     {% endif %}
 
-    <li class="arrow-right menu-item menu-item-type-post_type menu-item-object-page">
-      <a href="#">Courses</a>
-    </li>
+    {% if book.courses and book.courses != empty %}
+      <li class="arrow-right menu-item menu-item-type-post_type menu-item-object-page">
+        <a href="#">Courses</a>
+      </li>
+    {% endif %}
   </ul>
 
   <div id="sublogo">

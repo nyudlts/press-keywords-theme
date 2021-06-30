@@ -84,7 +84,7 @@
   </ul>
 </nav>
 
-{% unless book.courses == empty %}
+{% if book.courses and book.courses != empty %}
   <nav id="secondary-access" style="background-color: {{ book.color }}">
     <ul id="menu-right-flyout-nav" class="menu-right">
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
@@ -100,4 +100,4 @@
       </li>
     </ul>
   </nav>
-{% endunless %}
+{% endif %}
