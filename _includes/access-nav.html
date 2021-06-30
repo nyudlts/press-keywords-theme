@@ -62,9 +62,12 @@
       </li>
     {% endunless %}
 
-    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#todo">Works Cited</a></li>
+    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ book.works_cited.url }}">{{ book.works_cited.title }}</a></li>
     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.contributors.url }}">{{ book.contributors.title }}</a></li>
-    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgements.url }}">{{ book.acknowledgements.title }}</a></li>
+
+    {% if book.acknowledgements %}
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgements.url }}">{{ book.acknowledgements.title }}</a></li>
+    {% endif %}
 
     {% unless keywords_now == empty %}
       <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">

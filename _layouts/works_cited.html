@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+{% assign book = page.book %}
+
+{% include customization.html color=book.color %}
+
+<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+
+{% include access-nav.html book=book %}
+
+<div id="everything">
+  <header>
+    {% include headers/master-header.html %}
+    {% include headers/subsite-header.html book=book %}
+  </header>
+
+  <div id="clickoverlay"></div>
+
+  <section id="content" role="main">
+    {% include headers/subhead.html book=book page=page %}
+
+    <div class="wrapper">
+      <article class="site">
+        <h1>{{ page.title }}</h1>
+
+        {% for work_cited in page.works_cited %}
+          <article style="border-top: none; padding: 1rem" id="{{ work_cited.slug }}">
+            {{ work_cited.content | replace: "<p>", "<p style='padding-bottom: 0'>" }}
+          </article>
+        {% endfor %}
+     </article>
+  </div>
+</section>
+
+{% include footer.html book=book %}
+
+<div id="scroll-help">
+  <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
+  <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
+  <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    const work_cited = window.location.hash;
+
+    if (work_cited === "") return;
+
+    const work_cited_element = document.querySelector(work_cited);
+
+    work_cited_element.style.backgroundColor = "{{ book.color }}" ;
+    work_cited_element.style.color = "white" ;
+
+    setTimeout(function() {
+      work_cited_element.scrollIntoView({ block: 'center' });
+      work_cited_element.role = 'alert';
+    }, 300);
+    
+  });
+</script>

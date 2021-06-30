@@ -1,8 +1,19 @@
----
-layout: page
----
-{% for work_cited in page.work_citeds %}
-  <article>
-    {{ work_cited.content }}
-  </article>
-{% endfor %}
+{%- assign url = page.book.works_cited.url | absolute_url | append: '#' | append: page.slug -%}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <meta http-equiv="refresh" content="0;url={{ url }}" />
+
+    <title>{{ site.title }}</title>
+    <link rel="canonical" href="{{ url }}" />
+  </head>
+
+  <body>
+    {% comment %}
+    Just in case the redirection fails.
+    {% endcomment %}
+    {{ content }}
+  </body>
+</html>
