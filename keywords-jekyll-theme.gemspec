@@ -45,4 +45,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'sutty-liquid'
   spec.add_runtime_dependency 'pry'
   spec.add_runtime_dependency 'jekyll-ignore-layouts'
+  spec.add_runtime_dependency 'jekyll-seo-tag'
 end
