@@ -1,130 +1,67 @@
 ---
 layout: default
 ---
-{% if page.layout == 'book' %}
-  {% assign book = page %}
-{% elsif page.book %}
-  {% assign book = page.book %}
-{% endif %}
-<style>
-.site-2 .home h1,
-.site-2 h1,
-.site-2 .h1,
-.site-2 #share-links ul li a,
-.site-2 #share-links i,
-.site-2 #page-actions a:hover:after,
-.site-2 #results-count,
-.site-2 #results-pagination,
-.site-2 #respond input[type=submit]:hover,
-.site-2 .navigation,
-.site-2 .navigation a,
-.site-2 .navigation a:hover,
-.site-2 footer ul.menu a,
-article.site-2:before,
-#share-links a i,
-article.site-2 h1,
-article.site-2 a {
-  color: {{ book.color }} !important;
-}
-header .subsite-header{
-background-color: {{ book.color }} !important;
-}
-#access, #cite-box, #secondary-access, nav, #page-actions a, #scroll-help a{
-  background: {{ book.color }} !important;
-}
 
-</style>
+{% assign book = page.book %}
+
+{% include customization.html color=book.color %}
+
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
-    {% include access-nav.html %}
+
+{% include access-nav.html book=book %}
+
 <div id="everything">
   <header>
     {% include headers/master-header.html %}
-    {% include headers/search-overlay.html %}
-    {% include headers/subsite-header.html %}
+    {% include headers/subsite-header.html book=book %}
   </header>
+
   <div id="clickoverlay"></div>
-<section id="content" role="main">
-  {% include headers/subhead-essay.html %}
-  <div class="wrapper">
-      {% if book.availability == 'Web Essays'%}
-    <article id="post-335" class="cc_essay_toc cc_essay_online site-2  post-335 essay type-essay status-publish hentry availability-toc availability-online book-keywords-in-american-cultural-studies">
-      {% else %}
-    <article id="post-335" class="cc_essay_toc cc_essay_print site-2  post-335 essay type-essay status-publish hentry availability-toc availability-online book-keywords-in-american-cultural-studies">
-      {% endif%}
-      <h1>{{ page.title }}</h1>
+
+  <section id="content" role="main">
+    {% include headers/subhead-essay.html book=book page=page %}
+
+    <div class="wrapper">
+      <article class="site cc_essay_toc cc_essay_{% if page.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay status-publish hentry availability-toc">
+        <h1>{{ page.title }}</h1>
         <div class="meta-info">
-          <div class="book_name">book <a href="{{ book.url }}">Keywords for {{ book.title }}</a>
-          </div>
-            <div class="author_list">by
-              {% for author in page.authors %}
-              <span class="author vcard"><a class="url fn n" href="{{ author.url }}" title="View all posts by {{ author.title }}">{{ author.title }}{% unless forloop.last %}, {% endunless %}</a>
-              </span>
-              {% endfor %}
-            </div>
+          <div class="book_name">book <a href="{{ book.url }}">Keywords for {{ book.title }}</a></div>
+          <div class="author_list">by {% include people.html people=page.authors %}</div>
         </div>
-        {% if page.availability == 'Print Essays'%}
-        <p class="p1">{{ page.excerpt | strip_html | truncatewords: 200 }}<p>
-        <div class="meta-entry">
-					<p><strong>This essay may be found on page {{ page.page }} of the printed volume.</strong></p>
-        </div>
-        {% else %}
-        <p class="p1">{{ content }}<p>
-        {% endif%}
+
+        {% if page.availability == 'Print Essays' %}
+          {{ page.excerpt | strip_html | truncatewords: 200 }}
+
           <div class="meta-entry">
-            <a href="{{ book.works_cited }}">Works Cited</a><br />
-            <a href="{{ essay.url }}">Permanent Link to this Essay</a>
+            <p><strong>This essay may be found on page {{ page.page }} of the printed volume.</strong></p>
           </div>
+        {% else %}
+          {{ content }}
+        {% endif %}
+
+        <div class="meta-entry">
+          <a href="#todo">Works Cited</a><br />
+          <a href="{{ page.url }}">Permanent Link to this Essay</a>
+        </div>
      </article>
   </div>
 </section>
-  {% include footer.html %}
-  <div id="cite-box-overlay" style="display: none;"></div>
-  <div id="cite-box" style="display: none;">
-  	<button>
-  		<span>close</span>
-  	</button>
-  	<div>
-  {% for author in page.authors %}
-    {{ author.last_name }}, {{ author.first_name }}.
-  {% endfor %}
-    "{{ page.title }}." <em>Keywords for {{ book.title }}</em>.
-    Eds.
-      {% for editors in book.editors %}
-        {{ editors.title }} {% unless forloop.last %}, {% endunless %}
-      {% endfor %}.
-    New York: New York University Press,
-    {{ book.date | date: "%Y"}}. {{ page.page }}. Print.</div>
+
+{% include footer.html book=book %}
+
+<div id="cite-box-overlay" style="display: none;"></div>
+<div id="cite-box" style="display: none;">
+  <button><span>close</span></button>
+  <div>
+    {%- for author in page.authors -%}
+      {{ author.last_name }}, {{ author.first_name }}
+    {%- endfor -%}. "{{ page.title }}." <em>Keywords for {{ book.title }}</em>.
+    Eds. {% include people.html people=book.editors plain=true %}. New York: New York University Press, {{ book.date | date: "%Y"}}. {{ page.page }}. Print.</div>
   </div>
-                 <div id="scroll-help">
-                         <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
-                         <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
-                         <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
-                         </div>
+</div>
 
-                         <script type='text/javascript' src='../../wp-includes/js/comment-reply.min8d9d.js?ver=4.9.16'></script>
-                         <script type='text/javascript' src='../../wp-includes/js/wp-embed.min8d9d.js?ver=4.9.16'></script>
-                         </div>
-                         <div id="clickoverlay2"></div>
-                         <script>
-                         if (Modernizr.touch) {
-
-                             /* cache dom references */
-                             var $body = jQuery('body');
-
-                             /* bind events */
-                             jQuery(document)
-                             .on('focus', 'input', function(e) {
-                                 $body.addClass('fixfixed');
-                             })
-                             .on('blur', 'input', function(e) {
-                                 $body.removeClass('fixfixed');
-                             });
-                         jQuery(document)
-                             .on('focus', 'textarea', function(e) {
-                                 $body.addClass('fixfixed');
-                             })
-                             .on('blur', 'textarea', function(e) {
-                                 $body.removeClass('fixfixed');
-                             });
-                         }
-                         </script>
+<div id="scroll-help">
+  <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
+  <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
+  <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
+</div>

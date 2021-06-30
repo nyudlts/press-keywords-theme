@@ -1,36 +1,41 @@
 ---
 layout: default
 ---
-<!--{%- assign person = site.posts | where: 'layout', 'person' -%}-->
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+
 <div id="everything">
   <header>
     {% include headers/master-header.html %}
   </header>
+
   <div id="clickoverlay"></div>
-<section id="content" role="main">
-	{% include headers/subhead-page.html %}
-<div class="wrapper">
-	<h1>{{ page.title }}</h1>
-		<div id="entry-author-info">
-			<div id="author-avatar">
-  	   	<img alt='' src='https://secure.gravatar.com/avatar/37b9725dabed77c02e52164051034699?s=60&amp;d=mm&amp;r=g' srcset='https://secure.gravatar.com/avatar/37b9725dabed77c02e52164051034699?s=120&#038;d=mm&#038;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' /></div><!-- #author-avatar -->
-					<div id="author-description">
-							<h2>About {{ page.title }}</h2>
-								<p>{{ page.content }}</p>
-					</div>
-		</div>
-<!-- revisar luego con plugin para relacionar personas con book, essay -->
-<!--			<article id="post-149" class="cc_essay_print site-13  post-149 essay type-essay status-publish hentry availability-print book-keywords-for-african-american-studies">
-        {% for essay in page.person.essay %}
-				<h1><a href="../../essay/university/index.html" title="Permalink to University" rel="bookmark">{{ essay.title }}</a></h1>
+
+  <section id="content" role="main">
+
+    {% include headers/subhead-essay.html page=page %}
+
+    <div class="wrapper">
+      <h1>{{ page.title }}</h1>
+
+      <div id="entry-author-info">
+        <div id="author-description">
+          <h2>About {{ page.title }}</h2>
+
+          {{ content }}
+        </div>
+      </div>
+
+      {% for post in page.posts %}
+        <article class="cc_essay_print essay type-essay status-publish hentry">
+          <h1 style="color: {{ post.book.color }}"><a href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
+
 					<div class="meta-info">
-						<div class="book_name">book <a href="{{ page.book.url }}">{{ page.book.title }}</a></div><div class="author_list">by <span class="author vcard"><a class="url fn n" href="index.html" title="View all posts by {{ person.title }}">{{ page.author.title }}</a></span></div>
-						</div>
-							<p>{{ page.book.introduction }}</p>
-							<div class="meta-entry">
-        {% endfor %}
-					</div>
-			</article>
-      -->
+            <div class="book_name">book <a href="{{ post.book.url }}">{{ post.book.title }}</a></div>
+          </div>
+
+          {{ post.excerpt }}
+        </article>
+      {% endfor %}
 		</div>
+  </section>
+</div>

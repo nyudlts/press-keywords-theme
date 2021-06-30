@@ -1,20 +1,48 @@
-{% if page.layout == 'book' %}
-  {% assign book = page %}
-{% elsif page.book %}
-  {% assign book = page.book %}
-{% endif %}
+{%- if page.layout == 'home' %}
+  {%- assign body_classes = 'home mastersite site' -%}
+{%- elsif page.layout == 'book' %}
+  {%- assign body_classes = 'home subsite site' -%}
+{%- elsif page.layout == 'person' %}
+  {%- assign body_classes = 'mastersite site' -%}
+{%- elsif page.layout == 'page' %}
+  {%- if page.book %}
+    {%- assign body_classes = 'subsite site' -%}
+  {%- else -%}
+    {%- assign body_classes = 'mastersite site' -%}
+  {%- endif %}
+{%- else -%}
+  {%- assign body_classes = 'subsite site' -%}
+{%- endif -%}
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-{% include head.html %}
-{% if page.layout == 'essay' or page.layout == 'page' or page.layout == 'person' or page.layout == 'contributor' or page.layout == 'works_cited' %}
-<body class="essay-template-default single site-2 single-essay {% if page.layout == 'person' %} mastersite {% else %} subsite {% endif %}">
-{% else %}
-<body class="home page-template-default page page-id-16 custom-background site-1 {%if page.layout == 'book'%} subsite {% else %}mastersite {% endif %}">
-{% endif %}
-  {{ content }}
-{% if page.layout == 'home'%}
-{% include footer-home.html %}
-{% endif %}
-</body>
+  {% include head.html %}
+
+  <body class="{{ body_classes }}">
+    {{ content }}
+
+    <div id="clickoverlay2"></div>
+
+    <script>
+      if (Modernizr.touch) {
+        /* cache dom references */
+        var $body = jQuery('body');
+
+        /* bind events */
+        jQuery(document)
+        .on('focus', 'input', function(e) {
+            $body.addClass('fixfixed');
+        })
+        .on('blur', 'input', function(e) {
+            $body.removeClass('fixfixed');
+        });
+        jQuery(document)
+        .on('focus', 'textarea', function(e) {
+            $body.addClass('fixfixed');
+        })
+        .on('blur', 'textarea', function(e) {
+            $body.removeClass('fixfixed');
+        });
+      }
+    </script>
+  </body>
 </html>

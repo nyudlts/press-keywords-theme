@@ -41,5 +41,8 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'jekyll', '~> 4'
   spec.add_runtime_dependency 'jekyll-linked-posts'
-  spec.add_runtime_dependency 'jekyll-lunr'
+# spec.add_runtime_dependency 'jekyll-lunr'
+  spec.add_runtime_dependency 'sutty-liquid'
+  spec.add_runtime_dependency 'pry'
+  spec.add_runtime_dependency 'jekyll-ignore-layouts'
 end

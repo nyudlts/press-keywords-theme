@@ -1,52 +1,38 @@
 ---
 layout: default
 ---
-{%- assign book = site.posts | where: 'layout', 'book' -%}
-<style>
-.site-1 .home h1,
-.site-1 h1,
-.site-1 .h1,
-.site-1 #share-links ul li a,
-.site-1 #share-links i,
-.site-1 #page-actions a:hover:after,
-.site-1 #results-count,
-.site-1 #results-pagination,
-.site-1 #respond input[type=submit]:hover,
-.site-1 .navigation,
-.site-1 .navigation a,
-.site-1 .navigation a:hover,
-.site-1 footer ul.menu a,
-article.site-1:before,
-#share-links a i,
-article.site-1 h1,
-article.site-1 a {
-  color: {{ page.color }} !important;
-}
-header .subsite-header{
-background-color: {{ page.color }} !important;
-}
-#access, #cite-box, #secondary-access, nav, #page-actions a,.site-1 a.button, .site-1 .button, #scroll-help a{
-  background: {{ page.color }} !important;
-}
-</style>
+{%- assign book = page -%}
+
+{%- include customization.html color=book.color -%}
+
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
-    {% include access-nav.html %}
+{% include access-nav.html book=book %}
+
 <div id="everything">
-  {% include header.html %}
+  <header>
+    {% include headers/master-header.html %}
+    {% include headers/subsite-header.html book=book %}
+  </header>
+
   <div id="clickoverlay"></div>
-<section id="content" role="main">
+
+  <section id="content" role="main">
     {% include headers/subhead-book.html %}
-<div class="wrapper">
-<h1 style="color: {{ page.color }}">Keywords for <span>{{ page.title }}</span></h1>
-  <h2>Edited by
-    {% for editor in page.editors %}
-      {{ editor.title }}{% unless forloop.last %}, {% endunless %}
-    {% endfor %}
-  </h2>
-    <p>{{ content}} <a href="{{ page.about.url }}" style="color: {{ page.color }}">Read More...</a></p>
-    <p style="text-align: center;">
-      <a class="button" href="#" style="color: {{ page.color }}">Read the Essays</a>
-    </p>
-  </div>
-</section>
-{% include footer.html %}
+    <div class="wrapper">
+      <article class="site">
+        <h1>Keywords for <span>{{ page.title }}</span></h1>
+        <h2>Edited by {% include people.html people=page.editors %}</h2>
+
+        {{ content }}
+
+        <a href="{{ page.about.url }}">Read More...</a>
+
+        <p style="text-align: center;">
+          <a class="button" href="#">Read the Essays</a>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  {% include footer.html book=book %}
+</div>
