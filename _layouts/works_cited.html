@@ -2,7 +2,10 @@
 layout: default
 ---
 
-{% assign book = page.book %}
+{% comment %}
+WorksCitedPage can be books or essays
+{% endcomment %}
+{% assign book = page.book | default: page.essay.book %}
 
 {% include customization.html color=book.color %}
 
@@ -23,7 +26,11 @@ layout: default
 
     <div class="wrapper">
       <article class="site">
-        <h1>{{ page.title }}</h1>
+        <h1>{{ page.title }} {% if page.essay %}on {{ page.essay.title }}{% endif %}</h1>
+
+        {% if page.essay %}
+          <p><a href="{{ page.essay.book.works_cited.url }}">Go to all works cited on <em>Keywords for {{ page.essay.book.title }}</em></a></p>
+        {% endif %}
 
         {% for work_cited in page.works_cited %}
           <article style="border-top: none; padding: 1rem" id="{{ work_cited.slug }}">
