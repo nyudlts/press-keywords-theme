@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+{% include customization.html color=site.color %}
+
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
 
 <div id="everything">
@@ -15,27 +18,36 @@ layout: default
     {% include headers/subhead-essay.html page=page %}
 
     <div class="wrapper">
-      <h1>{{ page.title }}</h1>
+      <article class="site">
+        <h1>by {{ page.title }}</h1>
 
-      <div id="entry-author-info">
-        <div id="author-description">
-          <h2>About {{ page.title }}</h2>
-
-          {{ content }}
-        </div>
-      </div>
-
-      {% for post in page.posts %}
-        <article class="cc_essay_print essay type-essay status-publish hentry">
-          <h1 style="color: {{ post.book.color }}"><a href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
-
-					<div class="meta-info">
-            <div class="book_name">book <a href="{{ post.book.url }}">{{ post.book.title }}</a></div>
+        <div id="entry-author-info">
+          <div id="author-avatar">
+            <img alt="" src="https://secure.gravatar.com/avatar/ebe2ca692aad633818069d944cd9e5b7?s=60&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/ebe2ca692aad633818069d944cd9e5b7?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">
           </div>
 
-          {{ post.excerpt }}
-        </article>
-      {% endfor %}
-		</div>
+          <div id="author-description">
+            <h2>About {{ page.title }}</h2>
+
+            {{ content }}
+          </div>
+        </div>
+
+        {% for post in page.posts %}
+          {% assign color = post.color | default: post.book.color | default: site.color %}
+          {%- assign style = '<a style="color:' | append: color | append: '" ' -%}
+
+          <article class="{% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% endif %}status-publish hentry">
+            <h1><a style="color: {{ color }}" href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
+
+            <div class="meta-info">
+              <div class="book_name">book <a style="color: {{ color }}" href="{{ post.book.url }}">{{ post.book.title }}</a></div>
+            </div>
+
+            {{ post.excerpt | replace: "<a ", style }}
+          </article>
+        {% endfor %}
+      </article>
+    </div>
   </section>
 </div>
