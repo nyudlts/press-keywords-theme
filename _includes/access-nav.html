@@ -15,7 +15,7 @@
 
     {% unless web_essays == empty %}
       <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
-        <a href="#todo">Web Essays</a>
+        <a href="#">Web Essays</a>
 
         <ul class="sub-menu">
           {% for essay in web_essays %}
@@ -31,7 +31,7 @@
 
     {% unless print_essays == empty %}
       <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
-        <a href="#todo">Print Essays</a>
+        <a href="#">Print Essays</a>
 
         <ul class="sub-menu">
           {% for essay in print_essays %}
@@ -54,7 +54,7 @@
 
     {% unless keywords_now == empty %}
       <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
-        <a href="#todo">Keywords Now</a>
+        <a href="#">Keywords Now</a>
 
         <ul class="sub-menu">
           {% for essay in keywords_now %}
@@ -74,7 +74,7 @@
   {% if book.courses and book.courses != empty %}
     <ul id="menu-right-flyout-nav" class="menu-right">
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-        In the Classroom
+        <a href="#">In the Classroom</a>
 
         <ul class="sub-menu">
           {% for course in book.courses %}

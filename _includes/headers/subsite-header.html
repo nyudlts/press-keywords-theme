@@ -13,8 +13,14 @@
       </li>
     {% endif %}
 
+    {% comment %}
+    Since the menu JS depends on item order, we can't remove this
+    without breaking the menu.
+    {% endcomment %}
     <li class="arrow-right menu-item menu-item-type-post_type menu-item-object-page">
-      <a href="#">Courses</a>
+      {% if book.courses and book.courses != empty %}
+        <a href="#">Courses</a>
+      {% endif %}
     </li>
   </ul>
 
