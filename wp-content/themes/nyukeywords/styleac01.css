@@ -260,12 +260,13 @@ textarea {
 	resize:none;
 }
 hr {
-	background-color: #e7e7e7;
 	border: 0;
 	clear: both;
-	height: 1px;
+	height: 16px;
 	margin-bottom: 18px;
 }
+
+hr:after { content: '***' }
 
 /* Text elements */
 p, dd, pre, hr {
