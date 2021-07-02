@@ -2258,7 +2258,7 @@ a#up,a#down {
 
 	#content .site-list img {
 		float: none;
-		max-width: 100%;
+		max-width: 200px;
 		margin: 0 auto;
 	}
 
