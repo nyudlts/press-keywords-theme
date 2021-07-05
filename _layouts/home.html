@@ -5,8 +5,6 @@ layout: default
 {%- assign books = site.posts | where: 'layout', 'book' -%}
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
-{% include customization.html color=site.color %}
-
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
 
 <div id="everything">
@@ -20,7 +18,7 @@ layout: default
     {% include headers/subhead.html page=page %}
 
     <div class="wrapper">
-      <article class="site">
+      <article class="{{ book.slug }}">
         <h1 class="main-site-title">{{ site.title }}</h1>
 
         <p>

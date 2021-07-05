@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{% include customization.html color=site.color %}
-
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
 
 <div id="everything">
@@ -30,17 +28,14 @@ layout: default
         </div>
 
         {% for post in page.posts %}
-          {% assign color = post.color | default: post.book.color | default: site.color %}
-          {%- assign style = '<a style="color:' | append: color | append: '" ' -%}
-
-          <article class="{% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% endif %}status-publish hentry">
-            <h1><a style="color: {{ color }}" href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
+          <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% endif %}status-publish hentry">
+            <h1><a href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
 
             <div class="meta-info">
-              <div class="book_name">book <a style="color: {{ color }}" href="{{ post.book.url }}">Keywords for {{ post.book.title }}</a></div>
+              <div class="book_name">book <a href="{{ post.book.url }}">Keywords for {{ post.book.title }}</a></div>
             </div>
 
-            {{ post.excerpt | replace: "<a ", style }}
+            {{ post.excerpt }}
           </article>
         {% endfor %}
       </article>

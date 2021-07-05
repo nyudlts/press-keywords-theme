@@ -1,23 +1,25 @@
 {%- if page.layout == 'home' %}
-  {%- assign body_classes = 'home mastersite site' -%}
+  {%- assign body_classes = 'home mastersite' -%}
 {%- elsif page.layout == 'book' %}
-  {%- assign body_classes = 'home subsite site' -%}
+  {%- assign body_classes = 'home subsite' -%}
 {%- elsif page.layout == 'person' %}
-  {%- assign body_classes = 'mastersite site' -%}
+  {%- assign body_classes = 'mastersite' -%}
+{%- elsif page.layout == 'search' %}
+  {%- assign body_classes = 'mastersite' -%}
 {%- elsif page.layout == 'page' %}
   {%- if page.book %}
-    {%- assign body_classes = 'subsite site' -%}
+    {%- assign body_classes = 'subsite' -%}
   {%- else -%}
-    {%- assign body_classes = 'mastersite site' -%}
+    {%- assign body_classes = 'mastersite' -%}
   {%- endif %}
 {%- else -%}
-  {%- assign body_classes = 'subsite site' -%}
+  {%- assign body_classes = 'subsite' -%}
 {%- endif -%}
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
   {% include head.html %}
 
-  <body class="{{ body_classes }}">
+  <body class="{{ body_classes }} {% if page.layout == 'book' %}{{ page.slug }}{% else %}{{ page.book.slug | default: 'site' }}{% endif %}">
     {{ content }}
 
     <div id="clickoverlay2"></div>

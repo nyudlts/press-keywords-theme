@@ -7,8 +7,6 @@ WorksCitedPage can be books or essays
 {% endcomment %}
 {% assign book = page.book | default: page.essay.book %}
 
-{% include customization.html color=book.color %}
-
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
 
 {% include access-nav.html book=book %}
@@ -25,7 +23,7 @@ WorksCitedPage can be books or essays
     {% include headers/subhead.html book=book page=page %}
 
     <div class="wrapper">
-      <article class="site">
+      <article class="{{ book.slug }}">
         <h1>{{ page.title }} {% if page.essay %}on {{ page.essay.title }}{% endif %}</h1>
 
         {% if page.essay %}

@@ -1,6 +1,108 @@
 ---
 ---
 
+.site body,
+.site a.button,
+.site .button,
+.site header .subsite-header,
+.site #page-actions a,
+.site nav,
+.site #comments,
+.site #cite-box,
+.site #scroll-help a,
+article.site-site .highlighted-term {
+  background: {{ site.color }};
+}
+
+.site .home h1,
+.site h1,
+.site .h1,
+.site a,
+.site #share-links a,
+.site #share-links i,
+.site #page-actions a:hover:after,
+.site #breadcrumbs,
+.site #results-count,
+.site #results-pagination,
+.site #respond input[type=submit]:hover,
+.site .navigation,
+.site .navigation a,
+.site .navigation a:hover,
+.site footer ul.menu a,
+article.site:before,
+article.site h1,
+article.site a {
+  color: {{ site.color }};
+}
+
+article.site a .highlighted-term {
+  color: #fff;
+}
+
+.site a:hover,
+article.site a:hover {
+  color: #333;
+}
+
+@media screen and (max-width: 767px) {
+  .site .icon-cart a:after {
+    color: {{ site.color }};
+  }
+}
+
+{% assign books = site.posts | where: 'layout', 'book' %}
+
+{% for book in books %}
+	.{{ book.slug }} body,
+	.{{ book.slug }} a.button,
+	.{{ book.slug }} .button,
+	.{{ book.slug }} header .subsite-header,
+	.{{ book.slug }} #page-actions a,
+	.{{ book.slug }} nav,
+	.{{ book.slug }} #comments,
+	.{{ book.slug }} #cite-box,
+	.{{ book.slug }} #scroll-help a,
+	article.site-{{ book.slug }} .highlighted-term {
+		background: {{ book.color }};
+	}
+
+	.{{ book.slug }} .home h1,
+	.{{ book.slug }} h1,
+	.{{ book.slug }} .h1,
+	.{{ book.slug }} a,
+	.{{ book.slug }} #share-links a,
+	.{{ book.slug }} #share-links i,
+	.{{ book.slug }} #page-actions a:hover:after,
+	.{{ book.slug }} #breadcrumbs,
+	.{{ book.slug }} #results-count,
+	.{{ book.slug }} #results-pagination,
+	.{{ book.slug }} #respond input[type=submit]:hover,
+	.{{ book.slug }} .navigation,
+	.{{ book.slug }} .navigation a,
+	.{{ book.slug }} .navigation a:hover,
+	.{{ book.slug }} footer ul.menu a,
+	article.{{ book.slug }}:before,
+	article.{{ book.slug }} h1,
+	article.{{ book.slug }} a {
+		color: {{ book.color }};
+	}
+
+	article.{{ book.slug }} a .highlighted-term {
+		color: #fff;
+	}
+
+	.{{ book.slug }} a:hover,
+	article.{{ book.slug }} a:hover {
+		color: #333;
+	}
+
+  @media screen and (max-width: 767px) {
+    .{{ book.slug }} .icon-cart a:after {
+      color: {{ book.color }};
+    }
+  }
+{% endfor %}
+
 // https://fonts.googleapis.com/css?family=Open+Sans:300,700
 @font-face {
   font-family: 'Open Sans';
