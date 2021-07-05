@@ -20,7 +20,7 @@ layout: default
     {% include headers/subhead.html page=page %}
     <div class="wrapper">
       <article class="site">
-        <h1>Keywords for <span>{{ page.description | default: page.title }}</span></h1>
+        <h1>Keywords <span>for {{ page.description | default: page.title }}</span></h1>
         <h2>Edited by {% include people.html people=page.editors %}</h2>
 
         {{ content }}
