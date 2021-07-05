@@ -1,0 +1,80 @@
+/* commonmark 0.30.0 https://github.com/commonmark/commonmark.js @license BSD3 */
+
+/*!
+ * lunr.Builder
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.Index
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.Pipeline
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.Set
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.TokenSet
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.Vector
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.stemmer
+ * Copyright (C) 2020 Oliver Nightingale
+ * Includes code from - http://tartarus.org/~martin/PorterStemmer/js.txt
+ */
+
+/*!
+ * lunr.stopWordFilter
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.tokenizer
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.trimmer
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*!
+ * lunr.utils
+ * Copyright (C) 2020 Oliver Nightingale
+ */
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/*! http://mths.be/repeat v0.2.0 by @mathias */
+
+/**
+ * lunr - http://lunrjs.com - A bit like Solr, but much smaller and not as bright - 2.3.9
+ * Copyright (C) 2020 Oliver Nightingale
+ * @license MIT
+ */
