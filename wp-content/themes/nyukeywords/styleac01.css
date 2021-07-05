@@ -1165,17 +1165,6 @@ p + .meta-entry {
 	overflow: hidden;
 	padding: 18px 20px;
 }
-#entry-author-info #author-avatar {
-	background: #fff;
-	border: 1px solid #e7e7e7;
-	float: left;
-	margin: 0 -104px 0 0;
-	padding: 11px;
-}
-#entry-author-info #author-description {
-	float: left;
-	margin: 0 0 0 104px;
-}
 #entry-author-info h2 {
 	color: #000;
 	font-size: 100%;
