@@ -3,6 +3,10 @@
 {% assign url = page.url | absolute_url | uri_escape %}
 
 <div id="subhead">
+  {% if page.layout == 'search' %}
+    <div id="results-count" data-search-target="count"></div>
+  {% endif %}
+
   {% if page.layout == 'home' %}
   {% elsif page.layout == 'book' %}
   {% else %}
@@ -11,7 +15,13 @@
       {%- if page.layout == 'essay' -%}
         <a href="#">Essays</a>
       {%- endif -%}
-      <span class="active">{{ page.title }}</span>
+
+      {%- if page.layout == 'search' %}
+        <a href="{{ site.search.url }}">{{ page.title }}</a>
+        <span class="active" data-search-target="breadcrumb"></span>
+      {%- else -%}
+        <span class="active">{{ page.title }}</span>
+      {%- endif -%}
     </div>
   {% endif %}
 

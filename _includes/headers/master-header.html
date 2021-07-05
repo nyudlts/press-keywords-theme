@@ -21,9 +21,9 @@
   <div id="searchoverlay"></div>
   <div id="searchoverlay2"></div>
   <div id="search">
-    <form role='search' method="get" id="searchform" action="{{ site.url }}">
+    <form role='search' method="get" id="searchform" action="{{ site.search.url }}" data-controller="search">
       <label class="screen-reader-text" for="s">Search for:</label>
-      <input type="text" class="search_input" value="" name="s" id="s" placeholder="Search..." aria-label="Search" />
+      <input type="text" class="search_input" value="" name="s" id="s" placeholder="Search..." aria-label="Search" data-search-target="q" />
       <button class="toggle-searchsites" value="toggle sites">Individual book or all books</button>
       <input type="submit" id="searchsubmit" value="GO" />
 

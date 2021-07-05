@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<script defer src="/assets/js/pack.js"></script>
+
+<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+
+<div id="everything">
+  <header>
+    {% include headers/master-header.html %}
+  </header>
+
+  <div id="clickoverlay"></div>
+
+  <section id="content" role="main">
+
+    {% include headers/subhead.html page=page %}
+
+    <div class="wrapper">
+      <article class="site" id="results">
+        <h1>
+          <i class="fa fa-cog fa-spin"></i>
+          Please wait while the search index is downloaded...
+        </h1>
+      </article>
+    </div>
+  </section>
+
+  {% include footer.html %}
+</div>
