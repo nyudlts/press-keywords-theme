@@ -352,6 +352,7 @@ a:hover {
 
 #logo,
 #sublogo {
+  max-width: 400px;
 	margin: 0px auto;
 	position: relative;
 	z-index: 1;
