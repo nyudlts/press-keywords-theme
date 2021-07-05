@@ -54,9 +54,16 @@ export default class extends Controller {
     const count = document.querySelector('[data-search-target="count"]')
     const breadcrumb = document.querySelector('[data-search-target="breadcrumb"]')
     const sites = this.params.getAll('cc_gs_sites[]')
+    const type = this.params.get('post_type')
     const results = window.index.search(q)
       .map(r => window.data.find(a => a.id == r.ref))
-      .filter(d => ((sites.length === 0) || sites.includes(d.book ? d.book.slug : d.slug)))
+      .filter(d => (sites.length === 0 || sites.includes(d.book ? d.book.slug : d.slug)))
+      .filter(d => (!type || type === 'all' || d.layout === type))
+
+    document.title = `Keywords - Search results - ${q}`
+
+    if (count) count.innerText = `${results.length} results found`
+    if (breadcrumb) breadcrumb.innerText = q
 
     const request = await fetch('/assets/templates/results.html')
     const template = await request.text()
@@ -74,15 +81,7 @@ export default class extends Controller {
       results[i].content = this.markdown(p, q)
     }
 
-    const html = await this.engine.parseAndRender(template, { q, results })
-    const title = `Keywords - Search results - ${q}`
-
-    document.title = title
-
-    if (count) count.innerText = `${results.length} results found`
-    if (breadcrumb) breadcrumb.innerText = q
-
-    main.innerHTML = html
+    main.innerHTML = await this.engine.parseAndRender(template, { q, results })
     this.formDisable = false
   }
 
