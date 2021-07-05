@@ -53,7 +53,11 @@ export default class extends Controller {
     const main = document.querySelector('#results')
     const count = document.querySelector('[data-search-target="count"]')
     const breadcrumb = document.querySelector('[data-search-target="breadcrumb"]')
-    const results = window.index.search(q).map(r => window.data.find(a => a.id == r.ref))
+    const sites = this.params.getAll('cc_gs_sites[]')
+    const results = window.index.search(q)
+      .map(r => window.data.find(a => a.id == r.ref))
+      .filter(d => ((sites.length === 0) || sites.includes(d.book ? d.book.slug : d.slug)))
+
     const request = await fetch('/assets/templates/results.html')
     const template = await request.text()
 
