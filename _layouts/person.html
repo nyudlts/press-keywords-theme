@@ -37,7 +37,7 @@ layout: default
             <h1><a style="color: {{ color }}" href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
 
             <div class="meta-info">
-              <div class="book_name">book <a style="color: {{ color }}" href="{{ post.book.url }}">{{ post.book.title }}</a></div>
+              <div class="book_name">book <a style="color: {{ color }}" href="{{ post.book.url }}">Keywords for {{ post.book.title }}</a></div>
             </div>
 
             {{ post.excerpt | replace: "<a ", style }}
