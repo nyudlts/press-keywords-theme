@@ -1886,7 +1886,7 @@ footer:after {
 
 /* RWD */
 @media screen and (max-width: 1020px) and (min-width: 768px) {
-	article {
+	article.type-essay {
 		padding-left: 90px;
 	}
 	article.type-post:before, .type-essay:before {
