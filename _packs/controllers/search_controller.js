@@ -150,7 +150,7 @@ export default class extends Controller {
         if (!event.node.literal.match(match)) continue
 
         node = new commonmark.Node('custom_inline')
-        node.onEnter = event.node.literal.replaceAll(match, `<mark>${highlight}</mark>`)
+        node.onEnter = event.node.literal.replaceAll(match, `<mark>$<highlight></mark>`)
 
         event.node.insertBefore(node)
         event.node.unlink()
