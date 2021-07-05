@@ -65,7 +65,7 @@ export default class extends Controller {
     if (count) count.innerText = `${results.length} results found`
     if (breadcrumb) breadcrumb.innerText = q
 
-    const request = await fetch('/assets/templates/results.html')
+    const request = await fetch('/assets/templates/results.html', { cache: 'no-cache' })
     const template = await request.text()
 
     const match = new RegExp(`(?<q>${q})`, 'ig')
@@ -92,13 +92,13 @@ export default class extends Controller {
     let response
 
     if (!window.data) {
-      response = await fetch('/data.json')
+      response = await fetch('/data.json', { cache: 'no-cache' })
       const data = await response.json()
       window.data = data
     }
 
     if (!window.index) {
-      response = await fetch('/idx.json')
+      response = await fetch('/idx.json', { cache: 'no-cache' })
       const idx = await response.json()
       window.index = lunr.Index.load(idx)
     }
@@ -119,15 +119,6 @@ export default class extends Controller {
     if (!window.liquid) window.liquid = new Liquid()
 
     return window.liquid
-  }
-
-  async site () {
-    if (!window.site) {
-      const data = await fetch('assets/data/site.json')
-      window.site = await data.json()
-    }
-
-    return window.site
   }
 
   markdown (string, highlight = undefined) {
