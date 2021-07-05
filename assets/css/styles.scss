@@ -10,7 +10,8 @@
 .site #comments,
 .site #cite-box,
 .site #scroll-help a,
-article.site-site .highlighted-term {
+article.site mark,
+article.site .highlighted-term {
   background: {{ site.color }};
 }
 
@@ -35,8 +36,10 @@ article.site a {
   color: {{ site.color }};
 }
 
+article.site mark,
 article.site a .highlighted-term {
   color: #fff;
+  font-family: inherit;
 }
 
 .site a:hover,
@@ -62,7 +65,8 @@ article.site a:hover {
 	.{{ book.slug }} #comments,
 	.{{ book.slug }} #cite-box,
 	.{{ book.slug }} #scroll-help a,
-	article.site-{{ book.slug }} .highlighted-term {
+	article.{{ book.slug }} mark,
+	article.{{ book.slug }} .highlighted-term {
 		background: {{ book.color }};
 	}
 
@@ -87,8 +91,10 @@ article.site a:hover {
 		color: {{ book.color }};
 	}
 
+	article.{{ book.slug }} mark,
 	article.{{ book.slug }} a .highlighted-term {
 		color: #fff;
+    font-family: inherit;
 	}
 
 	.{{ book.slug }} a:hover,

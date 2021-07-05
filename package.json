@@ -4,6 +4,7 @@
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.14.7",
     "babel-loader": "^8.2.2",
+    "commonmark": "^0.30.0",
     "core-js": "^3.15.2",
     "liquidjs": "^9.25.1",
     "lunr": "^2.3.9",

@@ -2,6 +2,7 @@ import { Controller } from 'stimulus'
 import { Liquid } from 'liquidjs'
 
 const lunr = require("lunr")
+const commonmark = require('commonmark')
 
 export default class extends Controller {
   static targets = [ 'q' ]
@@ -10,7 +11,7 @@ export default class extends Controller {
     if (!this.hasQTarget) return
     if (!this.qTarget.value.trim().length === 0) return
 
-    return this.qTarget.value.trim().replace(':', '')
+    return this.qTarget.value.trim().replace(':', '').toLowerCase()
   }
 
   connect () {
@@ -23,7 +24,6 @@ export default class extends Controller {
   }
 
   async search (event) {
-    // Detiene el envío del formulario
     if (event) {
       event.preventDefault()
       event.stopPropagation()
@@ -46,10 +46,23 @@ export default class extends Controller {
     const results = window.index.search(q).map(r => window.data.find(a => a.id == r.ref))
     const request = await fetch('/assets/templates/results.html')
     const template = await request.text()
+
+    const match = new RegExp(`(?<q>${q})`, 'ig')
+
+    // TODO: Pagination
+    for (const i in results) {
+      // Find the first paragraph with a match or return the first
+      // paragraph by default.  Discard the full content.
+      const ps = results[i].content.split("\n")
+      const p = (ps.find(p => p.match(match)) || ps[0])
+
+      results[i].title = results[i].title.replaceAll(match, "<mark>$<q></mark>")
+      results[i].content = this.markdown(p, q)
+    }
+
     const html = await this.engine.parseAndRender(template, { q, results })
     const title = `Keywords - Search results - ${q}`
 
-    window.history.pushState({ q }, title, `?${this.qTarget.name}=${encodeURI(q)}`)
     document.title = title
 
     if (count) count.innerText = `${results.length} results found`
@@ -102,5 +115,36 @@ export default class extends Controller {
     }
 
     return window.site
+  }
+
+  markdown (string, highlight = undefined) {
+    if (!this._reader) this._reader = new commonmark.Parser({ smart: true })
+    if (!this._writer) this._writer = new commonmark.HtmlRenderer()
+
+    const tree = this._reader.parse(string)
+
+    if (highlight) {
+      const walker = tree.walker()
+      const match = new RegExp(`(?<highlight>${highlight})`, 'gi')
+      let event
+      let node
+
+      // We have to walk every text node and replace their text with a
+      // new node containing the highlight text.
+      while ((event = walker.next())) {
+        if (!event.entering) continue
+        console.log(event.node)
+        if (event.node.type !== 'text') continue
+        if (!event.node.literal.match(match)) continue
+
+        node = new commonmark.Node('custom_inline')
+        node.onEnter = event.node.literal.replaceAll(match, `<mark>${highlight}</mark>`)
+
+        event.node.insertBefore(node)
+        event.node.unlink()
+      }
+    }
+
+    return this._writer.render(tree)
   }
 }

@@ -3,7 +3,7 @@
     <h1>Not found</h1>
     <p>There were no results that matched your search criteria. Please try again with different search terms.</p>
   {% else %}
-    {% for post in results limit: 10 %}
+    {% for post in results %}
       {% assign people = post.authors | default: post.editors %}
       <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% else %}post type-post {% endif %}status-publish hentry">
         <h1><a href="{{ post.url }}">{% if post.layout == 'book' %}Keywords for {% endif %}{{ post.title }}</a></h1>
