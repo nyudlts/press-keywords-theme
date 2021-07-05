@@ -29,14 +29,14 @@
 
       <ul class="searchsites">
         <li>
-          <input type="checkbox" class="all" name="cc_gs_sites[]" value="{{ books | map: 'uuid' | join: ',' }}" checked />
+          <input type="checkbox" id="searchlimit" name="searchlimit" data-action="search#all" data-name="cc_gs_sites[]" checked />
           <label for="searchlimit">All books</label>
         </li>
 
         {% for book in books %}
           <li>
-            <input type="checkbox" name="cc_gs_sites[]" id="searchsites2" value="{{ book.uuid }}" />
-            <label for="searchsites2">Keywords for {{ book.title }}</label>
+            <input data-action="search#some" data-name="searchlimit" type="checkbox" name="cc_gs_sites[]" id="searchsites-{{ book.slug }}" value="{{ book.slug }}" checked />
+            <label for="searchsites-{{ book.slug }}">Keywords for {{ book.title }}</label>
           </li>
         {% endfor %}
       </ul>

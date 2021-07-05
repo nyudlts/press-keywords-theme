@@ -23,6 +23,16 @@ export default class extends Controller {
     }
   }
 
+  all (event) {
+    for (const some of this.element.elements[event.target.dataset.name]) {
+      some.checked = event.target.checked
+    }
+  }
+
+  some (event) {
+    this.element.elements[event.target.dataset.name].checked = false
+  }
+
   async search (event) {
     if (event) {
       event.preventDefault()
@@ -133,7 +143,6 @@ export default class extends Controller {
       // new node containing the highlight text.
       while ((event = walker.next())) {
         if (!event.entering) continue
-        console.log(event.node)
         if (event.node.type !== 'text') continue
         if (!event.node.literal.match(match)) continue
 
