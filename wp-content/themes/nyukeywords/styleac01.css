@@ -352,7 +352,6 @@ a:hover {
 
 #logo,
 #sublogo {
-	width: 180px;
 	margin: 0px auto;
 	position: relative;
 	z-index: 1;
@@ -372,7 +371,6 @@ a:hover {
 }
 
 #sublogo {
-	width: 320px;
 	padding: 15px 0;
 }
 
