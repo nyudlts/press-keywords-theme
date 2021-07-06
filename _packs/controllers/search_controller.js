@@ -5,7 +5,7 @@ const lunr = require("lunr")
 const commonmark = require('commonmark')
 
 export default class extends Controller {
-  static targets = [ 'q' ]
+  static targets = [ 'q', 'toggle' ]
 
   get q () {
     if (!this.hasQTarget) return
@@ -21,6 +21,13 @@ export default class extends Controller {
       this.qTarget.value = this.params.get(this.qTarget.name)
       this.search()
     }
+  }
+
+  toggle (event) {
+    event.preventDefault()
+    event.stopPropagation()
+
+    window.jQuery(this.toggleTarget).slideToggle()
   }
 
   all (event) {
