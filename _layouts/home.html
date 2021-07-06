@@ -23,18 +23,18 @@ layout: default
 
         <p>
           {{ about.description }}
-          <a href="{{ about.url }}">Read More...</a>
+          <a href="{{ about.url | relative_url }}">Read More...</a>
         </p>
       </article>
 
       {% for book in books %}
         <article class="selfclearing site-list">
-          <a href="{{ book.url }}">
+          <a href="{{ book.url | relative_url }}">
             <img src="{{ book.image }}" alt="Image for Keywords for {{ book.title }}" />
           </a>
 
           <div class="site-details">
-            <h1><a href="{{ book.url }}" style="color: {{ book.color }}">Keywords for {{ book.description | default: book.title }}</a></h1>
+            <h1><a href="{{ book.url | relative_url }}" style="color: {{ book.color }}">Keywords for {{ book.description | default: book.title }}</a></h1>
 
             <span>Edited by
               {% for editors in book.editors %}

@@ -7,10 +7,10 @@
   <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
 
   <ul id="menu-left-flyout-nav" class="menu-left">
-    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item current_page_item"><a href="{{ book.url }}">Home</a></li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item current_page_item"><a href="{{ book.url | relative_url }}">Home</a></li>
 
     {% if book.introduction %}
-      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.introduction.url }}">{{ book.introduction.title }}</a></li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.introduction.url | relative_url }}">{{ book.introduction.title }}</a></li>
     {% endif %}
 
     {% unless web_essays == empty %}
@@ -20,7 +20,7 @@
         <ul class="sub-menu">
           {% for essay in web_essays %}
             <li>
-              <a href="{{ essay.url }}">
+              <a href="{{ essay.url | relative_url }}">
                 {{ essay.title }}, <span>{% include people.html people=essay.authors plain=true %}</span>
               </a>
             </li>
@@ -36,7 +36,7 @@
         <ul class="sub-menu">
           {% for essay in print_essays %}
             <li>
-              <a href="{{ essay.url }}">
+              <a href="{{ essay.url | relative_url }}">
                 {{ essay.title }}, <span>{% include people.html people=essay.authors plain=true %}</span>
               </a>
             </li>
@@ -45,11 +45,11 @@
       </li>
     {% endunless %}
 
-    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ book.works_cited.url }}">{{ book.works_cited.title }}</a></li>
-    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.contributors.url }}">{{ book.contributors.title }}</a></li>
+    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ book.works_cited.url | relative_url }}">{{ book.works_cited.title }}</a></li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.contributors.url | relative_url }}">{{ book.contributors.title }}</a></li>
 
     {% if book.acknowledgments %}
-      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgments.url }}">{{ book.acknowledgments.title }}</a></li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgments.url | relative_url }}">{{ book.acknowledgments.title }}</a></li>
     {% endif %}
 
     {% unless keywords_now == empty %}
@@ -59,7 +59,7 @@
         <ul class="sub-menu">
           {% for essay in keywords_now %}
             <li>
-              <a href="{{ essay.url }}">
+              <a href="{{ essay.url | relative_url }}">
                 {{ essay.title }}, <span>{% include people.html people=essay.authors plain=true %}</span>
               </a>
             </li>
@@ -79,7 +79,7 @@
         <ul class="sub-menu">
           {% for course in book.courses %}
             <li class="menu-item menu-item-type-post_type menu-item-object-page">
-              <a href="{{ course.url }}">{{ course.title }}</a>
+              <a href="{{ course.url | relative_url }}">{{ course.title }}</a>
             </li>
           {% endfor %}
         </ul>

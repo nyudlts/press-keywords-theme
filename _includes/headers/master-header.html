@@ -2,11 +2,11 @@
 
 <div class="master-header">
   <ul id="master-menu" class="menu">
-    <li class="menu-item"><a href="{{ site.url }}">Home</a></li>
+    <li class="menu-item"><a href="{{ site.url | relative_url }}">Home</a></li>
     <li class="menu-item menu-item-has-children"><a href="#">Books</a>
       <ul class="sub-menu">
         {% for book in books %}
-          <li class="menu-item"><a href="{{ book.url }}">{{ book.title }}</a></li>
+          <li class="menu-item"><a href="{{ book.url | relative_url }}">{{ book.title }}</a></li>
         {% endfor %}
       </ul>
     </li>
@@ -15,13 +15,13 @@
   </ul>
 
   <div id="logo">
-    <a href="{{ site.url }}" title="{{ site.title }}">{{ site.title }}</a>
+    <a href="{{ site.url | relative_url }}" title="{{ site.title }}">{{ site.title }}</a>
   </div>
 
   <div id="searchoverlay"></div>
   <div id="searchoverlay2"></div>
   <div id="search">
-    <form role='search' method="get" id="searchform" action="{{ site.search.url }}" data-controller="search">
+    <form role='search' method="get" id="searchform" action="{{ site.search.url | relative_url }}" data-controller="search">
       <label class="screen-reader-text" for="s">Search for:</label>
       <input type="text" class="search_input" value="" name="s" id="s" placeholder="Search..." aria-label="Search" data-search-target="q" />
       <button data-action="search#toggle" class="toggle-searchsites" value="toggle sites">Individual book or all books</button>

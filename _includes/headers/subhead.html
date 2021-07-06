@@ -11,7 +11,7 @@
   {% elsif page.layout == 'book' %}
   {% else %}
     <div id="breadcrumbs">
-      <a href="{{ book.url | default: site.url }}">Home</a>
+      <a href="{{ book.url | default: site.url | relative_url }}">Home</a>
       {%- if page.layout == 'essay' -%}
         <a href="#">Essays</a>
       {%- endif -%}

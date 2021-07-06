@@ -23,7 +23,7 @@ layout: default
       <article class="{{ book.slug }} cc_essay_toc cc_essay_{% if page.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay status-publish hentry availability-toc">
         <h1>{{ page.title }}</h1>
         <div class="meta-info">
-          <div class="book_name">book <a href="{{ book.url }}">Keywords for {{ book.title }}</a></div>
+          <div class="book_name">book <a href="{{ book.url | relative_url }}">Keywords for {{ book.title }}</a></div>
           <div class="author_list">by {% include people.html people=page.authors %}</div>
         </div>
 
@@ -38,8 +38,8 @@ layout: default
         {% endif %}
 
         <div class="meta-entry">
-          <a href="{{ page.works_cited.url }}">{{ page.works_cited.title }}</a><br />
-          <a href="{{ page.url }}">Permanent Link to this Essay</a>
+          <a href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a><br />
+          <a href="{{ page.url | relative_url }}">Permanent Link to this Essay</a>
         </div>
      </article>
   </div>
