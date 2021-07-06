@@ -41,7 +41,6 @@ layout: default
                 <a href="{{ editors.permalink }}" style="color: {{ book.color }}">{{ editors.title }}</a>{% unless forloop.last %}, {% endunless %}
               {% endfor %}
             </span>
-            {% if book.date %}<span>Date: {{ book.date | date: "%d/%m/%Y" }}</span>{% endif %}
           </div>
         </article>
       {% endfor %}
