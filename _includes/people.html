@@ -1,4 +1,8 @@
+{%- if include.nosort -%}
+{%- assign people = include.people -%}
+{%- else -%}
 {%- assign people = include.people | sort: 'last_name', 'last' -%}
+{%- endif -%}
 {%- if include.plain -%}
 {{ people | map: 'title' | array_to_sentence_string: 'and' }}
 {%- else -%}
