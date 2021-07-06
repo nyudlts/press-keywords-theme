@@ -9,7 +9,7 @@
   {% for person in people %}
     <span class="author vcard">
       {% if forloop.last and people.size > 1 %}and{% endif %}
-      <a class="url fn n" href="{{ person.url }}" title="View all posts by {{ person.title }}">
+      <a class="url fn n" href="{{ person.url | relative_url }}" title="View all posts by {{ person.title }}">
         {{- person.title -}}
       </a>{% if people.size > 2 %}{% unless forloop.last %}, {% endunless %}{% endif %}
     </span>

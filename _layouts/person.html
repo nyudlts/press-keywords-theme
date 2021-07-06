@@ -29,10 +29,10 @@ layout: default
 
         {% for post in page.posts %}
           <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% endif %}status-publish hentry">
-            <h1><a href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
+            <h1><a href="{{ post.url | relative_url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
 
             <div class="meta-info">
-              <div class="book_name">book <a href="{{ post.book.url }}">Keywords for {{ post.book.title }}</a></div>
+              <div class="book_name">book <a href="{{ post.book.url | relative_url }}">Keywords for {{ post.book.title }}</a></div>
             </div>
 
             {{ post.excerpt }}

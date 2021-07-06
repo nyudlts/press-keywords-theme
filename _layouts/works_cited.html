@@ -27,7 +27,7 @@ WorksCitedPage can be books or essays
         <h1>{{ page.title }} {% if page.essay %}on {{ page.essay.title }}{% endif %}</h1>
 
         {% if page.essay %}
-          <p><a href="{{ page.essay.book.works_cited.url }}">Go to all works cited on <em>Keywords for {{ page.essay.book.title }}</em></a></p>
+          <p><a href="{{ page.essay.book.works_cited.url | relative_url }}">Go to all works cited on <em>Keywords for {{ page.essay.book.title }}</em></a></p>
         {% endif %}
 
         {% for work_cited in page.works_cited %}
