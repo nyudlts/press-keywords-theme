@@ -1,19 +1,32 @@
 {%- assign url = page.book.works_cited.url | absolute_url | append: '#' | append: page.slug -%}
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <meta http-equiv="refresh" content="0;url={{ url }}" />
+  {% include head.html redirect=url %}
 
-    <title>{{ site.title }}</title>
-    <link rel="canonical" href="{{ url }}" />
-  </head>
+  <body class="home mastersite">
+    <div id="everything">
+      <header>
+        {% include headers/master-header.html %}
+      </header>
 
-  <body>
-    {% comment %}
-    Just in case the redirection fails.
-    {% endcomment %}
-    {{ content }}
+      <div id="clickoverlay"></div>
+
+      <section id="content" role="main">
+
+        {% include headers/subhead.html page=page %}
+
+        <div class="wrapper">
+          <article class="site" id="results">
+            <h1>
+              <i class="fa fa-cog fa-spin"></i>
+
+              Redirecting to work cited...
+            </h1>
+          </article>
+        </div>
+      </section>
+
+      {% include footer.html %}
+    </div>
   </body>
 </html>

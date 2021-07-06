@@ -16,6 +16,11 @@
 
   <link href='/assets/css/styles.css' rel='stylesheet' type='text/css'>
 
+  {% if include.redirect %}
+    <meta http-equiv="refresh" content="0;url={{ include.redirect }}" />
+    <link rel="canonical" href="{{ include.redirect }}" />
+  {% endif %}
+
   {% if jekyll.env == 'production' %}
     {% include google-codes.html %}
   {% endif %}
