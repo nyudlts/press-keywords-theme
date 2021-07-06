@@ -6,11 +6,11 @@
     {% for post in results %}
       {% assign people = post.authors | default: post.editors %}
       <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% else %}post type-post {% endif %}status-publish hentry">
-        <h1><a href="{{ post.url }}">{% if post.layout == 'book' %}Keywords for {% endif %}{{ post.title }}</a></h1>
+        <h1><a href="{{ post.url | prepend: relative_url }}">{% if post.layout == 'book' %}Keywords for {% endif %}{{ post.title }}</a></h1>
 
         <div class="meta-info">
           {% if post.book %}
-            <div class="book_name">book <a href="{{ post.book.url }}">Keywords for {{ post.book.title }}</a></div>
+            <div class="book_name">book <a href="{{ post.book.url | prepend: relative_url }}">Keywords for {{ post.book.title }}</a></div>
           {% endif %}
 
           {% for person in people %}
@@ -20,7 +20,7 @@
             {% endif %}
             <span class="author vcard">
               {% if forloop.last and people.size > 1 %}and{% endif %}
-              <a class="url fn n" href="{{ person.url }}" title="View all posts by {{ person.title }}">
+              <a class="url fn n" href="{{ person.url | prepend: base_url }}" title="View all posts by {{ person.title }}">
                 {{- person.title -}}
               </a>{% if people.size > 2 %}{% unless forloop.last %}, {% endunless %}{% endif %}
             </span>

@@ -21,7 +21,16 @@
   <div id="searchoverlay"></div>
   <div id="searchoverlay2"></div>
   <div id="search">
-    <form role='search' method="get" id="searchform" action="{{ site.search.url | relative_url }}" data-controller="search">
+    <form
+      role='search'
+      method="get"
+      id="searchform"
+      action="{{ site.search.url | relative_url }}"
+      data-controller="search"
+      data-search-relative-url-value="{{ '/' | relative_url }}"
+      data-search-template-value="{{ '/assets/templates/results.html' | relative_url }}"
+      data-search-data-value="{{ '/data.json' | relative_url }}"
+      data-search-index-value="{{ '/idx.json' | relative_url }}">
       <label class="screen-reader-text" for="s">Search for:</label>
       <input type="text" class="search_input" value="" name="s" id="s" placeholder="Search..." aria-label="Search" data-search-target="q" />
       <button data-action="search#toggle" class="toggle-searchsites" value="toggle sites">Individual book or all books</button>

@@ -6,6 +6,12 @@ const commonmark = require('commonmark')
 
 export default class extends Controller {
   static targets = [ 'q', 'toggle' ]
+  static values = {
+    index: String,
+    data: String,
+    template: String,
+    relativeUrl: String
+  }
 
   get q () {
     if (!this.hasQTarget) return
@@ -57,6 +63,7 @@ export default class extends Controller {
       return
     }
 
+    const relative_url = this.relativeUrlValue
     const main = document.querySelector('#results')
     const count = document.querySelector('[data-search-target="count"]')
     const breadcrumb = document.querySelector('[data-search-target="breadcrumb"]')
@@ -72,7 +79,7 @@ export default class extends Controller {
     if (count) count.innerText = `${results.length} results found`
     if (breadcrumb) breadcrumb.innerText = q
 
-    const request = await fetch('/assets/templates/results.html', { cache: 'no-cache' })
+    const request = await fetch(this.templateValue, { cache: 'no-cache' })
     const template = await request.text()
 
     const match = new RegExp(`(?<q>${q})`, 'ig')
@@ -88,7 +95,7 @@ export default class extends Controller {
       results[i].content = this.markdown(p, q)
     }
 
-    main.innerHTML = await this.engine.parseAndRender(template, { q, results })
+    main.innerHTML = await this.engine.parseAndRender(template, { q, results, relative_url })
     this.formDisable = false
   }
 
@@ -99,13 +106,13 @@ export default class extends Controller {
     let response
 
     if (!window.data) {
-      response = await fetch('/data.json', { cache: 'no-cache' })
+      response = await fetch(this.dataValue, { cache: 'no-cache' })
       const data = await response.json()
       window.data = data
     }
 
     if (!window.index) {
-      response = await fetch('/idx.json', { cache: 'no-cache' })
+      response = await fetch(this.indexValue, { cache: 'no-cache' })
       const idx = await response.json()
       window.index = lunr.Index.load(idx)
     }
