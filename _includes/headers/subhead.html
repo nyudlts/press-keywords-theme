@@ -32,7 +32,7 @@
         rel="noopener noreferrer"
         target="_blank"
         aria-label="Share this page on Facebook">
-        <i class="fa fa-facebook"></i>
+        <i class="fa fa-facebook"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i>
       </a>
     </li>
 
@@ -42,7 +42,7 @@
         rel="noopener noreferrer"
         target="_blank"
         aria-label="Share this page on Twitter">
-        <i class="fa fa-twitter"></i>
+        <i class="fa fa-twitter"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i>
       </a>
     </li>
 
@@ -52,12 +52,12 @@
         rel="noopener noreferrer"
         target="_blank"
         aria-label="Share this page on Google Plus">
-        <i class="fa fa-google-plus"></i>
+        <i class="fa fa-google-plus"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i>
       </a>
     </li>
 
     <li>
-      <a aria-label="Email this page" href="mailto:?subject={{ page.title | uri_escape }}&amp;body={{ url }} "><i class="fa fa-envelope-o"></i></a>
+      <a aria-label="Email this page" href="mailto:?subject={{ page.title | uri_escape }}&amp;body={{ url }} "><i class="fa fa-envelope-o"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i></a>
     </li>
   </ul>
 
