@@ -17,7 +17,7 @@
 {%- endif -%}
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
-  {% include head.html %}
+  {% include_cached head.html %}
 
   <body class="{{ body_classes }} {% if page.layout == 'book' %}{{ page.slug }}{% else %}{{ page.book.slug | default: 'site' }}{% endif %}">
     {{ content }}

@@ -9,12 +9,12 @@ WorksCitedPage can be books or essays
 
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
 
-{% include access-nav.html book=book %}
+{% include_cached access-nav.html book=book %}
 
 <div id="everything">
   <header>
-    {% include headers/master-header.html %}
-    {% include headers/subsite-header.html book=book %}
+    {% include_cached headers/master-header.html %}
+    {% include_cached headers/subsite-header.html book=book %}
   </header>
 
   <div id="clickoverlay"></div>
@@ -39,7 +39,7 @@ WorksCitedPage can be books or essays
   </div>
 </section>
 
-{% include footer.html book=book %}
+{% include_cached footer.html book=book %}
 
 <div id="scroll-help">
   <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>

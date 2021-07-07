@@ -4,12 +4,12 @@ layout: default
 {%- assign book = page -%}
 
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
-{% include access-nav.html book=book %}
+{% include_cached access-nav.html book=book %}
 
 <div id="everything">
   <header>
-    {% include headers/master-header.html %}
-    {% include headers/subsite-header.html book=book %}
+    {% include_cached headers/master-header.html %}
+    {% include_cached headers/subsite-header.html book=book %}
   </header>
 
   <div id="clickoverlay"></div>
@@ -32,5 +32,5 @@ layout: default
     </div>
   </section>
 
-  {% include footer.html book=page %}
+  {% include_cached footer.html book=page %}
 </div>
