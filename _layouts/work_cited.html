@@ -9,24 +9,13 @@
         {% include_cached headers/master-header.html %}
       </header>
 
-      <div id="clickoverlay"></div>
-
-      <section id="content" role="main">
-
-        {% include headers/subhead.html page=page %}
-
+      <section id="content" role="main" style="background:none">
         <div class="wrapper">
           <article class="site" id="results">
-            <h1>
-              <i class="fa fa-cog fa-spin"></i>
-
-              Redirecting to work cited...
-            </h1>
+            <i class="fa fa-cog fa-spin"></i>
           </article>
         </div>
       </section>
-
-      {% include_cached footer.html %}
     </div>
   </body>
 </html>
