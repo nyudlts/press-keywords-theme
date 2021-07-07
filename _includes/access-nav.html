@@ -3,7 +3,7 @@
 {% assign print_essays = book.essays | where: 'availability', 'Print Essays' %}
 {% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' %}
 
-<nav id="access" style="background-color: {{ page.color }}">
+<nav id="access">
   <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
 
   <ul id="menu-left-flyout-nav" class="menu-left">
@@ -70,7 +70,7 @@
   </ul>
 </nav>
 
-<nav id="secondary-access" style="background-color: {{ book.color }}">
+<nav id="secondary-access">
   {% if book.courses and book.courses != empty %}
     <ul id="menu-right-flyout-nav" class="menu-right">
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">

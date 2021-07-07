@@ -10,6 +10,8 @@
 .site #comments,
 .site #cite-box,
 .site #scroll-help a,
+.site #access,
+.site #secondary-access,
 article.site mark,
 article.site .highlighted-term {
   background: {{ site.color }};
@@ -65,6 +67,8 @@ article.site a:hover {
 	.{{ book.slug }} #comments,
 	.{{ book.slug }} #cite-box,
 	.{{ book.slug }} #scroll-help a,
+	.{{ book.slug }} #access,
+	.{{ book.slug }} #secondary-access,
 	article.{{ book.slug }} mark,
 	article.{{ book.slug }} .highlighted-term {
 		background: {{ book.color }};
