@@ -1,5 +1,16 @@
 ---
 ---
+.home #content {
+  background-image: url("{{ '/wp-content/themes/nyukeywords/images/default_bg.jpg' | relative_url }}");
+}
+
+#subhead {
+  background: #f3f3f3;
+  padding: 5px 30px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
 
 .site body,
 .site a.button,
