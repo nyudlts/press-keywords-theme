@@ -5,7 +5,7 @@
   {% else %}
     {% for post in results %}
       {% assign people = post.authors | default: post.editors %}
-      <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% else %}post type-post {% endif %}status-publish hentry">
+      <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% else %}post type-essay cc_essay_online {% endif %}status-publish hentry">
         <h1><a href="{{ post.url | prepend: relative_url }}">{% if post.layout == 'book' %}Keywords for {% endif %}{{ post.title }}</a></h1>
 
         <div class="meta-info">
