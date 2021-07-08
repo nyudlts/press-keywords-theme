@@ -30,7 +30,7 @@ layout: default
       {% for book in books %}
         <article class="selfclearing site-list">
           <a href="{{ book.url | relative_url }}">
-            <img src="{{ book.image }}" alt="Image for Keywords for {{ book.title }}" />
+            <img src="{{ book.image | relative_url }}" alt="Image for Keywords for {{ book.title }}" />
           </a>
 
           <div class="site-details">
