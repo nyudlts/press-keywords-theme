@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{%- assign books = site.posts | where: 'layout', 'book' -%}
+{%- assign books = site.posts | where: 'layout', 'book' | sort: 'title' -%}
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
 <div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
