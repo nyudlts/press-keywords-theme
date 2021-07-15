@@ -1,7 +1,7 @@
 {% assign book = include.book %}
-{% assign web_essays = book.essays | where: 'availability', 'Web Essays' %}
-{% assign print_essays = book.essays | where: 'availability', 'Print Essays' %}
-{% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' %}
+{% assign web_essays = book.essays | where: 'availability', 'Web Essays' | sort: 'title' %}
+{% assign print_essays = book.essays | where: 'availability', 'Print Essays' | sort: 'title' %}
+{% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' | sort: 'title' %}
 
 <nav id="access">
   <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
