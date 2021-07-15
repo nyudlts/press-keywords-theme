@@ -28,7 +28,7 @@ layout: default
         </div>
 
         {% if page.availability == 'Print Essays' %}
-          {{ page.excerpt | strip_html | truncatewords: 200 }}
+          {{ page.excerpt | truncatewords: 200 }}
 
           <div class="meta-entry">
             <p><strong>This essay may be found on page {{ page.page }} of the printed volume.</strong></p>
