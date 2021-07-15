@@ -38,7 +38,7 @@ layout: default
         {% endif %}
 
         <div class="meta-entry">
-          {% if page.works_cited or page.works_cited != empty %}
+          {% if page.works_cited and page.works_cited != empty %}
             <a href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a><br />
           {% else %}
             <a href="{{ page.book.works_cited.url | relative_url }}">{{ page.book.works_cited.title }}</a><br />
