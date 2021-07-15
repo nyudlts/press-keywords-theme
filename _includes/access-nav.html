@@ -1,7 +1,8 @@
 {% assign book = include.book %}
-{% assign web_essays = book.essays | where: 'availability', 'Web Essays' | sort: 'title' %}
-{% assign print_essays = book.essays | where: 'availability', 'Print Essays' | sort: 'title' %}
-{% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' | sort: 'title' %}
+{% assign empty_list = '' | split: '' %}
+{% assign web_essays = book.essays | where: 'availability', 'Web Essays' | default: empty_list | sort: 'title' %}
+{% assign print_essays = book.essays | where: 'availability', 'Print Essays' | default: empty_list | sort: 'title' %}
+{% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' | default: empty_list | sort: 'title' %}
 
 <nav id="access">
   <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
