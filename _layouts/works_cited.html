@@ -30,7 +30,8 @@ WorksCitedPage can be books or essays
           <p><a href="{{ page.essay.book.works_cited.url | relative_url }}">Go to all works cited on <em>Keywords for {{ page.essay.book.title }}</em></a></p>
         {% endif %}
 
-        {% for work_cited in page.works_cited %}
+        {% assign works_cited = page.works_cited | sort: 'authorship', 'last' %}
+        {% for work_cited in works_cited %}
           <article style="border-top: none; padding: 1rem" id="{{ work_cited.slug }}">
             {{ work_cited.content | replace: "<p>", "<p style='padding-bottom: 0'>" }}
           </article>
