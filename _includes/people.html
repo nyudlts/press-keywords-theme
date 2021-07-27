@@ -1,12 +1,17 @@
-{%- if include.plain -%}
-{{ include.people | map: 'title' | array_to_sentence_string: 'and' }}
+{%- if include.nosort -%}
+{%- assign people = include.people -%}
 {%- else -%}
-  {% for person in include.people %}
+{%- assign people = include.people | sort: 'last_name', 'last' -%}
+{%- endif -%}
+{%- if include.plain -%}
+{{ people | map: 'title' | array_to_sentence_string: 'and' }}
+{%- else -%}
+  {% for person in people %}
     <span class="author vcard">
-      {% if forloop.last and include.people.size > 1 %}and{% endif %}
+      {% if forloop.last and people.size > 1 %}and{% endif %}
       <a class="url fn n" href="{{ person.url | relative_url }}" title="View all posts by {{ person.title }}">
         {{- person.title -}}
-      </a>{% if include.people.size > 2 %}{% unless forloop.last %}, {% endunless %}{% endif %}
+      </a>{% if people.size > 2 %}{% unless forloop.last %}, {% endunless %}{% endif %}
     </span>
   {% endfor %}
 {%- endif -%}
