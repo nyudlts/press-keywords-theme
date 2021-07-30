@@ -124,6 +124,13 @@ article.site a:hover {
   }
 {% endfor %}
 
+// Links in works cited need break lines, since they can be really long
+.work-cited {
+  a {
+    word-break: break-all;
+  }
+}
+
 // https://fonts.googleapis.com/css?family=Open+Sans:300,700
 @font-face {
   font-family: 'Open Sans';
