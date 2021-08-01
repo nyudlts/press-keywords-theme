@@ -19,7 +19,7 @@ layout: default
     <div class="wrapper">
       <article class="{{ book.slug }}">
         <h1>Keywords <span>for {{ page.description | default: page.title }}</span></h1>
-        <h2>Edited by {% include people.html people=page.editors nosort=true %}</h2>
+        <h2>Edited by {% include people.html people=page.editors %}</h2>
 
         {{ content }}
 
