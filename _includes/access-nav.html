@@ -72,8 +72,8 @@
 </nav>
 
 <nav id="secondary-access">
-  {% if book.courses and book.courses != empty %}
-    <ul id="menu-right-flyout-nav" class="menu-right">
+  <ul id="menu-right-flyout-nav" class="menu-right">
+    {% if book.courses and book.courses != empty %}
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
         <a href="#">In the Classroom</a>
 
@@ -85,6 +85,10 @@
           {% endfor %}
         </ul>
       </li>
-    </ul>
-  {% endif %}
+    {% endif %}
+
+    {% if book.contact %}
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="mailto:{{ book.contact }}">Contact</a></li>
+    {% endif %}
+  </ul>
 </nav>

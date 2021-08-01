@@ -5,6 +5,11 @@
       <li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-156 current_page_item menu-item-193">
         <a href="{{ include.book.about.url | relative_url }}">About this Site</a>
       </li>
+      {% if book.contact %}
+        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item">
+          <a href="mailto:{{ book.contact }}">Contact</a>
+        </li>
+      {% endif %}
       <li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-194">
         <a href="{{ include.book.rights.url | relative_url }}">Rights</a>
       </li>
