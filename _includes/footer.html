@@ -2,12 +2,14 @@
   <footer>
     <div class="wrapper">
     <ul id="menu-footer-nav" class="menu">
-      <li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-156 current_page_item menu-item-193">
-        <a href="{{ include.book.about.url | relative_url }}">About this Site</a>
-      </li>
-      {% if book.contact %}
+      {% if include.book.about %}
+        <li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-156 current_page_item menu-item-193">
+          <a href="{{ include.book.about.url | relative_url }}">About this Site</a>
+        </li>
+      {% endif %}
+      {% if include.book.contact %}
         <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item">
-          <a href="mailto:{{ book.contact }}">Contact</a>
+          <a href="mailto:{{ include.book.contact }}">Contact</a>
         </li>
       {% endif %}
       <li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-194">
