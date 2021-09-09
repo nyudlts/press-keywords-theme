@@ -2,7 +2,6 @@
 {% assign empty_list = '' | split: '' %}
 {% assign web_essays = book.essays | where: 'availability', 'Web Essays' | default: empty_list | sort: 'title' %}
 {% assign print_essays = book.essays | where: 'availability', 'Print Essays' | default: empty_list | sort: 'title' %}
-{% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' | default: empty_list | sort: 'title' %}
 
 <nav id="access">
   <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
@@ -52,22 +51,6 @@
     {% if book.acknowledgments %}
       <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgments.url | relative_url }}">{{ book.acknowledgments.title }}</a></li>
     {% endif %}
-
-    {% unless keywords_now == empty %}
-      <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
-        <a href="#">Keywords Now</a>
-
-        <ul class="sub-menu">
-          {% for essay in keywords_now %}
-            <li>
-              <a href="{{ essay.url | relative_url }}">
-                {{ essay.title }}, <span>{% include people.html people=essay.authors plain=true %}</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
-    {% endunless %}
   </ul>
 </nav>
 
