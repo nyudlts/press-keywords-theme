@@ -1,1 +1,54 @@
-../keywords-data/_config.yml
+title: Keywords
+url: "https://keywords.sutty.local:4000"
+#baseurl: /keywords
+# TODO: Change to the timezone on the server
+timezone: UTC
+# Language.
+lang: en
+locale: en
+color: '#481776'
+
+plugins:
+- jekyll-include-cache
+- jekyll-seo-tag
+- jekyll-ignore-layouts
+- sutty-liquid
+- jekyll-linked-posts
+- jekyll-lunr
+- jekyll-alternate-permalinks
+
+# Fields indexed.  Fields that are also linked fields are sub-indexed.
+#
+# XXX: Don't add fields that may point to printed essays or their
+# content will leak into the data.json file.  Currently there's no
+# reason to.  See _plugins/index.rb.
+jekyll-lunr:
+  fields:
+  - title
+  - availability
+  - book
+  - authors
+  - editors
+  - page
+  - layout
+  - color
+  - slug
+# Fields that contain UUIDs to other posts.  This allows to simplify
+# finding associated data in the theme.
+linked_fields:
+- book
+- books
+- authors
+- editors
+- posts
+- essays
+- introduction
+- acknowledgments
+- courses
+- about
+- rights
+- pages
+- works_cited
+
+exclude:
+- Makefile
