@@ -46,8 +46,13 @@
       </li>
     {% endunless %}
 
-    <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ book.works_cited.url | relative_url }}">{{ book.works_cited.title }}</a></li>
-    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.contributors.url | relative_url }}">{{ book.contributors.title }}</a></li>
+    {% unless book.works_cited.works_cited == empty %}
+      <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ book.works_cited.url | relative_url }}">{{ book.works_cited.title }}</a></li>
+    {% endunless %}
+
+    {% unless book.contributors.contributors == empty %}
+      <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.contributors.url | relative_url }}">{{ book.contributors.title }}</a></li>
+    {% endunless %}
 
     {% if book.acknowledgments %}
       <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ book.acknowledgments.url | relative_url }}">{{ book.acknowledgments.title }}</a></li>
