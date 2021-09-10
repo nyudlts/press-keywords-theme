@@ -2,6 +2,8 @@
   {%- assign body_classes = 'home mastersite' -%}
 {%- elsif page.layout == 'book' %}
   {%- assign body_classes = 'home subsite' -%}
+{%- elsif page.layout == 'feature' %}
+  {%- assign body_classes = 'home subsite' -%}
 {%- elsif page.layout == 'person' %}
   {%- assign body_classes = 'mastersite' -%}
 {%- elsif page.layout == 'search' %}
@@ -19,7 +21,7 @@
 <html lang="en-US" class="no-js">
   {% include head.html %}
 
-  <body class="{{ body_classes }} {% if page.layout == 'book' %}{{ page.slug }}{% else %}{{ page.book.slug | default: 'site' }}{% endif %}">
+  <body class="{{ body_classes }} {% if page.layout == 'book' or page.layout == 'feature' %}{{ page.slug }}{% else %}{{ page.book.slug | default: 'site' }}{% endif %}">
     {{ content }}
 
     <div id="clickoverlay2"></div>

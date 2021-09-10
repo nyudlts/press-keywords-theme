@@ -66,62 +66,64 @@ article.site a:hover {
   }
 }
 
-{% assign books = site.posts | where: 'layout', 'book' %}
-
-{% for book in books %}
-	.{{ book.slug }} body,
-	.{{ book.slug }} a.button,
-	.{{ book.slug }} .button,
-	.{{ book.slug }} header .subsite-header,
-	.{{ book.slug }} #page-actions a,
-	.{{ book.slug }} nav,
-	.{{ book.slug }} #comments,
-	.{{ book.slug }} #cite-box,
-	.{{ book.slug }} #scroll-help a,
-	.{{ book.slug }} #access,
-	.{{ book.slug }} #secondary-access,
-	article.{{ book.slug }} mark,
-	article.{{ book.slug }} .highlighted-term {
-		background: {{ book.color }};
-	}
-
-	.{{ book.slug }} .home h1,
-	.{{ book.slug }} h1,
-	.{{ book.slug }} .h1,
-	.{{ book.slug }} a,
-	.{{ book.slug }} #share-links a,
-	.{{ book.slug }} #share-links i,
-	.{{ book.slug }} #page-actions a:hover:after,
-	.{{ book.slug }} #breadcrumbs,
-	.{{ book.slug }} #results-count,
-	.{{ book.slug }} #results-pagination,
-	.{{ book.slug }} #respond input[type=submit]:hover,
-	.{{ book.slug }} .navigation,
-	.{{ book.slug }} .navigation a,
-	.{{ book.slug }} .navigation a:hover,
-	.{{ book.slug }} footer ul.menu a,
-	article.{{ book.slug }}:before,
-	article.{{ book.slug }} h1,
-	article.{{ book.slug }} a {
-		color: {{ book.color }};
-	}
-
-	article.{{ book.slug }} mark,
-	article.{{ book.slug }} a .highlighted-term {
-		color: #fff;
-    font-family: inherit;
-	}
-
-	.{{ book.slug }} a:hover,
-	article.{{ book.slug }} a:hover {
-		color: #333;
-	}
-
-  @media screen and (max-width: 767px) {
-    .{{ book.slug }} .icon-cart a:after {
-      color: {{ book.color }};
+{% assign layouts = 'book,feature' | split: ',' %}
+{% for layout in layouts %}
+  {% assign posts = site.posts | where: 'layout', layout %}
+  {% for post in posts %}
+    .{{ post.slug }} body,
+    .{{ post.slug }} a.button,
+    .{{ post.slug }} .button,
+    .{{ post.slug }} header .subsite-header,
+    .{{ post.slug }} #page-actions a,
+    .{{ post.slug }} nav,
+    .{{ post.slug }} #comments,
+    .{{ post.slug }} #cite-box,
+    .{{ post.slug }} #scroll-help a,
+    .{{ post.slug }} #access,
+    .{{ post.slug }} #secondary-access,
+    article.{{ post.slug }} mark,
+    article.{{ post.slug }} .highlighted-term {
+      background: {{ post.color }};
     }
-  }
+
+    .{{ post.slug }} .home h1,
+    .{{ post.slug }} h1,
+    .{{ post.slug }} .h1,
+    .{{ post.slug }} a,
+    .{{ post.slug }} #share-links a,
+    .{{ post.slug }} #share-links i,
+    .{{ post.slug }} #page-actions a:hover:after,
+    .{{ post.slug }} #breadcrumbs,
+    .{{ post.slug }} #results-count,
+    .{{ post.slug }} #results-pagination,
+    .{{ post.slug }} #respond input[type=submit]:hover,
+    .{{ post.slug }} .navigation,
+    .{{ post.slug }} .navigation a,
+    .{{ post.slug }} .navigation a:hover,
+    .{{ post.slug }} footer ul.menu a,
+    article.{{ post.slug }}:before,
+    article.{{ post.slug }} h1,
+    article.{{ post.slug }} a {
+      color: {{ post.color }};
+    }
+
+    article.{{ post.slug }} mark,
+    article.{{ post.slug }} a .highlighted-term {
+      color: #fff;
+      font-family: inherit;
+    }
+
+    .{{ post.slug }} a:hover,
+    article.{{ post.slug }} a:hover {
+      color: #333;
+    }
+
+    @media screen and (max-width: 767px) {
+      .{{ post.slug }} .icon-cart a:after {
+        color: {{ post.color }};
+      }
+    }
+  {% endfor %}
 {% endfor %}
 
 // Links in works cited need break lines, since they can be really long
