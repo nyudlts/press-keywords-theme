@@ -47,4 +47,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jekyll-ignore-layouts'
   spec.add_runtime_dependency 'jekyll-seo-tag'
   spec.add_runtime_dependency 'jekyll-include-cache'
+  spec.add_runtime_dependency 'jekyll-alternate-permalinks'
 end
