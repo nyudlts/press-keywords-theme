@@ -15,12 +15,16 @@
   <link href='{{ '/assets/css/styles.css' | relative_url }}' rel='stylesheet' type='text/css'>
 
   {% if include.redirect %}
-    <meta http-equiv="refresh" content="0;url={{ include.redirect }}" />
+    {% if jekyll.environment == 'production '%}
+      <meta http-equiv="refresh" content="0;url={{ include.redirect }}" />
+    {% endif %}
 
     <link rel="canonical" href="{{ include.redirect }}" />
   {% endif %}
 
-  {% include google-codes.html %}
+  {% if jekyll.environment == 'production' %}
+    {% include google-codes.html %}
+  {% endif %}
 
   {% seo %}
 </head>
