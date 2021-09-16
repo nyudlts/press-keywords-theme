@@ -1,6 +1,7 @@
 {% assign book = include.book %}
 {% assign page = include.page %}
 {% assign url = page.url | absolute_url | uri_escape %}
+{% assign main = 'book,home,feature' | split: ',' %}
 
 <div id="subhead">
   {% if page.layout == 'search' %}
@@ -32,7 +33,7 @@
         rel="noopener noreferrer"
         target="_blank"
         aria-label="Share this page on Facebook">
-        <i class="fa fa-facebook"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i>
+        <i class="fa fa-facebook"{% if main contains page.layout %} style="color: #bdbdbd"{% endif %}></i>
       </a>
     </li>
 
@@ -42,7 +43,7 @@
         rel="noopener noreferrer"
         target="_blank"
         aria-label="Share this page on Twitter">
-        <i class="fa fa-twitter"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i>
+        <i class="fa fa-twitter"{% if main contains page.layout %} style="color: #bdbdbd"{% endif %}></i>
       </a>
     </li>
 
@@ -52,12 +53,12 @@
         rel="noopener noreferrer"
         target="_blank"
         aria-label="Share this page on Google Plus">
-        <i class="fa fa-google-plus"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i>
+        <i class="fa fa-google-plus"{% if main contains page.layout %} style="color: #bdbdbd"{% endif %}></i>
       </a>
     </li>
 
     <li>
-      <a aria-label="Email this page" href="mailto:?subject={{ page.title | uri_escape }}&amp;body={{ url }} "><i class="fa fa-envelope-o"{% if page.layout == 'book' or page.layout == 'home' %} style="color: #bdbdbd"{% endif %}></i></a>
+      <a aria-label="Email this page" href="mailto:?subject={{ page.title | uri_escape }}&amp;body={{ url }} "><i class="fa fa-envelope-o"{% if main contains page.layout %} style="color: #bdbdbd"{% endif %}></i></a>
     </li>
   </ul>
 
