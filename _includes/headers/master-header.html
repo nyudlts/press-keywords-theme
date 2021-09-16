@@ -24,7 +24,7 @@
   </ul>
 
   <div id="logo">
-    <a href="{{ '/' | relative_url }}" title="{{ site.title }}">{{ site.title }}</a>
+    <a href="{{ '/' | relative_url }}" title="{{ site.title }}">{{ site.title }}{% if include.book_type == 'feature' %} Now{% endif %}</a>
   </div>
 
   <div id="searchoverlay"></div>
