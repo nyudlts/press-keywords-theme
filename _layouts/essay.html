@@ -58,7 +58,7 @@ layout: default
   <div>
     {%- for author in page.authors -%}
       {{ author.last_name }}, {{ author.first_name }}
-    {%- endfor -%}. "{{ page.title }}." <em>Keywords for {{ book.title }}</em>.
+    {%- endfor -%}. "{{ page.title }}." <em>Keywords {% if book.layout == 'book' %}for{% else %}Now:{% endif %} {{ book.title }}</em>.
     Eds. {% include people.html people=book.editors plain=true %}. New York: New York University Press, {{ book.date | date: "%Y"}}. {{ page.page }}. Print.</div>
   </div>
 </div>
