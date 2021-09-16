@@ -32,7 +32,7 @@ layout: default
             <h1><a href="{{ post.url | relative_url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
 
             <div class="meta-info">
-              <div class="book_name">book <a href="{{ post.book.url | relative_url }}">Keywords for {{ post.book.title }}</a></div>
+              <div class="book_name">{{ post.book.layout }} <a href="{{ post.book.url | relative_url }}">Keywords {% if book.layout == 'book' %}for{% else %}Now:{% endif %} {{ post.book.title }}</a></div>
             </div>
 
             {{ post.excerpt }}
