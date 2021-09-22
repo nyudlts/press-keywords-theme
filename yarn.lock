@@ -2637,6 +2637,11 @@ for-in@^1.0.2:
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=
 
+fork-awesome@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/fork-awesome/-/fork-awesome-1.2.0.tgz#acd43f1e1f54510fa45209c31385b4fde3a95003"
+  integrity sha512-MNwTBnnudMIweHfDtTY8TeR5fxIAZ2w9o8ITn5XDySqdxa4k5AH8IuAMa89RVxDxgPNlosZxqkFKN5UmHXuYSw==
+
 forwarded@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.2.0.tgz#2269936428aad4c15c7ebe9779a84bf0b2a81811"

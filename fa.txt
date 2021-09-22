@@ -1,0 +1,8 @@
+f09a facebook
+f099 twitter
+f0d5 google-plus
+f0f6 file-text-o
+f02f print
+f106 angle-up
+f107 angle-down
+f013 cog
