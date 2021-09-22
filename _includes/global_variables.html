@@ -1,0 +1,19 @@
+{%- comment -%}
+  This is a shortcut variable to access translation strings.  In Liquid
+  every variable has a global scope so they're accesible throughout the
+  templates.
+
+  This requires the lang option to be set on _config.yml and a
+  corresponding file on _data/
+{%- endcomment -%}
+{%- assign t = site.data[site.lang] -%}
+
+{%- comment -%}
+  Have the current book always available.
+{%- endcomment -%}
+{%- assign current_book = page.book -%}
+{%- if page.layout == 'book' -%}
+  {%- assign current_book = page -%}
+{%- elsif page.layout == 'layout' -%}
+  {%- assign current_book = page -%}
+{%- endif -%}
