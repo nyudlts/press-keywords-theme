@@ -7,7 +7,11 @@ timezone: UTC
 lang: en
 locale: en
 color: '#481776'
-
+# This minifies SASS/CSS and loads Bootstrap from a package.
+sass:
+  style: compressed
+  load_paths:
+  - node_modules
 plugins:
 - jekyll-include-cache
 - jekyll-seo-tag
