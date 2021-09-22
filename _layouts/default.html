@@ -8,53 +8,40 @@
 {%- endcomment -%}
 {%- assign t = site.data[site.lang] -%}
 
-{%- if page.layout == 'home' %}
-  {%- assign body_classes = 'home mastersite' -%}
-{%- elsif page.layout == 'book' %}
-  {%- assign body_classes = 'home subsite' -%}
-{%- elsif page.layout == 'person' %}
-  {%- assign body_classes = 'mastersite' -%}
-{%- elsif page.layout == 'search' %}
-  {%- assign body_classes = 'mastersite' -%}
-{%- elsif page.layout == 'page' %}
-  {%- if page.book %}
-    {%- assign body_classes = 'subsite' -%}
-  {%- else -%}
-    {%- assign body_classes = 'mastersite' -%}
-  {%- endif %}
-{%- else -%}
-  {%- assign body_classes = 'subsite' -%}
-{%- endif -%}
 <!DOCTYPE html>
-<html lang="en-US" class="no-js">
-  {% include head.html %}
+<html lang="{{ site.lang }}" dir="{{ site.dir }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="theme-color" content="white"/>
+    <meta name="color-scheme" content="light"/>
+    <meta name="referrer" content="strict-origin-when-cross-origin"/>
 
-  <body class="{{ body_classes }} {% if page.layout == 'book' %}{{ page.slug }}{% else %}{{ page.book.slug | default: 'site' }}{% endif %}">
-    {{ content }}
+    {% comment %}
+      Bust cache when we build the site.
+    {% endcomment %}
+    <link href="/assets/css/styles.css?{{ site.time | date: '%s' }}" rel="stylesheet">
 
-    <div id="clickoverlay2"></div>
+    <script defer src="/assets/js/pack.js?{{ site.time | date: '%s' }}"></script>
 
-    <script>
-      if (Modernizr.touch) {
-        /* cache dom references */
-        var $body = jQuery('body');
+    {% comment %}
+      Preload fonts
+    {% endcomment %}
+    {% include_cached preload_font.html font='assets/fonts/forkawesome-webfont.woff2' %}
+    {% include_cached preload_font.html font='assets/fonts/opensans/v20/mem5YaGs126MiZpBA-UN7rgOUuhs-subset.woff2' %}
+    {% include_cached preload_font.html font='assets/fonts/opensans/v20/mem5YaGs126MiZpBA-UN_r8OUuhs-subset.woff2' %}
 
-        /* bind events */
-        jQuery(document)
-        .on('focus', 'input', function(e) {
-            $body.addClass('fixfixed');
-        })
-        .on('blur', 'input', function(e) {
-            $body.removeClass('fixfixed');
-        });
-        jQuery(document)
-        .on('focus', 'textarea', function(e) {
-            $body.addClass('fixfixed');
-        })
-        .on('blur', 'textarea', function(e) {
-            $body.removeClass('fixfixed');
-        });
-      }
-    </script>
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+    <link rel="alternate icon" href="public/favicon.ico">
+    <link rel="mask-icon" href="public/favicon.svg" color="white">
+
+    {% seo %}
+    {% feed_meta %}
+  </head>
+  <body>
+    <main>
+      {{ content }}
+    </main>
   </body>
 </html>

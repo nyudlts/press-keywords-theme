@@ -6,6 +6,7 @@ timezone: UTC
 # Language.
 lang: en
 locale: en
+dir: ltr
 color: '#481776'
 # This minifies SASS/CSS and loads Bootstrap from a package.
 sass:
@@ -20,6 +21,7 @@ plugins:
 - jekyll-linked-posts
 - jekyll-lunr
 - jekyll-alternate-permalinks
+- jekyll-feed
 
 # Fields indexed.  Fields that are also linked fields are sub-indexed.
 #
