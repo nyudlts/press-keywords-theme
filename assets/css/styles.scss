@@ -1,130 +1,48 @@
 ---
+# Keep this so Jekyll processes Liquid before SCSS
 ---
+
+{% assign books = site.posts | where: 'layout', 'book' %}
+{% assign features = site.posts | where: 'layout', 'feature' %}
+
 .home #content {
   background-image: url("{{ '/wp-content/themes/nyukeywords/images/default_bg.jpg' | relative_url }}");
 }
 
-#subhead {
-  background: #f3f3f3;
-  padding: 5px 30px;
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box;
-}
+/// Redefine variables from node_modules/bootstrap/scss/_variables.scss
+$gray-600: #f3f3f3;
+$gray-800: #666;
+$link-hover-color: #333;
+$link-decoration: underline;
+$font-family-sans-serif: Georgia, Times New Roman, serif;
+$headings-font-family: Open Sans, sans-serif;
 
-.site body,
-.site a.button,
-.site .button,
-.site header .subsite-header,
-.site #page-actions a,
-.site nav,
-.site #comments,
-.site #cite-box,
-.site #scroll-help a,
-.site #access,
-.site #secondary-access,
-article.site mark,
-article.site .highlighted-term {
-  background: {{ site.color }};
-}
+$container-max-widths: (
+  lg: 820px,
+  xl: 821px
+);
 
-.site .home h1,
-.site h1,
-.site .h1,
-.site a,
-.site #share-links a,
-.site #share-links i,
-.site #page-actions a:hover:after,
-.site #breadcrumbs,
-.site #results-count,
-.site #results-pagination,
-.site #respond input[type=submit]:hover,
-.site .navigation,
-.site .navigation a,
-.site .navigation a:hover,
-.site footer ul.menu a,
-article.site:before,
-article.site h1,
-article.site a {
-  color: {{ site.color }};
-}
+/// These measurements were taken from the original design
+$spacers: (
+  "10px": 10px,
+  "20px": 20px,
+  "34px": 34px,
+  "50px": 50px,
+  "55px": 55px,
+  "73px": 73px
+);
 
-article.site mark,
-article.site a .highlighted-term {
-  color: #fff;
-  font-family: inherit;
-}
-
-.site a:hover,
-article.site a:hover {
-  color: #333;
-}
-
-@media screen and (max-width: 767px) {
-  .site .icon-cart a:after {
-    color: {{ site.color }};
-  }
-}
-
-{% assign layouts = 'book,feature' | split: ',' %}
-{% for layout in layouts %}
-  {% assign posts = site.posts | where: 'layout', layout %}
-  {% for post in posts %}
-    .{{ post.slug }} body,
-    .{{ post.slug }} a.button,
-    .{{ post.slug }} .button,
-    .{{ post.slug }} header .subsite-header,
-    .{{ post.slug }} #page-actions a,
-    .{{ post.slug }} nav,
-    .{{ post.slug }} #comments,
-    .{{ post.slug }} #cite-box,
-    .{{ post.slug }} #scroll-help a,
-    .{{ post.slug }} #access,
-    .{{ post.slug }} #secondary-access,
-    article.{{ post.slug }} mark,
-    article.{{ post.slug }} .highlighted-term {
-      background: {{ post.color }};
-    }
-
-    .{{ post.slug }} .home h1,
-    .{{ post.slug }} h1,
-    .{{ post.slug }} .h1,
-    .{{ post.slug }} a,
-    .{{ post.slug }} #share-links a,
-    .{{ post.slug }} #share-links i,
-    .{{ post.slug }} #page-actions a:hover:after,
-    .{{ post.slug }} #breadcrumbs,
-    .{{ post.slug }} #results-count,
-    .{{ post.slug }} #results-pagination,
-    .{{ post.slug }} #respond input[type=submit]:hover,
-    .{{ post.slug }} .navigation,
-    .{{ post.slug }} .navigation a,
-    .{{ post.slug }} .navigation a:hover,
-    .{{ post.slug }} footer ul.menu a,
-    article.{{ post.slug }}:before,
-    article.{{ post.slug }} h1,
-    article.{{ post.slug }} a {
-      color: {{ post.color }};
-    }
-
-    article.{{ post.slug }} mark,
-    article.{{ post.slug }} a .highlighted-term {
-      color: #fff;
-      font-family: inherit;
-    }
-
-    .{{ post.slug }} a:hover,
-    article.{{ post.slug }} a:hover {
-      color: #333;
-    }
-
-    @media screen and (max-width: 767px) {
-      .{{ post.slug }} .icon-cart a:after {
-        color: {{ post.color }};
-      }
-    }
-  {% endfor %}
+/// Add new colors from books and features
+$colors: (
+{% for book in books %}
+  "{{ book.slug }}": {{ book.color }},
 {% endfor %}
+{% for feature in features %}
+  "{{ feature.slug }}": {{ feature.color }},
+{% endfor %}
+  "site": {{ site.color }},
+  "black": #000
+);
 
 // Links in works cited need break lines, since they can be really long
 .work-cited {
@@ -149,3 +67,4 @@ article.site a:hover {
 
 @import "bootstrap/scss/bootstrap";
 @import "fork-awesome/scss/fork-awesome";
+@import "helpers";
