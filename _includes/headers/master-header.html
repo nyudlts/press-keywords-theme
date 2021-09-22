@@ -1,4 +1,5 @@
 {%- assign books = site.posts | where: 'layout', 'book' | sort: 'title' -%}
+{%- assign features = site.posts | where: 'layout', 'feature' | sort: 'title' -%}
 
 <div class="master-header">
   <ul id="master-menu" class="menu">
@@ -11,11 +12,19 @@
       </ul>
     </li>
 
+    <li class="menu-item menu-item-has-children"><a href="#">Keywords Now</a>
+      <ul class="sub-menu">
+        {% for feature in features %}
+          <li class="menu-item"><a href="{{ feature.url | relative_url }}">{{ feature.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+
     <li class="icon-search menu-item"><a href="#"><span>Search</span></a></li>
   </ul>
 
   <div id="logo">
-    <a href="{{ '/' | relative_url }}" title="{{ site.title }}">{{ site.title }}</a>
+    <a href="{{ '/' | relative_url }}" title="{{ site.title }}">{{ site.title }}{% if include.book_type == 'feature' %} Now{% endif %}</a>
   </div>
 
   <div id="searchoverlay"></div>
