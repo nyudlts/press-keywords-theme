@@ -4,6 +4,10 @@ contributor:
 default:
 essay:
 home:
+  read_more: Read more...
+  cover_alt: Image for Keywords for
+  book_prefix: Keywords for
+  edited_by: Edited by
 page:
 person:
 search:

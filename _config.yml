@@ -22,6 +22,7 @@ plugins:
 - jekyll-lunr
 - jekyll-alternate-permalinks
 - jekyll-feed
+- jekyll-images
 
 # Fields indexed.  Fields that are also linked fields are sub-indexed.
 #

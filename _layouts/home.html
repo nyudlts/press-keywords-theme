@@ -2,50 +2,43 @@
 layout: default
 ---
 
+{%- include global_variables.html -%}
 {%- assign books = site.posts | where: 'layout', 'book' | sort: 'title' -%}
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
-<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
-
-<div id="everything">
+<section id="content" role="main" class="container p-50px">
   <header>
-    {% include_cached headers/master-header.html %}
+    <h1 class="text-center text-uppercase gray-dark">{{ site.title }}</h1>
+
+    {{ about.description | markdownify }}
+
+    <a class="site" href="{{ about.url | relative_url }}">{{ t.home.read_more }}</a>
   </header>
 
-  <div id="clickoverlay"></div>
+  {% for book in books %}
+    <article id="{{ book.slug }}" class="position-relative d-flex flex-row pt-20px pb-55px">
+      <img
+        src="{{ book.image | thumbnail: 200 }}"
+        loading="lazy"
+        width="200"
+        alt="{{ t.home.cover_alt }} {{ book.title }}" />
 
-  <section id="content" role="main">
-    {% include headers/subhead.html page=page %}
-
-    <div class="wrapper">
-      <article class="{{ book.slug }}">
-        <h1 class="main-site-title">{{ site.title }}</h1>
+      <header class="pl-50px pt-10px">
+        <h2 class="text-uppercase font-weight-bold">
+          <a
+            class="stretched-link {{ book.slug }} text-decoration-none"
+            href="{{ book.url | relative_url }}">
+            {{ t.home.book_prefix }}
+            {{ book.description | default: book.title }}
+          </a>
+        </h2>
 
         <p>
-          {{ about.description }}
-          <a href="{{ about.url | relative_url }}">Read More...</a>
+          {{ t.home.edited_by }}
+
+          {% include_cached people.html people=book.editors book=book %}
         </p>
-      </article>
-
-      {% for book in books %}
-        <article class="selfclearing site-list">
-          <a href="{{ book.url | relative_url }}">
-            <img src="{{ book.image | relative_url }}" alt="Image for Keywords for {{ book.title }}" />
-          </a>
-
-          <div class="site-details">
-            <h1><a href="{{ book.url | relative_url }}" style="color: {{ book.color }}">Keywords for {{ book.description | default: book.title }}</a></h1>
-
-            <span>Edited by
-              {% for editors in book.editors %}
-                <a href="{{ editors.permalink }}" style="color: {{ book.color }}">{{ editors.title }}</a>{% unless forloop.last %}, {% endunless %}
-              {% endfor %}
-            </span>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-  </section>
-
-  {% include_cached footer.html %}
-</div>
+      </header>
+    </article>
+  {% endfor %}
+</section>
