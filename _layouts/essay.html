@@ -4,7 +4,7 @@ layout: default
 
 {% assign book = page.book %}
 
-<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+<div class="printonly" id="print-title">{{ t.print.keywords }}<br />{{ t.print.keywords_press }}</div>
 
 {% include access-nav.html book=book %}
 
@@ -23,7 +23,7 @@ layout: default
       <article class="{{ book.slug }} cc_essay_toc cc_essay_{% if page.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay status-publish hentry availability-toc">
         <h1>{{ page.title }}</h1>
         <div class="meta-info">
-        <div class="book_name">{{ book.layout }} <a href="{{ book.url | relative_url }}">Keywords {% if book.layout == 'book' %}for{% else %}Now:{% endif %} {{ book.title }}</a></div>
+        <div class="book_name">{{ book.layout }} <a href="{{ book.url | relative_url }}">{% if book.layout == 'book' %}{{ t.Keywords_for }}{% else %}{{ t.Keywords_now }}:{% endif %} {{ book.title }}</a></div>
           <div class="author_list">by {% include people.html people=page.authors %}</div>
         </div>
 
@@ -31,7 +31,7 @@ layout: default
           {{ page.excerpt | truncatewords: 200 }}
 
           <div class="meta-entry">
-            <p><strong>This essay may be found on page {{ page.page }} of the printed volume.</strong></p>
+            <p><strong>{{ t.essay.page_found }} {{ page.page }} {{ t.essay.printed_volume }}</strong></p>
           </div>
         {% else %}
           {{ content }}
@@ -44,7 +44,7 @@ layout: default
             <a href="{{ page.book.works_cited.url | relative_url }}">{{ page.book.works_cited.title }}</a><br />
           {% endif %}
 
-          <a href="{{ page.url | relative_url }}">Permanent Link to this Essay</a>
+          <a href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a>
         </div>
      </article>
   </div>
@@ -54,17 +54,17 @@ layout: default
 
 <div id="cite-box-overlay" style="display: none;"></div>
 <div id="cite-box" style="display: none;">
-  <button><span>close</span></button>
+  <button><span>{{ t.close }}</span></button>
   <div>
     {%- for author in page.authors -%}
       {{ author.last_name }}, {{ author.first_name }}
-    {%- endfor -%}. "{{ page.title }}." <em>Keywords {% if book.layout == 'book' %}for{% else %}Now:{% endif %} {{ book.title }}</em>.
-    Eds. {% include people.html people=book.editors plain=true %}. New York: New York University Press, {{ book.date | date: "%Y"}}. {{ page.page }}. Print.</div>
+    {%- endfor -%}. "{{ page.title }}." <em>{% if book.layout == 'book' %}{{ t.keywords_for }}{% else %}{{ t.keywords_now }}:{% endif %} {{ book.title }}</em>.
+    {{ t.essay.book_author.eds }}. {% include people.html people=book.editors plain=true %}. {{ t.essay.book_author.press }}, {{ book.date | date: "%Y"}}. {{ page.page }}. {{ t.essay.book_author.print }}.</div>
   </div>
 </div>
 
 <div id="scroll-help">
   <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
   <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
-  <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
+  <a id="top" href="#everything" aria-label="Navigate to top of page">{{ t.scroll_up }}</a>
 </div>

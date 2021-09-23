@@ -3,7 +3,7 @@ layout: default
 ---
 {%- assign book = page -%}
 
-<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+<div class="printonly" id="print-title">{{ t.print.keywords }}<br />{{ t.print.keywords_press }}</div>
 {% include_cached access-nav.html book=book %}
 
 <div id="everything">
@@ -18,13 +18,13 @@ layout: default
     {% include headers/subhead.html page=page %}
     <div class="wrapper">
       <article class="{{ book.slug }}">
-        <h1>Keywords <span>for {{ page.description | default: page.title }}</span></h1>
+        <h1>{{ t.book.keywords_book }} <span>{{ t.book.for }} {{ page.description | default: page.title }}</span></h1>
         <h2>Edited by {% include people.html people=page.editors %}</h2>
 
         {{ content }}
 
         {% if page.about %}
-          <a href="{{ page.about.url | relative_url }}">Read More...</a>
+          <a href="{{ page.about.url | relative_url }}">{{ t.read_more }}</a>
         {% endif %}
 
         <p style="text-align: center;">

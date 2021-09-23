@@ -1,8 +1,19 @@
+keywords_for: Keywords for
+edited_by: Edited by
 book:
   open_menu: Read the essays
 contributor:
 default:
 essay:
+  book: book
+  by: by
+  page_found: This essay may be found on page
+  printed_volume: of the printed volume.
+  permanent_link: Permanent Link to this Essay
+  book_author:
+    eds: Eds
+    press: New York: New York University Press
+    print: print
 home:
   read_more: Read more...
   cover_alt: Image for Keywords for
@@ -13,3 +24,6 @@ person:
 search:
 work_cited:
 works_cited:
+close: close
+scroll_up: Back to Top
+read_more: Read More...
