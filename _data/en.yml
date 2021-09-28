@@ -1,7 +1,14 @@
-keywords: Keywords
-keywords_for: Keywords for
-keywords_now: Keywords Now
-edited_by: Edited by
+title:
+  feature: "Keywords Now:"
+  book: "Keywords for"
+edit: Edited by
+close: close
+scroll_up: Back to Top
+read_more: Read More...
+by: by
+print:
+  title: Keywords
+  press: Keywords: NYU Press
 book:
   keywords_book: Keywords
   for: for
@@ -24,13 +31,14 @@ home:
   book_prefix: Keywords for
   edited_by: Edited by
 page:
+  by: by
 person:
+  by: by
+  about: about
+feature:
+  read: Read the Essays
 search:
+  index_download: Please wait while the search index is downloaded...
 work_cited:
 works_cited:
-close: close
-scroll_up: Back to Top
-read_more: Read More...
-print:
-  keywords: Keywords
-  keywords_press: Keywords: NYU Press
+  index_cited: Go to all works cited on

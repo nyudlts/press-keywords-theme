@@ -4,9 +4,10 @@ layout: default
 {% comment %}
 Features behave like books.
 {% endcomment %}
+{%- include global_variables.html -%}
 {%- assign book = page -%}
 
-<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 {% include_cached access-nav.html book=book %}
 
 <div id="everything">
@@ -21,17 +22,17 @@ Features behave like books.
     {% include headers/subhead.html page=page %}
     <div class="wrapper">
       <article class="{{ book.slug }}">
-        <h1>Keywords Now <span>{{ page.description | default: page.title }}</span></h1>
-        <h2>Edited by {% include people.html people=page.editors %}</h2>
+        <h1>{{ t.title[current_book.layout] }}<span>{{ page.description | default: page.title }}</span></h1>
+        <h2>{{ t.edit }} {% include people.html people=page.editors %}</h2>
 
         {{ content }}
 
         {% if page.about %}
-          <a href="{{ page.about.url | relative_url }}">Read More...</a>
+          <a href="{{ page.about.url | relative_url }}">{{ t.read_more }}</a>
         {% endif %}
 
         <p style="text-align: center;">
-          <a class="button" href="#">Read the Essays</a>
+          <a class="button" href="#">{{ t.feature.read }}</a>
         </p>
       </article>
     </div>

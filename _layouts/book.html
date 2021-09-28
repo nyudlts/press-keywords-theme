@@ -1,9 +1,10 @@
 ---
 layout: default
 ---
+{%- include global_variables.html -%}
 {%- assign book = page -%}
 
-<div class="printonly" id="print-title">{{ t.print.keywords }}<br />{{ t.print.keywords_press }}</div>
+<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 {% include_cached access-nav.html book=book %}
 
 <div id="everything">
@@ -18,8 +19,8 @@ layout: default
     {% include headers/subhead.html page=page %}
     <div class="wrapper">
       <article class="{{ book.slug }}">
-        <h1>{{ t.book.keywords_book }} <span>{{ t.book.for }} {{ page.description | default: page.title }}</span></h1>
-        <h2>Edited by {% include people.html people=page.editors %}</h2>
+        <h1>{{ site.title }} <span>{{ t.book.for }} {{ page.description | default: page.title }}</span></h1>
+        <h2>{{ t.edit }} {% include people.html people=page.editors %}</h2>
 
         {{ content }}
 

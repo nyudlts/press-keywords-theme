@@ -28,7 +28,7 @@ layout: default
           <a
             class="stretched-link {{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
-            {{ t.home.book_prefix }}
+            {{ t.title[current_book.layout] }}
             {{ book.description | default: book.title }}
           </a>
         </h2>

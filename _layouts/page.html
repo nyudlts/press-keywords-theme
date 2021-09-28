@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-
+{%- include global_variables.html -%}
 {% assign book = page.book %}
 
-<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
 {% include_cached access-nav.html book=book %}
 
@@ -26,7 +26,7 @@ layout: default
 
       {% if page.authors and page.authors != empty %}
         <div class="meta-info">
-          <div class="author_list">by {% include people.html people=page.authors %}</div>
+          <div class="author_list">{{ t.page.by }} {% include people.html people=page.authors %}</div>
         </div>
       {% endif %}
 
@@ -40,7 +40,7 @@ layout: default
 <div id="scroll-help">
   <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
   <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
-  <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
+  <a id="top" href="#everything" aria-label="Navigate to top of page">{{ t.scroll_up }}</a>
 </div>
 
 <script>

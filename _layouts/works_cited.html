@@ -7,7 +7,8 @@ WorksCitedPage can be books or essays
 {% endcomment %}
 {% assign book = page.book | default: page.essay.book %}
 
-<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+{%- include global_variables.html -%}
+<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
 {% include_cached access-nav.html book=book %}
 
@@ -27,8 +28,12 @@ WorksCitedPage can be books or essays
         <h1>{{ page.title }} {% if page.essay %}on {{ page.essay.title }}{% endif %}</h1>
 
         {% if page.essay %}
-          <p><a href="{{ page.essay.book.works_cited.url | relative_url }}">Go to all works cited on <em>Keywords for {{ page.essay.book.title }}</em></a></p>
-
+          <p>
+            <a href="{{ page.essay.book.works_cited.url | relative_url }}">
+            {{ t.works_cited.index_cited }}
+            <em>{{ t.title[current_book.layout] }} {{ page.essay.book.title }}</em>
+            </a>
+          </p>
           {% assign works_cited = page.works_cited | sort: 'slug' %}
         {% else %}
           {% assign works_cited = page.works_cited %}
@@ -48,7 +53,7 @@ WorksCitedPage can be books or essays
 <div id="scroll-help">
   <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
   <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
-  <a id="top" href="#everything" aria-label="Navigate to top of page">Back to Top</a>
+  <a id="top" href="#everything" aria-label="Navigate to top of page">{{ t.scroll_up }}</a>
 </div>
 
 <script>
@@ -66,6 +71,5 @@ WorksCitedPage can be books or essays
       work_cited_element.scrollIntoView({ block: 'center' });
       work_cited_element.role = 'alert';
     }, 300);
-    
   });
 </script>

@@ -1,43 +1,45 @@
 ---
 layout: default
 ---
-
-<div class="printonly" id="print-title">Keywords<br />Keywords: NYU Press</div>
+{%- include global_variables.html -%}
+<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
 <div id="everything">
   <header>
     {% include_cached headers/master-header.html %}
   </header>
-
   <div id="clickoverlay"></div>
-
   <section id="content" role="main">
-
     {% include headers/subhead.html page=page %}
-
     <div class="wrapper">
       <article class="site">
-        <h1>by {{ page.title }}</h1>
+        <h1>{{ t.person.by }} {{ page.title }}</h1>
 
         <div id="entry-author-info">
           <div id="author-description">
-            <h2>About {{ page.title }}</h2>
-
+            <h2>{{ t.person.about }} {{ page.title }}</h2>
             {{ content }}
           </div>
         </div>
 
         {% for post in page.posts %}
           <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% else %}post type-essay cc_essay_online {% endif %}status-publish hentry">
-            <h1><a href="{{ post.url | relative_url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a></h1>
-
+            <h1>
+              <a href="{{ post.url | relative_url }}" title="Permalink to {{ post.title }}" rel="bookmark">
+                {{ post.title }}
+              </a>
+            </h1>
             <div class="meta-info">
-              <div class="book_name">{{ post.book.layout }} <a href="{{ post.book.url | relative_url }}">Keywords {% if post.book.layout == 'book' %}for{% else %}Now:{% endif %} {{ post.book.title }}</a></div>
+              <div class="book_name">{{ post.book.layout }}
+                <a href="{{ post.book.url | relative_url }}">
+                  {{ t.title[current_book.layout] }} {{ post.book.title }}
+                </a>
+              </div>
             </div>
-
             {{ post.excerpt }}
           </article>
         {% endfor %}
+
       </article>
     </div>
   </section>
