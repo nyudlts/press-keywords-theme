@@ -121,7 +121,9 @@ export default class extends Controller {
   }
 
   set formDisable (disable) {
-    this.element.elements.forEach(x => x.disabled = disable)
+    for (const x of this.element.elements) {
+     x.disabled = disable
+    }
   }
 
   /*
