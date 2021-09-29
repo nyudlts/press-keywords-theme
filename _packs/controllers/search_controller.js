@@ -17,7 +17,7 @@ export default class extends Controller {
     if (!this.hasQTarget) return
     if (!this.qTarget.value.trim().length === 0) return
 
-    return this.qTarget.value.trim().replace(':', '').toLowerCase()
+    return this.qTarget.value.trim().replaceAll(':', '').toLowerCase()
   }
 
   connect () {
