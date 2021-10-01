@@ -17,6 +17,9 @@ $link-decoration: underline;
 $font-family-sans-serif: Georgia, Times New Roman, serif;
 $headings-font-family: Open Sans, sans-serif;
 
+// Border setting
+$border-width: 4px;
+
 $container-max-widths: (
   lg: 820px,
   xl: 821px
@@ -26,6 +29,7 @@ $container-max-widths: (
 $spacers: (
   "10px": 10px,
   "20px": 20px,
+  "24px": 24px,
   "34px": 34px,
   "50px": 50px,
   "55px": 55px,
