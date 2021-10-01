@@ -6,33 +6,25 @@ layout: default
 
 <div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
-{% include_cached access-nav.html book=book %}
 
-<div id="everything">
-  <header>
-    {% include_cached headers/master-header.html book_type=book.layout %}
-
-    {% if book %}
-      {% include_cached headers/subsite-header.html book=book %}
-    {% endif %}
-  </header>
-  <div id="clickoverlay"></div>
-<section id="content" role="main">
+<header>
+  {% include_cached access-nav.html book=book %}
+  {% include_cached headers/master-header.html book_type=book.layout %}
+  {% if book %}
+    {% include_cached headers/subsite-header.html book=book %}
+  {% endif %}
   {% include headers/subhead.html book=book page=page %}
-
-  <div class="wrapper">
-    <article class="{{ book.slug }} post type-post status-publish hentry availability-toc availability-online">
-      <h1>{{ page.title }}</h1>
-
+</header>
+<section id="content" role="main" class="container pt-50px pl-20px pr-20px">
+  <article class="{{ book.slug }} post type-post status-publish hentry availability-toc availability-online">
+    <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">{{ page.title }}</h1>
       {% if page.authors and page.authors != empty %}
-        <div class="meta-info">
-          <div class="author_list">{{ t.page.by }} {% include people.html people=page.authors %}</div>
-        </div>
+    <div class="pb-2">
+      <div class="text-uppercase font-weight-bold">{{ t.page.by }} {% include people.html people=page.authors %}</div>
+    </div>
       {% endif %}
-
-      {{ content }}
+      {{ content | markdownify }}
     </article>
-  </div>
 </section>
 
 {% include_cached footer.html book=book %}

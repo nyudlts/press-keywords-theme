@@ -10,33 +10,30 @@ Features behave like books.
 <div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 {% include_cached access-nav.html book=book %}
 
-<div id="everything">
-  <header>
-    {% include_cached headers/master-header.html book_type=book.layout %}
-    {% include_cached headers/subsite-header.html book=book %}
-  </header>
-
-  <div id="clickoverlay"></div>
-
-  <section id="content" role="main">
-    {% include headers/subhead.html page=page %}
-    <div class="wrapper">
-      <article class="{{ book.slug }}">
-        <h1>{{ t.title[current_book.layout] }}<span>{{ page.description | default: page.title }}</span></h1>
-        <h2>{{ t.edit }} {% include people.html people=page.editors %}</h2>
-
-        {{ content }}
-
-        {% if page.about %}
-          <a href="{{ page.about.url | relative_url }}">{{ t.read_more }}</a>
-        {% endif %}
-
-        <p style="text-align: center;">
-          <a class="button" href="#">{{ t.feature.read }}</a>
-        </p>
-      </article>
+<header>
+  {% include_cached headers/master-header.html book_type=book.layout %}
+  {% include_cached headers/subsite-header.html book=book %}
+  {% include headers/subhead.html page=page %}
+</header>
+<section id="content" role="main" class="container p-50px">
+  <article class="{{ book.slug }}">
+    <h1 class="text-center text-uppercase {{ current_book.slug }}">{{ t.title[current_book.layout] }}
+      <span>{{ page.description | default: page.title }}</span>
+    </h1>
+    <h2 class="text-center text-uppercase mb-3">{{ t.edit }}
+      {% include people.html people=page.editors %}
+    </h2>
+      {{ content }}
+    {% if page.about %}
+      <a href="{{ page.about.url | relative_url }}">{{ t.read_more }}</a>
+    {% endif %}
+    <div class="text-center text-uppercase mt-1">
+      <input id="essay" type="radio" class="sr-only" name="menu-essay"/>
+      <label for="essay" itemprop="menu" class="d-flex flex-column justify-content-center">
+        <span class="btn mb-3">{{ t.feature.read }}</span>
+      </label>
     </div>
-  </section>
+  </article>
+</section>
 
-  {% include_cached footer.html book=page %}
-</div>
+{% include_cached footer.html book=page %}

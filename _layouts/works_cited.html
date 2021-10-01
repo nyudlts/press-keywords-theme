@@ -10,42 +10,34 @@ WorksCitedPage can be books or essays
 {%- include global_variables.html -%}
 <div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
-{% include_cached access-nav.html book=book %}
-
-<div id="everything">
-  <header>
-    {% include_cached headers/master-header.html book_type=book.layout %}
-    {% include_cached headers/subsite-header.html book=book %}
-  </header>
-
-  <div id="clickoverlay"></div>
-
-  <section id="content" role="main">
-    {% include headers/subhead.html book=book page=page %}
-
-    <div class="wrapper">
-      <article class="{{ book.slug }}">
-        <h1>{{ page.title }} {% if page.essay %}on {{ page.essay.title }}{% endif %}</h1>
-
-        {% if page.essay %}
-          <p>
-            <a href="{{ page.essay.book.works_cited.url | relative_url }}">
-            {{ t.works_cited.index_cited }}
-            <em>{{ t.title[current_book.layout] }} {{ page.essay.book.title }}</em>
-            </a>
-          </p>
-          {% assign works_cited = page.works_cited | sort: 'slug' %}
-        {% else %}
-          {% assign works_cited = page.works_cited %}
-        {% endif %}
-
-        {% for work_cited in works_cited %}
-          <article class="work-cited" style="border-top: none; padding: 1rem" id="{{ work_cited.slug }}">
-            {{ work_cited.content | replace: "<p>", "<p style='padding-bottom: 0'>" }}
-          </article>
-        {% endfor %}
-     </article>
-  </div>
+<header>
+  {% include_cached access-nav.html book=book %}
+  {% include_cached headers/master-header.html book_type=book.layout %}
+  {% include_cached headers/subsite-header.html book=book %}
+  {% include headers/subhead.html book=book page=page %}
+</header>
+<section id="content" role="main">
+  <article class="{{ book.slug }}">
+    <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">
+      {{ page.title }} {% if page.essay %}{{ t.works_cited.on}} {{ page.essay.title }}{% endif %}
+    </h1>
+    {% if page.essay %}
+      <p>
+        <a href="{{ page.essay.book.works_cited.url | relative_url }}">
+        {{ t.works_cited.index_cited }}
+        <em>{{ t.title[current_book.layout] }} {{ page.essay.book.title }}</em>
+        </a>
+      </p>
+      {% assign works_cited = page.works_cited | sort: 'slug' %}
+      {% else %}
+        {% assign works_cited = page.works_cited %}
+      {% endif %}
+    {% for work_cited in works_cited %}
+      <article class="work-cited" style="border-top: none; padding: 1rem" id="{{ work_cited.slug }}">
+        {{ work_cited.content | replace: "<p>", "<p style='padding-bottom: 0'>" }}
+      </article>
+    {% endfor %}
+  </article>
 </section>
 
 {% include_cached footer.html book=book %}
