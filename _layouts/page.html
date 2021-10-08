@@ -6,7 +6,7 @@ layout: default
 <section id="content" role="main" class="container pt-50px pl-20px pr-20px">
   <article class="">
     <header>
-      <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">{{ page.title }}</h1>
+      <h1 class="text-uppercase font-weight-bold {{ current_color }}">{{ page.title }}</h1>
 
       {% if page.authors and page.authors != empty %}
         <div class="text-uppercase font-weight-bold pb-2">
@@ -16,7 +16,7 @@ layout: default
       {% endif %}
     </header>
 
-    <div class="content-{{ current_book.slug }}">
+    <div class="{{ content_color }}">
       {{ content }}
     </div>
   </article>
