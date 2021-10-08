@@ -17,3 +17,9 @@
 {%- elsif page.layout == 'layout' -%}
   {%- assign current_book = page -%}
 {%- endif -%}
+
+{%- comment -%}
+  Styles scoped to the book
+{%- endcomment -%}
+{%- assign current_color = current_book.slug | default: 'site' -%}
+{%- assign content_color = current_color | prepend: 'content-' -%}
