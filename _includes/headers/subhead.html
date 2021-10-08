@@ -63,13 +63,15 @@
   </ul>
 
   <ul id="page-actions">
-    {% if page.layout == 'essay' %}
-      <li>
-        <a aria-label="Cite this essay" class="action-cite" href="#">
-          <i class="fa fa-file-text-o"></i>
-        </a>
-      </li>
-    {% endif %}
+    {% comment %}
+      {% if page.layout == 'essay' %}
+        <li>
+          <a aria-label="Cite this essay" class="action-cite" href="#">
+            <i class="fa fa-file-text-o"></i>
+          </a>
+        </li>
+      {% endif %}
+    {% endcomment %}
 
     <li>
       <a class="action-print" href="javascript:print()" aria-label="Print" >
