@@ -49,7 +49,7 @@
 
     {% unless all_essays == empty %}
       <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
-        <a href="#">All Essays</a>
+        <a href="#">{% if book.layout == 'book' %}All {% endif %}Essays</a>
 
         <ul class="sub-menu">
           {% for essay in all_essays %}
