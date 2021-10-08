@@ -16,7 +16,6 @@ book:
 contributor:
 default:
 essay:
-  book: 'book'
   by: 'by'
   page_found: 'This essay may be found on page'
   printed_volume: 'of the printed volume.'

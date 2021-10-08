@@ -2,33 +2,30 @@
 layout: default
 ---
 {%- include global_variables.html -%}
-{% assign book = page.book %}
 
-<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
-
-{% include access-nav.html book=book %}
-
-<header>
-  {% include_cached headers/master-header.html book_type=book.layout %}
-  {% include_cached headers/subsite-header.html book=book %}
-  {% include headers/subhead.html book=book page=page %}
-</header>
 <section id="content" role="main" class="container pt-50px pl-20px pr-20px">
-  <article class="{{ book.slug }} cc_essay_toc cc_essay_{% if page.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay status-publish hentry availability-toc">
-    <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">
-      {{ page.title }}
-    </h1>
-  <div class="">
-    <div class="text-uppercase font-weight-bold">{{ book.layout }}
-          <a href="{{ book.url | relative_url }}">
-            {{ t.essay.book }} {{ book.title }}
-          </a>
-        </div>
-        <div class="text-uppercase font-weight-bold">
-          {{ t.essay.by}} {% include people.html people=page.authors %}
-        </div>
+  <article class="">
+    <header>
+      <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">
+        {{ page.title }}
+      </h1>
+
+      <div class="text-uppercase font-weight-bold">
+        {{ book.layout }}
+
+        <a href="{{ book.url | relative_url }}">
+          {{ book.title }}
+        </a>
       </div>
 
+      <div class="text-uppercase font-weight-bold">
+        {{ t.essay.by }}
+        {% include people.html people=page.authors %}
+      </div>
+    </header>
+
+
+    <div class="content-{{ current_book.slug }}">
       {% if page.availability == 'Print Essays' %}
         {{ page.excerpt | truncatewords: 200 }}
 
@@ -38,33 +35,16 @@ layout: default
       {% else %}
         {{ content | markdownify }}
       {% endif %}
+    </div>
 
-        <div class="text-uppercase font-weight-bold">
-          {% if page.works_cited and page.works_cited != empty %}
-            <a href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a><br />
-          {% elsif page.book.works_cited.works_cited != empty %}
-            <a href="{{ page.book.works_cited.url | relative_url }}">{{ page.book.works_cited.title }}</a><br />
-          {% endif %}
-          <a href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a>
-        </div>
-     </article>
+    <footer class="text-uppercase font-weight-bold">
+      {% if page.works_cited and page.works_cited != empty %}
+        <p><a href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
+      {% elsif page.book.works_cited.works_cited != empty %}
+        <p><a href="{{ page.book.works_cited.url | relative_url }}">{{ page.book.works_cited.title }}</a></p>
+      {% endif %}
+
+      <p><a href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
+    </footer>
+  </article>
 </section>
-
-{% include_cached footer.html book=book %}
-
-<div id="cite-box-overlay" style="display: none;"></div>
-<div id="cite-box" style="display: none;">
-  <button><span>{{ t.close }}</span></button>
-  <div>
-    {%- for author in page.authors -%}
-      {{ author.last_name }}, {{ author.first_name }}
-    {%- endfor -%}. "{{ page.title }}." <em>{{ t.title[current_book.layout] }}: {{ book.title }}</em>.
-    {{ t.essay.book_author.eds }}. {% include people.html people=book.editors plain=true %}. {{ t.essay.book_author.press }}, {{ book.date | date: "%Y"}}. {{ page.page }}. {{ t.essay.book_author.print }}.
-  </div>
-</div>
-
-<div id="scroll-help">
-  <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
-  <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
-  <a id="top" href="#everything" aria-label="Navigate to top of page">{{ t.scroll_up }}</a>
-</div>
