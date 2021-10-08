@@ -1,6 +1,3 @@
-title:
-  feature: 'Keywords Now:'
-  book: 'Keywords for'
 edit: 'Edited by?'
 close: 'close'
 scroll_up: 'Back to Top'
@@ -9,9 +6,11 @@ by: 'by'
 print:
   title: 'Keywords'
   press: 'Keywords: NYU Press'
+feature:
+  modifier: 'Now:'
+  open_menu: 'Read the essays'
 book:
-  keywords_book: 'Keywords'
-  for: 'for'
+  modifier: 'for'
   open_menu: 'Read the essays'
 contributor:
 default:

@@ -19,7 +19,10 @@
 {%- endif -%}
 
 {%- comment -%}
-  Styles scoped to the book
+  Styles and other variables scoped to the book
 {%- endcomment -%}
 {%- assign current_color = current_book.slug | default: 'site' -%}
 {%- assign content_color = current_color | prepend: 'content-' -%}
+{%- assign current_modifier = t[current_book.layout].modifier -%}
+{%- assign current_series = site.title | append: ' ' | append: current_modifier -%}
+{%- assign current_title = current_book.title | prepend: ' ' | prepend: current_series -%}
