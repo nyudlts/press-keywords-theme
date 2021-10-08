@@ -2,54 +2,22 @@
 layout: default
 ---
 {%- include global_variables.html -%}
-{% assign book = page.book %}
 
-<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
-
-
-<header>
-  {% include_cached access-nav.html book=book %}
-  {% include_cached headers/master-header.html book_type=book.layout %}
-  {% if book %}
-    {% include_cached headers/subsite-header.html book=book %}
-  {% endif %}
-  {% include headers/subhead.html book=book page=page %}
-</header>
 <section id="content" role="main" class="container pt-50px pl-20px pr-20px">
-  <article class="{{ book.slug }} post type-post status-publish hentry availability-toc availability-online">
-    <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">{{ page.title }}</h1>
+  <article class="">
+    <header>
+      <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">{{ page.title }}</h1>
+
       {% if page.authors and page.authors != empty %}
-    <div class="pb-2">
-      <div class="text-uppercase font-weight-bold">{{ t.page.by }} {% include people.html people=page.authors %}</div>
-    </div>
+        <div class="text-uppercase font-weight-bold pb-2">
+          {{ t.page.by }}
+          {% include people.html people=page.authors %}
+        </div>
       {% endif %}
+    </header>
+
+    <div class="content-{{ current_book.slug }}">
       {{ content | markdownify }}
-    </article>
+    </div>
+  </article>
 </section>
-
-{% include_cached footer.html book=book %}
-
-<div id="scroll-help">
-  <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
-  <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
-  <a id="top" href="#everything" aria-label="Navigate to top of page">{{ t.scroll_up }}</a>
-</div>
-
-<script>
-  if (Modernizr.touch) {
-    /* cache dom references */
-    var $body = jQuery('body');
-
-    /* bind events */
-    jQuery(document).on('focus', 'input', function(e) {
-      $body.addClass('fixfixed');
-    }).on('blur', 'input', function(e) {
-      $body.removeClass('fixfixed');
-    });
-    jQuery(document).on('focus', 'textarea', function(e) {
-      $body.addClass('fixfixed');
-    }).on('blur', 'textarea', function(e) {
-      $body.removeClass('fixfixed');
-    });
-  }
-</script>
