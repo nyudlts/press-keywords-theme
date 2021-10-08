@@ -28,6 +28,7 @@ layout: default
           <a
             class="stretched-link {{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
+            {{ site.title }}
             {{ t.title[current_book.layout] }}
             {{ book.description | default: book.title }}
           </a>
