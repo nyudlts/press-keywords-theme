@@ -4,34 +4,36 @@ layout: default
 {%- include global_variables.html -%}
 {%- assign book = page -%}
 
-  <div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
-  <header>
-    {% include_cached access-nav.html book=book %}
-    {% include_cached headers/master-header.html book_type=book.layout %}
-    {% include_cached headers/subsite-header.html book=book %}
-    {% include headers/subhead.html page=page %}
-  </header>
-  <section id="content" role="main" class="container p-50px">
-    <article class="{{ book.slug }}" class="position-relative d-flex flex-row pt-45px pb-55px">
-      <h1 class="text-center text-uppercase font-weight-bold {{ current_book.slug }}">{{ site.title }}
+<section id="content" role="main" class="container p-50px">
+  <article class="pt-45px pb-55px">
+    <header>
+      <h1 class="text-center text-uppercase font-weight-bold {{ current_book.slug }}">
+        <span class="">{{ site.title }}</span>
         <span>{{ t.book.for }} {{ page.description | default: page.title }}</span>
       </h1>
+
       <h2 class="text-center text-uppercase mb-3 font-weight-bold">{{ t.edit }}
         {% include people.html people=page.editors %}
       </h2>
-        {{ content | markdownify }}
+    </header>
+
+    {{ content | markdownify }}
+
+    <footer>
       {% if page.about %}
         <a href="{{ page.about.url | relative_url }}">
           {{ t.read_more }}
         </a>
       {% endif %}
+
       <div class="text-center text-uppercase mt-1">
         <input id="essay" type="radio" class="sr-only" name="menu-essay"/>
-        <label for="essay" itemprop="menu" class="d-flex flex-column justify-content-center">
-          <span class="btn mb-3">{{ t.book.open_menu }}</span>
+        <label for="essay" itemprop="menu" class="btn btn-{{ current_book.slug }}">
+          {{ t.book.open_menu }}
         </label>
       </div>
-    </article>
+    </footer>
+  </article>
 </section>
 
-  {% include_cached footer.html book=page %}
+{% include_cached footer.html book=page %}
