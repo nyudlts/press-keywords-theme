@@ -4,6 +4,7 @@
 {% assign print_essays = book.essays | where: 'availability', 'Print Essays' | default: empty_list | sort: 'title' %}
 {% assign keywords_now = book.essays | where: 'availability', 'Keywords Now' | default: empty_list | sort: 'title' %}
 {% assign essays = book.essays | where: 'availability', 'Essays' | default: empty_list | sort: 'title' %}
+{% assign all_essays = book.essays | default: empty_list | sort: 'title' %}
 
 <nav id="access">
   <div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
@@ -53,6 +54,22 @@
 
         <ul class="sub-menu">
           {% for essay in print_essays %}
+            <li>
+              <a href="{{ essay.url | relative_url }}">
+                {{ essay.title }}, <span>{% include people.html people=essay.authors plain=true %}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endunless %}
+
+    {% unless all_essays == empty %}
+      <li class="menu-item menu-item-type-taxonomy menu-item-object-availability menu-item-has-children">
+        <a href="#">All Essays</a>
+
+        <ul class="sub-menu">
+          {% for essay in all_essays %}
             <li>
               <a href="{{ essay.url | relative_url }}">
                 {{ essay.title }}, <span>{% include people.html people=essay.authors plain=true %}</span>
