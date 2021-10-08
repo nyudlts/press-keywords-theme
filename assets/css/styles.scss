@@ -60,6 +60,31 @@ $theme-colors: (
   "site": {{ site.color }}
 );
 
+/// Since the content HTML comes from Markdown, we need to define their
+/// their style inside a .content.
+{% for book in books %}
+.content-{{ book.slug }} {
+  mark {
+    background-color: {{ feature.color }} !important;
+  }
+
+  a {
+    color: {{ book.color }} !important;
+  }
+}
+{% endfor %}
+{% for feature in features %}
+.content-{{ feature.slug }} {
+  mark {
+    background-color: {{ feature.color }} !important;
+  }
+
+  a {
+    color: {{ feature.color }} !important;
+  }
+}
+{% endfor %}
+
 // Links in works cited need break lines, since they can be really long
 .work-cited {
   a {
