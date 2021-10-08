@@ -2,38 +2,39 @@
 layout: default
 ---
 {% comment %}
-Features behave like books.
+  Features behave like books.
 {% endcomment %}
 {%- include global_variables.html -%}
-{%- assign book = page -%}
 
-<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
-{% include_cached access-nav.html book=book %}
-
-<header>
-  {% include_cached headers/master-header.html book_type=book.layout %}
-  {% include_cached headers/subsite-header.html book=book %}
-  {% include headers/subhead.html page=page %}
-</header>
 <section id="content" role="main" class="container p-50px">
-  <article class="{{ book.slug }}">
-    <h1 class="text-center text-uppercase {{ current_book.slug }}">{{ t.title[current_book.layout] }}
-      <span>{{ page.description | default: page.title }}</span>
-    </h1>
-    <h2 class="text-center text-uppercase mb-3">{{ t.edit }}
-      {% include people.html people=page.editors %}
-    </h2>
-      {{ content }}
-    {% if page.about %}
-      <a href="{{ page.about.url | relative_url }}">{{ t.read_more }}</a>
-    {% endif %}
-    <div class="text-center text-uppercase mt-1">
-      <input id="essay" type="radio" class="sr-only" name="menu-essay"/>
-      <label for="essay" itemprop="menu" class="d-flex flex-column justify-content-center">
-        <span class="btn mb-3">{{ t.feature.read }}</span>
-      </label>
-    </div>
+  <article class="pt-45px pb-55px">
+    <header>
+      <h1 class="text-center text-uppercase font-weight-bold {{ current_book.slug }}">
+        <span class="">{{ site.title }}</span>
+        <span>{{ current_modifier }} {{ page.description | default: page.title }}</span>
+      </h1>
+
+      <h2 class="text-center text-uppercase mb-3 font-weight-bold">
+        {{ t.edit }}
+        {% include people.html people=page.editors %}
+      </h2>
+    </header>
+
+    {{ content }}
+
+    <footer>
+      {% if page.about %}
+        <a class="{{ current_color }}" href="{{ page.about.url | relative_url }}">
+          {{ t.read_more }}
+        </a>
+      {% endif %}
+
+      <div class="text-center text-uppercase mt-1">
+        <input id="essay" type="radio" class="sr-only" name="menu-essay"/>
+        <label for="essay" itemprop="menu" class="btn btn-{{ current_book.slug }}">
+          {{ t.book.open_menu }}
+        </label>
+      </div>
+    </footer>
   </article>
 </section>
-
-{% include_cached footer.html book=page %}

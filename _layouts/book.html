@@ -8,19 +8,20 @@ layout: default
     <header>
       <h1 class="text-center text-uppercase font-weight-bold {{ current_book.slug }}">
         <span class="">{{ site.title }}</span>
-        <span>{{ t.book.for }} {{ page.description | default: page.title }}</span>
+        <span>{{ current_modifier }} {{ page.description | default: page.title }}</span>
       </h1>
 
-      <h2 class="text-center text-uppercase mb-3 font-weight-bold">{{ t.edit }}
+      <h2 class="text-center text-uppercase mb-3 font-weight-bold">
+        {{ t.edit }}
         {% include people.html people=page.editors %}
       </h2>
     </header>
 
-    {{ content | markdownify }}
+    {{ content }}
 
     <footer>
       {% if page.about %}
-        <a href="{{ page.about.url | relative_url }}">
+        <a class="{{ current_color }}" href="{{ page.about.url | relative_url }}">
           {{ t.read_more }}
         </a>
       {% endif %}
