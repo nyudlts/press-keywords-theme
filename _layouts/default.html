@@ -33,5 +33,7 @@
     <main>
       {{ content }}
     </main>
+
+    {%- include_cached footer.html cache_key=page.book.slug -%}
   </body>
 </html>

@@ -41,3 +41,11 @@ work_cited:
 works_cited:
   index_cited: 'Go to all works cited on'
   on: 'on'
+footer:
+  about: 'About this Site'
+  contact: 'Contact'
+  rights: 'Rights'
+  accessibility: 'Accessibility'
+  accessibility_url: 'https://www.nyu.edu/footer/accessibility.html'
+  publisher: 'NYU Press'
+  logo: '/wp-content/themes/nyukeywords/images/logo-nyupress.png'

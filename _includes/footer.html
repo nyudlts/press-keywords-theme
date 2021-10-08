@@ -1,32 +1,41 @@
-{% if include.book %}
-  <footer>
-    <div class="wrapper">
-    <ul id="menu-footer-nav" class="menu">
-      {% if include.book.about %}
-        <li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-156 current_page_item menu-item-193">
-          <a href="{{ include.book.about.url | relative_url }}">About this Site</a>
-        </li>
-      {% endif %}
-      {% if include.book.contact %}
-        <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item">
-          <a href="mailto:{{ include.book.contact }}">Contact</a>
-        </li>
-      {% endif %}
-      <li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-194">
-        <a href="{{ include.book.rights.url | relative_url }}">Rights</a>
-      </li>
-      <li id="menu-item-1579" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1579">
-        <a href="https://www.nyu.edu/footer/accessibility.html">Accessibility</a>
-      </li>
-    </ul>
-      <a href="http://nyupress.org/" target="_blank"><img src="{{ '/wp-content/themes/nyukeywords/images/logo-nyupress.png' | relative_url }}" alt="NYU Press" /></a>
+{%- include global_variables.html -%}
+
+{%- capture accessibility -%}
+  <a class="{{ current_color }}" target="_blank" rel="noopener noreferrer" href="{{ t.footer.accessibility_url }}">{{ t.footer.accessibility }}</a>
+{%- endcapture -%}
+
+<footer class="border-top">
+  <div class="container mx-auto">
+    {% if current_book %}
+      <nav>
+        <ul class="list-unstyled" id="menu-footer-nav">
+          {% if current_book.about %}
+            <li>
+              <a class="{{ current_color }}" href="{{ current_book.about.url | relative_url }}">{{ t.footer.about }}</a>
+            </li>
+          {% endif %}
+
+          {% if current_book.contact %}
+            <li class="">
+              <a class="{{ current_color }}" href="mailto:{{ current_book.contact }}">{{ t.footer.contact }}</a>
+            </li>
+          {% endif %}
+
+          <li class="">
+            <a class="{{ current_color }}" href="{{ current_book.rights.url | relative_url }}">{{ t.footer.rights }}</a>
+          </li>
+
+          <li class="">{{ accessibility }}</li>
+        </ul>
+      </nav>
+    {% else %}
+      <p>{{ accessibility }}</p>
+    {% endif %}
+
+    <div class="d-flex align-items-center justify-content-center p-3">
+      <a href="http://nyupress.org/" target="_blank" rel="noopener noreferrer">
+        <img src="{{ t.footer.logo | relative_url }}" alt="{{ t.footer.publisher }}" />
+      </a>
     </div>
-  </footer>
-{% else %}
-  <footer class="accessibility"><a href="https://www.nyu.edu/footer/accessibility.html" target="_blank">Accessibility</a></footer>
-  <footer>
-    <div class="wrapper">
-      <a href="http://nyupress.org/" target="_blank"><img src="{{ '/wp-content/themes/nyukeywords/images/logo-nyupress.png' | relative_url }}" alt="NYU Press" /></a>
-    </div>
-  </footer>
-{% endif %}
+  </div>
+</footer>
