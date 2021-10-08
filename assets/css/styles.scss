@@ -16,6 +16,7 @@ $link-hover-color: #333;
 $link-decoration: underline;
 $font-family-sans-serif: Georgia, Times New Roman, serif;
 $headings-font-family: Open Sans, sans-serif;
+$enable-rounded: false;
 
 // Border setting
 $border-width: 4px;
@@ -46,6 +47,16 @@ $colors: (
 {% endfor %}
   "site": {{ site.color }},
   "black": #000
+);
+
+$theme-colors: (
+{% for book in books %}
+  "{{ book.slug }}": {{ book.color }},
+{% endfor %}
+{% for feature in features %}
+  "{{ feature.slug }}": {{ feature.color }},
+{% endfor %}
+  "site": {{ site.color }}
 );
 
 // Links in works cited need break lines, since they can be really long
