@@ -49,6 +49,7 @@ linked_fields:
 - rights
 - pages
 - works_cited
+- extra_contributors
 
 exclude:
 - Makefile
