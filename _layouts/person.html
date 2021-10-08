@@ -2,37 +2,47 @@
 layout: default
 ---
 {%- include global_variables.html -%}
-<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
-<header>
-  {% include_cached headers/master-header.html %}
-  {% include headers/subhead.html page=page %}
-</header>
 <section id="content" role="main" class="container pt-50px pl-20px pr-20px">
   <article>
-    <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">
-      {{ t.person.by }} {{ page.title }}
-    </h1>
-    <div id="background-gray-800 border border-top mt-24px p-20px ">
-      <h2 class="text-uppercase font-weight-bold">
-        {{ t.person.about }} {{ page.title }}
-      </h2>
-        {{ content | markdownify }}
-    </div>
-  {% for post in page.posts %}
-    <article class="{{ post.book.slug }} {% if post.layout == 'essay' %}cc_essay_{% if post.availability contains 'Print' %}print{% else %}online{% endif %} essay type-essay {% else %}post type-essay cc_essay_online {% endif %}status-publish hentry border border-top">
-      <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}"">
-        <a href="{{ post.url | relative_url }}" title="Permalink to {{ post.title }}" rel="bookmark">
-          {{ post.title }}
-        </a>
+    <header>
+      <h1 class="text-uppercase font-weight-bold {{ current_color }}">
+        {{ t.person.by }}
+        {{ page.title }}
       </h1>
-      <div class="mb-2">
-        <div class="text-uppercase font-weight-bold">{{ post.book.layout }}
-          <a href="{{ post.book.url | relative_url }}">
-            {{ t.title[current_book.layout] }} {{ post.book.title }}
-          </a>
-        </div>
+
+      <div id="background-gray-800 border border-top mt-24px p-20px">
+        <h2 class="text-uppercase font-weight-bold">
+          {{ t.person.about }}
+          {{ page.title }}
+        </h2>
+
+        {{ content }}
       </div>
+    </header>
+
+    {% for post in page.posts %}
+      <article class="border-top">
+        <header>
+          <h1 class="text-uppercase font-weight-bold">
+            <a class="{{ post.book.slug }} text-decoration-none" href="{{ post.url | relative_url }}" title="{{ t.person.bookmark }} {{ post.title }}" rel="bookmark">
+              {{ post.title }}
+            </a>
+          </h1>
+        </header>
+
+        <div class="mb-2">
+          <div class="text-uppercase font-weight-bold">
+            {{ post.book.layout }}
+
+            <a class="{{ post.book.slug }}" href="{{ post.book.url | relative_url }}">
+              {{ site.title }}
+              {{ t[post.book.layout].modifier }}
+              {{ post.book.title }}
+            </a>
+          </div>
+        </div>
+
         {{ post.excerpt | markdownify }}
       </article>
     {% endfor %}
