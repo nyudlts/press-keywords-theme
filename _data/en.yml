@@ -49,3 +49,8 @@ footer:
   accessibility_url: 'https://www.nyu.edu/footer/accessibility.html'
   publisher: 'NYU Press'
   logo: '/wp-content/themes/nyukeywords/images/logo-nyupress.png'
+navbar:
+  label: 'Open the menu'
+  home: 'Home'
+  book: 'Books'
+  feature: 'Keywords Now'

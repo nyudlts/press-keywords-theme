@@ -1,0 +1,46 @@
+{%- include global_variables.html -%}
+
+<div class="w-100">
+  <nav class="navbar navbar-dark navbar-expand-lg background-gray-dark">
+    <button class="navbar-toggler" type="button" aria-label="{{ t.navbar.label }}">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <div class="navbar-nav">
+        <div class="nav-item">
+          <a class="nav-link text-uppercase font-weight-bold" href="{{ '/' | relative_url }}">
+            {{ t.navbar.home }}
+          </a>
+        </div>
+
+        {% comment %}
+          Generate dropdown menus recursively
+        {% endcomment %}
+        {% for layout in site.book_layouts -%}
+          {% assign posts = site.posts | where: 'layout', layout %}
+          {% if posts == empty %}{% continue %}{% endif %}
+          <div class="nav-item">
+            <div class="nav-link dropdown">
+              <button
+                class="dropdown-toggle border-0 background-gray-dark white text-uppercase font-weight-bold"
+                type="button"
+                id="dropdown-{{ layout }}"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+                {{ t.navbar[layout] }}
+              </button>
+
+              <div class="dropdown-menu background-gray-dark" aria-labeledby="dropdown-books">
+                {% for post in posts %}
+                  <a class="dropdown-item font-weight-bold white" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    <div>
+  </nav>
+</div>

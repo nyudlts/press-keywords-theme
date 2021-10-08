@@ -32,3 +32,26 @@
     }
   }
 }
+
+/// This creates a navbar that can be toggled on focus and doesn't
+/// require CSS.
+.navbar {
+  &:focus-within {
+    .navbar-collapse {
+      @extend .d-block;
+    }
+  }
+
+  .dropdown {
+    .dropdown-menu {
+      @extend .d-none;
+    }
+
+    &:hover,
+    &:focus-within {
+      .dropdown-menu {
+        @extend .d-block;
+      }
+    }
+  }
+}

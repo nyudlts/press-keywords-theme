@@ -30,6 +30,8 @@
     {% feed_meta %}
   </head>
   <body>
+    {%- include_cached navbar.html -%}
+
     <main>
       {{ content }}
     </main>
