@@ -8,8 +8,8 @@
       </button>
 
       <div class="order-lg-1 col collapse navbar-collapse">
-        <div class="navbar-nav">
-          <div class="nav-item">
+        <div class="navbar-nav d-flex align-items-center">
+          <div class="nav-item w-100 w-lg-auto">
             <a class="nav-link text-uppercase font-weight-bold" href="{{ '/' | relative_url }}">
               {{ t.navbar.home }}
             </a>
@@ -21,7 +21,7 @@
           {% for layout in site.book_layouts -%}
             {% assign posts = site.posts | where: 'layout', layout %}
             {% if posts == empty %}{% continue %}{% endif %}
-            <div class="nav-item">
+            <div class="nav-item w-100 w-lg-auto">
               <div class="nav-link dropdown">
                 <button
                   class="dropdown-toggle border-0 background-gray-dark white text-uppercase font-weight-bold"
