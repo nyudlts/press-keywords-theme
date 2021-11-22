@@ -1,19 +1,9 @@
-{%- assign url = page.book.works_cited.url | absolute_url | append: '#' | append: page.slug -%}
-<!DOCTYPE html>
-<html lang="{{ site.lang }}">
-  {% include head.html redirect=url %}
+---
+layout: default
+---
 
-  <body class="d-flex d-print-block flex-column align-items-center justify-content-between min-h-100vh">
-    {%- include_cached navbar.html -%}
-
-    <main>
-      <section id="content" role="main">
-        <article class="site">
-          <i class="fa fa-cog fa-spin" style="font-size:10rem"></i>
-        </article>
-      </section>
-    </main>
-
-    {%- include_cached footer.html cache_key=current_book -%}
-  </body>
-</html>
+<section id="content" role="main">
+  <article class="site">
+    <i class="fa fa-cog fa-spin" style="font-size:10rem"></i>
+  </article>
+</section>
