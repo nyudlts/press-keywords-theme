@@ -6,7 +6,7 @@ layout: default
 <section id="content" role="main" class="container p-50px">
   <article class="pt-45px pb-55px">
     <header>
-      <h1 class="text-center text-uppercase font-weight-bold {{ current_book.slug }}">
+      <h1 class="text-center text-uppercase font-weight-bold {{ current_color }}">
         <span class="">{{ site.title }}</span>
         <span>{{ current_modifier }} {{ page.description | default: page.title }}</span>
       </h1>
@@ -28,7 +28,7 @@ layout: default
 
       <div class="text-center text-uppercase mt-1">
         <input id="essay" type="radio" class="sr-only" name="menu-essay"/>
-        <label for="essay" itemprop="menu" class="btn btn-{{ current_book.slug }}">
+        <label for="essay" itemprop="menu" class="btn btn-{{ current_color }}">
           {{ t.book.open_menu }}
         </label>
       </div>
