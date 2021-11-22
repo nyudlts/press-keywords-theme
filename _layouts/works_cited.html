@@ -2,66 +2,38 @@
 layout: default
 ---
 
-{% comment %}
-WorksCitedPage can be books or essays
-{% endcomment %}
-{% assign book = page.book | default: page.essay.book %}
-
 {%- include global_variables.html -%}
-<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
-<header>
-  {% include_cached access-nav.html book=book %}
-  {% include_cached headers/master-header.html book_type=book.layout %}
-  {% include_cached headers/subsite-header.html book=book %}
-  {% include headers/subhead.html book=book page=page %}
-</header>
-<section id="content" role="main">
-  <article class="{{ book.slug }}">
-    <h1 class="text-uppercase font-weight-bold {{ current_book.slug }}">
-      {{ page.title }} {% if page.essay %}{{ t.works_cited.on}} {{ page.essay.title }}{% endif %}
+<section id="content" role="main" class="container pt-50px pl-20px pr-20px">
+  <header>
+    <h1 class="text-uppercase font-weight-bold {{ current_color }}">
+      {{ page.title }} {% if page.essay %}{{ t.works_cited.on }} {{ page.essay.title }}{% endif %}
     </h1>
-    {% if page.essay %}
-      <p>
-        <a href="{{ page.essay.book.works_cited.url | relative_url }}">
+  </header>
+
+  {% if page.essay %}
+    <p>
+      <a
+        href="{{ page.essay.book.works_cited.url | relative_url }}"
+        class="{{ current_book }}">
         {{ t.works_cited.index_cited }}
-        <em>{{ t.title[current_book.layout] }} {{ page.essay.book.title }}</em>
-        </a>
-      </p>
-      {% assign works_cited = page.works_cited | sort: 'slug' %}
-      {% else %}
-        {% assign works_cited = page.works_cited %}
-      {% endif %}
-    {% for work_cited in works_cited %}
-      <article class="work-cited" style="border-top: none; padding: 1rem" id="{{ work_cited.slug }}">
-        {{ work_cited.content | replace: "<p>", "<p style='padding-bottom: 0'>" }}
-      </article>
-    {% endfor %}
-  </article>
+
+        <em>
+          {{ site.title }}
+          {{ current_modifier }}
+          {{ page.essay.book.title }}
+        </em>
+      </a>
+    </p>
+
+    {% assign works_cited = page.works_cited | sort: 'slug' %}
+  {% else %}
+    {% assign works_cited = page.works_cited %}
+  {% endif %}
+
+  {% for work_cited in works_cited %}
+    <article class="{{ content_color }}" id="{{ work_cited.slug }}">
+      {{ work_cited.content  }}
+    </article>
+  {% endfor %}
 </section>
-
-{% include_cached footer.html book=book %}
-
-<div id="scroll-help">
-  <a id="up" role="presentation"><i class="fa fa-angle-up"></i></a>
-  <a id="down" role="presentation"><i class="fa fa-angle-down"></i></a>
-  <a id="top" href="#everything" aria-label="Navigate to top of page">{{ t.scroll_up }}</a>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function(event) {
-    const work_cited = window.location.hash;
-
-    if (work_cited === "") return;
-
-    const work_cited_element = document.querySelector(work_cited);
-
-    work_cited_element.style.backgroundColor = "{{ book.color }}" ;
-    work_cited_element.style.color = "white" ;
-
-    setTimeout(function() {
-      work_cited_element.scrollIntoView({ block: 'center' });
-      work_cited_element.role = 'alert';
-    }, 300);
-  });
-</script>
