@@ -11,8 +11,8 @@ layout: default
         {{ page.title }}
       </h1>
 
-      <div id="background-gray-800 border border-top mt-24px p-20px">
-        <h2 class="text-uppercase font-weight-bold">
+      <div class="background-gray border-top border-gray-dark border-thick mt-24px p-20px my-4">
+        <h2 class="h6 text-uppercase font-weight-bold">
           {{ t.person.about }}
           {{ page.title }}
         </h2>
@@ -22,9 +22,9 @@ layout: default
     </header>
 
     {% for post in page.posts %}
-      <article class="border-top">
+      <article class="border-top pt-3">
         <header>
-          <h1 class="text-uppercase font-weight-bold">
+          <h1 class="h3 text-uppercase font-weight-bold">
             <a class="{{ post.book.slug }} text-decoration-none" href="{{ post.url | relative_url }}" title="{{ t.person.bookmark }} {{ post.title }}" rel="bookmark">
               {{ post.title }}
             </a>
@@ -32,7 +32,7 @@ layout: default
         </header>
 
         <div class="mb-2">
-          <div class="text-uppercase font-weight-bold">
+          <div class="h6 text-uppercase font-weight-bold">
             {{ post.book.layout }}
 
             <a class="{{ post.book.slug }}" href="{{ post.book.url | relative_url }}">
@@ -43,7 +43,9 @@ layout: default
           </div>
         </div>
 
-        {{ post.excerpt | markdownify }}
+        <div class="content-{{ post.book.slug }}">
+          {{ post.excerpt | markdownify }}
+        </div>
       </article>
     {% endfor %}
   </article>

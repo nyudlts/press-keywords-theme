@@ -3,6 +3,8 @@
   @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
+    .border#{$infix}-thick { border-width: 4px !important; }
+
     @each $color, $rgb in $colors {
       .background#{$infix}-#{$color} {
         background-color: $rgb !important;

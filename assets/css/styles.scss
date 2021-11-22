@@ -10,6 +10,7 @@
 }
 
 /// Redefine variables from node_modules/bootstrap/scss/_variables.scss
+$gray-100: #efefef;
 $gray-600: #f3f3f3;
 $gray-800: #666;
 $link-hover-color: #333;
@@ -22,9 +23,6 @@ $navbar-padding-y: 5px;
 $navbar-padding-x: 5px;
 $nav-link-padding-y: 0;
 $nav-link-padding-x: 2rem;
-
-// Border setting
-$border-width: 4px;
 
 $container-max-widths: (
   lg: 820px,
@@ -55,7 +53,8 @@ $colors: (
   "{{ feature.slug }}": {{ feature.color }},
 {% endfor %}
   "site": {{ site.color }},
-  "black": #000
+  "black": #000,
+  "gray-light": $gray-100
 );
 
 $theme-colors: (
@@ -117,3 +116,7 @@ $theme-colors: (
 @import "bootstrap/scss/bootstrap";
 @import "fork-awesome/scss/fork-awesome";
 @import "helpers";
+
+p {
+  margin-bottom: 2rem;
+}
