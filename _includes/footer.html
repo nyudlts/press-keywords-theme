@@ -4,9 +4,9 @@
   <a class="{{ current_color }}" target="_blank" rel="noopener noreferrer" href="{{ t.footer.accessibility_url }}">{{ t.footer.accessibility }}</a>
 {%- endcapture -%}
 
-<footer class="border-top">
-  <div class="container mx-auto">
-    {% if current_book %}
+<footer class="{% unless current_book %}border-top{% endunless %}">
+  {% if current_book %}
+    <div class="container mx-auto">
       <nav>
         <ul class="list-unstyled" id="menu-footer-nav">
           {% if current_book.about %}
@@ -28,14 +28,13 @@
           <li class="">{{ accessibility }}</li>
         </ul>
       </nav>
-    {% else %}
-      <p>{{ accessibility }}</p>
-    {% endif %}
-
+    </div>
+  {% else %}
+    <div class="d-flex align-items-center justify-content-center py-2 background-gray-dark">{{ accessibility }}</div>
+  {% endif %}
     <div class="d-flex align-items-center justify-content-center p-3">
       <a href="http://nyupress.org/" target="_blank" rel="noopener noreferrer">
         <img src="{{ t.footer.logo | relative_url }}" alt="{{ t.footer.publisher }}" />
       </a>
     </div>
-  </div>
 </footer>
