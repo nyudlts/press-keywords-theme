@@ -31,6 +31,10 @@ $container-max-widths: (
   xl: 821px
 );
 
+$sizes: (
+  100vh: 100vh
+);
+
 /// These measurements were taken from the original design
 $spacers: (
   "10px": 10px,

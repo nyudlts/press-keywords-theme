@@ -30,6 +30,15 @@
         }
       }
     }
+
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        .min-#{$abbrev}#{$infix}-#{$size} { min-#{$prop}: $length !important; }
+        .max-#{$abbrev}#{$infix}-#{$size} { max-#{$prop}: $length !important; }
+      }
+    }
   }
 }
 
