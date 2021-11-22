@@ -16,6 +16,8 @@
   {%- assign current_book = page -%}
 {%- elsif page.layout == 'layout' -%}
   {%- assign current_book = page -%}
+{%- else -%}
+  {%- assign current_book = nil -%}
 {%- endif -%}
 
 {%- comment -%}
