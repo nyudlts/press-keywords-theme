@@ -4,7 +4,7 @@
   <a class="{{ current_color }}" target="_blank" rel="noopener noreferrer" href="{{ t.footer.accessibility_url }}">{{ t.footer.accessibility }}</a>
 {%- endcapture -%}
 
-<footer class="{% unless current_book %}border-top{% endunless %}">
+<footer class="w-100{% unless current_book %} border-top{% endunless %}">
   {% if current_book %}
     <div class="container mx-auto">
       <nav>
