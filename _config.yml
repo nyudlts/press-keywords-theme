@@ -19,7 +19,7 @@ plugins:
 - jekyll-ignore-layouts
 - sutty-liquid
 - jekyll-linked-posts
-- jekyll-lunr
+  #- jekyll-lunr
 - jekyll-alternate-permalinks
 - jekyll-feed
 - jekyll-images
@@ -63,3 +63,8 @@ exclude:
 book_layouts:
 - book
 - feature
+
+analytics:
+  id: UA-51495518-2
+  anonymize_ip: true
+  tag_manager: GTM-TRVMLPF

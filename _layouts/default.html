@@ -32,8 +32,11 @@
     <link rel="alternate icon" href="public/favicon.ico">
     <link rel="mask-icon" href="public/favicon.svg" color="white">
 
-    {% seo %}
-    {% feed_meta %}
+    {% if jekyll.environment == 'production' %}
+      {% seo %}
+      {% feed_meta %}
+      {% include_cached google-codes.html %}
+    {% endif %}
   </head>
   <body class="d-flex d-print-block flex-column justify-content-between align-items-center min-h-100vh">
     {%- include_cached navbar.html -%}
