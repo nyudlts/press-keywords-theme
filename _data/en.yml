@@ -36,6 +36,13 @@ person:
 feature:
   read: 'Read the Essays'
 search:
+  label: 'Search for:'
+  placeholder: 'Search...'
+  select: 'Individual book or all books'
+  submit: 'GO'
+  all: 'All books'
+  everything: 'Everything'
+  essays: 'Essays'
   index_download: 'Please wait while the search index is downloaded...'
 work_cited:
 works_cited:

@@ -6,3 +6,4 @@ f02f print
 f106 angle-up
 f107 angle-down
 f013 cog
+f002 search
