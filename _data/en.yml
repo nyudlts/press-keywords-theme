@@ -3,8 +3,14 @@ close: 'close'
 scroll_up: 'Back to Top'
 read_more: 'Read More...'
 leftbar:
+  title: Essays
   home: Home
   close: Close navigation bar
+  accessibility: (Touch to open table of contents)
+rightbar:
+  title: Courses &#9654;
+  link: Buy this book
+  accessibility: (Touch to open classroom materials)
 by: 'by'
 print:
   title: 'Keywords'

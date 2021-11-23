@@ -1,7 +1,13 @@
 <nav class="w-100vw py-3 background-{{ include.current_book.slug }} container-fluid">
   <div class="row row-cols-md-3">
-    <div class="col order-md-0">
-      <label for="leftbar" class="mb-0"></label>
+    <div class="col order-md-0 text-left">
+      <label for="leftbar" class="mb-0 text-uppercase white h6 font-weight-bold">
+        <i aria-hidden="true" class="fa fa-fw fa-bars mr-1"></i>
+
+        {{ include.t.leftbar.title }}
+
+        <span class="sr-only">{{ include.t.leftbar.accessibility }}</span>
+      </label>
     </div>
 
     <div class="col-12 col-md order-first order-md-1">
@@ -22,8 +28,24 @@
       </h1>
     </div>
 
-    <div class="col order-md-2">
-      <label for="rightbar" class="mb-0"></label>
+    <div class="col order-md-2 text-right">
+      {% if current_book.link %}
+        <a
+          class="white text-decoration-none mr-3"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="{{ include.t.rightbar.link }}"
+          href="{{ current_book.link }}">
+          <i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i>
+          <span class="sr-only">{{ include.t.rightbar.link }}</span>
+        </a>
+      {% endif %}
+
+      <label for="rightbar" class="mb-0 text-uppercase white h6 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}">
+        {{ include.t.rightbar.title }}
+
+        <span class="sr-only">{{ include.t.rightbar.accessibility }}</span>
+      </label>
     </div>
   </div>
 </nav>
