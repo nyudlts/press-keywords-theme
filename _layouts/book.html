@@ -3,6 +3,8 @@ layout: default
 ---
 {%- include global_variables.html -%}
 
+{% include_cached titlebar.html current_book=current_book current_modifier=current_modifier %}
+
 <section id="content" role="main" class="container p-50px">
   {% include_cached leftbar.html current_book=current_book t=t %}
 

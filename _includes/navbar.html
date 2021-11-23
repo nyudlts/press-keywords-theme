@@ -44,7 +44,15 @@
         </div>
       </div>
 
-      <div class="order-first order-lg-2 col navbar-brand text-uppercase text-center">{{ site.title }}</div>
+      <div class="order-first order-lg-2 col navbar-brand text-uppercase text-center">
+        <span aria-hidden="true" class="h4 white">
+          {{ site.title }}
+
+          {% if current_book.layout == 'feature' %}
+            {{ current_modifier }}
+          {% endif %}
+        </span>
+      </div>
 
       <div class="order-lg-3 col text-right">
         <div class="nav-item">
