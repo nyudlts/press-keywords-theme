@@ -6,7 +6,7 @@
 
 <input type="checkbox" class="toggler invisible position-absolute" autocomplete="off" id="leftbar" name="leftbar" />
 <aside id="" class="toggled w-100 position-fixed top-0 left-0 d-flex flex-row">
-  <nav class="background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-sidebar py-5 px-4">
+  <nav class="background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
     <ul class="list-unstyled">
       <li>
         <a class="{{ main_link_class }}" href="{{ current_book.url | relative_url }}">{{ t.leftbar.home }}</a>
