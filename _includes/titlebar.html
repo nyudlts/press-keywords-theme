@@ -1,21 +1,29 @@
-<nav class="w-100vw py-3 d-flex flex-row justify-content-between background-{{ include.current_book.slug }}">
-  <label for="leftbar" class="mb-0"></label>
+<nav class="w-100vw py-3 background-{{ include.current_book.slug }} container-fluid">
+  <div class="row row-cols-md-3">
+    <div class="col order-md-0">
+      <label for="leftbar" class="mb-0"></label>
+    </div>
 
-  <h1 class="h5 text-uppercase white mb-0 text-center">
-    <span class="sr-only">
-      {{ site.title }}
+    <div class="col-12 col-md order-first order-md-1">
+      <h1 class="h5 text-uppercase white my-2 my-md-0 text-center">
+        <span class="sr-only">
+          {{ site.title }}
 
-      {% unless include.current_book.layout == 'book' %}
-        {{ include.current_modifier }}
-      {% endunless %}
-    </span>
+          {% unless include.current_book.layout == 'book' %}
+            {{ include.current_modifier }}
+          {% endunless %}
+        </span>
 
-    {% if include.current_book.layout == 'book' %}
-      {{ include.current_modifier }}
-    {% endif %}
+        {% if include.current_book.layout == 'book' %}
+          {{ include.current_modifier }}
+        {% endif %}
 
-    {{ include.current_book.title }}
-  </h1>
+        {{ include.current_book.title }}
+      </h1>
+    </div>
 
-  <label for="rightbar" class="mb-0"></label>
+    <div class="col order-md-2">
+      <label for="rightbar" class="mb-0"></label>
+    </div>
+  </div>
 </nav>
