@@ -38,8 +38,6 @@ person:
   by: 'by'
   about: 'about'
   bookmark: 'Permalink to'
-feature:
-  read: 'Read the Essays'
 search:
   label: 'Search for:'
   placeholder: 'Search...'

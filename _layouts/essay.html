@@ -5,12 +5,12 @@ layout: default
 
 <section id="content" role="main" class="container pt-50px pl-20px pr-20px">
   <article class="">
-    <header>
-      <h1 class="text-uppercase font-weight-bold {{ current_color }}">
+    <header class="mb-3">
+      <h1 class="h2 text-uppercase font-weight-bold {{ current_color }}">
         {{ page.title }}
       </h1>
 
-      <div class="text-uppercase font-weight-bold">
+      <div class="h6 text-uppercase font-weight-bold">
         {{ current_book.layout }}
 
         <a class="{{ current_color }}" href="{{ current_book.url | relative_url }}">
@@ -18,16 +18,15 @@ layout: default
         </a>
       </div>
 
-      <div class="text-uppercase font-weight-bold">
+      <div class="h6 text-uppercase font-weight-bold">
         {{ t.essay.by }}
 
         {% include people.html people=page.authors %}
       </div>
     </header>
 
-
     <div class="{{ content_color }}">
-      {% if page.availability == 'Print Essays' %}
+      {% if page.availability contains 'Print' or page.availability contains 'print' %}
         {{ page.excerpt | truncatewords: 200 }}
 
         <div class="text-uppercase font-weight-bold">
@@ -40,12 +39,12 @@ layout: default
 
     <footer class="text-uppercase font-weight-bold">
       {% if page.works_cited and page.works_cited != empty %}
-        <p><a class="{{ current_color }}" href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
+        <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
       {% elsif current_book.works_cited.works_cited != empty %}
-        <p><a class="{{ current_color }}" href="{{ current_book.works_cited.url | relative_url }}">{{ current_book.works_cited.title }}</a></p>
+        <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ current_book.works_cited.url | relative_url }}">{{ current_book.works_cited.title }}</a></p>
       {% endif %}
 
-      <p><a class="{{ current_color }}" href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
+      <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
     </footer>
   </article>
 </section>
