@@ -39,7 +39,7 @@
     {% endif %}
   </head>
   <body class="d-flex d-print-block flex-column justify-content-between align-items-center min-h-100vh">
-    {%- include_cached navbar.html -%}
+    {%- include_cached navbar.html cache_key=current_book -%}
 
     <main class="flex-grow-1">
       {{ content }}
