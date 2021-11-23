@@ -1,0 +1,61 @@
+{%- assign current_book = include.current_book -%}
+{%- assign availabilities = current_book.essays | group_by: 'availability' -%}
+{%- assign link_class = 'd-block white text-decoration-none mb-3' -%}
+{%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase' -%}
+{%- assign all_essays = include.t[current_book.layout].all_essays -%}
+
+<input type="checkbox" class="toggler invisible position-absolute" autocomplete="off" id="leftbar" name="leftbar" />
+<aside id="" class="toggled w-100 position-fixed top-0 left-0 d-flex flex-row">
+  <nav class="background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-sidebar py-5 px-4">
+    <ul class="list-unstyled">
+      <li>
+        <a class="{{ main_link_class }}" href="{{ current_book.url | relative_url }}">{{ t.leftbar.home }}</a>
+      </li>
+
+      {% if book.introduction %}
+        <li>
+          <a
+            class="{{ main_link_class }}"
+            href="{{ current_book.introduction.url | relative_url }}">
+            {{ book.introduction.title }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% for availability in availabilities %}
+        {% include_cached essays_list.html group=availability.name essays=availability.items link_class=link_class main_link_class=main_link_class %}
+      {% endfor %}
+
+      {% include_cached essays_list.html group=all_essays essays=current_book.essays link_class=link_class main_link_class=main_link_class %}
+
+      {% unless current_book.works_cited.works_cited == empty %}
+        <li>
+          <a
+            class="{{ main_link_class }}"
+            href="{{ current_book.works_cited.url | relative_url }}">{{ current_book.works_cited.title }}</a>
+        </li>
+      {% endunless %}
+
+      {% unless current_book.contributors.contributors == empty %}
+        <li>
+          <a
+            class="{{ main_link_class }}"
+            href="{{ current_book.contributors.url | relative_url }}">{{ current_book.contributors.title }}</a></li>
+      {% endunless %}
+
+      {% if current_book.acknowledgments %}
+        <li>
+          <a
+            class="{{ main_link_class }}"
+            href="{{ current_book.acknowledgments.url | relative_url }}">
+            {{ current_book.acknowledgments.title }}
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <label for="leftbar" class="d-block flex-grow-1 background-white-t2">
+    <span class="sr-only">{{ t.leftbar.close }}</span>
+  </label>
+</aside>

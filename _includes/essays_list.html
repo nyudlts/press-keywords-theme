@@ -1,0 +1,17 @@
+{% assign essays = include.essays | sort: 'title' %}
+
+<li>
+  <details>
+    <summary class="{{ include.main_link_class }}">{{ include.group }}</summary>
+
+    <ul class="list-unstyled">
+      {% for essay in essays %}
+        <li>
+          <a class="{{ include.link_class }}" href="{{ essay.url | relative_url }}">
+            {{ essay.title }}, <em>{% include people.html people=essay.authors plain=true %}</em>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </details>
+</li>

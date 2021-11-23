@@ -2,6 +2,9 @@ edit: 'Edited by'
 close: 'close'
 scroll_up: 'Back to Top'
 read_more: 'Read More...'
+leftbar:
+  home: Home
+  close: Close navigation bar
 by: 'by'
 print:
   title: 'Keywords'
@@ -9,9 +12,11 @@ print:
 feature:
   modifier: 'Now:'
   open_menu: 'Read the essays'
+  all_essays: 'Essays'
 book:
   modifier: 'for'
   open_menu: 'Read the essays'
+  all_essays: 'All Essays'
 contributor:
 default:
 essay:

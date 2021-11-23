@@ -5,12 +5,51 @@
 
     .border#{$infix}-thick { border-width: 4px !important; }
 
+    @each $direction in (top, right, bottom, left) {
+      .#{$direction}#{$infix}-0 { #{$direction}: 0 !important; }
+    }
+
+    $overflows: (auto, hidden, scroll);
+    $overflow-axis: (x, y);
+    @each $overflow in $overflows {
+      .overflow#{$infix}-#{$overflow} {
+        overflow: $overflow !important;
+      }
+
+      @each $axis in $overflow-axis {
+        .overflow-#{$axis}#{$infix}-#{$overflow} {
+          overflow-#{$axis}: $overflow !important;
+        }
+      }
+    }
+
     @each $color, $rgb in $colors {
       .background#{$infix}-#{$color} {
         background-color: $rgb !important;
 
         &:focus {
           background-color: $rgb !important;
+        }
+      }
+
+      @each $opacity, $degree in $opacities {
+        .background#{$infix}-#{$color}-t#{$opacity} {
+          background-color: scale-color($rgb, $alpha: $degree);
+        }
+      }
+
+      .scrollbar#{$infix}-#{$color} {
+        scrollbar-color: var(--#{$color}) transparent;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+          height: 8px;
+          background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: var(--#{$color});
         }
       }
 
@@ -72,17 +111,13 @@
   opacity: 0;
   position: absolute;
 
-  & + label {
-    & + .toggled {
-      z-index: 10;
-      visibility: hidden;
-    }
+  & + .toggled {
+    z-index: 10;
+    visibility: hidden;
   }
 
-  &:checked + label {
-    & + .toggled {
-      visibility: visible;
-    }
+  &:checked + .toggled {
+    visibility: visible;
   }
 
   & + label {

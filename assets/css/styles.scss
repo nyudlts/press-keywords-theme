@@ -30,7 +30,8 @@ $container-max-widths: (
 );
 
 $sizes: (
-  100vh: 100vh
+  100vh: 100vh,
+  sidebar: 21.25rem
 );
 
 /// These measurements were taken from the original design
@@ -42,6 +43,15 @@ $spacers: (
   "50px": 50px,
   "55px": 55px,
   "73px": 73px
+);
+
+$opacities: (
+  0: -100%,
+  1: -80%,
+  2: -60%,
+  3: -40%,
+  4: -20%,
+  5: 0%
 );
 
 /// Add new colors from books and features
