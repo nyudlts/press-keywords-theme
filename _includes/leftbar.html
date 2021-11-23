@@ -3,6 +3,7 @@
 {%- assign link_class = 'd-block white text-decoration-none mb-3' -%}
 {%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase' -%}
 {%- assign all_essays = include.t[current_book.layout].all_essays -%}
+{%- assign availabilities_names = availabilities | map: 'name' -%}
 
 <input type="checkbox" class="toggler invisible position-absolute" autocomplete="off" id="leftbar" name="leftbar" />
 <aside id="" class="toggled w-100 position-fixed top-0 left-0 d-flex flex-row">
@@ -26,7 +27,9 @@
         {% include_cached essays_list.html group=availability.name essays=availability.items link_class=link_class main_link_class=main_link_class %}
       {% endfor %}
 
-      {% include_cached essays_list.html group=all_essays essays=current_book.essays link_class=link_class main_link_class=main_link_class %}
+      {% unless availabilities_names contains all_essays %}
+        {% include_cached essays_list.html group=all_essays essays=current_book.essays link_class=link_class main_link_class=main_link_class %}
+      {% endunless %}
 
       {% unless current_book.works_cited.works_cited == empty %}
         <li>
