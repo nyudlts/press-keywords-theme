@@ -45,13 +45,13 @@
       </div>
 
       <div class="order-first order-lg-2 col navbar-brand text-uppercase text-center" aria-hidden="true">
-        <span class="h4 white mb-0">
+        <a href="{{ '/' | relative_url }}" class="h4 white mb-0 text-decoration-none">
           {{ site.title }}
 
           {% if current_book.layout == 'feature' %}
             {{ current_modifier }}
           {% endif %}
-        </span>
+        </a>
       </div>
 
       <div class="order-lg-3 col text-right">
