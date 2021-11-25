@@ -8,9 +8,11 @@ layout: default
 
 <section id="content" role="main" class="container p-50px background-white">
   <header>
-    <h1 class="text-center text-uppercase gray-dark">{{ site.title }}</h1>
+    <h1 class="f-6 text-center text-uppercase gray-dark">{{ site.title }}</h1>
 
-    {{ about.description | markdownify }}
+    <div class="content gray-dark">
+      {{ about.description | markdownify }}
+    </div>
 
     <a class="site" href="{{ about.url | relative_url }}">{{ t.home.read_more }}</a>
   </header>
@@ -29,7 +31,7 @@ layout: default
             class="stretched-link {{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
             {{ site.title }}
-            {{ t[current_book.layout].modifier }}
+            {{ t[book.layout].modifier }}
             {{ book.description | default: book.title }}
           </a>
         </h2>

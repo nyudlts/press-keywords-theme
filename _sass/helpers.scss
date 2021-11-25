@@ -9,6 +9,12 @@
       .#{$direction}#{$infix}-0 { #{$direction}: 0 !important; }
     }
 
+    @each $spacer, $length in $spacers {
+      .f#{$infix}-#{$spacer} {
+        font-size: $length !important;
+      }
+    }
+
     $overflows: (auto, hidden, scroll);
     $overflow-axis: (x, y);
     @each $overflow in $overflows {
