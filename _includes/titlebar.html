@@ -1,7 +1,7 @@
 <nav class="w-100vw py-3 background-{{ include.current_book.slug }} container-fluid">
   <div class="row row-cols-md-3">
     <div class="col order-md-0 text-left">
-      <label for="leftbar" class="mb-0 text-uppercase white h6 font-weight-bold">
+      <label for="leftbar" class="mb-0 text-uppercase white h6 mb-0 font-weight-bold">
         <i aria-hidden="true" class="fa fa-fw fa-bars mr-1"></i>
 
         {{ include.t.leftbar.title }}
@@ -11,7 +11,7 @@
     </div>
 
     <div class="col-12 col-md order-first order-md-1">
-      <h1 class="h5 text-uppercase white my-2 my-md-0 text-center">
+      <h1 class="h5 mb-0 text-uppercase white my-2 my-md-0 text-center">
         <span class="sr-only">
           {{ site.title }}
 
@@ -41,7 +41,7 @@
         </a>
       {% endif %}
 
-      <label for="rightbar" class="mb-0 text-uppercase white h6 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}">
+      <label for="rightbar" class="mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}">
         {{ include.t.rightbar.title }}
 
         <span class="sr-only">{{ include.t.rightbar.accessibility }}</span>
