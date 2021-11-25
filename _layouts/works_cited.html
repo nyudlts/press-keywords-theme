@@ -11,7 +11,7 @@ layout: default
   {% include_cached rightbar.html current_book=current_book t=t %}
 
   <header>
-    <h1 class="text-uppercase font-weight-bold {{ current_color }}">
+    <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
       {{ page.title }} {% if page.essay %}{{ t.works_cited.on }} {{ page.essay.title }}{% endif %}
     </h1>
   </header>
