@@ -1,10 +1,10 @@
 {%- assign current_book = include.current_book -%}
 {%- assign t = include.t -%}
-{%- assign item_class = 'breadcrumb-item h6 mb-0 font-weight-bold gray-dark' -%}
+{%- assign item_class = 'breadcrumb-item h6 mb-0 font-weight-bold gray-dark small' -%}
 
 <nav aria-label="{{ t.breadbar.title }}" class="w-100vw {% unless site.book_layouts contains page.layout %}background-gray-light{% endunless %}">
-  <div class="row row-cols-1 row-cols-md-2 no-gutters justify-content-between">
-    <ol class="breadcrumb text-uppercase">
+  <div class="d-flex flex-column flex-md-row justify-content-between">
+    <ol class="breadcrumb text-uppercase flex-grow-1">
       <li class="{{ item_class }}">
         <a href="{{ current_book.url }}" class="gray-dark text-decoration-none">{{ t.breadbar.home }}</a>
       </li>
@@ -23,7 +23,7 @@
       </li>
     </ol>
 
-    <div class="d-flex flex-row align-items-center justify-content-end pr-3">
+    <div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-3">
       {% for share in t.share.items %}
         {% include share.html share=share page=page current_color=include.current_color %}
       {% endfor %}
