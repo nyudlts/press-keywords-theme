@@ -10,6 +10,9 @@ leftbar:
 rightbar:
   title: Courses &#9654;
   link: Buy this book
+  close: Close navigation bar
+  contact: Contact
+  courses: In the Classroom
   accessibility: (Touch to open classroom materials)
 by: 'by'
 print:

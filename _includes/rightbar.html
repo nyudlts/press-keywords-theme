@@ -1,0 +1,36 @@
+{%- assign current_book = include.current_book -%}
+{%- assign link_class = 'd-block white text-decoration-none mb-3' -%}
+{%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase' -%}
+
+<input type="checkbox" class="toggler invisible position-absolute" autocomplete="off" id="rightbar" name="rightbar" />
+<aside class="toggled position-fixed top-0 right-0 d-flex flex-row w-100">
+  <label for="rightbar" class="d-block flex-grow-1 background-white-t2">
+    <span class="sr-only">{{ t.rightbar.close }}</span>
+  </label>
+
+  <nav class="background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
+    <ul class="list-unstyled">
+      {% if current_book.courses and current_book.courses != empty %}
+        <li class="">
+          <details>
+            <summary class="{{ main_link_class }}">{{ include.t.rightbar.courses }}</summary>
+
+            <ul class="list-unstyled">
+              {% for course in current_book.courses %}
+                <li class="">
+                  <a
+                    class="{{ link_class }}"
+                    href="{{ course.url | relative_url }}">{{ course.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+      {% endif %}
+
+      {% if current_book.contact %}
+        <li class=""><a class="{{ main_link_class }}" href="mailto:{{ current_book.contact }}">{{ include.t.rightbar.contact }}</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</aside>
