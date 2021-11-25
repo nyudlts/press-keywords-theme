@@ -6,7 +6,7 @@ layout: default
 {%- assign books = site.posts | where: 'layout', 'book' | sort: 'title' -%}
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
-<section id="content" role="main" class="container p-50px">
+<section id="content" role="main" class="container p-50px background-white">
   <header>
     <h1 class="text-center text-uppercase gray-dark">{{ site.title }}</h1>
 

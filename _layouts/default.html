@@ -41,7 +41,7 @@
   <body class="d-flex d-print-block flex-column justify-content-between align-items-center min-h-100vh">
     {%- include_cached navbar.html cache_key=current_book -%}
 
-    <main class="flex-grow-1">
+    <main class="flex-grow-1 w-100{% if site.book_layouts contains page.layout or page.layout == 'home' %} background-black{% endif %}">
       {{ content }}
     </main>
 
