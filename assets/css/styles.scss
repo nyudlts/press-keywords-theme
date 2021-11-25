@@ -89,35 +89,11 @@ $theme-colors: (
 /// Since the content HTML comes from Markdown, we need to define their
 /// their style inside a .content.
 {% for book in books %}
-.content-{{ book.slug }} {
-  mark {
-    background-color: {{ feature.color }} !important;
-  }
-
-  a {
-    color: {{ book.color }} !important;
-  }
-}
+  {% include content.scss page=book %}
 {% endfor %}
 {% for feature in features %}
-.content-{{ feature.slug }} {
-  mark {
-    background-color: {{ feature.color }} !important;
-  }
-
-  a {
-    color: {{ feature.color }} !important;
-    font-weight: bold;
-  }
-}
+  {% include content.scss page=feature %}
 {% endfor %}
-
-// Links in works cited need break lines, since they can be really long
-.work-cited {
-  a {
-    word-break: break-all;
-  }
-}
 
 // https://fonts.googleapis.com/css?family=Open+Sans:300,700
 @font-face {
@@ -126,6 +102,7 @@ $theme-colors: (
   font-weight: 300;
   src: url(../fonts/opensans/v20/mem5YaGs126MiZpBA-UN_r8OUuhs-subset.woff2) format('woff2');
 }
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
