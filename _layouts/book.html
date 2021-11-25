@@ -2,7 +2,6 @@
 layout: default
 ---
 {%- include global_variables.html -%}
-
 {% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
 {% include breadbar.html current_book=current_book t=t current_color=current_color %}
 
@@ -12,18 +11,19 @@ layout: default
 
   <article class="pt-45px">
     <header>
-      <h1 class="text-center text-uppercase font-weight-bold {{ current_color }}">
-        <span class="f-6">{{ site.title }} {{ current_site_modifier }}</span>
-        <span>{{ current_page_modifier }} {{ page.description | default: page.title }}</span>
+      <h1 class="text-center text-uppercase {{ current_color }}">
+        <span class="f-6">{{ site.title }} {{ current_site_modifier | remove: ':' }}</span>
+        <br/>
+        <span class="f-4 font-weight-bold">{{ current_page_modifier }} {{ page.description | default: page.title }}</span>
       </h1>
 
-      <h2 class="text-center text-uppercase mb-3 font-weight-bold">
+      <p class="h6 text-center text-uppercase mb-3 font-weight-bold">
         {{ t.edit }}
         {% include people.html people=page.editors %}
-      </h2>
+      </p>
     </header>
 
-    <div class="{{ content_color }}">
+    <div class="gray-dark {{ content_color }}">
       {{ content }}
     </div>
 
@@ -35,7 +35,7 @@ layout: default
       {% endif %}
 
       <div class="text-center text-uppercase mt-1">
-        <label for="leftbar" itemprop="menu" class="btn btn-{{ current_color }}">
+        <label for="leftbar" itemprop="menu" class="btn btn-{{ current_color }} h6 m-0 font-weight-bold">
           {{ t.book.open_menu }}
         </label>
       </div>
