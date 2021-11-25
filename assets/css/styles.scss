@@ -30,6 +30,7 @@ $breadcrumb-divider-color: $gray-800;
 $breadcrumb-active-color: $gray-800;
 $breadcrumb-divider: "{{ t.breadbar.separator }}";
 $breadcrumb-item-padding: 10px;
+$navbar-height: 32px;
 
 $container-max-widths: (
   lg: 820px,
@@ -44,6 +45,7 @@ $sizes: (
 
 /// These measurements were taken from the original design
 $spacers: (
+  0: 0,
   "10px": 10px,
   "20px": 20px,
   "24px": 24px,
@@ -51,7 +53,8 @@ $spacers: (
   "50px": 50px,
   "55px": 55px,
   "73px": 73px,
-  6: 4.5rem
+  6: 4.5rem,
+  navbar: $navbar-height
 );
 
 $opacities: (

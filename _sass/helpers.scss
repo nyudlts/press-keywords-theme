@@ -5,13 +5,13 @@
 
     .border#{$infix}-thick { border-width: 4px !important; }
 
-    @each $direction in (top, right, bottom, left) {
-      .#{$direction}#{$infix}-0 { #{$direction}: 0 !important; }
-    }
-
     @each $spacer, $length in $spacers {
       .f#{$infix}-#{$spacer} {
         font-size: $length !important;
+      }
+
+      @each $direction in (top, right, bottom, left) {
+        .#{$direction}#{$infix}-#{$spacer} { #{$direction}: $length !important; }
       }
     }
 
