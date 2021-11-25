@@ -3,7 +3,15 @@ layout: default
 ---
 {%- include global_variables.html -%}
 
+{% if current_book %}
+  {% include_cached titlebar.html current_book=current_book current_modifier=current_modifier t=t %}
+{% endif %}
+
 <section id="content" role="main" class="container pt-50px pl-20px pr-20px">
+  {% if current_book %}
+    {% include_cached leftbar.html current_book=current_book t=t %}
+  {% endif %}
+
   <article class="">
     <header>
       <h1 class="text-uppercase font-weight-bold {{ current_color }}">{{ page.title }}</h1>

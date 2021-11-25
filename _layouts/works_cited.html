@@ -3,8 +3,11 @@ layout: default
 ---
 
 {%- include global_variables.html -%}
+{% include_cached titlebar.html current_book=current_book current_modifier=current_modifier t=t %}
 
 <section id="content" role="main" class="container pt-50px pl-20px pr-20px">
+  {% include_cached leftbar.html current_book=current_book t=t %}
+
   <header>
     <h1 class="text-uppercase font-weight-bold {{ current_color }}">
       {{ page.title }} {% if page.essay %}{{ t.works_cited.on }} {{ page.essay.title }}{% endif %}
