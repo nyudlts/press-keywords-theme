@@ -2,23 +2,31 @@
 {%- assign t = include.t -%}
 {%- assign item_class = 'breadcrumb-item h6 mb-0 font-weight-bold gray-dark' -%}
 
-<nav aria-label="{{ t.breadbar.title }}" class="w-100vw background-gray-light">
-  <ol class="breadcrumb text-uppercase">
-    <li class="{{ item_class }}">
-      <a href="{{ current_book.url }}" class="gray-dark text-decoration-none">{{ t.breadbar.home }}</a>
-    </li>
-
-    {% comment %}
-      Add a section with the layout name to add an intermediate section.
-    {% endcomment %}
-    {% if t.breadbar.sections[page.layout] %}
+<nav aria-label="{{ t.breadbar.title }}" class="w-100vw {% unless site.book_layouts contains page.layout %}background-gray-light{% endunless %}">
+  <div class="row row-cols-1 row-cols-md-2 no-gutters justify-content-between">
+    <ol class="breadcrumb text-uppercase">
       <li class="{{ item_class }}">
-        {{ t.breadbar.sections[page.layout] }}
+        <a href="{{ current_book.url }}" class="gray-dark text-decoration-none">{{ t.breadbar.home }}</a>
       </li>
-    {% endif %}
 
-    <li class="{{ item_class }}" aria-current="page">
-      {{ page.title }}
-    </li>
-  </ol>
+      {% comment %}
+        Add a section with the layout name to add an intermediate section.
+      {% endcomment %}
+      {% if t.breadbar.sections[page.layout] %}
+        <li class="{{ item_class }}">
+          {{ t.breadbar.sections[page.layout] }}
+        </li>
+      {% endif %}
+
+      <li class="{{ item_class }}" aria-current="page">
+        {{ page.title }}
+      </li>
+    </ol>
+
+    <div class="d-flex flex-row align-items-center justify-content-end pr-3">
+      {% for share in t.share.items %}
+        {% include share.html share=share page=page current_color=include.current_color %}
+      {% endfor %}
+    </div>
+  </div>
 </nav>

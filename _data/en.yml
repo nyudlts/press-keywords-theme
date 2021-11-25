@@ -81,3 +81,17 @@ navbar:
   book: 'Books'
   feature: 'Keywords Now'
   search: 'Search'
+share:
+  items:
+  - title: Share this page on Facebook
+    url: "https://www.facebook.com/sharer/sharer.php?u=%url&amp;t=%title%0A%0A%description"
+    icon: facebook
+  - title: Share this page on Twitter
+    url: "https://twitter.com/intent/tweet?url=%url&amp;text=%title%0A%0A%description&amp;hashtags=%tags"
+    icon: twitter
+  - title: Share this page on Google Plus
+    url: "https://plus.google.com/share?url=%url"
+    icon: google-plus
+  - title: Email this page
+    url: "mailto:?subject=%title&amp;body=%description%0A%0A%url"
+    icon: envelope

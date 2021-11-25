@@ -10,3 +10,4 @@ f002 search
 f07a shopping-cart
 f0c9 bars
 f105 angle-right
+f0e0 envelope
