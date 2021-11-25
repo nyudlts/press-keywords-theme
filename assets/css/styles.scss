@@ -4,6 +4,7 @@
 
 {% assign books = site.posts | where: 'layout', 'book' %}
 {% assign features = site.posts | where: 'layout', 'feature' %}
+{%- assign t = site.data[site.lang] -%}
 
 .home #content {
   background-image: url("{{ '/wp-content/themes/nyukeywords/images/default_bg.jpg' | relative_url }}");
@@ -23,6 +24,12 @@ $navbar-padding-y: 5px;
 $navbar-padding-x: 5px;
 $nav-link-padding-y: 0;
 $nav-link-padding-x: 2rem;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-bg: transparent;
+$breadcrumb-divider-color: $gray-800;
+$breadcrumb-active-color: $gray-800;
+$breadcrumb-divider: "{{ t.breadbar.separator }}";
+$breadcrumb-item-padding: 10px;
 
 $container-max-widths: (
   lg: 820px,
@@ -132,3 +139,16 @@ $theme-colors: (
 p {
   margin-bottom: 2rem;
 }
+
+{% comment %}
+If the separator is a ForkAwesome icon, define it as one.
+{% endcomment %}
+{% if t.breadbar.fa_separator %}
+  .breadcrumb-item {
+    + .breadcrumb-item {
+      &::before {
+        @include fa-icon();
+      }
+    }
+  }
+{% endif %}

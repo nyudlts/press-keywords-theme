@@ -14,6 +14,13 @@ rightbar:
   contact: Contact
   courses: In the Classroom
   accessibility: (Touch to open classroom materials)
+breadbar:
+  separator: "\\f105"
+  fa_separator: true
+  title: Your current location on this site and social sharing
+  home: Home
+  sections:
+    essay: Essays
 by: 'by'
 print:
   title: 'Keywords'

@@ -1,0 +1,24 @@
+{%- assign current_book = include.current_book -%}
+{%- assign t = include.t -%}
+{%- assign item_class = 'breadcrumb-item h6 mb-0 font-weight-bold gray-dark' -%}
+
+<nav aria-label="{{ t.breadbar.title }}" class="w-100vw background-gray-light">
+  <ol class="breadcrumb text-uppercase">
+    <li class="{{ item_class }}">
+      <a href="{{ current_book.url }}" class="gray-dark text-decoration-none">{{ t.breadbar.home }}</a>
+    </li>
+
+    {% comment %}
+      Add a section with the layout name to add an intermediate section.
+    {% endcomment %}
+    {% if t.breadbar.sections[page.layout] %}
+      <li class="{{ item_class }}">
+        {{ t.breadbar.sections[page.layout] }}
+      </li>
+    {% endif %}
+
+    <li class="{{ item_class }}" aria-current="page">
+      {{ page.title }}
+    </li>
+  </ol>
+</nav>
