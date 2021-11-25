@@ -47,10 +47,7 @@
       <div class="order-first order-lg-2 col navbar-brand text-uppercase text-center" aria-hidden="true">
         <a href="{{ '/' | relative_url }}" class="h4 white mb-0 text-decoration-none">
           {{ site.title }}
-
-          {% if current_book.layout == 'feature' %}
-            {{ current_modifier }}
-          {% endif %}
+          {{ current_site_modifier | remove: ':' }}
         </a>
       </div>
 
@@ -137,7 +134,9 @@
                               <label
                                 class="custom-control-label"
                                 for="searchsites-{{ post.slug }}">
-                                {{- site.title }} {{ t[layout].modifier }} {{ post.title -}}
+                                {{- site.title }}
+                                {{ t[layout].modifier_included_in_site_title | default: t[layout].modifier_included_in_page_title }}
+                                {{ post.title -}}
                               </label>
                             </div>
                           </li>

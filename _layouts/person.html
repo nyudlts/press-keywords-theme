@@ -38,7 +38,7 @@ layout: default
 
             <a class="{{ post.book.slug }}" href="{{ post.book.url | relative_url }}">
               {{ site.title }}
-              {{ t[post.book.layout].modifier }}
+              {{ t[post.book.layout].modifier_included_in_site_title | default: t[post.book.layout].modifier_included_in_page_title }}
               {{ post.book.title }}
             </a>
           </div>

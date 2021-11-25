@@ -31,7 +31,7 @@ layout: default
             class="stretched-link {{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
             {{ site.title }}
-            {{ t[book.layout].modifier }}
+            {{ t[book.layout].modifier_included_in_site_title | default: t[book.layout].modifier_included_in_page_title }}
             {{ book.description | default: book.title }}
           </a>
         </h2>

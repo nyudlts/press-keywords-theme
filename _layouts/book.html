@@ -3,7 +3,7 @@ layout: default
 ---
 {%- include global_variables.html -%}
 
-{% include_cached titlebar.html current_book=current_book current_modifier=current_modifier t=t %}
+{% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
 {% include breadbar.html current_book=current_book t=t current_color=current_color %}
 
 <section id="content" role="main" class="container p-50px background-white my-5">
@@ -13,8 +13,8 @@ layout: default
   <article class="pt-45px">
     <header>
       <h1 class="text-center text-uppercase font-weight-bold {{ current_color }}">
-        <span class="">{{ site.title }}</span>
-        <span>{{ current_modifier }} {{ page.description | default: page.title }}</span>
+        <span class="f-6">{{ site.title }} {{ current_site_modifier }}</span>
+        <span>{{ current_page_modifier }} {{ page.description | default: page.title }}</span>
       </h1>
 
       <h2 class="text-center text-uppercase mb-3 font-weight-bold">

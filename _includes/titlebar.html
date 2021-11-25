@@ -14,15 +14,10 @@
       <h1 class="h5 mb-0 text-uppercase white my-2 my-md-0 text-center">
         <span class="sr-only">
           {{ site.title }}
-
-          {% unless include.current_book.layout == 'book' %}
-            {{ include.current_modifier }}
-          {% endunless %}
+          {{ include.current_site_modifier }}
         </span>
 
-        {% if include.current_book.layout == 'book' %}
-          {{ include.current_modifier }}
-        {% endif %}
+        {{ include.current_page_modifier }}
 
         {{ include.current_book.title }}
       </h1>

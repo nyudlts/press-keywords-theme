@@ -23,6 +23,7 @@
 {%- endcomment -%}
 {%- assign current_color = current_book.slug | default: 'site' -%}
 {%- assign content_color = current_color | prepend: 'content-' -%}
-{%- assign current_modifier = t[current_book.layout].modifier -%}
+{%- assign current_site_modifier = t[current_book.layout].modifier_included_in_site_title -%}
+{%- assign current_page_modifier = t[current_book.layout].modifier_included_in_page_title -%}
 {%- assign current_series = site.title | append: ' ' | append: current_modifier -%}
 {%- assign current_title = current_book.title | prepend: ' ' | prepend: current_series -%}
