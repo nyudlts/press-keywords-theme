@@ -10,7 +10,7 @@
       The content is hidden for screen readers so because the titlebar
       contains the full book title.
     {% endcomment %}
-    <div class="w-100 position-md-absolute navbar-brand text-uppercase text-center" aria-hidden="true">
+    <div class="w-100 position-md-absolute navbar-brand text-uppercase text-center pointer-event-none" aria-hidden="true">
       <a href="{{ '/' | relative_url }}" class="h4 white mb-0 text-decoration-none">
         {{ site.title }}
         {{ current_site_modifier | remove: ':' }}

@@ -16,6 +16,12 @@
       }
     }
 
+    @each $event in (none, auto) {
+      .pointer-event#{$infix}-#{$event} {
+        pointer-events: $event;
+      }
+    }
+
     @each $position in $positions {
       .position#{$infix}-#{$position} { position: $position !important; }
     }
