@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+{%- include global_variables.html -%}
+
+{% if current_book %}
+  {% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
+{% endif %}
+
+{% include breadbar.html current_book=current_book t=t current_color=current_color %}
+
+<section tabindex="-1" id="content" role="main" class="container pt-50px pl-20px pr-20px">
+  {% if current_book %}
+    {% include_cached leftbar.html current_book=current_book t=t %}
+    {% include_cached rightbar.html current_book=current_book t=t %}
+  {% endif %}
+
+  {{ content }}
+</section>
