@@ -15,6 +15,10 @@
       }
     }
 
+    @each $position in $positions {
+      .position#{$infix}-#{$position} { position: $position !important; }
+    }
+
     $overflows: (auto, hidden, scroll);
     $overflow-axis: (x, y);
     @each $overflow in $overflows {
