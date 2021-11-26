@@ -10,76 +10,67 @@
   data-search-data-value="{{ '/data.json' | relative_url }}"
   data-search-index-value="{{ '/idx.json' | relative_url }}">
 
-  <div class="d-flex flex-row justify-content-between align-items-center">
-    <div class="form-group mb-0">
-      <label id="label-s" class="sr-only" for="s">{{ t.search.label }}</label>
-      <input type="text" class="form-control" name="s" id="s" placeholder="{{ t.search.placeholder }}" aria-labeledby="label-s" data-search-target="q" />
-    </div>
+  <div class="d-flex flex-row justify-content-between align-items-start">
+    <div>
+      <div class="d-flex flex-row justify-content-between align-items-center">
+        <div class="form-group mb-0 flex-grow-1 pr-2">
+          <label id="label-s" class="sr-only" for="s">{{ t.search.label }}</label>
+          <input type="text" class="form-control" name="s" id="s" placeholder="{{ t.search.placeholder }}" aria-labeledby="label-s" data-search-target="q" />
+        </div>
 
-    <div class="form-group mb-0">
-      <label for="filter-toggler" id="filter-label" class="form-control mb-0">
-        <small>{{ t.search.select }}</small>
-      </label>
+        <div class="form-group mb-0">
+          <label for="filter-toggler" id="filter-label" class="form-control mb-0">
+            <small>{{ t.search.select }}</small>
+          </label>
+        </div>
+      </div>
+
+      <input type="checkbox" class="toggler sr-only" id="filter-toggler" aria-labeledby="filter-label"/>
+      <ul class="toggled list-unstyled p-3 background-white mb-0">
+        <li>
+          <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" type="checkbox" id="searchlimit" name="searchlimit" data-action="search#all" data-name="cc_gs_sites[]" checked />
+            <label class="custom-control-label" for="searchlimit">{{- t.search.all -}}</label>
+          </div>
+        </li>
+
+        {% for layout in site.book_layouts -%}
+          {% assign posts = site.posts | where: 'layout', layout %}
+          {% if posts == empty %}{% continue %}{% endif %}
+
+          {% for post in posts %}
+            <li>
+              <div class="custom-control custom-checkbox">
+                <input
+                  class="custom-control-input" 
+                  data-action="search#some"
+                  data-name="searchlimit"
+                  type="checkbox"
+                  name="cc_gs_sites[]"
+                  id="searchsites-{{ post.slug }}"
+                  value="{{ post.slug }}"
+                  checked />
+                <label class="custom-control-label" for="searchsites-{{ post.slug }}">
+                  {{- site.title }}
+                  {{ t[layout].modifier_included_in_site_title | default: t[layout].modifier_included_in_page_title }}
+                  {{ post.title -}}
+                </label>
+              </div>
+            </li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
     </div>
 
     <div>
-      <button class="border-0 background-gray-dark" type="submit">
+      <button class="btn border-0 background-gray-dark" type="submit">
         <span class="h6 text-decoration-underline white">{{ t.search.submit }}</span>
       </button>
     </div>
   </div>
 
-  <input type="checkbox" class="toggler sr-only" id="filter-toggler" aria-labeledby="filter-label"/>
-  <ul class="toggled list-unstyled p-3 background-white">
-    <li>
-      <div class="custom-control custom-checkbox">
-        <input
-          class="custom-control-input"
-          type="checkbox"
-          id="searchlimit"
-          name="searchlimit"
-          data-action="search#all"
-          data-name="cc_gs_sites[]"
-          checked />
-        <label
-          class="custom-control-label"
-          for="searchlimit">
-          {{- t.search.all -}}
-        </label>
-      </div>
-    </li>
-
-    {% for layout in site.book_layouts -%}
-      {% assign posts = site.posts | where: 'layout', layout %}
-      {% if posts == empty %}{% continue %}{% endif %}
-
-      {% for post in posts %}
-        <li>
-          <div class="custom-control custom-checkbox">
-            <input
-              class="custom-control-input" 
-              data-action="search#some"
-              data-name="searchlimit"
-              type="checkbox"
-              name="cc_gs_sites[]"
-              id="searchsites-{{ post.slug }}"
-              value="{{ post.slug }}"
-              checked />
-            <label
-              class="custom-control-label"
-              for="searchsites-{{ post.slug }}">
-              {{- site.title }}
-              {{ t[layout].modifier_included_in_site_title | default: t[layout].modifier_included_in_page_title }}
-              {{ post.title -}}
-            </label>
-          </div>
-        </li>
-      {% endfor %}
-    {% endfor %}
-  </ul>
-
-  <ul class="list-unstyled">
-    <li>
+  <div class="d-flex flex-column flex-md-row">
+    <div class="py-2 pr-2">
       <div class="custom-control custom-checkbox">
         <input
           class="custom-control-input"
@@ -94,8 +85,9 @@
           <span class="white">{{ t.search.everything }}</span>
         </label>
       </div>
-    </li>
-    <li>
+    </div>
+
+    <div class="p-2">
       <div class="custom-control custom-checkbox">
         <input
           class="custom-control-input"
@@ -107,6 +99,6 @@
           <span class="white">{{ t.search.essays }}</span>
         </label>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 </form>
