@@ -20,6 +20,13 @@
       .position#{$infix}-#{$position} { position: $position !important; }
     }
 
+    .h1#{$infix} { @include font-size($h1-font-size); }
+    .h2#{$infix} { @include font-size($h2-font-size); }
+    .h3#{$infix} { @include font-size($h3-font-size); }
+    .h4#{$infix} { @include font-size($h4-font-size); }
+    .h5#{$infix} { @include font-size($h5-font-size); }
+    .h6#{$infix} { @include font-size($h6-font-size); }
+
     $overflows: (auto, hidden, scroll);
     $overflow-axis: (x, y);
     @each $overflow in $overflows {
