@@ -2,11 +2,26 @@
 
 <div class="w-100">
   <nav class="navbar navbar-dark navbar-expand-lg background-gray-dark d-flex flex-wrap flex-md-nowrap justify-content-between">
+    {% comment %}
+      XXX: Starting from medium screens this element is absolutely
+      positioned so it's always centered even if the left dropdown menu
+      grows.
+
+      The content is hidden for screen readers so because the titlebar
+      contains the full book title.
+    {% endcomment %}
+    <div class="w-100 position-md-absolute navbar-brand text-uppercase text-center" aria-hidden="true">
+      <a href="{{ '/' | relative_url }}" class="h4 white mb-0 text-decoration-none">
+        {{ site.title }}
+        {{ current_site_modifier | remove: ':' }}
+      </a>
+    </div>
+
     <button class="navbar-toggler" type="button" aria-label="{{ t.navbar.label }}">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="order-lg-1 collapse navbar-collapse">
+    <div class="collapse navbar-collapse">
       <div class="navbar-nav d-flex align-items-center">
         <div class="nav-item w-100 w-lg-auto">
           <a class="nav-link text-uppercase font-weight-bold h6 mb-0 white" href="{{ '/' | relative_url }}">
@@ -43,40 +58,23 @@
       </div>
     </div>
 
-    {% comment %}
-      XXX: Starting from medium screens this element is absolutely
-      positioned so it's always centered even if the left dropdown menu
-      grows.
+    <div class="nav-item">
+      <div class="nav-link text-right">
+        <label
+          class="white text-uppercase font-weight-bold h6 mb-0"
+          for="search-toggler"
+          id="search-label">
+          {{ t.navbar.search }}
+          <i class="fa fa-fw fa-search" aria-hidden="true"></i>
+        </label>
 
-      The content is hidden for screen readers so because the titlebar
-      contains the full book title.
-    {% endcomment %}
-    <div class="w-100 position-md-absolute order-first order-lg-2 navbar-brand text-uppercase text-center" aria-hidden="true">
-      <a href="{{ '/' | relative_url }}" class="h4 white mb-0 text-decoration-none">
-        {{ site.title }}
-        {{ current_site_modifier | remove: ':' }}
-      </a>
-    </div>
-
-    <div class="order-lg-3">
-      <div class="nav-item">
-        <div class="nav-link text-right">
-          <label
-            class="white text-uppercase font-weight-bold h6 mb-0"
-            for="search-toggler"
-            id="search-label">
-            {{ t.navbar.search }}
-            <i class="fa fa-fw fa-search" aria-hidden="true"></i>
+        <input type="checkbox" name="search-toggler" id="search-toggler" class="toggler sr-only" />
+        <div class="toggled">
+          <label class="background-white-t2 position-fixed top-0 left-0 h-100vh w-100vw" for="search-toggler">
           </label>
 
-          <input type="checkbox" name="search-toggler" id="search-toggler" class="toggler sr-only" />
-          <div class="toggled">
-            <label class="background-white-t2 position-fixed top-0 left-0 h-100vh w-100vw" for="search-toggler">
-            </label>
-
-            <div class="text-left background-gray-dark p-3 position-fixed top-navbar right-0" aria-labeledby="dropdown-search">
-              {% include_cached search.html t=t %}
-            </div>
+          <div class="text-left background-gray-dark p-3 position-fixed top-navbar right-0" aria-labeledby="dropdown-search">
+            {% include_cached search.html t=t %}
           </div>
         </div>
       </div>
