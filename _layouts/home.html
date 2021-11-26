@@ -8,7 +8,7 @@ layout: default
 
 <section id="content" role="main" class="container p-50px background-white my-5">
   <header>
-    <h1 class="f-6 text-center text-uppercase gray-dark">{{ site.title }}</h1>
+    <h1 class="f-md-6 text-center text-uppercase gray-dark">{{ site.title }}</h1>
 
     <div class="content gray-dark">
       {{ about.description | markdownify }}
@@ -18,14 +18,16 @@ layout: default
   </header>
 
   {% for book in books %}
-    <article id="{{ book.slug }}" class="position-relative d-flex flex-row pt-20px pb-55px">
-      <img
-        src="{{ book.image | thumbnail: 200 }}"
-        loading="lazy"
-        width="200"
-        alt="{{ t.home.cover_alt }} {{ book.title }}" />
+    <article id="{{ book.slug }}" class="position-relative d-flex flex-column flex-md-row pt-20px pb-55px">
+      <div class="text-center">
+        <img
+          src="{{ book.image | thumbnail: 200 }}"
+          loading="lazy"
+          width="200"
+          alt="{{ t.home.cover_alt }} {{ book.title }}" />
+      </div>
 
-      <header class="pl-50px pt-10px">
+      <header class="pl-md-50px pt-10px">
         <h1 class="text-uppercase font-weight-bold h4">
           <a
             class="stretched-link {{ book.slug }} text-decoration-none"
