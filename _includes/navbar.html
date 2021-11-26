@@ -51,9 +51,9 @@
         </a>
       </div>
 
-      <div class="order-lg-3 col text-right">
+      <div class="order-lg-3 col">
         <div class="nav-item">
-          <div class="nav-link">
+          <div class="nav-link text-right">
             <label
               class="white text-uppercase font-weight-bold h6 mb-0"
               for="search-toggler"
@@ -63,7 +63,7 @@
             </label>
 
             <input type="checkbox" name="search-toggler" id="search-toggler" class="toggler sr-only" />
-            <div class="toggled background-gray-dark p-3 position-fixed top-navbar right-0" aria-labeledby="dropdown-search">
+            <div class="text-left toggled background-gray-dark p-3 position-fixed top-navbar right-0" aria-labeledby="dropdown-search">
               {% include_cached search.html t=t %}
             </div>
           </div>
