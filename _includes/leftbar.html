@@ -13,12 +13,12 @@
         <a class="{{ main_link_class }}" href="{{ current_book.url | relative_url }}">{{ t.leftbar.home }}</a>
       </li>
 
-      {% if book.introduction %}
+      {% if current_book.introduction %}
         <li>
           <a
             class="{{ main_link_class }}"
             href="{{ current_book.introduction.url | relative_url }}">
-            {{ book.introduction.title }}
+            {{ current_book.introduction.title }}
           </a>
         </li>
       {% endif %}
