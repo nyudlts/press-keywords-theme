@@ -6,10 +6,6 @@
 {% assign features = site.posts | where: 'layout', 'feature' %}
 {%- assign t = site.data[site.lang] -%}
 
-.home #content {
-  background-image: url("{{ '/wp-content/themes/nyukeywords/images/default_bg.jpg' | relative_url }}");
-}
-
 /// Redefine variables from node_modules/bootstrap/scss/_variables.scss
 $gray-100: #efefef;
 $gray-600: #f3f3f3;
@@ -120,8 +116,16 @@ $theme-colors: (
 @import "fork-awesome/scss/fork-awesome";
 @import "helpers";
 
+// XXX: Sometimes we don't need a full helper
 p {
   margin-bottom: 2rem;
+}
+
+.background-tools {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("{{ '/assets/images/tools.jpg' | relative_url }}");
 }
 
 {% comment %}
