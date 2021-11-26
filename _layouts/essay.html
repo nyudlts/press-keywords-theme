@@ -1,56 +1,47 @@
 ---
-layout: default
+layout: section
 ---
-{%- include global_variables.html -%}
 
-{% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
-{% include breadbar.html current_book=current_book t=t current_color=current_color %}
+<article class="">
+  <header class="mb-3">
+    <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
+      {{ page.title }}
+    </h1>
 
-<section id="content" role="main" class="container pt-50px pl-20px pr-20px">
-  {% include_cached leftbar.html current_book=current_book t=t %}
-  {% include_cached rightbar.html current_book=current_book t=t %}
+    <div class="h6 text-uppercase font-weight-bold">
+      {{ current_book.layout }}
 
-  <article class="">
-    <header class="mb-3">
-      <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
-        {{ page.title }}
-      </h1>
-
-      <div class="h6 text-uppercase font-weight-bold">
-        {{ current_book.layout }}
-
-        <a class="{{ current_color }}" href="{{ current_book.url | relative_url }}">
-          {{ current_title }}
-        </a>
-      </div>
-
-      <div class="h6 text-uppercase font-weight-bold">
-        {{ t.essay.by }}
-
-        {% include people.html people=page.authors %}
-      </div>
-    </header>
-
-    <div class="{{ content_color }}">
-      {% if page.availability contains 'Print' or page.availability contains 'print' %}
-        {{ page.excerpt | truncatewords: 200 }}
-
-        <div class="text-uppercase font-weight-bold">
-          <p>{{ t.essay.page_found }} {{ page.page }} {{ t.essay.printed_volume }}</p>
-        </div>
-      {% else %}
-        {{ content }}
-      {% endif %}
+      <a class="{{ current_color }}" href="{{ current_book.url | relative_url }}">
+        {{ current_title }}
+      </a>
     </div>
 
-    <footer class="text-uppercase font-weight-bold">
-      {% if page.works_cited and page.works_cited != empty %}
-        <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
-      {% elsif current_book.works_cited.works_cited != empty %}
-        <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ current_book.works_cited.url | relative_url }}">{{ current_book.works_cited.title }}</a></p>
-      {% endif %}
+    <div class="h6 text-uppercase font-weight-bold">
+      {{ t.essay.by }}
 
-      <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
-    </footer>
-  </article>
-</section>
+      {% include people.html people=page.authors %}
+    </div>
+  </header>
+
+  <div class="{{ content_color }}">
+    {% if page.availability contains 'Print' or page.availability contains 'print' %}
+      {{ page.excerpt | truncatewords: 200 }}
+
+      <div class="text-uppercase font-weight-bold">
+        <p>{{ t.essay.page_found }} {{ page.page }} {{ t.essay.printed_volume }}</p>
+      </div>
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+
+  <footer class="text-uppercase font-weight-bold">
+    {% if page.works_cited and page.works_cited != empty %}
+      <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
+    {% elsif current_book.works_cited.works_cited != empty %}
+      <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ current_book.works_cited.url | relative_url }}">{{ current_book.works_cited.title }}</a></p>
+    {% endif %}
+
+    <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
+  </footer>
+</article>

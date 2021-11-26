@@ -8,7 +8,7 @@ layout: default
 {% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
 {% include breadbar.html current_book=current_book t=t current_color=current_color %}
 
-<section id="content" role="main" class="container p-50px background-white my-5">
+<section tabindex="-1" id="content" role="main" class="container p-50px background-white my-5">
   {% include_cached leftbar.html current_book=current_book t=t %}
   {% include_cached rightbar.html current_book=current_book t=t %}
 

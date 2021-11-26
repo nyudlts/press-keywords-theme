@@ -1,44 +1,35 @@
 ---
-layout: default
+layout: content
 ---
 
-{%- include global_variables.html -%}
-{% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
-{% include breadbar.html current_book=current_book t=t current_color=current_color %}
+<header>
+  <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
+    {{ page.title }} {% if page.essay %}{{ t.works_cited.on }} {{ page.essay.title }}{% endif %}
+  </h1>
+</header>
 
-<section id="content" role="main" class="container pt-50px pl-20px pr-20px">
-  {% include_cached leftbar.html current_book=current_book t=t %}
-  {% include_cached rightbar.html current_book=current_book t=t %}
+{% if page.essay %}
+  <p>
+    <a
+      href="{{ page.essay.book.works_cited.url | relative_url }}"
+      class="{{ current_book }}">
+      {{ t.works_cited.index_cited }}
 
-  <header>
-    <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
-      {{ page.title }} {% if page.essay %}{{ t.works_cited.on }} {{ page.essay.title }}{% endif %}
-    </h1>
-  </header>
+      <em>
+        {{ site.title }}
+        {{ current_site_modifier | default: current_page_modifier }}
+        {{ page.essay.book.title }}
+      </em>
+    </a>
+  </p>
 
-  {% if page.essay %}
-    <p>
-      <a
-        href="{{ page.essay.book.works_cited.url | relative_url }}"
-        class="{{ current_book }}">
-        {{ t.works_cited.index_cited }}
+  {% assign works_cited = page.works_cited | sort: 'slug' %}
+{% else %}
+  {% assign works_cited = page.works_cited %}
+{% endif %}
 
-        <em>
-          {{ site.title }}
-          {{ current_site_modifier | default: current_page_modifier }}
-          {{ page.essay.book.title }}
-        </em>
-      </a>
-    </p>
-
-    {% assign works_cited = page.works_cited | sort: 'slug' %}
-  {% else %}
-    {% assign works_cited = page.works_cited %}
-  {% endif %}
-
-  {% for work_cited in works_cited %}
-    <article class="{{ content_color }}" id="{{ work_cited.slug }}">
-      {{ work_cited.content  }}
-    </article>
-  {% endfor %}
-</section>
+{% for work_cited in works_cited %}
+  <article class="{{ content_color }}" id="{{ work_cited.slug }}">
+    {{ work_cited.content  }}
+  </article>
+{% endfor %}

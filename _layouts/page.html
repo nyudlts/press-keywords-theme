@@ -1,34 +1,21 @@
 ---
-layout: default
+layout: content
 ---
 {%- include global_variables.html -%}
 
-{% if current_book %}
-  {% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
-{% endif %}
+<article class="">
+  <header>
+    <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">{{ page.title }}</h1>
 
-{% include breadbar.html current_book=current_book t=t current_color=current_color %}
+    {% if page.authors and page.authors != empty %}
+      <div class="text-uppercase font-weight-bold pb-2">
+        {{ t.page.by }}
+        {% include people.html people=page.authors %}
+      </div>
+    {% endif %}
+  </header>
 
-<section id="content" role="main" class="container pt-50px pl-20px pr-20px">
-  {% if current_book %}
-    {% include_cached leftbar.html current_book=current_book t=t %}
-    {% include_cached rightbar.html current_book=current_book t=t %}
-  {% endif %}
-
-  <article class="">
-    <header>
-      <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">{{ page.title }}</h1>
-
-      {% if page.authors and page.authors != empty %}
-        <div class="text-uppercase font-weight-bold pb-2">
-          {{ t.page.by }}
-          {% include people.html people=page.authors %}
-        </div>
-      {% endif %}
-    </header>
-
-    <div class="{{ content_color }}">
-      {{ content }}
-    </div>
-  </article>
-</section>
+  <div class="{{ content_color }}">
+    {{ content }}
+  </div>
+</article>
