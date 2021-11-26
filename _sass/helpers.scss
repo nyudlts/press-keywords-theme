@@ -4,6 +4,7 @@
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     .border#{$infix}-thick { border-width: 4px !important; }
+    .text-decoration#{$infix}-underline { text-decoration: underline !important; }
 
     @each $spacer, $length in $spacers {
       .f#{$infix}-#{$spacer} {
