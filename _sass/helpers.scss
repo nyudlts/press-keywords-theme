@@ -109,7 +109,7 @@
 
 /// This creates a navbar that can be toggled on focus and doesn't
 /// require CSS.
-.navbar {
+.navbar-focus-within {
   &:focus-within {
     .navbar-collapse {
       @extend .d-block;
