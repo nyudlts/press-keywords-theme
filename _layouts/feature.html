@@ -38,9 +38,10 @@ layout: default
       {% endif %}
 
       <div class="text-center text-uppercase mt-1">
-        <label for="leftbar" itemprop="menu" class="btn btn-{{ current_color }} h6 m-0 font-weight-bold">
-          {{ t.book.open_menu }}
-        </label>
+        {%- capture leftbar_class -%}
+          btn btn-{{ current_color }} h6 m-0 font-weight-bold
+        {%- endcapture -%}
+        {% include toggler_label.html id='leftbar' class=leftbar_class content=t.book.open_menu %}
       </div>
     </footer>
   </article>

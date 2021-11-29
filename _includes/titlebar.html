@@ -1,13 +1,15 @@
 <nav class="w-100 py-2 py-md-3 background-{{ include.current_book.slug }} container-fluid">
   <div class="row row-cols-md-3">
     <div class="col order-md-0 text-left">
-      <label for="leftbar" class="mb-0 text-uppercase white h6 mb-0 font-weight-bold">
+      {%- capture leftbar_content -%}
         <i aria-hidden="true" class="fa fa-fw fa-bars mr-1"></i>
 
         {{ include.t.leftbar.title }}
 
         <span class="sr-only">{{ include.t.leftbar.accessibility }}</span>
-      </label>
+      {%- endcapture -%}
+
+      {% include toggler_label.html id='leftbar' content=leftbar_content class='mb-0 text-uppercase white h6 mb-0 font-weight-bold' %}
     </div>
 
     <div class="col-12 col-md order-first order-md-1">
@@ -36,11 +38,17 @@
         </a>
       {% endif %}
 
-      <label for="rightbar" class="mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}">
+      {%- capture rightbar_class -%}
+        mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}
+      {%- endcapture -%}
+
+      {%- capture rightbar_content -%}
         {{ include.t.rightbar.title }}
 
         <span class="sr-only">{{ include.t.rightbar.accessibility }}</span>
-      </label>
+      {%- endcapture -%}
+
+      {% include toggler_label.html id='rightbar' content=rightbar_content class=rightbar_class %}
     </div>
   </div>
 </nav>

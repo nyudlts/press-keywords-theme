@@ -19,13 +19,15 @@
         </div>
 
         <div class="form-group mb-0 w-100">
-          <label for="filter-toggler" id="filter-label" class="form-control mb-0">
+
+          {%- capture filter_content -%}
             <small>{{ t.search.select }}</small>
-          </label>
+          {%- endcapture -%}
+          {%- include toggler_label.html id='filter' class='form-control mb-0' content=filter_content -%}
         </div>
       </div>
 
-      <input type="checkbox" class="toggler sr-only" id="filter-toggler" aria-labeledby="filter-label"/>
+      {%- include toggler.html id='filter' -%}
       <ul class="toggled list-unstyled p-3 background-white mb-0">
         <li>
           <div class="custom-control custom-checkbox">

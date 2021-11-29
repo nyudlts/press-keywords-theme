@@ -5,7 +5,7 @@
 {%- assign all_essays = include.t[current_book.layout].all_essays -%}
 {%- assign availabilities_names = availabilities | map: 'name' -%}
 
-<input type="checkbox" class="toggler invisible position-absolute" autocomplete="off" id="leftbar" name="leftbar" />
+{% include toggler.html id='leftbar' %}
 <aside id="" class="toggled w-100 position-fixed top-0 left-0 d-flex flex-row">
   <nav class="background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
     <ul class="list-unstyled">
@@ -58,7 +58,8 @@
     </ul>
   </nav>
 
-  <label for="leftbar" class="d-block flex-grow-1 background-white-t2">
-    <span class="sr-only">{{ t.leftbar.close }}</span>
-  </label>
+  {%- capture leftbar_content -%}
+    <span class="sr-only sr-only-focusable">{{ t.leftbar.close }}</span>
+  {%- endcapture -%}
+  {% include toggler_label.html class='d-block flex-grow-1 background-white-t2' content=leftbar_content id='leftbar' %}
 </aside>

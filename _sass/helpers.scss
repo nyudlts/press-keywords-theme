@@ -16,6 +16,12 @@
       }
     }
 
+    @each $cursor in (pointer, none) {
+      .cursor#{$infix}-#{$cursor} {
+        cursor: $cursor;
+      }
+    }
+
     @each $event in (none, auto) {
       .pointer-event#{$infix}-#{$event} {
         pointer-events: $event;

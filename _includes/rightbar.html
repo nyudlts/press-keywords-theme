@@ -2,11 +2,12 @@
 {%- assign link_class = 'd-block white text-decoration-none mb-3' -%}
 {%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase' -%}
 
-<input type="checkbox" class="toggler invisible position-absolute" autocomplete="off" id="rightbar" name="rightbar" />
+{% include toggler.html id='rightbar' %}
 <aside class="toggled position-fixed top-0 right-0 d-flex flex-row w-100">
-  <label for="rightbar" class="d-block flex-grow-1 background-white-t2">
-    <span class="sr-only">{{ t.rightbar.close }}</span>
-  </label>
+  {%- capture rightbar_content -%}
+    <span class="sr-only sr-only-focusable">{{ t.rightbar.close }}</span>
+  {%- endcapture -%}
+  {%- include toggler_label.html id='rightbar' class='d-block flex-grow-1 background-white-t2' content=rightbar_content -%}
 
   <nav class="background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
     <ul class="list-unstyled">
