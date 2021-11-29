@@ -5,11 +5,11 @@ layout: default
 {% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
 {% include breadbar.html current_book=current_book t=t current_color=current_color %}
 
-<section tabindex="-1" id="content" role="main" class="container p-50px background-white my-5">
+<section class="container p-50px background-white my-5">
   {% include_cached leftbar.html current_book=current_book t=t %}
   {% include_cached rightbar.html current_book=current_book t=t %}
 
-  <article class="pt-45px">
+  <article tabindex="-1" id="content" role="main" class="pt-45px">
     <header>
       <h1 class="text-center text-uppercase {{ current_color }}">
         <span class="f-md-6">{{ site.title }} {{ current_site_modifier | remove: ':' }}</span>
