@@ -1,6 +1,7 @@
 ---
 # Keep this so Jekyll processes Liquid before SCSS
 ---
+$debug: {{ jekyll.environment | not: 'production' }};
 
 {% assign books = site.posts | where: 'layout', 'book' %}
 {% assign features = site.posts | where: 'layout', 'feature' %}
@@ -38,7 +39,6 @@ $container-max-widths: (
 
 $sizes: (
   100vh: 100vh,
-  100vw: 100vw,
   sidebar: 21.25rem
 );
 
@@ -126,6 +126,10 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("{{ '/assets/images/tools.jpg' | relative_url }}");
+}
+
+@if $debug {
+  * { outline: 1px solid pink; }
 }
 
 {% comment %}
