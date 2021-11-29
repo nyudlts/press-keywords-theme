@@ -2,7 +2,7 @@ import { Controller } from 'stimulus'
 import { Liquid } from 'liquidjs'
 
 const lunr = require("lunr")
-const commonmark = require('commonmark')
+const commonmark = require('commonmark/dist/commonmark')
 
 export default class extends Controller {
   static targets = [ 'q', 'toggle' ]
@@ -17,7 +17,7 @@ export default class extends Controller {
     if (!this.hasQTarget) return
     if (!this.qTarget.value.trim().length === 0) return
 
-    return this.qTarget.value.trim().replace(':', '').toLowerCase()
+    return this.qTarget.value.trim().replaceAll(/[:~\*\^\+\-]/gi, "");
   }
 
   connect () {
@@ -63,24 +63,25 @@ export default class extends Controller {
       return
     }
 
+    const site = window.site
+    const t = site.t
     const relative_url = this.relativeUrlValue
     const main = document.querySelector('#results')
     const count = document.querySelector('[data-search-target="count"]')
     const breadcrumb = document.querySelector('[data-search-target="breadcrumb"]')
     const sites = this.params.getAll('cc_gs_sites[]')
     const type = this.params.get('post_type')
+    const template = window.templates.results
     const results = window.index.search(q)
       .map(r => window.data.find(a => a.id == r.ref))
       .filter(d => (sites.length === 0 || sites.includes(d.book ? d.book.slug : d.slug)))
       .filter(d => (!type || type === 'all' || d.layout === type))
 
-    document.title = `Keywords - Search results - ${q}`
+    document.title = `${site.title} - ${t.search.title} - ${q}`
 
-    if (count) count.innerText = `${results.length} results found`
+    if (count) count.innerText = `${results.length} ${t.search.some}`
     if (breadcrumb) breadcrumb.innerText = q
 
-    const request = await fetch(this.templateValue, { cache: 'no-cache' })
-    const template = await request.text()
 
     const match = new RegExp(`(?<q>${q})`, 'ig')
 
@@ -95,7 +96,7 @@ export default class extends Controller {
       results[i].content = this.markdown(p, q)
     }
 
-    main.innerHTML = await this.engine.parseAndRender(template, { q, results, relative_url })
+    main.innerHTML = await this.engine.parseAndRender(template, { q, results, relative_url, site, t })
     this.formDisable = false
   }
 

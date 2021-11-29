@@ -2,19 +2,10 @@
 layout: content
 ---
 {%- include global_variables.html -%}
-<div class="printonly" id="print-title">{{ t.print.title }}<br />{{ t.print.press }}</div>
 
-<header>
-  {% include_cached headers/master-header.html %}
-  {% include headers/subhead.html page=page %}
-</header>
-<section id="content" role="main" class="container p-50px">
-    <article class="text-center text-uppercase font-weight-bold" id="results">
-      <h1>
-        <i class="fa fa-cog fa-spin"></i>
-        {{ t.search.index_download }}
-      </h1>
-    </article>
-</section>
-
-  {% include_cached footer.html %}
+<article class="" id="results">
+  <h1 class="text-center text-uppercase font-weight-bold">
+    <i class="fa fa-cog fa-spin"></i>
+    {{ t.search.index_download }}
+  </h1>
+</article>

@@ -1,0 +1,76 @@
+{% comment %}
+This template needs to be raw because it's processed by Liquid JS on the
+browser.
+{% endcomment %}
+{% raw %}
+<section class="">
+  {% if results == empty %}
+    <h1>{{ t.search.nothing }}</h1>
+    <p>{{ t.search.nothing_content }}</p>
+  {% else %}
+    {% for post in results %}
+      {% assign people = post.authors | default: post.editors %}
+      {% assign book = post.book %}
+      {% assign current_color = post.book.slug %}
+      {% if book %}{% else %}
+        {% assign book = post %}
+        {% assign current_color = book.slug %}
+      {% endif %}
+      {% assign modifier = t[book.layout].modifier_included_in_site_title %}
+      {% if modifier %}{% else %}
+        {% assign modifier = t[book.layout].modifier_included_in_page_title %}
+      {% endif %}
+      {% assign book_title = site.title | append: ' ' | append: modifier | append: ' ' | append: book.title %}
+      <article class="border-top pt-3">
+        <header>
+          <h1 class="h3 text-uppercase font-weight-bold">
+            <a
+              class="{{ current_color }} text-decoration-none"
+              href="{{ post.url | prepend: relative_url | replace_first: '//', '/' }}" title="{{ t.person.bookmark }} {{ post.title }}" rel="bookmark">
+              {% if site.book_layouts contains post.layout %}
+                {{ book_title }}
+              {% else %}
+                {{ post.title }}
+              {% endif %}
+            </a>
+          </h1>
+        </header>
+
+        <div class="mb-2">
+          {% if post.book %}
+            <p class="h6 text-uppercase font-weight-bold">
+              {{ post.book.layout }}
+
+              <a class="{{ current_color }}" href="{{ post.book.url | prepend: relative_url | replace_first: '//', '/' }}">
+                {{ book_title }}
+              </a>
+            </p>
+          {% endif %}
+
+          <p class="h6 text-uppercase font-weight-bold">
+            {% for person in people %}
+              {% if forloop.first %}
+                {% if site.book_layouts contains post.layout %}
+                  {{ t.home.edited_by }}
+                {% else %}
+                  {{ t.page.by }}
+                {% endif %}
+              {% endif %}
+              <span class="author vcard">
+                {% if forloop.last and people.size > 1 %}{{ t.and }}{% endif %}
+                <a class="url fn n {{ current_color }}" href="{{ person.url | prepend: base_url }}">
+                  {{- person.title -}}
+                </a>{% if people.size > 2 %}{% unless forloop.last %}, {% endunless %}{% endif %}
+              </span>
+            {% endfor %}
+          </p>
+        </div>
+
+        <div class="content-{{ current_color }}">
+          {{ post.content }}
+        </div>
+      </article>
+    {% endfor %}
+  {% endif %}
+</section>
+{% endraw %}

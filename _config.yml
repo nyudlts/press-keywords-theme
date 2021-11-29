@@ -19,7 +19,7 @@ plugins:
 - jekyll-ignore-layouts
 - sutty-liquid
 - jekyll-linked-posts
-  #- jekyll-lunr
+- jekyll-lunr
 - jekyll-alternate-permalinks
 - jekyll-feed
 - jekyll-images

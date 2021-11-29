@@ -3,6 +3,7 @@ close: 'close'
 scroll_up: 'Back to Top'
 read_more: 'Read More...'
 skip_to_content: 'Skip to content'
+and: 'and'
 leftbar:
   title: Essays
   home: Home
@@ -64,6 +65,10 @@ search:
   everything: 'Everything'
   essays: 'Essays'
   index_download: 'Please wait while the search index is downloaded...'
+  nothing: 'Not found'
+  nothing_content: 'There were no results that matched your search criteria. Please try again with different search terms.'
+  title: 'Search results'
+  some: 'results found'
 work_cited:
 works_cited:
   index_cited: 'Go to all works cited on'
