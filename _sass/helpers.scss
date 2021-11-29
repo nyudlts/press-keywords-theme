@@ -93,6 +93,11 @@
           background: $rgb;
           color: white;
         }
+
+        mark {
+          background-color: $rgb !important;
+          color: white !important;
+        }
       }
     }
 

@@ -9,6 +9,7 @@
 
   mark {
     background-color: {{ include.page.color }} !important;
+    color: white;
   }
 
   // Links need break lines, since they can be really long
