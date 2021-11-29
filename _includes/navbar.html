@@ -1,7 +1,7 @@
 {%- include global_variables.html -%}
 
 <div class="w-100">
-  <nav class="navbar navbar-dark navbar-expand-lg background-gray-dark d-flex flex-wrap flex-md-nowrap justify-content-between">
+  <nav class="navbar navbar-dark navbar-expand-lg background-primary d-flex flex-wrap flex-md-nowrap justify-content-between">
     {% comment %}
       XXX: Starting from medium screens this element is absolutely
       positioned so it's always centered even if the left dropdown menu
@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div style="z-index: 1" class="collapse navbar-collapse position-absolute position-md-relative left-0 w-100 w-md-auto h-100vh h-md-auto background-gray-dark">
+      <div style="z-index: 1" class="collapse navbar-collapse position-absolute position-md-relative left-0 w-100 w-md-auto h-100vh h-md-auto background-primary">
         <div class="navbar-nav d-flex align-items-center">
           <div class="nav-item w-100 w-lg-auto">
             <a class="nav-link text-uppercase font-weight-bold h6 mb-0 white" href="{{ '/' | relative_url }}">
@@ -39,7 +39,7 @@
             <div class="nav-item w-100 w-lg-auto">
               <div class="nav-link dropdown">
                 <button
-                  class="dropdown-toggle border-0 background-gray-dark white text-uppercase font-weight-bold h6 mb-0"
+                  class="dropdown-toggle border-0 background-primary white text-uppercase font-weight-bold h6 mb-0"
                   type="button"
                   id="dropdown-{{ layout }}"
                   data-toggle="dropdown"
@@ -48,7 +48,7 @@
                   {{ t.navbar[layout] }}
                 </button>
 
-                <div class="dropdown-menu background-gray-dark" aria-labeledby="dropdown-{{ layout }}">
+                <div class="dropdown-menu background-primary" aria-labeledby="dropdown-{{ layout }}">
                   {% for post in posts %}
                     <a class="dropdown-item font-weight-bold white" href="{{ post.url | relative_url }}">{{ post.title }}</a>
                   {% endfor %}
@@ -75,7 +75,7 @@
           <label class="background-white-t2 position-fixed top-0 left-0 h-100vh w-100" for="search-toggler">
           </label>
 
-          <div class="text-left background-gray-dark p-3 position-fixed top-navbar right-0" aria-labeledby="dropdown-search">
+          <div class="text-left background-primary p-3 position-fixed top-navbar right-0" aria-labeledby="dropdown-search">
             {% include_cached search.html t=t %}
           </div>
         </div>

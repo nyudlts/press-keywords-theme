@@ -1,12 +1,12 @@
 {%- assign current_book = include.current_book -%}
 {%- assign t = include.t -%}
-{%- assign item_class = 'breadcrumb-item h6 mb-0 font-weight-bold gray-dark small' -%}
+{%- assign item_class = 'breadcrumb-item h6 mb-0 font-weight-bold primary small' -%}
 
 <nav aria-label="{{ t.breadbar.title }}" class="w-100 {% unless site.book_layouts contains page.layout %}background-gray-light{% endunless %}">
   <div class="d-flex flex-column flex-md-row justify-content-between">
     <ol class="breadcrumb text-uppercase flex-grow-1">
       <li class="{{ item_class }}">
-        <a href="{{ current_book.url }}" class="gray-dark text-decoration-none">{{ t.breadbar.home }}</a>
+        <a href="{{ current_book.url }}" class="primary text-decoration-none">{{ t.breadbar.home }}</a>
       </li>
 
       {% comment %}

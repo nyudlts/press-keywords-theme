@@ -75,7 +75,8 @@ $colors: (
 {% endfor %}
   "site": {{ site.color }},
   "black": #000,
-  "gray-light": $gray-100
+  "gray-light": $gray-100,
+  "primary": $primary
 );
 
 $theme-colors: (
