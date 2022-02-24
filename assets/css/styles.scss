@@ -126,7 +126,7 @@ p {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("{{ '/assets/images/tools.jpg' | relative_url }}");
+  background-image: url("{{ site.background_image | relative_url }}");
 }
 
 @if $debug {

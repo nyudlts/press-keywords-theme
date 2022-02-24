@@ -63,6 +63,7 @@ exclude:
 book_layouts:
 - book
 - feature
+background_image: /assets/images/tools.jpg
 
 analytics:
   id: UA-51495518-2
