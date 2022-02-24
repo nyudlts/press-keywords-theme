@@ -10,6 +10,10 @@
       @include transition($transition-base);
     }
 
+    .flex-grow#{$infix}-0 {
+      flex-grow: 0 !important;
+    }
+
     @each $spacer, $length in $spacers {
       .f#{$infix}-#{$spacer} {
         font-size: $length !important;

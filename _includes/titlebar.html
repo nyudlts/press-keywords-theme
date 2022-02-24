@@ -1,6 +1,6 @@
 <nav class="w-100 py-2 py-md-3 background-{{ include.current_book.slug }} container-fluid">
-  <div class="row row-cols-md-3">
-    <div class="col order-md-0 text-left">
+  <div class="row">
+    <div class="col flex-grow-md-0 order-md-0 text-left d-flex align-items-center">
       {%- capture leftbar_content -%}
         <i aria-hidden="true" class="fa fa-fw fa-bars mr-1"></i>
 
@@ -9,7 +9,7 @@
         <span class="sr-only">{{ include.t.leftbar.accessibility }}</span>
       {%- endcapture -%}
 
-      {% include toggler_label.html id='leftbar' content=leftbar_content class='mb-0 text-uppercase white h6 mb-0 font-weight-bold' %}
+      {% include toggler_label.html id='leftbar' content=leftbar_content class='mb-0 text-uppercase white h6 mb-0 font-weight-bold d-flex align-items-center' %}
     </div>
 
     <div class="col-12 col-md order-first order-md-1">
@@ -25,7 +25,7 @@
       </h1>
     </div>
 
-    <div class="col order-md-2 text-right">
+    <div class="col flex-grow-md-0 order-md-2 text-right d-flex align-items-center justify-content-end">
       {% if current_book.link %}
         <a
           class="white text-decoration-none mr-3"
@@ -39,7 +39,7 @@
       {% endif %}
 
       {%- capture rightbar_class -%}
-        mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}
+        text-nowrap mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}
       {%- endcapture -%}
 
       {%- capture rightbar_content -%}
