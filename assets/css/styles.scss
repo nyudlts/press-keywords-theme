@@ -32,6 +32,7 @@ $input-placeholder-color: $gray-800;
 $body-bg: {{ site.background_color | default: "#ffffff" }};
 $primary: {{ site.primary_color | default: "#666666" }};
 $enable-responsive-font-sizes: true;
+$transition-base: all 0.2s cubic-bezier(0.75, 0, 0.25, 1);
 
 $container-max-widths: (
   lg: 820px,
