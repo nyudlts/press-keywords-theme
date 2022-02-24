@@ -7,7 +7,7 @@
   {%- capture rightbar_content -%}
     <span class="sr-only sr-only-focusable">{{ t.rightbar.close }}</span>
   {%- endcapture -%}
-  {%- include toggler_label.html id='rightbar' class='d-block flex-grow-1 background-white-t2' content=rightbar_content -%}
+  {%- include toggler_related.html id='rightbar' class='d-block flex-grow-1 background-white-t2' content=rightbar_content -%}
 
   <nav class="grow-horizontally transition background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
     <ul class="list-unstyled">
