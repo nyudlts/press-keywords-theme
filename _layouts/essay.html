@@ -24,7 +24,7 @@ layout: content
   </header>
 
   <div class="{{ content_color }}">
-    {% if page.availability contains 'Print' or page.availability contains 'print' %}
+    {% if page.availability == site.default_availability %}
       {{ page.excerpt | truncatewords: 200 }}
 
       <div class="text-uppercase font-weight-bold">
