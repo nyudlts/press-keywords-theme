@@ -1,9 +1,14 @@
 {% assign essays = include.essays | sort: 'title' %}
+{% assign toggler_id = include.group | slugify | append: '-details' %}
 
 <li>
-  <details>
-    <summary class="{{ include.main_link_class }}">{{ include.group }}</summary>
+  {% capture toggler_label_content %}
+    {{ include.group }}
+  {% endcapture %}
+  {%- include_cached toggler_label.html id=toggler_id class=include.main_link_class content=toggler_label_content %}
 
+  {%- include_cached toggler.html id=toggler_id -%}
+  <div class="toggled grow-vertically">
     <ul class="list-unstyled">
       {% for essay in essays %}
         <li>
@@ -13,5 +18,5 @@
         </li>
       {% endfor %}
     </ul>
-  </details>
+  </div>
 </li>
