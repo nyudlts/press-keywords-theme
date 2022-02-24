@@ -64,6 +64,8 @@ book_layouts:
 - book
 - feature
 background_image: /assets/images/tools.jpg
+background_color: "#fff"
+primary_color: "#666"
 
 analytics:
   id: UA-51495518-2
