@@ -2,6 +2,8 @@
 layout: content
 ---
 
+{%- include global_variables.html -%}
+
 <header>
   <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
     {{ page.title }} {% if page.essay %}{{ t.works_cited.on }} {{ page.essay.title }}{% endif %}
@@ -28,8 +30,10 @@ layout: content
   {% assign works_cited = page.works_cited %}
 {% endif %}
 
-{% for work_cited in works_cited %}
-  <article class="{{ content_color }}" id="{{ work_cited.slug }}">
-    {{ work_cited.content  }}
-  </article>
-{% endfor %}
+<div class="{{ content_color }}">
+  {% for work_cited in works_cited %}
+    <article id="{{ work_cited.slug }}">
+      {{ work_cited.content  }}
+    </article>
+  {% endfor %}
+</div>
