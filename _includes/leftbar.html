@@ -5,6 +5,7 @@
 {%- assign all_essays = include.t[current_book.layout].all_essays -%}
 {%- assign availabilities_names = availabilities | map: 'name' -%}
 
+<div>
 {% include toggler.html id='leftbar' %}
 <aside id="" class="toggled w-100 position-fixed top-0 left-0 d-flex flex-row">
   <nav class="grow-horizontally transition background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
@@ -24,11 +25,11 @@
       {% endif %}
 
       {% for availability in availabilities %}
-        {% include_cached essays_list.html group=availability.name essays=availability.items link_class=link_class main_link_class=main_link_class %}
+        {% include_cached essays_list.html group=availability.name essays=availability.items link_class=link_class main_link_class=main_link_class t=include.t %}
       {% endfor %}
 
       {% unless availabilities_names contains all_essays %}
-        {% include_cached essays_list.html group=all_essays essays=current_book.essays link_class=link_class main_link_class=main_link_class %}
+        {% include_cached essays_list.html group=all_essays essays=current_book.essays link_class=link_class main_link_class=main_link_class t=include.t%}
       {% endunless %}
 
       {% unless current_book.works_cited.works_cited == empty %}
@@ -63,3 +64,4 @@
   {%- endcapture -%}
   {% include toggler_related.html class='d-block flex-grow-1 background-white-t2' content=leftbar_content id='leftbar' %}
 </aside>
+</div>

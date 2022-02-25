@@ -2,12 +2,15 @@
 {% assign toggler_id = include.group | slugify | append: '-details' %}
 
 <li>
+  {%- include_cached toggler.html id=toggler_id -%}
+
   {% capture toggler_label_content %}
     {{ include.group }}
+
+    <span class="d-inline-block toggled-rotate transition">{{ include.t.details }}</span>
   {% endcapture %}
   {%- include_cached toggler_label.html id=toggler_id class=include.main_link_class content=toggler_label_content %}
 
-  {%- include_cached toggler.html id=toggler_id -%}
   <div class="toggled grow-vertically">
     <ul class="list-unstyled">
       {% for essay in essays %}

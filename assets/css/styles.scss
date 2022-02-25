@@ -118,6 +118,7 @@ $theme-colors: (
 @import "bootstrap/scss/bootstrap";
 @import "fork-awesome/scss/fork-awesome";
 @import "helpers";
+@import "toggler";
 
 // XXX: Sometimes we don't need a full helper
 p {

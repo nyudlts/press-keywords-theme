@@ -2,6 +2,7 @@
 {%- assign link_class = 'd-block white text-decoration-none mb-3' -%}
 {%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase' -%}
 
+<div>
 {% include toggler.html id='rightbar' %}
 <aside class="toggled position-fixed top-0 right-0 d-flex flex-row w-100">
   {%- capture rightbar_content -%}
@@ -35,3 +36,4 @@
     </ul>
   </nav>
 </aside>
+</div>

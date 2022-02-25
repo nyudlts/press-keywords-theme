@@ -1,0 +1,69 @@
+/// Creates a toggle button without JS
+.toggler {
+  opacity: 0;
+  position: absolute;
+
+  & ~ label {
+    .toggled-rotate {
+      transform-origin: center;
+    }
+  }
+
+  & ~ .toggled.grow-vertically {
+    height: auto !important;
+    overflow-y: hidden;
+  }
+
+  &:not(:checked) {
+    & ~ label {
+      .toggled-rotate {
+        transform: rotate(0deg);
+      }
+    }
+
+    & ~ .toggled {
+      z-index: 10;
+      visibility: hidden;
+
+      .grow-horizontally {
+        width: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow-x: hidden;
+      }
+
+      &.grow-vertically {
+        visibility: visible;
+        max-height: 0 !important;
+        transition: max-height 0.3s cubic-bezier(0,1,0,1) !important;
+      }
+    }
+  }
+
+  &:checked {
+    & ~ label {
+      .toggled-rotate {
+        transform: rotate(90deg);
+      }
+    }
+
+    & ~ .toggled {
+      visibility: visible;
+
+      &.grow-vertically {
+        max-height: 9999px !important;
+        transition: max-height 0.3s cubic-bezier(1,0,1,0) !important;
+      }
+    }
+  }
+
+  & + label {
+    border: none;
+    outline: none;
+  }
+
+  &:focus + label {
+    outline: 1px dotted grey ;
+  }
+}
+

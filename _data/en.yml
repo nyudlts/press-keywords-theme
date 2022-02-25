@@ -4,6 +4,7 @@ scroll_up: 'Back to Top'
 read_more: 'Read More...'
 skip_to_content: 'Skip to content'
 and: 'and'
+details: "&#9654;"
 leftbar:
   title: Essays
   home: Home
