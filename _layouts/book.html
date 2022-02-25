@@ -50,7 +50,7 @@ layout: default
     "@type": "Book",
     "@id": {{ site.url | append: page.url | jsonify }},
     "url": {{ site.url | append: page.url | jsonify }},
-    "name": {{ site.title | append: " " | append: current_site_modifier | append: current_page_modifier | append: " " | append: page.title | jsonify }},
+    "name": {{ current_title | jsonify }},
     "bookEdition": {{ page.title | jsonify }},
     "image": {{ site.url | append: page.image | jsonify }},
     "copyrightYear": "{{ page.date | date: "%Y" }}",
