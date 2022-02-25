@@ -45,3 +45,53 @@ layout: content
     <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
   </footer>
 </article>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Chapter",
+    "@id": {{ site.url | append: page.url | jsonify }},
+    "url": {{ site.url | append: page.url | jsonify }},
+    "pageStart": "{{ page.page }}",
+    "name": {{ page.title | jsonify }},
+    "image": {{ site.url | append: page.book.image | jsonify }},
+    "copyrightYear": "{{ page.date | date: "%Y" }}",
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "New York University"
+    },
+    "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "creativeWorkStatus": "Published",
+    "inLanguage": "en-US",
+    "isAccessibleForFree": "{{ page.availability | not: site.default_availability }}",
+    "editor": [
+      {% for editor in page.book.editors %}
+        {
+          "@type": "Person",
+          "@id": {{ site.url | append: editor.url | jsonify }}
+        }{{ forloop.last | value_unless: "," }}
+      {% endfor %}
+    ],
+    "author": [
+      {% for author in page.authors %}
+        {
+          "@type": "Person",
+          "@id": {{ site.url | append: author.url | jsonify }}
+        }{{ forloop.last | value_unless: "," }}
+      {% endfor %}
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "NYU Press",
+      "@id": "https://nyupress.org/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "@id": {{ page.book.link | jsonify }}
+    },
+    "isPartOf": {
+      "@type": "Book",
+      "@id": {{ site.url | append: page.book.url | jsonify }}
+    }
+  }
+</script>
