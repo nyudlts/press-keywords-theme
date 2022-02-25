@@ -47,3 +47,16 @@ layout: content
     </article>
   {% endfor %}
 </article>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": {{ site.url | append: page.url | jsonify }},
+    "url": {{ site.url | append: page.url | jsonify }},
+    "name": {{ page.title | jsonify }},
+    "familyName": {{ page.last_name | jsonify }},
+    "givenName": {{ page.first_name | jsonify }},
+    "description": {{ content | strip_html | jsonify }}
+  }
+</script>
