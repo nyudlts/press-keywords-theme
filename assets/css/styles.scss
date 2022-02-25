@@ -33,6 +33,7 @@ $body-bg: {{ site.background_color | default: "#ffffff" }};
 $primary: {{ site.primary_color | default: "#666666" }};
 $enable-responsive-font-sizes: true;
 $transition-base: all 0.2s cubic-bezier(0.75, 0, 0.25, 1);
+$paragraph-margin-bottom: 2rem;
 
 $container-max-widths: (
   lg: 820px,
@@ -119,11 +120,6 @@ $theme-colors: (
 @import "fork-awesome/scss/fork-awesome";
 @import "helpers";
 @import "toggler";
-
-// XXX: Sometimes we don't need a full helper
-p {
-  margin-bottom: 2rem;
-}
 
 .background {
   background-position: center center;
