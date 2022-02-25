@@ -43,3 +43,49 @@ layout: default
     </footer>
   </article>
 </section>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "@id": {{ site.url | append: page.url | jsonify }},
+    "url": {{ site.url | append: page.url | jsonify }},
+    "name": {{ site.title | append: " " | append: current_site_modifier | append: current_page_modifier | append: " " | append: page.title | jsonify }},
+    "bookEdition": {{ page.title | jsonify }},
+    "image": {{ site.url | append: page.image | jsonify }},
+    "copyrightYear": "{{ page.date | date: "%Y" }}",
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "New York University"
+    },
+    "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "creativeWorkStatus": "Published",
+    "inLanguage": "en-US",
+    "isAccessibleForFree": "true",
+    "editor": [
+      {% for editor in page.editors %}
+        {
+          "@type": "Person",
+          "@id": {{ site.url | append: editor.url | jsonify }}
+        }{{ forloop.last | value_unless: "," }}
+      {% endfor %}
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "NYU Press",
+      "@id": "https://nyupress.org/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "@id": {{ page.link | jsonify }}
+    },
+    "hasPart": [
+      {% for essay in page.essays %}
+        {
+          "@type": "Chapter",
+          "@id": {{ site.url | append: essay.url | jsonify }}
+        }{{ forloop.last | value_unless: "," }}
+      {% endfor %}
+    ]
+  }
+</script>
