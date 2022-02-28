@@ -5,7 +5,9 @@ layout: content
 {%- include global_variables.html -%}
 
 <article class="">
-  <header class="mb-3">
+  <header class="mb-3 position-relative">
+    {%- include_cached icon.html t=t availability=page.availability color=current_color -%}
+
     <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
       {{ page.title }}
     </h1>

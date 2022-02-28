@@ -5,6 +5,10 @@ read_more: 'Read More...'
 skip_to_content: 'Skip to content'
 and: 'and'
 details: "&#9654;"
+icons:
+  print-essays: book
+  web-essays: desktop
+  default: book
 leftbar:
   title: Essays
   home: Home

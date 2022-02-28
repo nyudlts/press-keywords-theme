@@ -41,12 +41,14 @@ $container-max-widths: (
 );
 
 $sizes: (
+  10: 10%,
   100vh: 100vh,
   sidebar: 21.25rem
 );
 
 /// These measurements were taken from the original design
 $spacers: (
+  15: 15%,
   0: 0,
   "10px": 10px,
   "20px": 20px,

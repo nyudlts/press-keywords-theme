@@ -21,6 +21,7 @@
 
       @each $direction in (top, right, bottom, left) {
         .#{$direction}#{$infix}-#{$spacer} { #{$direction}: $length !important; }
+        .#{$direction}#{$infix}-n#{$spacer} { #{$direction}: -$length !important; }
       }
     }
 
