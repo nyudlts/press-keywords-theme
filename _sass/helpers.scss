@@ -10,6 +10,10 @@
       @include transition($transition-base);
     }
 
+    .text#{$infix}-nowrap {
+      white-space: nowrap;
+    }
+
     .flex-grow#{$infix}-0 {
       flex-grow: 0 !important;
     }
@@ -48,7 +52,7 @@
     .h5#{$infix} { @include font-size($h5-font-size); }
     .h6#{$infix} { @include font-size($h6-font-size); }
 
-    $overflows: (auto, hidden, scroll);
+    $overflows: (auto, hidden, scroll, visible);
     $overflow-axis: (x, y);
     @each $overflow in $overflows {
       .overflow#{$infix}-#{$overflow} {

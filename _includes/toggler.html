@@ -1,7 +1,7 @@
 <input
-  type="checkbox"
+  type="{{ include.type | default: "checkbox" }}"
   class="toggler sr-only"
   autocomplete="off"
   id="{{ include.id }}"
-  name="{{ include.id }}"
+  name="{{ include.name | default: include.id }}"
   aria-labelledby="{{ include.id }}-label" />

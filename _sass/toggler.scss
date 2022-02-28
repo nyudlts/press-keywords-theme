@@ -22,7 +22,6 @@
     }
 
     & ~ .toggled {
-      z-index: 10;
       visibility: hidden;
 
       .grow-horizontally {
@@ -33,7 +32,7 @@
       }
 
       &.grow-vertically {
-        max-height: 0 !important;
+        max-height: 0;
         transition: max-height 0.3s cubic-bezier(0,1,0,1) !important;
       }
     }
@@ -50,7 +49,7 @@
       visibility: inherit;
 
       &.grow-vertically {
-        max-height: 9999px !important;
+        max-height: 9999px;
         transition: max-height 0.3s cubic-bezier(1,0,1,0) !important;
       }
     }
@@ -66,3 +65,19 @@
   }
 }
 
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .toggler {
+      & ~ .untoggled#{$infix} {
+        visibility: visible !important;
+
+        &.grow-vertically {
+          max-height: 9999px !important;
+          transition: max-height 0.3s cubic-bezier(1,0,1,0) !important;
+        }
+      }
+    }
+  }
+}

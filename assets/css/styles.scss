@@ -28,6 +28,7 @@ $breadcrumb-active-color: $gray-800;
 $breadcrumb-divider: "{{ t.breadbar.separator }}";
 $breadcrumb-item-padding: 10px;
 $navbar-height: 32px;
+$navbar-sm-height: 48px;
 $input-placeholder-color: $gray-800;
 $body-bg: {{ site.background_color | default: "#ffffff" }};
 $primary: {{ site.primary_color | default: "#666666" }};
@@ -43,7 +44,8 @@ $container-max-widths: (
 $sizes: (
   10: 10%,
   100vh: 100vh,
-  sidebar: 21.25rem
+  sidebar: 21.25rem,
+  auto: auto
 );
 
 /// These measurements were taken from the original design
@@ -58,7 +60,8 @@ $spacers: (
   "55px": 55px,
   "73px": 73px,
   6: 4.5rem,
-  navbar: $navbar-height
+  navbar: $navbar-height,
+  navbar-sm: $navbar-sm-height
 );
 
 $opacities: (
@@ -81,7 +84,8 @@ $colors: (
   "site": {{ site.color }},
   "black": #000,
   "gray-light": $gray-100,
-  "primary": $primary
+  "primary": $primary,
+  "transparent": transparent
 );
 
 $theme-colors: (
