@@ -76,10 +76,10 @@ $opacities: (
 /// Add new colors from books and features
 $colors: (
 {% for book in books %}
-  "{{ book.slug }}": {{ book.color }},
+  "{{ book.slug }}": {{ book.color | default: site.color }},
 {% endfor %}
 {% for feature in features %}
-  "{{ feature.slug }}": {{ feature.color }},
+  "{{ feature.slug }}": {{ feature.color | default: site.color }},
 {% endfor %}
   "site": {{ site.color }},
   "black": #000,
@@ -90,10 +90,10 @@ $colors: (
 
 $theme-colors: (
 {% for book in books %}
-  "{{ book.slug }}": {{ book.color }},
+  "{{ book.slug }}": {{ book.color | default: site.color }},
 {% endfor %}
 {% for feature in features %}
-  "{{ feature.slug }}": {{ feature.color }},
+  "{{ feature.slug }}": {{ feature.color | default: site.color }},
 {% endfor %}
   "site": {{ site.color }}
 );
