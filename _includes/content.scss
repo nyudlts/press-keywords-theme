@@ -8,13 +8,13 @@
   }
 
   mark {
-    background-color: {{ include.page.color }} !important;
+    background-color: {{ include.page.color | default: site.color }} !important;
     color: white;
   }
 
   // Links need break lines, since they can be really long
   a {
-    color: {{ include.page.color }};
+    color: {{ include.page.color | default: site.color }};
     font-weight: bold;
     word-break: break-all;
   }
