@@ -2,6 +2,8 @@
 layout: content
 ---
 
+{%- include global_variables.html -%}
+
 <article>
   <header>
     <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
@@ -21,7 +23,9 @@ layout: content
 
   {% for post in page.posts %}
     <article class="border-top pt-3">
-      <header>
+      <header class="position-relative">
+        {%- include_cached icon.html t=t availability=post.availability color=post.book.slug -%}
+
         <h1 class="h3 text-uppercase font-weight-bold">
           <a class="{{ post.book.slug }} text-decoration-none" href="{{ post.url | relative_url }}" title="{{ t.person.bookmark }} {{ post.title }}" rel="bookmark">
             {{ post.title }}
