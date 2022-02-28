@@ -14,6 +14,7 @@ sass:
   load_paths:
   - node_modules
 plugins:
+- jekyll-data
 - jekyll-include-cache
 - jekyll-seo-tag
 - jekyll-ignore-layouts
@@ -23,7 +24,6 @@ plugins:
 - jekyll-alternate-permalinks
 - jekyll-feed
 - jekyll-images
-
 # Fields indexed.  Fields that are also linked fields are sub-indexed.
 #
 # XXX: Don't add fields that may point to printed essays or their
@@ -56,17 +56,18 @@ linked_fields:
 - rights
 - pages
 - works_cited
-
+- extra_contributors
 exclude:
 - Makefile
-
+- package.json
+- yarn.lock
+- README.md
 book_layouts:
 - book
 - feature
 background_image: /assets/images/tools.jpg
 background_color: "#fff"
 primary_color: "#666"
-
 analytics:
   id: UA-51495518-2
   anonymize_ip: true
