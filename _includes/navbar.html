@@ -24,7 +24,7 @@
       {% include_cached toggler_label.html id="responsive-menu" class="navbar-toggler" content=responsive_menu -%}
       {% include_cached toggler.html id="responsive-menu" -%}
 
-      <div class="toggled untoggled-md transition navbar-collapse position-absolute position-md-relative left-0 w-100 w-md-auto background-primary background-md-transparent overflow-y-scroll overflow-y-md-visible top-navbar-sm top-md-0 grow-vertically">
+      <div class="toggled untoggled-md navbar-collapse position-absolute position-md-relative left-0 w-100 w-md-auto background-primary background-md-transparent overflow-y-scroll overflow-y-md-visible top-navbar-sm top-md-0 grow-vertically">
         <div class="navbar-nav d-flex align-items-center pt-3 pt-md-0">
           <div class="nav-item w-100 w-lg-auto">
             <a class="nav-link px-3 mb-3 mb-md-0 text-uppercase font-weight-bold h6 white" href="{{ '/' | relative_url }}">
@@ -69,11 +69,11 @@
             {{ t.navbar.search }}
             <i class="fa fa-fw fa-search" aria-hidden="true"></i>
           {%- endcapture -%}
-          {%- include toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer' content=search_content -%}
+          {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer' content=search_content -%}
 
-          {% include toggler.html id='search' %}
-          <div class="toggled">
-            <div class="text-left background-primary p-3 position-fixed top-navbar right-0">
+          {%- include_cached toggler.html id="search" name="dropdown" type="radio" -%}
+          <div class="toggled grow-vertically position-absolute right-0">
+            <div class="text-left background-primary p-3">
               {% include_cached search.html t=t %}
             </div>
           </div>
