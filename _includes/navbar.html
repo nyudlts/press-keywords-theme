@@ -51,7 +51,7 @@
 
                   <ul class="list-unstyled mb-0 mt-3">
                     {% for post in posts %}
-                      <li class="mb-md-3">
+                      <li class="{{ forloop.last | value_unless: 'mb-3' }}">
                         <a class="nav-link font-weight-bold white text-nowrap" href="{{ post.url | relative_url }}">{{ post.title }}</a>
                       </li>
                     {% endfor %}
