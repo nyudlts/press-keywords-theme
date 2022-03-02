@@ -47,6 +47,7 @@
 
     & ~ .toggled {
       visibility: inherit;
+      z-index: 1;
 
       &.grow-vertically {
         max-height: 9999px;
