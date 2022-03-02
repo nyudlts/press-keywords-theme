@@ -13,21 +13,7 @@
   <nav class="grow-horizontally transition background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
     <ul class="list-unstyled">
       {% if current_book.courses and current_book.courses != empty %}
-        <li class="">
-          <details>
-            <summary class="{{ main_link_class }}">{{ include.t.rightbar.courses }}</summary>
-
-            <ul class="list-unstyled">
-              {% for course in current_book.courses %}
-                <li class="">
-                  <a
-                    class="{{ link_class }}"
-                    href="{{ course.url | relative_url }}">{{ course.title }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </details>
-        </li>
+        {%- include_cached essays_list.html essays=current_book.courses group=include.t.rightbar.courses link_class=link_class main_link_class=main_link_class t=include.t -%}
       {% endif %}
 
       {% if current_book.contact %}
