@@ -3,6 +3,10 @@
   opacity: 0;
   position: absolute;
 
+  & ~ .toggled {
+    z-index: 1;
+  }
+
   & ~ label {
     .toggled-rotate {
       transform-origin: center;
