@@ -57,6 +57,13 @@
                     {% endfor %}
                   </ul>
                 </div>
+
+                {% comment %}
+                  Close the menu when touching outside it
+                {% endcomment %}
+                <div class="toggled position-fixed w-100 left-0 h-100vh" style="z-index: 0">
+                  {%- include_cached toggler_related.html id="close" class="w-100 h-100" -%}
+                </div>
               </div>
             </div>
           {% endfor %}
@@ -76,6 +83,13 @@
             <div class="text-left background-primary p-3">
               {% include_cached search.html t=t %}
             </div>
+          </div>
+
+          {% comment %}
+            Close the menu when touching outside it
+          {% endcomment %}
+          <div class="toggled position-fixed w-100 left-0 h-100vh" style="z-index: 0">
+            {%- include_cached toggler_related.html id="close" class="w-100 h-100" -%}
           </div>
         </div>
       </div>
