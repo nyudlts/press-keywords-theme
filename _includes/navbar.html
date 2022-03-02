@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       {%- endcapture -%}
       {% include_cached toggler_label.html id="responsive-menu" class="navbar-toggler" content=responsive_menu -%}
-      {% include_cached toggler.html id="responsive-menu" -%}
+      {% include_cached toggler.html id="responsive-menu" type="radio" name="dropdown" -%}
 
       <div class="toggled untoggled-md navbar-collapse position-absolute position-md-relative left-0 w-100 w-md-auto background-primary background-md-transparent overflow-y-scroll overflow-y-md-visible top-navbar-sm top-md-0 grow-vertically">
         <div class="navbar-nav d-flex align-items-center pt-3 pt-md-0">
