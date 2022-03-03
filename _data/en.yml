@@ -85,7 +85,7 @@ footer:
   accessibility: 'Accessibility'
   accessibility_url: 'https://www.nyu.edu/footer/accessibility.html'
   publisher: 'NYU Press'
-  logo: '/assets/images/logo-nyupress.png'
+  logo: '/assets/images/nyupress.png'
 navbar:
   label: 'Open the menu'
   home: 'Home'
