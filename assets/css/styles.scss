@@ -137,9 +137,11 @@ $theme-colors: (
   background-image: url("{{ site.background_image | relative_url }}");
 }
 
+{% comment %}
 @if $debug {
   * { outline: 1px solid pink; }
 }
+{% endcomment %}
 
 {% comment %}
 If the separator is a ForkAwesome icon, define it as one.

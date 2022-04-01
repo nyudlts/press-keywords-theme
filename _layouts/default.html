@@ -49,5 +49,9 @@
     </main>
 
     {%- include_cached footer.html cache_key=current_book -%}
+
+    <div data-turbo-permanent>
+      {% include_cached device_detector.html %}
+    </div>
   </body>
 </html>
