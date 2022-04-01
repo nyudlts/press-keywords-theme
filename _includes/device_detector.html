@@ -1,0 +1,19 @@
+<div data-controller="device-detector" class="position-fixed top-0 right-0 background-pink-t3 z-index-2050 pointer-event-none">
+  <a class="pointer-event-auto"
+  href="javascript:(()=>{let style=document.head.querySelector('style#outline');if(style){style.remove()}else{style=document.createElement('style');style.id='outline';document.head.appendChild(style);style.append(`*{outline: 1px solid pink}`)}})()">
+    outline
+  </a>
+  <span data-device-detector-target="clientName"></span>
+  &nbsp;
+  <span data-device-detector-target="clientVersion"></span>
+  &nbsp;
+  (<span data-device-detector-target="deviceType"></span>)
+  &nbsp;
+  <span data-device-detector-target="osName"></span>
+  &nbsp;
+  <span data-device-detector-target="osVersion"></span>
+  &nbsp;
+  <span data-device-detector-target="viewportWidth"></span>
+  x <span data-device-detector-target="viewportHeight"></span>
+  x <span data-device-detector-target="devicePixelRatio"></span>
+</div>
