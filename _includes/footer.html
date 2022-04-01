@@ -1,7 +1,7 @@
 {%- include global_variables.html -%}
 
 {%- capture accessibility -%}
-  <a class="{{ current_color }}" target="_blank" rel="noopener noreferrer" href="{{ t.footer.accessibility_url }}">{{ t.footer.accessibility }}</a>
+  <a class="{% if current_book %}{{ current_color }}{% else %}text-white{% endif %}" target="_blank" rel="noopener noreferrer" href="{{ t.footer.accessibility_url }}">{{ t.footer.accessibility }}</a>
 {%- endcapture -%}
 
 <footer class="w-100{% unless current_book %} border-top{% endunless %}">
