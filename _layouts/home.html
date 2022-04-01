@@ -11,10 +11,18 @@ layout: default
     <h1 class="f-md-6 text-center text-uppercase primary">{{ site.title }}</h1>
 
     <div class="content primary">
-      {{ about.description | markdownify }}
+      {% capture read_more %}
+        <a class="site" href="{{ about.url | relative_url }}">
+          {{ t.home.read_more }}
+        </a>
+      {% endcapture %}
+
+      {{ about.description | append: read_more }}
+      {% comment %}
+        Tuve que sacarle markdownify porque sino no no mostraba el read_more en la misma linea del parrafo
+      {% endcomment %}
     </div>
 
-    <a class="site" href="{{ about.url | relative_url }}">{{ t.home.read_more }}</a>
   </header>
 
   {% for book in books %}
