@@ -25,14 +25,14 @@ layout: default
 
       {{ about.description | append: read_more }}
       {% comment %}
-        Tuve que sacarle markdownify porque sino no no mostraba el read_more en la misma linea del parrafo
+        Tuve que sacarle markdownify porque sino no no mostraba el read_more en la misma línea del parrafo
       {% endcomment %}
     </div>
 
   </header>
 
   {% for book in books %}
-    <article id="{{ book.slug }}" class="position-relative d-flex flex-column flex-md-row pt-20px pb-55px">
+    <article id="{{ book.slug }}" class="position-relative d-flex flex-column flex-md-row pt-5 pb-55px">
       <div class="text-center">
         <img
           src="{{ book.image | thumbnail: 200 }}"
@@ -52,7 +52,7 @@ layout: default
           </a>
         </h1>
 
-        <p>
+        <p class="primary">
           {{ t.home.edited_by }}
 
           {% include_cached people.html people=book.editors book=book %}
