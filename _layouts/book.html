@@ -41,7 +41,7 @@ layout: default
 
       <div class="text-center text-uppercase mt-1">
         {%- capture leftbar_class -%}
-          btn btn-{{ current_color }} h6 m-0 font-weight-bold
+          btn btn-{{ current_color }} h6 m-0 font-weight-bold px-5 py-3
         {%- endcapture -%}
         {% include toggler_related.html id='leftbar' class=leftbar_class content=t.book.open_menu %}
       </div>
