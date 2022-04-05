@@ -14,6 +14,7 @@ sass:
   load_paths:
   - node_modules
 plugins:
+- press-plugins
 - jekyll-data
 - jekyll-include-cache
 - jekyll-seo-tag
