@@ -15,7 +15,7 @@
   <link href='{{ '/assets/css/styles.css' | relative_url }}' rel='stylesheet' type='text/css'>
 
   {% if include.redirect %}
-    {% if jekyll.environment == 'production '%}
+    {% if jekyll.environment == 'production' %}
       <meta http-equiv="refresh" content="0;url={{ include.redirect }}" />
     {% endif %}
 
