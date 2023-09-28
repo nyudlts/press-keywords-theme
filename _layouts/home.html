@@ -33,18 +33,21 @@ layout: default
 
   {% for book in books %}
     <article id="{{ book.slug }}" class="position-relative d-flex flex-column flex-md-row pt-5 pb-55px">
-      <div class="text-center">
+      <div class="position-relative text-center">
         <img
           src="{{ book.image | thumbnail: 200 }}"
+          
           loading="lazy"
           width="200"
           alt="{{ t.home.cover_alt }} {{ book.title }}" />
+        {% assign book_url = book.url | relative_url %}
+        {% include stretched_link.html href=book_url %}
       </div>
 
       <header class="pl-md-50px pt-10px">
         <h1 class="text-uppercase font-weight-bold h4">
           <a
-            class="stretched-link {{ book.slug }} text-decoration-none"
+            class=" {{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
             {{ site.title }}
             {{ t[book.layout].modifier_included_in_site_title | default: t[book.layout].modifier_included_in_page_title }}
