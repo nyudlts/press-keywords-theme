@@ -13,3 +13,4 @@ f105 angle-right
 f0e0 envelope
 f108 desktop
 f02d book
+f0d7 caret-down
