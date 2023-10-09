@@ -1,0 +1,53 @@
+title:
+  type: string
+  required: true
+  label:
+    es: Título
+    en: Title
+  help:
+    es: ''
+    en: ''
+permalink:
+  type: 'string'
+  label:
+    es: 'Enlace'
+    en: 'Permalink'
+  help:
+    es: |
+      Si no quieres utilizar el formato de enlaces general del sitio
+      para este artículo, especifica uno aquí.
+    en: |
+      If you don't want to follow the site's link format for this
+      post, change it here.
+authorship:
+  type: 'string'
+  label:
+    es: 'Autoría'
+    en: 'Authorship'
+  help:
+    es: |
+      
+    en: |
+      
+book:
+  type: belongs_to
+  inverse: works_cited
+  filter:
+    layout: book
+  label:
+    es: "Citado en:"
+    en: "Cited in:"
+  help:
+    es: ¿En qué libro se hace esta cita?
+    en: Which book is this cited in?
+essay:
+  type: belongs_to
+  inverse: works_cited
+  filter:
+    layout: essay
+  label:
+    es: "Citado en:"
+    en: "Cited in:"
+  help:
+    es: ¿En qué libro se hace esta cita?
+    en: Which book is this cited in?

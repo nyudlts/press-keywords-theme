@@ -1,0 +1,58 @@
+title:
+  type: string
+  required: true
+  label:
+    es: Título
+    en: Title
+  help:
+    es: ''
+    en: ''
+authors:
+  type: 'has_many'
+  filter:
+    layout: 'author'
+  inverse: 'essay'
+  label:
+    es: 'Autores'
+    en: 'Authors'
+  help:
+    es: '' 
+    en: ''
+availability:
+  type: 'string'
+  label:
+    es: 'Disponibilidad'
+    en: 'Availability'
+  help:
+    es: ''
+    en: ''
+book:
+  type: belongs_to
+  inverse: essay
+  filter:
+    layout: book
+  label:
+    es: "Libro"
+    en: "Book"
+  help:
+    es: ¿En qué libro está este ensayo?
+    en: Which book does this belong to?
+works_cited:
+  type: 'has_many'
+  filter:
+    layout: 'work_cited'
+  inverse: 'essay'
+  label:
+    es: 'Obras citadas'
+    en: 'Works cited'
+  help:
+    es: '' 
+    en: ''
+page:
+  type: 'number'
+  label:
+    es: 'Página'
+    en: 'Page'
+  help:
+    es: 'Página del libro impreso'
+    en: 'Page on the printed book'
