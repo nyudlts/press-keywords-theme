@@ -1,0 +1,26 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'name'
+  help:
+    en: 'Person full name'
+content:
+  type: 'html'
+  label:
+    en: 'content'
+  help:
+    en: 'Person bio'
+books:
+  type: 'list_of_book'
+  label:
+    en: 'books'
+  help:
+    en: 'Books this person is contributor of'
+posts:
+  type: 'list_of_post'
+  label:
+    en: 'posts'
+  help:
+    en: 'Posts the person is linked to'
+
