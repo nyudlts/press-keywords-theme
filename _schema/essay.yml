@@ -1,0 +1,30 @@
+---
+# Essays
+#
+# The title is automatically converted into all lower case letters and
+# used as the keyword or slug.
+title:
+  type: 'string'
+  use: 'The essay full title'
+  example: 'Abolition'
+content:
+  type: 'html'
+  use: 'Essay full text'
+authors:
+  type: 'list_of_person'
+  use: 'List of authors'
+availability:
+  type: 'string'
+  use: 'Organizes essays between Web and Print'
+book:
+  type: 'book'
+  use: 'Book the essay is published on'
+# Works cited are internal links made over on the content.  A plugin
+# extracts them and fills this field, which allows creating the works
+# cited pages for the book and the individual essay.
+works_cited:
+  type: 'list_of_work_cited'
+  use: 'Bibliography pages'
+page:
+  type: 'number'
+  use: 'Page on the printed book'
