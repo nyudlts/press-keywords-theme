@@ -1,0 +1,25 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'title'
+  help:
+    en: 'Page title'
+content:
+  type: 'html'
+  label:
+    en: 'content'
+  help:
+    en: 'Page content'
+book:
+  type: 'book'
+  label:
+    en: 'book'
+  help:
+    en: 'Book the page belongs to'
+authors:
+  type: 'list_of_person'
+  label:
+    en: 'authors'
+  help:
+    en: 'Book authors'
