@@ -1,0 +1,44 @@
+---
+title:
+  type: 'string'
+  required: true
+  label:
+    en: 'Essay title'
+  help:
+    en: 'Title that describes the essay'
+content:
+  type: 'html'
+  label:
+    en: 'content'
+  help:
+    en: 'Essay content' 
+authors:
+  type: 'list_of_person'
+  label:
+    en: 'authors'
+  help:
+    en: 'List of authors'
+availability:
+  type: 'string'
+  label:
+    en: 'Availability'
+  help:
+    en: 'Essay availability'
+book:
+  type: 'book'
+  label:
+    en: 'book'
+  help:
+    en: 'book to which the essay belongs'
+works_cited:
+  type: 'list_of_work_cited'
+  label:
+    en: 'works cited'
+  help:
+    en: 'citation reference linked to the essay'
+page:
+  type: 'number'
+  label:
+    en: 'page'
+  help:
+    en: 'Essay page'
