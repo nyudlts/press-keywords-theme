@@ -1,0 +1,52 @@
+---
+# Each book contains the metadata necessary to create what so far has
+# been a new subsite.
+title:
+  type: 'string'
+  use: 'Title of the book'
+  example: 'African American Studies'
+description:
+  type: 'string'
+  use: 'Description of the book'
+  example: 'African American Studies, Fourth Edition'
+image:
+  type: 'image'
+  use: 'Book cover'
+color:
+  type: 'color'
+  use: 'Main color'
+  example: '#730302'
+contact:
+  type: 'email'
+  use: 'Contact address on the right side menu'
+editors:
+  type: 'list_of_person'
+  use: 'Editors'
+content:
+  type: 'html'
+  use: 'Introduction, as read on Home'
+# The works cited page is created automatically from all of the works
+# linked from the essays.
+essays:
+  type: 'list_of_essay'
+  use: 'Essays'
+link:
+  type: 'url'
+  use: 'Link to NYU Press'
+# The following fields link page to their roles on the book.  The menus
+# are created automatically from this.  Missing pages are skipped.
+introduction:
+  type: 'page'
+  use: 'Introduction page'
+acknowledgments:
+  type: 'page'
+  use: 'Acknowledgments page'
+courses:
+  type: 'list_of_page'
+  uses: 'In the classroom pages'
+about:
+  type: 'page'
+  uses: 'About page'
+rights:
+  type: 'page'
+  uses: 'Licensing page'
