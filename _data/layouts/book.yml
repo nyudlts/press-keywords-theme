@@ -1,0 +1,86 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'book'
+  help:
+    en: 'Book title'
+description:
+  type: 'string'
+  label:
+    en: 'description'
+  help:
+    en: 'Book description'
+image:
+  type: 'image'
+  label:
+    en: 'image'
+  help:
+    en: 'Image cover'
+color:
+  type: 'color'
+  label:
+    en: 'color'
+  help:
+    en: 'Main color'
+contact:
+  type: 'email'
+  label:
+    en: 'contact'
+  help:
+    en: 'Contact email'
+editors:
+  type: 'list_of_person'
+  label:
+    en: 'Editors'
+  help:
+    en: 'Book editors'
+content:
+  type: 'html'
+  label:
+    en: 'content'
+  help:
+    en: 'Book content'
+essays:
+  type: 'list_of_essay'
+  label:
+    en: 'essays'
+  help:
+    en: 'list of book essays'
+link:
+  type: 'url'
+  label:
+    en: 'link'
+  help:
+    en: 'Book link'
+introduction:
+  type: 'page'
+  label:
+    en: 'introduction'
+  help:
+    en: 'Book introduction'
+acknowledgments:
+  type: 'page'
+  label:
+    en: 'acknowledgments'
+  help:
+    en: 'Acknowledgments page'
+courses:
+  type: 'list_of_page'
+  label:
+    en: 'courses'
+  help:
+    en: 'classroom pages'
+about:
+  type: 'page'
+  label:
+    en: 'about'
+  help:
+    en: 'About page'
+rights:
+  type: 'page'
+  label:
+    en: 'rights'
+  help:
+    en: 'Licensing page'
+
