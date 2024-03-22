@@ -6,19 +6,19 @@ title:
   help:
     en: 'Page title'
 content:
-  type: 'html'
+  type: 'markdown'
   label:
     en: 'content'
   help:
     en: 'Page content'
 book:
-  type: 'book'
+  type: 'belongs_to'
   label:
     en: 'book'
   help:
     en: 'Book the page belongs to'
 authors:
-  type: 'list_of_person'
+  type: 'has_many'
   label:
     en: 'authors'
   help:
