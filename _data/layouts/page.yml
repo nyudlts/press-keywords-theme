@@ -10,7 +10,7 @@ content:
   label:
     en: 'content'
   help:
-    en: 'Page content'
+    en: 'Page contents'
 book:
   type: 'belongs_to'
   label:
@@ -22,7 +22,7 @@ authors:
   label:
     en: 'authors'
   help:
-    en: 'Book authors'
+    en: 'List of authors'
 permalink:
   type: 'string'
   label:
