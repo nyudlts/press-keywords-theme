@@ -17,3 +17,8 @@ content:
     en: 'content'
   help:
     en: 'Citation content'
+permalink:
+  label:
+    en: 'permalink'
+  help:
+    en: 'The citation permalink'
