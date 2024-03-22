@@ -4,63 +4,63 @@ title:
   label:
     en: 'book'
   help:
-    en: 'Book title'
+    en: 'Title of the book. (example: African American Studies)'
 description:
   type: 'string'
   label:
     en: 'description'
   help:
-    en: 'Book description'
+    en: 'Description of the book. (example: African American Studies, Fourth Edition)'
 image:
   type: 'image'
   label:
     en: 'image'
   help:
-    en: 'Image cover'
+    en: 'Book cover'
 color:
   type: 'color'
   label:
     en: 'color'
   help:
-    en: 'Main color'
+    en: 'Main color. (example: #730302)'
 contact:
   type: 'email'
   label:
     en: 'contact'
   help:
-    en: 'Contact email'
+    en: 'Contact address on the right side menu'
 editors:
   type: 'has_many'
   label:
     en: 'Editors'
   help:
-    en: 'Book editors'
+    en: 'Editors'
 content:
   type: 'markdown'
   label:
     en: 'content'
   help:
-    en: 'Book content'
+    en: 'Introduction, as read on Home'
 essays:
   type: 'has_many'
   label:
     en: 'essays'
   help:
-    en: 'list of book essays'
+    en: 'Essays'
 link:
   type: 'url'
   label:
     en: 'link'
   help:
-    en: 'Book link'
+    en: 'Link to NYU Press'
 introduction:
-  type: 'page'
+  type: 'link'
   label:
     en: 'introduction'
   help:
-    en: 'Book introduction'
+    en: 'Introduction page'
 acknowledgments:
-  type: 'page'
+  type: 'link'
   label:
     en: 'acknowledgments'
   help:
@@ -70,17 +70,16 @@ courses:
   label:
     en: 'courses'
   help:
-    en: 'classroom pages'
+    en: 'In the classroom pages'
 about:
-  type: 'page'
+  type: 'link'
   label:
     en: 'about'
   help:
     en: 'About page'
 rights:
-  type: 'page'
+  type: 'link'
   label:
     en: 'rights'
   help:
     en: 'Licensing page'
-
