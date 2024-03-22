@@ -23,3 +23,9 @@ authors:
     en: 'authors'
   help:
     en: 'Book authors'
+permalink:
+  type: 'string'
+  label:
+    en: 'permalink'
+  help:
+    en: 'The page permalink'
