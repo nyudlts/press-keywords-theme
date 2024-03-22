@@ -5,15 +5,15 @@ title:
   label:
     en: 'Essay title'
   help:
-    en: 'Title that describes the essay'
+    en: 'The essay full title. (example: Abolition)'
 content:
-  type: 'html'
+  type: 'markdown'
   label:
     en: 'content'
   help:
-    en: 'Essay content' 
+    en: 'Essay full text' 
 authors:
-  type: 'list_of_person'
+  type: 'has_many'
   label:
     en: 'authors'
   help:
@@ -23,25 +23,25 @@ availability:
   label:
     en: 'Availability'
   help:
-    en: 'Essay availability'
+    en: 'Organizes essays between Web and Print'
 book:
-  type: 'book'
+  type: 'belongs_to'
   label:
     en: 'book'
   help:
-    en: 'book to which the essay belongs'
+    en: 'Book the essay is published on'
 works_cited:
-  type: 'list_of_work_cited'
+  type: 'has_many'
   label:
     en: 'works cited'
   help:
-    en: 'citation reference linked to the essay'
+    en: 'Bibliography pages'
 page:
   type: 'number'
   label:
     en: 'page'
   help:
-    en: 'Essay page'
+    en: 'Page on the printed book'
 permalink:
   type: 'string'
   label:
