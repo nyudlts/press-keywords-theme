@@ -1,0 +1,19 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'citation'
+  help:
+    en: 'Name for the citation'
+authorship:
+  type: 'string'
+  label:
+    en: 'authorship'
+  help:
+    en: 'Authors names'
+content:
+  type: 'markdown'
+  label:
+    en: 'content'
+  help:
+    en: 'Citation content'
