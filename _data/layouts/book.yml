@@ -30,19 +30,19 @@ contact:
   help:
     en: 'Contact email'
 editors:
-  type: 'list_of_person'
+  type: 'has_many'
   label:
     en: 'Editors'
   help:
     en: 'Book editors'
 content:
-  type: 'html'
+  type: 'markdown'
   label:
     en: 'content'
   help:
     en: 'Book content'
 essays:
-  type: 'list_of_essay'
+  type: 'has_many'
   label:
     en: 'essays'
   help:
@@ -66,7 +66,7 @@ acknowledgments:
   help:
     en: 'Acknowledgments page'
 courses:
-  type: 'list_of_page'
+  type: 'has_many'
   label:
     en: 'courses'
   help:
