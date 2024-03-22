@@ -18,7 +18,15 @@ content:
   help:
     en: 'Citation content'
 permalink:
+  type: 'string'
   label:
     en: 'permalink'
   help:
     en: 'The citation permalink'
+book:
+  type: 'belongs_to'
+  label:
+    en: 'book'
+  help:
+    en: 'The book which the citation belongs'
+
