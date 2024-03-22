@@ -4,13 +4,13 @@ title:
   label:
     en: 'name'
   help:
-    en: 'Person full name'
+    en: 'Full name. (example: )Marlon M. Bailey'
 content:
   type: 'markdown'
   label:
     en: 'content'
   help:
-    en: 'Person bio'
+    en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
   type: 'has_many'
   label:
@@ -22,7 +22,7 @@ posts:
   label:
     en: 'posts'
   help:
-    en: 'Posts the person is linked to'
+    en: 'Posts the person is linked to, filled automatically by the CMS or Jekyll plugin'
 permalink:
   type: 'string'
   label:
