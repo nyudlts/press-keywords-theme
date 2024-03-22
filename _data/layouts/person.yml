@@ -6,19 +6,19 @@ title:
   help:
     en: 'Person full name'
 content:
-  type: 'html'
+  type: 'markdown'
   label:
     en: 'content'
   help:
     en: 'Person bio'
 books:
-  type: 'list_of_book'
+  type: 'has_many'
   label:
     en: 'books'
   help:
     en: 'Books this person is contributor of'
 posts:
-  type: 'list_of_post'
+  type: 'has_many'
   label:
     en: 'posts'
   help:
