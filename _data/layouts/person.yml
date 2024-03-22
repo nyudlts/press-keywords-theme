@@ -23,4 +23,15 @@ posts:
     en: 'posts'
   help:
     en: 'Posts the person is linked to'
-
+permalink:
+  type: 'string'
+  label:
+    en: 'permalink'
+  help:
+    en: 'The person permalink'
+alternate-permalink:
+  type: 'array'
+  label:
+    en: 'alternate_permalinks'
+  help:
+    en: 'The person alternate permalinks'
