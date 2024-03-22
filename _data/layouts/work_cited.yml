@@ -4,19 +4,19 @@ title:
   label:
     en: 'citation'
   help:
-    en: 'Name for the citation'
+    en: 'Human-readable name for the citation. (example: Aaronson, Trevor. The Terror Factory: Inside the...)'
 authorship:
   type: 'string'
   label:
     en: 'authorship'
   help:
-    en: 'Authors names'
+    en: 'Authors names. (example: Aaronson, Trevor)'
 content:
   type: 'markdown'
   label:
     en: 'content'
   help:
-    en: 'Citation content'
+    en: 'Reference. (example: <em>The Terror Factory: Inside the FBI’s Manufactured...)'
 permalink:
   type: 'string'
   label:
@@ -29,4 +29,3 @@ book:
     en: 'book'
   help:
     en: 'The book which the citation belongs'
-
