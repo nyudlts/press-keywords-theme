@@ -1,0 +1,55 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'book'
+  help:
+    en: 'Book title'
+color:
+  type: 'color'
+  label:
+    en: 'color'
+  help:
+    en: 'Main color'
+contact:
+  type: 'email'
+  label:
+    en: 'contact'
+  help:
+    en: 'Contact email'
+editors:
+  type: 'has_many'
+  label:
+    en: 'Editors'
+  help:
+    en: 'Book editors'
+essays:
+  type: 'has_many'
+  label:
+    en: 'essays'
+  help:
+    en: 'list of book essays'
+introduction:
+  type: 'page'
+  label:
+    en: 'introduction'
+  help:
+    en: 'Book introduction'
+about:
+  type: 'page'
+  label:
+    en: 'about'
+  help:
+    en: 'About page'
+rights:
+  type: 'page'
+  label:
+    en: 'rights'
+  help:
+    en: 'Licensing page'
+permalink:
+  type: 'string'
+  label:
+    en: 'permalink'
+  help:
+    en: 'The feature permalink'
