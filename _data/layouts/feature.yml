@@ -30,19 +30,19 @@ essays:
   help:
     en: 'list of book essays'
 introduction:
-  type: 'page'
+  type: 'link'
   label:
     en: 'introduction'
   help:
     en: 'Book introduction'
 about:
-  type: 'page'
+  type: 'link'
   label:
     en: 'about'
   help:
     en: 'About page'
 rights:
-  type: 'page'
+  type: 'link'
   label:
     en: 'rights'
   help:
