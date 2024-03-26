@@ -13,6 +13,8 @@ content:
     en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
   type: 'has_many'
+  filter:
+    layout: 'book'
   label:
     en: 'books'
   help:
