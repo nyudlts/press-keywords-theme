@@ -26,6 +26,8 @@ availability:
     en: 'Organizes essays between Web and Print'
 book:
   type: 'belongs_to'
+  filter:
+    layout: 'book'
   label:
     en: 'book'
   help:
