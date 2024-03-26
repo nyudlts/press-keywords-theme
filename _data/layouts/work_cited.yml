@@ -25,6 +25,8 @@ permalink:
     en: 'The citation permalink'
 book:
   type: 'belongs_to'
+  filter:
+    layout: 'book'
   label:
     en: 'book'
   help:
