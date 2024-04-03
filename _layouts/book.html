@@ -30,6 +30,12 @@ layout: default
         <p style="text-align: center;">
           <a class="button" href="#">Read the Essays</a>
         </p>
+
+        {% if page.link %}
+          <p style="text-align: center;">
+            <a class="button-outline" href="{{ page.link | uri_escape }}" target="_blank" rel="noopener">Buy the Book</a>
+          </p>
+        {% endif %}
       </article>
     </div>
   </section>
