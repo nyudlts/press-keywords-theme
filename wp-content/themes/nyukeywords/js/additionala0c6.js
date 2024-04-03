@@ -172,7 +172,7 @@ jQuery('#clickoverlay2').click(function() {
 		flyout('right',jQuery(this));
 	});
 
-    jQuery('.home #content a.button').click(function(e) {
+    jQuery('.home #content a.button[href="#"]').click(function(e) {
 		e.preventDefault();
 		flyout('left',jQuery('#main-menu li:first-child'));
 	});
