@@ -1,0 +1,156 @@
+version: "3"
+vars:
+  CURRENT_BRANCH:
+    sh: "git rev-parse --abbrev-ref HEAD"
+  SITE:
+    sh: "pwd | xargs basename | sed -re s/-jekyll-theme//"
+  DOMAIN:
+    sh: "pwd | xargs basename | sed -re s/-jekyll-theme/.sutty.local/"
+shopt:
+- "globstar"
+dotenv:
+- ".env"
+tasks:
+  default:
+    deps:
+    - "build"
+  rubocop:
+    desc: "Chequea el código Ruby"
+    deps:
+    - "bundle"
+    cmds:
+    - "haini.sh bundle exec rubocop -A"
+  url:
+    silent: true
+    cmds:
+    - "echo https://{{.DOMAIN}}:4000/"
+  subset_fonts:
+    desc: "Create latin font subsets"
+    cmds:
+    - cmd: "haini.sh _bin/subset_font.sh {{.ITEM}}"
+      for: "sources"
+    sources:
+    - "assets/fonts/**/*.ttf"
+    - "assets/fonts/*.ttf"
+    - "assets/fonts/**/*.otf"
+    - "assets/fonts/*.otf"
+  pack:
+    desc: "Compila JavaScript"
+    deps:
+    - "pnpm"
+    cmds:
+    - "git rm -f assets/js/pack.* || true"
+    - "haini.sh ./node_modules/.bin/esbuild _packs/entry.js --analyze --bundle --minify --sourcemap --outdir=assets/js/ --entry-names=\"pack.[hash]\" --metafile=_data/manifest.json"
+    - "git add _data/manifest.json assets/js/pack.*"
+    - "git commit -m \"[skip ci] JS\""
+    - task: "notify"
+    sources:
+    - "_packs/**/*.js"
+    generates:
+    - "_data/manifest.json"
+  watch:
+    desc: "Desarrollar JavaScript"
+    deps:
+    - "pnpm"
+    cmds:
+    - "haini.sh ./node_modules/.bin/esbuild _packs/entry.js --analyze --bundle --outfile=pack.js --serve=65001"
+  build:
+    desc: "Genera el sitio en entorno de desarrollo"
+    deps:
+    - "url"
+    - "pnpm"
+    - "bundle"
+    - "serve"
+    cmds:
+    - "haini.sh bundle exec jekyll build --trace --profile"
+    - task: "notify"
+  bundle:
+    desc: "Instala dependencias de Jekyll"
+    cmds:
+    - "haini.sh bundle"
+    sources:
+    - "*.gemspec"
+    - "Gemfile"
+    generates:
+    - "Gemfile.lock"
+  pnpm:
+    desc: "Instala dependencias de JS y CSS"
+    cmds:
+    - "haini.sh npm install -g pnpm@~7"
+    - "haini.sh pnpm install"
+    sources:
+    - "package.json"
+    generates:
+    - "pnpm-lock.yaml"
+  hosts:
+    desc: "Agrega el dominio local a /etc/hosts"
+    interactive: true
+    cmds:
+    - "echo -e \"127.0.0.1 {{.DOMAIN}}\n::1 {{.DOMAIN}}\" | sudo tee -a /etc/hosts"
+    status:
+    - "grep -q \" {{.DOMAIN}}$\" /etc/hosts"
+  serve:
+    desc: "Inicia el servidor web de desarrollo"
+    deps:
+    - "hosts"
+    cmds:
+    - "haini.sh nginx"
+    status:
+    - "pgrep -F ../hain/run/nginx/nginx.pid"
+  notify: "echo -e \"\a\""
+  google-font:
+    desc: "Descarga una tipografía desde Google Fonts: $ task google-font -- $url "
+    cmds:
+    - "./_bin/download_google_font {{.CLI_ARGS}}"
+  push:
+    desc: "Push"
+    cmds:
+    - "git push --set-upstream origin {{.CURRENT_BRANCH}}"
+    status:
+    - "git rev-list --right-only --count origin/{{.CURRENT_BRANCH}}..{{.CURRENT_BRANCH}} | grep -q \"^0$\""
+  ota:
+    internal: true
+    deps:
+    - "push"
+    - "pack"
+    cmds:
+    - "scp ./_bin/ota.sh {{.DELEGATE}}:/tmp/"
+    - "ssh {{.DELEGATE}} docker cp /tmp/ota.sh {{.CONTAINER}}:/usr/local/bin/ota"
+    - "cp ./_bin/ota.sh /tmp/ota"
+    sources:
+    - "./_bin/ota.sh"
+    generates:
+    - "/tmp/ota"
+  ota-testing:
+    desc: "Deploy para testing"
+    deps:
+    - "ota"
+    cmds:
+    - "ssh {{.DELEGATE}} docker exec {{.CONTAINER}} ota {{.SITE}}.testing {{.CURRENT_BRANCH}} {{.CLI_ARGS}}"
+  hechos:
+    desc: "Hecho"
+    cmds:
+    - "glab issue list --label Hecho"
+  testing:
+    desc: "Testing"
+    cmds:
+    - "git switch {{.TESTING_BRANCH}}"
+    - "git pull origin issue-{{.CLI_ARGS}}"
+    - "glab issue update --label Testing --unlabel \"Hecho,Skill: Desarrollo\" {{.CLI_ARGS}}"
+  fa-add:
+    desc: "Agregar ícono en la lista: $ task fa-add -- $name (ej. funkwhale, sin fa-)"
+    deps:
+    - "pnpm"
+    cmds:
+    - "haini.sh _bin/add_fa.sh {{.CLI_ARGS}}"
+  fa:
+    desc: "Fork Awesome"
+    deps:
+    - "pnpm"
+    cmds:
+    - "haini.sh _bin/subset_fork_awesome.sh"
+    sources:
+    - "fa.txt"
+    - "node_modules/fork-awesome/fonts/forkawesome-webfont.woff2"
+    generates:
+    - "assets/fonts/forkawesome-webfont.woff2"

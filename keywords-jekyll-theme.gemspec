@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
     'documentation_uri' => "#{spec.homepage}/blob/master/README.md"
   }
 
-  spec.add_runtime_dependency 'jekyll', '~> 4'
+  spec.add_runtime_dependency 'jekyll', '~> 4.2.0'
   spec.add_runtime_dependency 'jekyll-linked-posts', '~>0.3'
   spec.add_runtime_dependency 'jekyll-lunr', '~>0.3'
   spec.add_runtime_dependency 'sutty-liquid'

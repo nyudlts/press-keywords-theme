@@ -1,6 +1,6 @@
 {%- include global_variables.html -%}
 
-<div class="w-100">
+<div class="w-100 bd-navbar">
   <nav class="navbar navbar-dark navbar-expand-lg background-primary d-flex flex-wrap flex-md-nowrap justify-content-between py-1">
     {% comment %}
       XXX: Starting from medium screens this element is absolutely
@@ -48,7 +48,7 @@
                 <i class="fa fa-caret-down" aria-hidden="true"></i>
 
                 {%- include_cached toggler.html id=layout name="dropdown" type="radio" -%}
-                <div class="toggled position-md-absolute px-3 background-primary grow-vertically">
+                <div class="toggled position-md-absolute px-3 pb-2 background-primary grow-vertically">
 
                   <ul class="list-unstyled mb-0 mt-3">
                     {% for post in posts %}

@@ -1,1 +1,3 @@
-../keywords-data/index.md
+---
+layout: home
+---
