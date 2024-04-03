@@ -27,15 +27,17 @@ layout: default
           <a href="{{ page.about.url | relative_url }}">Read More...</a>
         {% endif %}
 
-        <p style="text-align: center;">
-          <a class="button" href="#">Read the Essays</a>
-        </p>
-
-        {% if page.link %}
+        <div style="width: 260px; margin: auto;">
           <p style="text-align: center;">
-            <a class="button-outline" href="{{ page.link | uri_escape }}" target="_blank" rel="noopener">Buy the Book</a>
+            <a class="button" style="width: 100%" href="#">Read the Essays</a>
           </p>
-        {% endif %}
+
+          {% if page.link %}
+            <p style="text-align: center;">
+              <a class="button button-outline" style="width: 100%" href="{{ page.link | uri_escape }}" target="_blank" rel="noopener">Buy the Book</a>
+            </p>
+          {% endif %}
+        </div>
       </article>
     </div>
   </section>
