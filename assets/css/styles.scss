@@ -90,6 +90,11 @@ article.site a:hover {
       background: white;
       color: {{ post.color }} !important;
       border: 4px solid {{ post.color }} !important;
+
+      &:hover {
+        color: white !important;
+        background: {{ post.color }} !important;
+      }
     }
 
     .{{ post.slug }} .home h1,
