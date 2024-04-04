@@ -2,84 +2,98 @@
 title:
   type: 'string'
   label:
-    en: 'book'
+    en: 'Book'
   help:
     en: 'Title of the book. (example: African American Studies)'
 description:
-  type: 'string'
+  type: 'text'
   label:
-    en: 'description'
+    en: 'Description'
   help:
     en: 'Description of the book. (example: African American Studies, Fourth Edition)'
 image:
   type: 'image'
   label:
-    en: 'image'
+    en: 'Image'
   help:
-    en: 'Book cover'
+    en: 'Image'
 color:
   type: 'color'
   label:
-    en: 'color'
+    en: 'Color'
   help:
     en: 'Main color. (example: #730302)'
 contact:
   type: 'email'
   label:
-    en: 'contact'
+    en: 'Contact'
   help:
     en: 'Contact address on the right side menu'
 editors:
   type: 'has_many'
+  filtro:
+    layout: 'person'
   label:
     en: 'Editors'
   help:
     en: 'Editors'
 content:
-  type: 'markdown'
+  type: 'markdown_content'
   label:
-    en: 'content'
+    en: 'Content'
   help:
     en: 'Introduction, as read on Home'
 essays:
   type: 'has_many'
+  filter:
+    layout: 'essay'
   label:
-    en: 'essays'
+    en: 'Essays'
   help:
     en: 'Essays'
 link:
   type: 'url'
   label:
-    en: 'link'
+    en: 'Link'
   help:
     en: 'Link to NYU Press'
 introduction:
-  type: 'link'
+  type: 'has_one'
+  filter:
+    layout: 'page'
   label:
-    en: 'introduction'
+    en: 'Introduction'
   help:
     en: 'Introduction page'
 acknowledgments:
-  type: 'link'
+  type: 'has_one'
+  filter:
+    layout: 'page'
   label:
-    en: 'acknowledgments'
+    en: 'Acknowledgments'
   help:
     en: 'Acknowledgments page'
 courses:
   type: 'has_many'
+  filter:
+    layout: 'page'
   label:
-    en: 'courses'
+    en: 'Courses'
   help:
     en: 'In the classroom pages'
 about:
-  type: 'link'
+  type: 'has_one'
+  filter:
+    layout: 'page'
   label:
-    en: 'about'
+    en: 'About'
   help:
     en: 'About page'
 rights:
-  type: 'link'
+  type: 'has_one'
+  filter:
+    layout: 'page'
   label:
-    en: 'rights'
+    en: 'Rights'
   help:
     en: 'Licensing page'
