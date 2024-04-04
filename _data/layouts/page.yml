@@ -2,13 +2,13 @@
 title:
   type: 'string'
   label:
-    en: 'title'
+    en: 'Title'
   help:
     en: 'Page title'
 content:
-  type: 'markdown'
+  type: 'markdown_content'
   label:
-    en: 'content'
+    en: 'Content'
   help:
     en: 'Page contents'
 book:
@@ -16,18 +16,20 @@ book:
   filter:
     layout: 'book'
   label:
-    en: 'book'
+    en: 'Book'
   help:
     en: 'Book the page belongs to'
 authors:
   type: 'has_many'
+  filter:
+    layout: 'person'
   label:
-    en: 'authors'
+    en: 'Authors'
   help:
     en: 'List of authors'
 permalink:
   type: 'string'
   label:
-    en: 'permalink'
+    en: 'Permalink'
   help:
     en: 'The page permalink'
