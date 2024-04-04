@@ -2,54 +2,64 @@
 title:
   type: 'string'
   label:
-    en: 'book'
+    en: 'Book'
   help:
     en: 'Book title'
 color:
   type: 'color'
   label:
-    en: 'color'
+    en: 'Color'
   help:
     en: 'Main color'
 contact:
   type: 'email'
   label:
-    en: 'contact'
+    en: 'Contact'
   help:
     en: 'Contact email'
 editors:
   type: 'has_many'
+  filter:
+    layout: 'person'
   label:
     en: 'Editors'
   help:
     en: 'Book editors'
 essays:
   type: 'has_many'
+  filter:
+    layout: 'essay'
   label:
-    en: 'essays'
+    en: 'Essays'
   help:
-    en: 'list of book essays'
+    en: 'List of book essays'
 introduction:
-  type: 'link'
+  type: 'has_one'
+  filter:
+    layout: 'page'
   label:
-    en: 'introduction'
+    en: 'Introduction'
   help:
     en: 'Book introduction'
 about:
-  type: 'link'
+  type: 'has_one'
+  filter:
+    layout: 'page'
   label:
-    en: 'about'
+    en: 'About'
   help:
     en: 'About page'
 rights:
-  type: 'link'
+  type: 'has_one'
+  filter:
+    layout: 'page'
   label:
-    en: 'rights'
+    en: 'Rights'
   help:
     en: 'Licensing page'
 permalink:
   type: 'string'
   label:
-    en: 'permalink'
+    en: 'Permalink'
   help:
     en: 'The feature permalink'
