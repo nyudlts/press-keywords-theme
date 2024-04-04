@@ -2,25 +2,25 @@
 title:
   type: 'string'
   label:
-    en: 'citation'
+    en: 'Citation'
   help:
     en: 'Human-readable name for the citation. (example: Aaronson, Trevor. The Terror Factory: Inside the...)'
 authorship:
   type: 'string'
   label:
-    en: 'authorship'
+    en: 'Authorship'
   help:
     en: 'Authors names. (example: Aaronson, Trevor)'
 content:
-  type: 'markdown'
+  type: 'markdown_content'
   label:
-    en: 'content'
+    en: 'Content'
   help:
     en: 'Reference. (example: <em>The Terror Factory: Inside the FBI’s Manufactured...)'
 permalink:
   type: 'string'
   label:
-    en: 'permalink'
+    en: 'Permalink'
   help:
     en: 'The citation permalink'
 book:
@@ -28,6 +28,6 @@ book:
   filter:
     layout: 'book'
   label:
-    en: 'book'
+    en: 'Book'
   help:
     en: 'The book which the citation belongs'
