@@ -13,14 +13,20 @@ description:
     en: 'Description of the book. (example: African American Studies, Fourth Edition)'
 image:
   type: 'image'
-  label:
-    en: 'Image'
-  help:
-    en: 'Image'
+  path:
+    label:
+      en: 'Image'
+    help:
+      en: 'Book image'
+  description:
+    label:
+      en: 'Image description'
+    help:
+      en: 'Describe the image for accesibility purposes and for indexation in search engines'
 color:
   type: 'color'
   label:
-    en: 'Color'
+    en: 'Color' 
   help:
     en: 'Main color. (example: #730302)'
 contact:
