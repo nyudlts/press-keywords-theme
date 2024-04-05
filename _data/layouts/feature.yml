@@ -2,9 +2,9 @@
 title:
   type: 'string'
   label:
-    en: 'Book'
+    en: 'Feature'
   help:
-    en: 'Book title'
+    en: 'Feature title'
 color:
   type: 'color'
   label:
