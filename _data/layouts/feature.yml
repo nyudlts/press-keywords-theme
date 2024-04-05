@@ -1,0 +1,65 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'Feature'
+  help:
+    en: 'Feature title'
+color:
+  type: 'color'
+  label:
+    en: 'Color'
+  help:
+    en: 'Main color'
+contact:
+  type: 'email'
+  label:
+    en: 'Contact'
+  help:
+    en: 'Contact email'
+editors:
+  type: 'has_many'
+  filter:
+    layout: 'person'
+  label:
+    en: 'Editors'
+  help:
+    en: 'Book editors'
+essays:
+  type: 'has_many'
+  filter:
+    layout: 'essay'
+  label:
+    en: 'Essays'
+  help:
+    en: 'List of book essays'
+introduction:
+  type: 'has_one'
+  filter:
+    layout: 'page'
+  label:
+    en: 'Introduction'
+  help:
+    en: 'Book introduction'
+about:
+  type: 'has_one'
+  filter:
+    layout: 'page'
+  label:
+    en: 'About'
+  help:
+    en: 'About page'
+rights:
+  type: 'has_one'
+  filter:
+    layout: 'page'
+  label:
+    en: 'Rights'
+  help:
+    en: 'Licensing page'
+permalink:
+  type: 'string'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The feature permalink'
