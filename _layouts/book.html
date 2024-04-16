@@ -30,13 +30,11 @@ layout: default
         <div style="width: 260px; margin: auto;">
           <p style="text-align: center;">
             <a class="button" style="width: 100%" href="#">Read the Essays</a>
-          </p>
 
-          {% if page.link %}
-            <p style="text-align: center;">
+            {% if page.link %}
               <a class="button button-outline" style="width: 100%" href="{{ page.link | uri_escape }}" target="_blank" rel="noopener">Buy the Book</a>
-            </p>
-          {% endif %}
+            {% endif %}
+          </p>
         </div>
       </article>
     </div>

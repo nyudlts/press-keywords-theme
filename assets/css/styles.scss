@@ -90,6 +90,11 @@ article.site a:hover {
       background: white;
       color: {{ post.color }} !important;
       border: 4px solid {{ post.color }} !important;
+      padding: 11px 44px;
+
+      @media screen and (max-width: 767px) {
+        padding: 11px 16px;
+      }
 
       &:hover {
         color: white !important;
