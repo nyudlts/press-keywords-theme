@@ -1,0 +1,33 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'Citation'
+  help:
+    en: 'Human-readable name for the citation. (example: Aaronson, Trevor. The Terror Factory: Inside the...)'
+authorship:
+  type: 'string'
+  label:
+    en: 'Authorship'
+  help:
+    en: 'Authors names. (example: Aaronson, Trevor)'
+content:
+  type: 'markdown_content'
+  label:
+    en: 'Content'
+  help:
+    en: 'Reference. (example: <em>The Terror Factory: Inside the FBI’s Manufactured...)'
+permalink:
+  type: 'string'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The citation permalink'
+book:
+  type: 'belongs_to'
+  filter:
+    layout: 'book'
+  label:
+    en: 'Book'
+  help:
+    en: 'The book which the citation belongs'
