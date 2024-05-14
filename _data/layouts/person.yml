@@ -36,6 +36,6 @@ permalink:
 alternate-permalink:
   type: 'array'
   label:
-    en: 'Human readeable tags'
+    en: 'Alternate permalinks'
   help:
     en: 'The person alternate permalinks'
