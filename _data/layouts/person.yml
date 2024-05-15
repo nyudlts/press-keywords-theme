@@ -1,0 +1,41 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'Name'
+  help:
+    en: 'Full name. (example: )Marlon M. Bailey'
+content:
+  type: 'markdown_content'
+  label:
+    en: 'Content'
+  help:
+    en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
+books:
+  type: 'has_many'
+  filter:
+    layout: 'book'
+  label:
+    en: 'Books'
+  help:
+    en: 'Books this person is contributor of'
+posts:
+  type: 'has_many'
+  filter:
+    layout: 'post'
+  label:
+    en: 'Posts'
+  help:
+    en: 'Posts the person is linked to, filled automatically by the CMS or Jekyll plugin'
+permalink:
+  type: 'string'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The person permalink'
+alternate-permalink:
+  type: 'array'
+  label:
+    en: 'Alternate permalinks'
+  help:
+    en: 'The person alternate permalinks'
