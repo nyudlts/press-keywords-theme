@@ -1,0 +1,21 @@
+---
+title: Linda Trinh Võ
+layout: person
+uuid: bcff61cf-49bb-4693-9233-3aa4b4ef3b11
+migration_id: 160
+permalink: "/author/ltvo/"
+first_name: Linda Trinh
+last_name: Võ
+books:
+- 4b5534c6-21a6-4598-b134-d06081de34e6
+posts:
+- c0aec2f7-c0c8-4e10-8c92-dfda84462f9b
+- 8c5dd987-2cf4-4963-8547-c6281c9f95c1
+- 4ed78d7b-a471-4f79-9712-b2dfcd71d1ec
+- 4fe1f095-bc12-445f-bd69-856303436829
+alternate-permalinks:
+- "/asian-american-studies/author/ltvo/"
+---
+
+**Linda Trinh Võ** is Associate Professor in the Department of Asian American Studies at the University of California, Irvine. She is the author of _Mobilizing an Asian American Community_ (2004) and co-­editor of _Contemporary Asian American Communities: Intersection and Divergences_ (2002), _Asian American Women: The “Frontiers” Reader_ (2004), and _Labor versus Empire: Race, Gender, and Migration_ (2004). She is a series editor for the Asian American History and Culture series published by Temple University Press and is president of the Association for Asian American Studies.
+
