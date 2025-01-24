@@ -11,6 +11,7 @@ $debug: {{ jekyll.environment | not: 'production' }};
 $gray-100: #efefef;
 $gray-600: #f3f3f3;
 $gray-800: #666;
+$gray-share: #bdbdbd;
 $link-hover-color: #333;
 $link-decoration: underline;
 $font-family-sans-serif: Georgia, Times New Roman, serif;
@@ -55,10 +56,15 @@ $sizes: (
 $spacers: (
   15: 15%,
   0: 0,
+  "5px": 5px,
   "10px": 10px,
+  "14px": 14px,
+  "18px": 18px,
   "20px": 20px,
   "24px": 24px,
+  "30px": 30px,
   "34px": 34px,
+  "45px": 45px,
   "50px": 50px,
   "55px": 55px,
   "73px": 73px,
@@ -89,7 +95,8 @@ $colors: (
   "black": #000,
   "gray-light": $gray-100,
   "primary": $primary,
-  "transparent": transparent
+  "transparent": transparent,
+  "gray-share": $gray-share
 );
 
 $theme-colors: (
@@ -99,7 +106,8 @@ $theme-colors: (
 {% for feature in features %}
   "{{ feature.slug }}": {{ feature.color | default: site.color }},
 {% endfor %}
-  "site": {{ site.color }}
+  "site": {{ site.color }},
+  "gray-share": $gray-share
 );
 
 /// Since the content HTML comes from Markdown, we need to define their

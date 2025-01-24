@@ -6,13 +6,13 @@ layout: default
 {%- assign books = site.posts | where: 'layout', 'book' | sort: 'title' -%}
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
-<div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-3 pt-2">
+<div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-30px py-5px">
   {% for share in t.share.items %}
     {% include share.html share=share page=page current_color=include.current_color %}
   {% endfor %}
 </div>
 
-<section tabindex="-1" id="content" role="main" class="container p-50px background-white my-5">
+<section tabindex="-1" id="content" role="main" class="container p-50px background-white my-45px">
   <header>
     <h1 class="f-md-6 letter-spacing-h1 text-center text-uppercase primary">{{ site.title }}</h1>
 
