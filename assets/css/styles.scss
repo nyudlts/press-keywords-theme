@@ -12,6 +12,7 @@ $gray-100: #efefef;
 $gray-600: #f3f3f3;
 $gray-800: #666;
 $gray-share: #bdbdbd;
+$gray-breadcrumb: #444;
 $link-hover-color: #333;
 $link-decoration: underline;
 $font-family-sans-serif: Georgia, Times New Roman, serif;
@@ -49,6 +50,7 @@ $sizes: (
   100vh: 100vh,
   300px: 300px,
   sidebar: 21.25rem,
+  "30px": 30px,
   auto: auto
 );
 
@@ -58,6 +60,7 @@ $spacers: (
   0: 0,
   "5px": 5px,
   "10px": 10px,
+  "12px": 12px,
   "14px": 14px,
   "18px": 18px,
   "20px": 20px,
@@ -67,6 +70,8 @@ $spacers: (
   "45px": 45px,
   "50px": 50px,
   "55px": 55px,
+  "60px": 60px,
+  "70px": 70px,
   "73px": 73px,
   6: 4.5rem,
   navbar: $navbar-height,
@@ -107,7 +112,8 @@ $theme-colors: (
   "{{ feature.slug }}": {{ feature.color | default: site.color }},
 {% endfor %}
   "site": {{ site.color }},
-  "gray-share": $gray-share
+  "gray-share": $gray-share,
+  "gray-breadcrumb": $gray-breadcrumb
 );
 
 /// Since the content HTML comes from Markdown, we need to define their
@@ -190,4 +196,28 @@ blockquote {
   position: sticky;
   top: 32px;
   z-index: 1071;
+}
+
+.print {
+  background-color: $primary;
+  transition: background-color 0.5s;
+  a {
+    display: none;
+  }
+}
+
+.print:hover {
+  background-color: transparent;
+  transition: background-color 0.5s;
+
+  i {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+  }
 }

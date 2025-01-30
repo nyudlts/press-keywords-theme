@@ -7,6 +7,12 @@ layout: default
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
 <div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-30px py-5px">
+  <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px print position-relative">
+      <i class="fa fa-print white f-18px"></i>
+      <a class="primary h6 mb-0 stretched-link" href="">PRINT</a>
+    </div>
+  </div>
   {% for share in t.share.items %}
     {% include share.html share=share page=page current_color=include.current_color %}
   {% endfor %}
@@ -42,7 +48,7 @@ layout: default
       </div>
 
       <header class="pl-md-50px pt-10px">
-        <h1 class="text-uppercase font-weight-bold h4">
+        <h1 class="text-uppercase font-weight-bold h4 mb-0 pb-1">
           <a
             class="stretched-link {{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
