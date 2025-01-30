@@ -48,6 +48,7 @@ $container-max-widths: (
 $sizes: (
   10: 10%,
   100vh: 100vh,
+  260px: 260px,
   300px: 300px,
   sidebar: 21.25rem,
   "30px": 30px,
@@ -58,10 +59,12 @@ $sizes: (
 $spacers: (
   15: 15%,
   0: 0,
+  "4px": 4px,
   "5px": 5px,
   "10px": 10px,
   "12px": 12px,
   "14px": 14px,
+  "15px": 15px,
   "18px": 18px,
   "20px": 20px,
   "24px": 24px,
@@ -219,5 +222,11 @@ blockquote {
     font-weight: bold;
     font-size: 10px;
     text-decoration: none;
+  }
+}
+
+@each $spacer, $value in $spacers {
+  .border-#{$spacer} {
+    border-width: $value !important;
   }
 }
