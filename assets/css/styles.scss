@@ -166,6 +166,7 @@ If the separator is a ForkAwesome icon, define it as one.
     + .breadcrumb-item {
       &::before {
         @include fa-icon();
+        color: $gray-breadcrumb;
       }
     }
   }
