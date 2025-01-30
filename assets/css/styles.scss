@@ -199,7 +199,6 @@ blockquote {
 }
 
 .print {
-  background-color: $primary;
   transition: background-color 0.5s;
   a {
     display: none;
@@ -207,7 +206,7 @@ blockquote {
 }
 
 .print:hover {
-  background-color: transparent;
+  background-color: transparent !important;
   transition: background-color 0.5s;
 
   i {
