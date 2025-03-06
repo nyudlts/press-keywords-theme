@@ -1,18 +1,21 @@
 ---
 title:
   type: 'string'
+  required: true
   label:
     en: 'Book'
   help:
     en: 'Title of the book. (example: African American Studies)'
 description:
   type: 'text'
+  required: true
   label:
     en: 'Description'
   help:
     en: 'Description of the book. (example: African American Studies, Fourth Edition)'
 image:
   type: 'image'
+  required: true
   path:
     label:
       en: 'Image'
@@ -25,6 +28,7 @@ image:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
 color:
   type: 'color'
+  required: true
   label:
     en: 'Color'
   help:
@@ -36,7 +40,7 @@ contact:
   help:
     en: 'Contact address on the right side menu'
 editors:
-  type: 'has_many'
+  type: 'new_has_many'
   filtro:
     layout: 'person'
   label:
@@ -44,13 +48,13 @@ editors:
   help:
     en: 'Editors'
 content:
-  type: 'markdown_content'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
     en: 'Introduction, as read on Home'
 essays:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'essay'
   label:
@@ -64,7 +68,7 @@ link:
   help:
     en: 'Link to NYU Press'
 introduction:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
     layout: 'page'
   label:
@@ -72,7 +76,7 @@ introduction:
   help:
     en: 'Introduction page'
 acknowledgments:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
     layout: 'page'
   label:
@@ -80,7 +84,7 @@ acknowledgments:
   help:
     en: 'Acknowledgments page'
 courses:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'page'
   label:
@@ -88,7 +92,7 @@ courses:
   help:
     en: 'In the classroom pages'
 about:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
     layout: 'page'
   label:
@@ -96,7 +100,7 @@ about:
   help:
     en: 'About page'
 rights:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
     layout: 'page'
   label:

@@ -1,18 +1,19 @@
 ---
 title:
   type: 'string'
+  required: true
   label:
     en: 'Name'
   help:
     en: 'Full name. (example: )Marlon M. Bailey'
 content:
-  type: 'markdown_content'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
     en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'book'
   label:
@@ -20,7 +21,7 @@ books:
   help:
     en: 'Books this person is contributor of'
 posts:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'post'
   label:
@@ -34,7 +35,7 @@ permalink:
   help:
     en: 'The person permalink'
 alternate-permalink:
-  type: 'array'
+  type: 'new_array'
   label:
     en: 'Alternate permalinks'
   help:

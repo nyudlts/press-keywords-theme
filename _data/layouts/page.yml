@@ -1,18 +1,19 @@
 ---
 title:
   type: 'string'
+  required: true
   label:
     en: 'Title'
   help:
     en: 'Page title'
 content:
-  type: 'markdown_content'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
     en: 'Page contents'
 book:
-  type: 'belongs_to'
+  type: 'new_belongs_to'
   filter:
     layout: 'book'
   label:
@@ -20,7 +21,7 @@ book:
   help:
     en: 'Book the page belongs to'
 authors:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'person'
   label:

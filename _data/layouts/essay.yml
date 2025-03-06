@@ -7,13 +7,13 @@ title:
   help:
     en: 'The essay full title. (example: Abolition)'
 content:
-  type: 'markdown_content'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
     en: 'Essay full text' 
 authors:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'person'
   label:
@@ -21,13 +21,13 @@ authors:
   help:
     en: 'List of authors'
 availability:
-  type: 'predefined_value'
+  type: 'new_predefined_value'
   label:
     en: 'Availability'
   help:
     en: 'Organizes essays between Web and Print'
 book:
-  type: 'belongs_to'
+  type: 'new_belongs_to'
   filter:
     layout: 'book'
   label:
@@ -35,7 +35,7 @@ book:
   help:
     en: 'Book the essay is published on'
 works_cited:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'work_cited'
   label:

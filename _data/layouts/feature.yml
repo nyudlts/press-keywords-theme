@@ -1,12 +1,14 @@
 ---
 title:
   type: 'string'
+  required: true
   label:
     en: 'Feature'
   help:
     en: 'Feature title'
 color:
   type: 'color'
+  required: true
   label:
     en: 'Color'
   help:
@@ -18,7 +20,7 @@ contact:
   help:
     en: 'Contact email'
 editors:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'person'
   label:
@@ -26,7 +28,7 @@ editors:
   help:
     en: 'Book editors'
 essays:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'essay'
   label:
@@ -34,7 +36,7 @@ essays:
   help:
     en: 'List of book essays'
 introduction:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
     layout: 'page'
   label:
@@ -42,7 +44,7 @@ introduction:
   help:
     en: 'Book introduction'
 about:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
     layout: 'page'
   label:
@@ -50,7 +52,7 @@ about:
   help:
     en: 'About page'
 rights:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
     layout: 'page'
   label:
