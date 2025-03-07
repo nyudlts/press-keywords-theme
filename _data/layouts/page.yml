@@ -16,6 +16,7 @@ book:
   type: 'new_belongs_to'
   filter:
     layout: 'book'
+  inverse: "introduction"
   label:
     en: 'Book'
   help:

@@ -3,14 +3,14 @@ title:
   type: 'string'
   required: true
   label:
-    en: 'Book'
+    en: 'Book title'
   help:
     en: 'Title of the book. (example: African American Studies)'
 description:
   type: 'text'
   required: true
   label:
-    en: 'Description'
+    en: 'Book description'
   help:
     en: 'Description of the book. (example: African American Studies, Fourth Edition)'
 image:
@@ -20,7 +20,7 @@ image:
     label:
       en: 'Image'
     help:
-      en: 'Book image'
+      en: 'Book cover'
   description:
     label:
       en: 'Image description'
@@ -28,7 +28,6 @@ image:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
 color:
   type: 'color'
-  required: true
   label:
     en: 'Color'
   help:
@@ -40,15 +39,16 @@ contact:
   help:
     en: 'Contact address on the right side menu'
 editors:
-  type: 'new_has_many'
-  filtro:
+  type: 'new_has_and_belongs_to_many'
+  filter:
     layout: 'person'
+  inverse: "books"
   label:
     en: 'Editors'
   help:
-    en: 'Editors'
+    en: 'Book editors'
 content:
-  type: 'new_content'
+  type: 'markdown_content'
   label:
     en: 'Content'
   help:
@@ -57,10 +57,11 @@ essays:
   type: 'new_has_many'
   filter:
     layout: 'essay'
+  inverse: "books"
   label:
     en: 'Essays'
   help:
-    en: 'Essays'
+    en: 'Related essays'
 link:
   type: 'url'
   label:
@@ -70,15 +71,17 @@ link:
 introduction:
   type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'introduction'
+  inverse: "book"
   label:
     en: 'Introduction'
   help:
     en: 'Introduction page'
-acknowledgments:
+acknowledgment:
   type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'acknowledgment'
+  inverse: "book"
   label:
     en: 'Acknowledgments'
   help:
@@ -86,7 +89,8 @@ acknowledgments:
 courses:
   type: 'new_has_many'
   filter:
-    layout: 'page'
+    layout: 'course'
+  inverse: "book"
   label:
     en: 'Courses'
   help:
@@ -94,7 +98,8 @@ courses:
 about:
   type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'about'
+  inverse: "book"
   label:
     en: 'About'
   help:
@@ -102,8 +107,47 @@ about:
 rights:
   type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'rights'
+  inverse: "book"
   label:
     en: 'Rights'
   help:
     en: 'Licensing page'
+works_cited:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout: 'work_cited'
+  inverse: "books"
+  label:
+    en: 'Works cited'
+  help:
+    en: 'Bibliography pages'
+permalink:
+  type: 'permalink'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The book permalink'
+alternate_permalink:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'

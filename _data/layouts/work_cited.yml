@@ -13,22 +13,57 @@ authorship:
   help:
     en: 'Authors names. (example: Aaronson, Trevor)'
 content:
-  type: 'new_content'
+  type: 'markdown_content'
   label:
     en: 'Content'
   help:
     en: 'Reference. (example: <em>The Terror Factory: Inside the FBI’s Manufactured...)'
-permalink:
-  type: 'string'
-  label:
-    en: 'Permalink'
-  help:
-    en: 'The citation permalink'
-book:
-  type: 'new_belongs_to'
+books:
+  type: 'new_has_and_belongs_to_many'
   filter:
-    layout: 'book'
+    layout:
+    - 'book'
+    - "feature"
+  inverse: "works_cited"
   label:
     en: 'Book'
   help:
     en: 'The book which the citation belongs'
+essays:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout: "essay"
+  inverse: "works_cited"
+  label:
+    en: 'Book'
+  help:
+    en: 'The book which the citation belongs'
+permalink:
+  type: 'permalink'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The book permalink'
+alternate_permalink:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'

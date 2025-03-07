@@ -6,6 +6,26 @@ title:
     en: 'Feature'
   help:
     en: 'Feature title'
+description:
+  type: 'text'
+  required: true
+  label:
+    en: 'Book description'
+  help:
+    en: 'Description of the book. (example: African American Studies, Fourth Edition)'
+image:
+  type: 'image'
+  required: true
+  path:
+    label:
+      en: 'Image'
+    help:
+      en: 'Book cover'
+  description:
+    label:
+      en: 'Image description'
+    help:
+      en: 'Describe the image for accesibility purposes and for indexation in search engines'
 color:
   type: 'color'
   required: true
@@ -20,33 +40,67 @@ contact:
   help:
     en: 'Contact email'
 editors:
-  type: 'new_has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'person'
+  inverse: "books"
   label:
     en: 'Editors'
   help:
     en: 'Book editors'
+content:
+  type: 'markdown_content'
+  label:
+    en: 'Content'
+  help:
+    en: 'Introduction, as read on Home'
 essays:
   type: 'new_has_many'
   filter:
     layout: 'essay'
+  inverse: "books"
   label:
     en: 'Essays'
   help:
     en: 'List of book essays'
+link:
+  type: 'url'
+  label:
+    en: 'Link'
+  help:
+    en: 'Link to NYU Press'
 introduction:
   type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'introduction'
+  inverse: "book"
   label:
     en: 'Introduction'
   help:
-    en: 'Book introduction'
+    en: 'Introduction page'
+acknowledgment:
+  type: 'new_has_one'
+  filter:
+    layout: 'acknowledgment'
+  inverse: "book"
+  label:
+    en: 'Acknowledgments'
+  help:
+    en: 'Acknowledgments page'
+courses:
+  type: 'new_has_many'
+  filter:
+    layout: 'course'
+  inverse: "book"
+  label:
+    en: 'Courses'
+  help:
+    en: 'In the classroom pages'
 about:
   type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'about'
+  inverse: "book"
   label:
     en: 'About'
   help:
@@ -54,14 +108,47 @@ about:
 rights:
   type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'rights'
+  inverse: "book"
   label:
     en: 'Rights'
   help:
     en: 'Licensing page'
+works_cited:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout: 'work_cited'
+  inverse: "books"
+  label:
+    en: 'Works cited'
+  help:
+    en: 'Bibliography pages'
 permalink:
-  type: 'string'
+  type: 'permalink'
   label:
     en: 'Permalink'
   help:
-    en: 'The feature permalink'
+    en: 'The book permalink'
+alternate_permalink:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'

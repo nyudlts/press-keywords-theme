@@ -3,61 +3,35 @@ title:
   type: 'string'
   required: true
   label:
-    en: 'Essay title'
+    en: 'Introduction title'
   help:
-    en: 'The essay full title. (example: Abolition)'
+    en: 'Introduction page title'
 content:
   type: 'markdown_content'
   label:
     en: 'Content'
   help:
-    en: 'Essay full text' 
-authors:
-  type: 'new_has_and_belongs_to_many'
-  filter:
-    layout: 'person'
-  inverse: "essays"
-  label:
-    en: 'Authors'
-  help:
-    en: 'List of authors'
-availability:
-  type: 'new_predefined_value'
-  label:
-    en: 'Availability'
-  help:
-    en: 'Organizes essays between Web and Print'
-  values:
-    web:
-      en: "Web"
-    print:
-      en: "Print"
-books:
+    en: 'Introduction page contents'
+book:
   type: 'new_belongs_to'
   filter:
     layout:
     - 'book'
     - "feature"
-  inverse: "essays"
+  inverse: "introduction"
   label:
     en: 'Book'
   help:
-    en: 'Book the essay is published on'
-works_cited:
+    en: 'Book the introduction page belongs to'
+authors:
   type: 'new_has_and_belongs_to_many'
   filter:
-    layout: 'work_cited'
-  inverse: "essays"
+    layout: 'person'
+  inverse: "pages"
   label:
-    en: 'Works cited'
+    en: 'Authors'
   help:
-    en: 'Bibliography pages'
-page:
-  type: 'number'
-  label:
-    en: 'Page'
-  help:
-    en: 'Page on the printed book'
+    en: 'List of authors'
 permalink:
   type: 'permalink'
   label:

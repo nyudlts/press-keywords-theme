@@ -7,36 +7,71 @@ title:
   help:
     en: 'Full name. (example: )Marlon M. Bailey'
 content:
-  type: 'new_content'
+  type: 'markdown_content'
   label:
     en: 'Content'
   help:
     en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
-  type: 'new_has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
-    layout: 'book'
+    layout:
+    - 'book'
+    - "feature"
+  inverse: "editors"
   label:
     en: 'Books'
   help:
     en: 'Books this person is contributor of'
-posts:
-  type: 'new_has_many'
+essays:
+  type: 'new_has_and_belongs_to_many'
   filter:
-    layout: 'post'
+    layout: "essay"
+  inverse: "authors"
   label:
-    en: 'Posts'
+    en: 'Essays'
   help:
-    en: 'Posts the person is linked to, filled automatically by the CMS or Jekyll plugin'
+    en: 'Essays this person is contributor of'
+pages:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout:
+    - "introduction"
+    - "acknowledgment"
+    - "course"
+    - "about"
+    - "rights"
+  inverse: "authors"
+  label:
+    en: 'Pages'
+  help:
+    en: 'Pages this person is contributor of'
 permalink:
-  type: 'string'
+  type: 'permalink'
   label:
     en: 'Permalink'
   help:
-    en: 'The person permalink'
-alternate-permalink:
+    en: 'The book permalink'
+alternate_permalink:
   type: 'new_array'
   label:
-    en: 'Alternate permalinks'
+    en: 'Alternate permalink'
   help:
-    en: 'The person alternate permalinks'
+    en: 'The alternate permalink'
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'
