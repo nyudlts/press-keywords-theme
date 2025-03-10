@@ -1,0 +1,15 @@
+{%- comment -%}
+
+Para asignar un enlace a un bloque contenedor.
+
+@param :href [String] La URL
+@param :alt [String] La descripción de la imagen
+{%- endcomment -%}
+
+<a
+	class="stretched-link black hover-black text-decoration-none"
+	href="{{ include.href | uri_escape }}"
+	{{ include.href | start_with: "https://" | value_if: 'rel="noopener" target="_blank"' }}
+	{{ include.href | start_with: "http://" | value_if: 'rel="noopener" target="_blank"' }}>
+	<span class="sr-only">{{ include.alt }}</span>
+</a>
