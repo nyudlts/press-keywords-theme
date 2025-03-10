@@ -9,8 +9,13 @@ layout: default
 {% endif %}
 
 {% include breadbar.html current_book=current_book t=t current_color=current_color %}
-
-<section class="container pt-50px pl-20px pr-20px border-bottom">
+<div class="d-flex justify-content-end mt-30px">
+  <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-{{current_color}} print position-relative">
+    <i class="fa fa-print white f-18px"></i>
+    <a class="{{current_color}} h6 mb-0 stretched-link text-uppercase" href="">{{t.print_button}}</a>
+  </div>
+</div>
+<section class="container pt-60px pl-20px pr-20px border-bottom">
   {% if current_book %}
     {% include_cached leftbar.html current_book=current_book t=t %}
     {% include_cached rightbar.html current_book=current_book t=t %}

@@ -1,0 +1,56 @@
+---
+title:
+  type: 'string'
+  required: true
+  label:
+    en: 'Essay title'
+  help:
+    en: 'The essay full title. (example: Abolition)'
+content:
+  type: 'markdown_content'
+  label:
+    en: 'Content'
+  help:
+    en: 'Essay full text' 
+authors:
+  type: 'has_many'
+  filter:
+    layout: 'person'
+  label:
+    en: 'Authors'
+  help:
+    en: 'List of authors'
+availability:
+  type: 'predefined_value'
+  label:
+    en: 'Availability'
+  help:
+    en: 'Organizes essays between Web and Print'
+book:
+  type: 'belongs_to'
+  filter:
+    layout: 'book'
+  label:
+    en: 'Book'
+  help:
+    en: 'Book the essay is published on'
+works_cited:
+  type: 'has_many'
+  filter:
+    layout: 'work_cited'
+  label:
+    en: 'Works cited'
+  help:
+    en: 'Bibliography pages'
+page:
+  type: 'number'
+  label:
+    en: 'Page'
+  help:
+    en: 'Page on the printed book'
+permalink:
+  type: 'string'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The essay permalink'

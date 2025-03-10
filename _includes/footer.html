@@ -1,27 +1,27 @@
 {%- include global_variables.html -%}
 
 {%- capture accessibility -%}
-  <a class="{% if current_book %}{{ current_color }}{% else %}text-white{% endif %}" target="_blank" rel="noopener noreferrer" href="{{ t.footer.accessibility_url }}">{{ t.footer.accessibility }}</a>
+  <a class="{% if current_book %}{{ current_color }}{% else %}text-white{% endif %} h6 f-14px mb-0" target="_blank" rel="noopener noreferrer" href="{{ t.footer.accessibility_url }}">{{ t.footer.accessibility }}</a>
 {%- endcapture -%}
 
-<footer class="w-100{% unless current_book %} border-top{% endunless %}">
+<footer class="w-100">
   {% if current_book %}
     <div class="container mx-auto p-4">
       <nav>
         <ul class="list-unstyled" id="menu-footer-nav">
           {% if current_book.about %}
-            <li>
+            <li class="h6 f-14px">
               <a class="{{ current_color }}" href="{{ current_book.about.url | relative_url }}">{{ t.footer.about }}</a>
             </li>
           {% endif %}
 
           {% if current_book.contact %}
-            <li class="">
+            <li class="h6 f-14px">
               <a class="{{ current_color }}" href="mailto:{{ current_book.contact }}">{{ t.footer.contact }}</a>
             </li>
           {% endif %}
 
-          <li class="">
+          <li class="h6 f-14px">
             <a class="{{ current_color }}" href="{{ current_book.rights.url | relative_url }}">{{ t.footer.rights }}</a>
           </li>
 
@@ -32,7 +32,7 @@
   {% else %}
     <div class="d-flex align-items-center justify-content-center py-2 background-primary">{{ accessibility }}</div>
   {% endif %}
-    <div class="d-flex align-items-center justify-content-center p-3">
+    <div class="d-flex align-items-center justify-content-center p-30px">
       <a href="http://nyupress.org/" target="_blank" rel="noopener noreferrer">
         <img src="{{ t.footer.logo | relative_url }}" alt="{{ t.footer.publisher }}" />
       </a>

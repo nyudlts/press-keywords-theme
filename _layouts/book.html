@@ -5,6 +5,12 @@ layout: default
 {% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
 
 <div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-3 pt-2">
+  <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-{{current_color}} print position-relative">
+      <i class="fa fa-print white f-18px"></i>
+      <a class="{{current_color}} h6 mb-0 stretched-link text-uppercase" href="">{{t.print_button}}</a>
+    </div>
+  </div>
   {% for share in t.share.items %}
     {% include share.html share=share page=page current_color=include.current_color %}
   {% endfor %}
@@ -39,11 +45,17 @@ layout: default
         </a>
       {% endif %}
 
-      <div class="text-center text-uppercase mt-1">
+      <div class="mx-auto w-260px text-uppercase mt-1">
         {%- capture leftbar_class -%}
-          btn btn-{{ current_color }} h6 m-0 font-weight-bold px-5 py-3
+          btn btn-{{ current_color }} h6 m-0 font-weight-bold px-45px py-15px d-block f-18px font-weight-bold
         {%- endcapture -%}
         {% include toggler_related.html id='leftbar' class=leftbar_class content=t.book.open_menu %}
+
+        {% if page.link %}
+          <a href="{{ page.link | uri_escape }}" rel="noopener" target="_blank" class="m-0 mt-18px btn btn-outline-{{ current_color }} border-4px font-weight-bold px-45px py-15px d-block h2 f-18px font-weight-bold">
+            {{ t.book.buy_the_book }}
+          </a>
+        {% endif %}
       </div>
     </footer>
   </article>

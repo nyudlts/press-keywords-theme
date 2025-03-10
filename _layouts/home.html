@@ -6,13 +6,19 @@ layout: default
 {%- assign books = site.posts | where: 'layout', 'book' | sort: 'title' -%}
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
-<div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-3 pt-2">
+<div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-30px py-5px">
+  <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-primary print position-relative">
+      <i class="fa fa-print white f-18px"></i>
+      <a class="primary h6 mb-0 stretched-link text-uppercase" href="">{{t.print_button}}</a>
+    </div>
+  </div>
   {% for share in t.share.items %}
     {% include share.html share=share page=page current_color=include.current_color %}
   {% endfor %}
 </div>
 
-<section tabindex="-1" id="content" role="main" class="container p-50px background-white my-5">
+<section tabindex="-1" id="content" role="main" class="container p-50px background-white my-45px">
   <header>
     <h1 class="f-md-6 letter-spacing-h1 text-center text-uppercase primary">{{ site.title }}</h1>
 
@@ -33,21 +39,20 @@ layout: default
 
   {% for book in books %}
     <article id="{{ book.slug }}" class="position-relative d-flex flex-column flex-md-row pt-5 pb-55px">
-      <div class="position-relative text-center">
+      <div class="text-center position-relative">
         <img
           src="{{ book.image | thumbnail: 200 }}"
           
           loading="lazy"
           width="200"
           alt="{{ t.home.cover_alt }} {{ book.title }}" />
-        {% assign book_url = book.url | relative_url %}
-        {% include stretched_link.html href=book_url %}
+          <a href="{{ book.url | relative_url }}" class="stretched-link"></a>
       </div>
 
       <header class="pl-md-50px pt-10px">
-        <h1 class="text-uppercase font-weight-bold h4">
+        <h1 class="text-uppercase font-weight-bold h4 mb-0 pb-1">
           <a
-            class=" {{ book.slug }} text-decoration-none"
+            class="{{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
             {{ site.title }}
             {{ t[book.layout].modifier_included_in_site_title | default: t[book.layout].modifier_included_in_page_title }}
