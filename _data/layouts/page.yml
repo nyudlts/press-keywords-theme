@@ -1,0 +1,35 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'Title'
+  help:
+    en: 'Page title'
+content:
+  type: 'markdown_content'
+  label:
+    en: 'Content'
+  help:
+    en: 'Page contents'
+book:
+  type: 'belongs_to'
+  filter:
+    layout: 'book'
+  label:
+    en: 'Book'
+  help:
+    en: 'Book the page belongs to'
+authors:
+  type: 'has_many'
+  filter:
+    layout: 'person'
+  label:
+    en: 'Authors'
+  help:
+    en: 'List of authors'
+permalink:
+  type: 'string'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The page permalink'

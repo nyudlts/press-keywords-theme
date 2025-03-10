@@ -40,6 +40,7 @@ book:
   modifier_included_in_page_title: 'for'
   open_menu: 'Read the essays'
   all_essays: 'All Essays'
+  buy_the_book: 'Buy the Book'
 contributor:
 default:
 essay:
@@ -106,3 +107,4 @@ share:
   - title: Email this page
     url: "mailto:?subject=%title&amp;body=%description%0A%0A%url"
     icon: envelope
+print_button: "Print"

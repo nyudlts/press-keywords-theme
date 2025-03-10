@@ -1,0 +1,18 @@
+---
+title: Yoonmee Chang
+layout: person
+uuid: 6690674a-5608-483e-bc01-0c62fc572311
+migration_id: 110
+permalink: "/author/ychang/"
+first_name: Yoonmee
+last_name: Chang
+posts:
+- 9129b9c6-2dd5-4e51-ac37-edb0d453e9c3
+books:
+- 4b5534c6-21a6-4598-b134-d06081de34e6
+alternate-permalinks:
+- "/asian-american-studies/author/ychang/"
+---
+
+**Yoonmee Chang** is Associate Professor of English at George Mason University. She received her Ph.D. from the University of Pennsylvania and is the author of _Writing the Ghetto: Class, Authorship, and the Asian American Enclave_ (2010). Chang’s current research focuses on North Korea and disability studies; she also writes poetry.
+

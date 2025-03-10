@@ -11,6 +11,8 @@ $debug: {{ jekyll.environment | not: 'production' }};
 $gray-100: #efefef;
 $gray-600: #f3f3f3;
 $gray-800: #666;
+$gray-share: #bdbdbd;
+$gray-breadcrumb: #444;
 $link-hover-color: #333;
 $link-decoration: underline;
 $font-family-sans-serif: Georgia, Times New Roman, serif;
@@ -46,7 +48,10 @@ $container-max-widths: (
 $sizes: (
   10: 10%,
   100vh: 100vh,
+  260px: 260px,
+  300px: 300px,
   sidebar: 21.25rem,
+  "30px": 30px,
   auto: auto
 );
 
@@ -54,12 +59,22 @@ $sizes: (
 $spacers: (
   15: 15%,
   0: 0,
+  "4px": 4px,
+  "5px": 5px,
   "10px": 10px,
+  "12px": 12px,
+  "14px": 14px,
+  "15px": 15px,
+  "18px": 18px,
   "20px": 20px,
   "24px": 24px,
+  "30px": 30px,
   "34px": 34px,
+  "45px": 45px,
   "50px": 50px,
   "55px": 55px,
+  "60px": 60px,
+  "70px": 70px,
   "73px": 73px,
   6: 4.5rem,
   navbar: $navbar-height,
@@ -88,7 +103,8 @@ $colors: (
   "black": #000,
   "gray-light": $gray-100,
   "primary": $primary,
-  "transparent": transparent
+  "transparent": transparent,
+  "gray-share": $gray-share
 );
 
 $theme-colors: (
@@ -98,7 +114,9 @@ $theme-colors: (
 {% for feature in features %}
   "{{ feature.slug }}": {{ feature.color | default: site.color }},
 {% endfor %}
-  "site": {{ site.color }}
+  "site": {{ site.color }},
+  "gray-share": $gray-share,
+  "gray-breadcrumb": $gray-breadcrumb
 );
 
 /// Since the content HTML comes from Markdown, we need to define their
@@ -151,6 +169,7 @@ If the separator is a ForkAwesome icon, define it as one.
     + .breadcrumb-item {
       &::before {
         @include fa-icon();
+        color: $gray-breadcrumb;
       }
     }
   }
@@ -173,7 +192,7 @@ blockquote {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1071;
+  z-index: 1072;
 }
 
 .bd-titlebar {
@@ -181,4 +200,33 @@ blockquote {
   position: sticky;
   top: 32px;
   z-index: 1071;
+}
+
+.print {
+  transition: background-color 0.5s;
+  a {
+    display: none;
+  }
+}
+
+.print:hover {
+  background-color: transparent !important;
+  transition: background-color 0.5s;
+
+  i {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+  }
+}
+
+@each $spacer, $value in $spacers {
+  .border-#{$spacer} {
+    border-width: $value !important;
+  }
 }

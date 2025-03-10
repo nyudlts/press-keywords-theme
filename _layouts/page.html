@@ -8,7 +8,7 @@ layout: content
     <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">{{ page.title }}</h1>
 
     {% if page.authors and page.authors != empty %}
-      <div class="text-uppercase font-weight-bold pb-2">
+      <div class="text-uppercase font-weight-bold pb-2 h2 f-14px">
         {{ t.page.by }}
         {% include people.html people=page.authors %}
       </div>

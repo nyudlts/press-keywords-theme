@@ -1,0 +1,105 @@
+---
+title:
+  type: 'string'
+  label:
+    en: 'Book'
+  help:
+    en: 'Title of the book. (example: African American Studies)'
+description:
+  type: 'text'
+  label:
+    en: 'Description'
+  help:
+    en: 'Description of the book. (example: African American Studies, Fourth Edition)'
+image:
+  type: 'image'
+  path:
+    label:
+      en: 'Image'
+    help:
+      en: 'Book image'
+  description:
+    label:
+      en: 'Image description'
+    help:
+      en: 'Describe the image for accesibility purposes and for indexation in search engines'
+color:
+  type: 'color'
+  label:
+    en: 'Color'
+  help:
+    en: 'Main color. (example: #730302)'
+contact:
+  type: 'email'
+  label:
+    en: 'Contact'
+  help:
+    en: 'Contact address on the right side menu'
+editors:
+  type: 'has_many'
+  filtro:
+    layout: 'person'
+  label:
+    en: 'Editors'
+  help:
+    en: 'Editors'
+content:
+  type: 'markdown_content'
+  label:
+    en: 'Content'
+  help:
+    en: 'Introduction, as read on Home'
+essays:
+  type: 'has_many'
+  filter:
+    layout: 'essay'
+  label:
+    en: 'Essays'
+  help:
+    en: 'Essays'
+link:
+  type: 'url'
+  label:
+    en: 'Link'
+  help:
+    en: 'Link to NYU Press'
+introduction:
+  type: 'has_one'
+  filter:
+    layout: 'page'
+  label:
+    en: 'Introduction'
+  help:
+    en: 'Introduction page'
+acknowledgments:
+  type: 'has_one'
+  filter:
+    layout: 'page'
+  label:
+    en: 'Acknowledgments'
+  help:
+    en: 'Acknowledgments page'
+courses:
+  type: 'has_many'
+  filter:
+    layout: 'page'
+  label:
+    en: 'Courses'
+  help:
+    en: 'In the classroom pages'
+about:
+  type: 'has_one'
+  filter:
+    layout: 'page'
+  label:
+    en: 'About'
+  help:
+    en: 'About page'
+rights:
+  type: 'has_one'
+  filter:
+    layout: 'page'
+  label:
+    en: 'Rights'
+  help:
+    en: 'Licensing page'

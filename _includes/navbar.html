@@ -27,7 +27,7 @@
       <div class="toggled untoggled-md navbar-collapse position-absolute position-md-relative left-0 w-100 w-md-auto background-primary background-md-transparent overflow-y-scroll overflow-y-md-visible top-navbar-sm top-md-0 grow-vertically">
         <div class="navbar-nav d-flex align-items-center pt-3 pt-md-0">
           <div class="nav-item w-100 w-lg-auto">
-            <a class="nav-link px-3 mb-3 mb-md-0 text-uppercase font-weight-bold h6 white" href="{{ '/' | relative_url }}">
+            <a class="nav-link px-30px mb-3 mb-md-0 text-uppercase font-weight-bold h6 white" href="{{ '/' | relative_url }}">
               {{ t.navbar.home }}
             </a>
           </div>
@@ -45,10 +45,10 @@
               <div class="nav-link px-3 mb-3 mb-md-0">
                 {%- assign toggler_content = t.navbar[layout] -%}
                 {%- include_cached toggler_label.html id=layout content=toggler_content class="white text-uppercase font-weight-bold h6 mb-0" -%}
-                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                <i class="fa fa-caret-down f-24px white ml-2" aria-hidden="true"></i>
 
                 {%- include_cached toggler.html id=layout name="dropdown" type="radio" -%}
-                <div class="toggled position-md-absolute px-3 pb-2 background-primary grow-vertically">
+                <div class="toggled position-md-absolute px-3 pb-2 background-primary grow-vertically z-index-navbar">
 
                   <ul class="list-unstyled mb-0 mt-3">
                     {% for post in posts %}
