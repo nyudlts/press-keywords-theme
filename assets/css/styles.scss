@@ -237,3 +237,12 @@ blockquote {
 .border-search {
   border-bottom-left-radius: 10px;
 }
+
+.btn-hover-gray:hover {
+  background-color: #333;
+}
+
+a:hover {
+  color: $link-hover-color !important;
+  transition: all 0.3s ease-in-out;
+}
