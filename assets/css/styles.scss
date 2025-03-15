@@ -50,6 +50,7 @@ $sizes: (
   100vh: 100vh,
   260px: 260px,
   300px: 300px,
+  574px: 574px,
   sidebar: 21.25rem,
   "30px": 30px,
   auto: auto
@@ -57,6 +58,7 @@ $sizes: (
 
 /// These measurements were taken from the original design
 $spacers: (
+  13: 13%,
   15: 15%,
   0: 0,
   "4px": 4px,
@@ -70,6 +72,7 @@ $spacers: (
   "24px": 24px,
   "30px": 30px,
   "34px": 34px,
+  "40px": 40px,
   "45px": 45px,
   "50px": 50px,
   "55px": 55px,
@@ -229,4 +232,8 @@ blockquote {
   .border-#{$spacer} {
     border-width: $value !important;
   }
+}
+
+.border-search {
+  border-bottom-left-radius: 10px;
 }

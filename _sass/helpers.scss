@@ -27,6 +27,14 @@
         .#{$direction}#{$infix}-#{$spacer} { #{$direction}: $length !important; }
         .#{$direction}#{$infix}-n#{$spacer} { #{$direction}: -$length !important; }
       }
+
+      /// Border radius
+      ///
+      /// @example html
+      ///   <div class="rounded-3"></div>
+      .rounded#{$infix}-#{$spacer} {
+        border-radius: $length !important;
+      }
     }
 
     @each $cursor in (pointer, none) {
@@ -128,6 +136,15 @@
         .max-#{$abbrev}#{$infix}-#{$size} { max-#{$prop}: $length !important; }
       }
     }
+
+    /// Z-Indexes según Bootstrap
+    .z-index#{$infix}-dropdown { z-index: $zindex-dropdown !important; }
+    .z-index#{$infix}-sticky { z-index: $zindex-sticky !important; }
+    .z-index#{$infix}-fixed { z-index: $zindex-fixed !important; }
+    .z-index#{$infix}-backdrop { z-index: $zindex-modal-backdrop !important; }
+    .z-index#{$infix}-modal { z-index: $zindex-modal !important; }
+    .z-index#{$infix}-popover { z-index: $zindex-popover !important; }
+    .z-index#{$infix}-tooltip { z-index: $zindex-tooltip !important; }
   }
 }
 
