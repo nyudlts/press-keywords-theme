@@ -10,8 +10,8 @@
       The content is hidden for screen readers because the titlebar
       contains the full book title.
     {% endcomment %}
-    <div class="w-100 position-md-absolute navbar-brand text-uppercase text-center pointer-event-none" aria-hidden="true">
-      <a href="{{ '/' | relative_url }}" class="h3 white mb-0 text-decoration-none letter-spacing">
+    <div class="w-100 position-md-absolute navbar-brand text-uppercase text-center" aria-hidden="true">
+      <a href="{{ '/' | relative_url }}" class="position-relative h3 white mb-0 text-decoration-none letter-spacing z-index-dropdown">
         {{ site.title }}
         {{ current_site_modifier | remove: ':' }}
       </a>
@@ -41,19 +41,21 @@
             {% assign posts = site.posts | where: 'layout', layout %}
             {% if posts == empty %}{% continue %}{% endif %}
 
-            <div class="nav-item w-100 w-lg-auto">
-              <div class="nav-link px-3 mb-3 mb-md-0">
-                {%- assign toggler_content = t.navbar[layout] -%}
+            <div class="nav-item w-100 w-lg-auto px-30px">
+              <div class="nav-link px-0 mb-3 mb-md-0">
+                {%- capture toggler_content -%}
+                  {{ t.navbar[layout] }}
+                  <i class="fa fa-caret-down f-24px white ml-2" aria-hidden="true"></i>
+                {%- endcapture -%}
                 {%- include_cached toggler_label.html id=layout content=toggler_content class="white text-uppercase font-weight-bold h6 mb-0" -%}
-                <i class="fa fa-caret-down f-24px white ml-2" aria-hidden="true"></i>
 
                 {%- include_cached toggler.html id=layout name="dropdown" type="radio" -%}
-                <div class="toggled position-md-absolute px-3 pb-2 background-primary grow-vertically z-index-navbar">
+                <div class="toggled position-md-absolute px-3 pt-10px pb-14px background-primary grow-vertically z-index-navbar">
 
-                  <ul class="list-unstyled mb-0 mt-3">
+                  <ul class="list-unstyled mb-0">
                     {% for post in posts %}
-                      <li class="{{ forloop.last | value_unless: 'mb-3' }}">
-                        <a class="nav-link font-weight-bold white text-nowrap" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                      <li class="{{ forloop.last | value_unless: 'mb-3' }} py-12px">
+                        <a class="nav-link font-weight-bold white text-nowrap f-15px" href="{{ post.url | relative_url }}">{{ post.title }}</a>
                       </li>
                     {% endfor %}
                   </ul>
@@ -75,13 +77,13 @@
         <div class="nav-link text-right">
           {%- capture search_content -%}
             {{ t.navbar.search }}
-            <i class="fa fa-fw fa-search" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-search f-20px pl-1" aria-hidden="true"></i>
           {%- endcapture -%}
           {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer' content=search_content -%}
 
           {%- include_cached toggler.html id="search" name="dropdown" type="radio" -%}
-          <div class="toggled position-absolute right-0 top-navbar-sm top-md-navbar">
-            <div class="text-left background-primary p-3">
+          <div class="toggled position-absolute right-0 top-navbar-sm top-md-navbar w-100 w-md-574px">
+            <div class="text-left background-primary p-30px border-search">
               {% include_cached search.html t=t %}
             </div>
           </div>
