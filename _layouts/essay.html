@@ -41,12 +41,12 @@ layout: content
 
   <footer class="text-uppercase font-weight-bold">
     {% if page.works_cited and page.works_cited != empty %}
-      <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
+      <p class="mb-0"><a class="{{ current_color }} h6 font-weight-bold f-14px" href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
     {% elsif current_book.works_cited.works_cited != empty %}
-      <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ current_book.works_cited.url | relative_url }}">{{ current_book.works_cited.title }}</a></p>
+      <p class="mb-0"><a class="{{ current_color }} h6 font-weight-bold f-14px" href="{{ current_book.works_cited.url | relative_url }}">{{ current_book.works_cited.title }}</a></p>
     {% endif %}
 
-    <p><a class="{{ current_color }} h6 font-weight-bold" href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
+    <p class="mb-0"><a class="{{ current_color }} h6 font-weight-bold f-14px" href="{{ page.url | relative_url }}">{{ t.essay.permanent_link }}</a></p>
   </footer>
 </article>
 
