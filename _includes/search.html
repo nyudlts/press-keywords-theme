@@ -11,19 +11,20 @@
   data-search-index-value="{{ '/idx.json' | relative_url }}">
 
   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
-    <div>
+    <div class="w-100">
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div class="form-group mb-md-0 flex-grow-1 pr-md-2 w-100">
           <label id="label-s" class="sr-only" for="s">{{ t.search.label }}</label>
-          <input type="text" class="form-control" name="s" id="s" placeholder="{{ t.search.placeholder }}" aria-labeledby="label-s" data-search-target="q" />
+          <input type="text" class="form-control f-14px" name="s" id="s" placeholder="{{ t.search.placeholder }}" aria-labeledby="label-s" data-search-target="q" />
         </div>
 
         <div class="form-group mb-0 w-100">
 
           {%- capture filter_content -%}
             <small>{{ t.search.select }}</small>
+            <i class="fa fa-caret-down f-24px primary ml-2" aria-hidden="true"></i>
           {%- endcapture -%}
-          {%- include toggler_label.html id='filter' class='form-control mb-0' content=filter_content -%}
+          {%- include toggler_label.html id='filter' class='form-control mb-0 f-14px d-flex align-items-center justify-content-between' content=filter_content -%}
         </div>
       </div>
 
@@ -44,7 +45,7 @@
             <li>
               <div class="custom-control custom-checkbox">
                 <input
-                  class="custom-control-input" 
+                  class="custom-control-input"
                   data-action="search#some"
                   data-name="searchlimit"
                   type="checkbox"
@@ -71,7 +72,7 @@
     </div>
   </div>
 
-  <div class="d-flex flex-column flex-md-row">
+  <div class="d-flex flex-column flex-md-row font-weight-bold f-15px">
     <div class="py-2 pr-2">
       <div class="custom-control custom-checkbox">
         <input
