@@ -7,7 +7,7 @@
   {% capture toggler_label_content %}
     {{ include.group }}
 
-    <span class="d-inline-block toggled-rotate transition">{{ include.t.details }}</span>
+    <span class="d-inline-block toggled-rotate transition ml-2"><i class="fa fa-caret-down f-24px white" aria-hidden="true"></i></span>
   {% endcapture %}
   {%- include_cached toggler_label.html id=toggler_id class=include.main_link_class content=toggler_label_content %}
 

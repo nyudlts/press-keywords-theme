@@ -1,14 +1,14 @@
 {%- assign current_book = include.current_book -%}
 {%- assign availabilities = current_book.essays | group_by: 'availability' -%}
-{%- assign link_class = 'd-block white text-decoration-none mb-3' -%}
-{%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase' -%}
+{%- assign link_class = 'd-block white text-decoration-none mb-3 hover-white' -%}
+{%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase d-flex align-items-center' -%}
 {%- assign all_essays = include.t[current_book.layout].all_essays -%}
 {%- assign availabilities_names = availabilities | map: 'name' -%}
 
 <div>
 {% include toggler.html id='leftbar' %}
 <aside id="" class="toggled w-100 position-fixed top-secondary-navbar-sm top-md-0 left-0 d-flex flex-row" style="z-index:2000;">
-  <nav class="grow-horizontally transition background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
+  <nav class="grow-horizontally transition background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4 leftbar-shadow">
     <ul class="list-unstyled">
       <li>
         <a class="{{ main_link_class }}" href="{{ current_book.url | relative_url }}">{{ t.leftbar.home }}</a>

@@ -1,6 +1,6 @@
 {%- assign current_book = include.current_book -%}
-{%- assign link_class = 'd-block white text-decoration-none mb-3' -%}
-{%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase' -%}
+{%- assign link_class = 'd-block white text-decoration-none mb-3 hover-white' -%}
+{%- assign main_link_class = link_class | append: ' h6 font-weight-bold text-uppercase d-flex align-items-center' -%}
 
 <div>
 {% include toggler.html id='rightbar' %}
@@ -10,7 +10,7 @@
   {%- endcapture -%}
   {%- include toggler_related.html id='rightbar' class='d-block flex-grow-1 background-white-t2' content=rightbar_content -%}
 
-  <nav class="grow-horizontally transition background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4">
+  <nav class="grow-horizontally transition background-{{ current_book.slug }} h-100vh overflow-y-scroll scrollbar-white w-100 w-md-sidebar py-5 px-4 rightbar-shadow">
     <ul class="list-unstyled">
       {% if current_book.courses and current_book.courses != empty %}
         {%- include_cached essays_list.html essays=current_book.courses group=include.t.rightbar.courses link_class=link_class main_link_class=main_link_class t=include.t -%}
