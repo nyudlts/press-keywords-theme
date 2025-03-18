@@ -14,7 +14,7 @@
   {% endif %}
   rel="noopener noreferrer nofollow"
   title="{{ include.share.title }}"
-  class="{% if page.layout == 'home' or page.layout == 'book' or page.layout == 'feature' %}gray-share {% else %}{{ include.current_color }}{% endif %} mx-5px"
+  class="{% if page.layout == 'home' or page.layout == 'book' or page.layout == 'feature' %}gray-share hover-gray-share{% else %}{{ include.current_color }}{% endif %} mx-5px"
   href="{{ include.share.url | replace: '%url', url | replace: '%title', title | replace: '%description', description | replace: '%tags', tags }}">
   <i class="fa fa-fw fa-{{ include.share.icon }} f-18px" aria-hidden="true"></i>
   <span class="sr-only">{{ include.share.title }}</span>
