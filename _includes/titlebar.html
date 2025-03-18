@@ -1,8 +1,8 @@
-<nav class="w-100 py-2 py-md-3 pl-30px background-{{ include.current_book.slug }} container-fluid bd-titlebar z-index-zero">
+<nav class="w-100 py-2 py-md-15px px-30px background-{{ include.current_book.slug }} container-fluid bd-titlebar z-index-zero">
   <div class="row">
     <div class="col flex-grow-md-0 order-md-0 text-left d-flex align-items-center">
       {%- capture leftbar_content -%}
-        <i aria-hidden="true" class="fa fa-fw fa-bars mr-1"></i>
+        <i aria-hidden="true" class="fa fa-fw fa-bars mr-1 f-30px"></i>
 
         {{ include.t.leftbar.title }}
 
@@ -12,38 +12,41 @@
       {% include toggler_label.html id='leftbar' content=leftbar_content class='mb-0 text-uppercase white h6 mb-0 font-weight-bold d-flex align-items-center' %}
     </div>
 
-    <div class="col-12 col-md order-first order-md-1">
-      <h1 class="h6 h5-md f-18px font-weight-light text-uppercase white my-2 my-md-0 text-center">
-        <span class="sr-only">
-          {{ site.title }}
-          {{ include.current_site_modifier }}
-        </span>
+    <div class="col-12 col-md order-first order-md-1 align-items-center d-flex justify-content-center">
+      <a class="text-decoration-none" href="{{ include.current_book.url }}">
+        <h1 class="h6 h5-md f-18px font-weight-light text-uppercase white my-2 my-md-0 text-center">
+          <span class="sr-only">
+            {{ site.title }}
+            {{ include.current_site_modifier }}
+          </span>
 
-        {{ include.current_page_modifier }}
+          {{ include.current_page_modifier }}
 
-        {{ include.current_book.title }}
-      </h1>
+          {{ include.current_book.title }}
+        </h1>
+      </a>
     </div>
 
     <div class="col flex-grow-md-0 order-md-2 text-right d-flex align-items-center justify-content-end">
       {% if current_book.link %}
         <a
-          class="white text-decoration-none mr-3"
+          class="white text-decoration-none mr-30px"
           rel="noopener noreferrer"
           target="_blank"
           title="{{ include.t.rightbar.link }}"
           href="{{ current_book.link }}">
-          <i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i>
+          <i class="fa fa-shopping-cart fa-fw f-20px" aria-hidden="true"></i>
           <span class="sr-only">{{ include.t.rightbar.link }}</span>
         </a>
       {% endif %}
 
       {%- capture rightbar_class -%}
-        text-nowrap mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %}
+        text-nowrap mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %} d-flex align-items-center
       {%- endcapture -%}
 
       {%- capture rightbar_content -%}
         {{ include.t.rightbar.title }}
+        <i class="fa fa-caret-right fa-fw f-24px" aria-hidden="true"></i>
 
         <span class="sr-only">{{ include.t.rightbar.accessibility }}</span>
       {%- endcapture -%}
