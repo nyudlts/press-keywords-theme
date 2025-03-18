@@ -126,6 +126,17 @@
           color: white !important;
         }
       }
+
+      /// Cambiar el color al pasar por encima o hacer foco
+      ///
+      /// @example html
+      ///   <div class="black hover-red"></div>
+      .hover-#{$color} {
+        &:hover,
+        &:focus-within {
+          color: var(--#{$color}) !important;
+        }
+      }
     }
 
     @each $prop, $abbrev in (width: w, height: h) {
