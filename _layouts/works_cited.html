@@ -30,10 +30,10 @@ layout: content
   {% assign works_cited = page.works_cited %}
 {% endif %}
 
-<div class="{{ content_color }}">
+<div class="{{ content_color }} pt-3">
   {% for work_cited in works_cited %}
-    <article id="{{ work_cited.slug }}">
-      {{ work_cited.content  }}
+    <article id="{{ work_cited.slug }}" class="px-3">
+      {{ work_cited.content }}
     </article>
   {% endfor %}
 </div>
