@@ -71,6 +71,7 @@ $spacers: (
   "20px": 20px,
   "24px": 24px,
   "30px": 30px,
+  "32px": 32px,
   "34px": 34px,
   "40px": 40px,
   "45px": 45px,
@@ -245,4 +246,16 @@ blockquote {
 a:hover {
   color: $link-hover-color !important;
   transition: all 0.3s ease-in-out;
+}
+
+.letter-spacing {
+  letter-spacing: 1px;
+}
+
+.leftbar-shadow {
+  box-shadow: inset -25px -15px 45px -25px #000;
+}
+
+.rightbar-shadow {
+  box-shadow: inset 15px -15px 45px -25px #000;
 }

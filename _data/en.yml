@@ -15,7 +15,7 @@ leftbar:
   close: Close navigation bar
   accessibility: (Touch to open table of contents)
 rightbar:
-  title: Courses &#9654;
+  title: Courses
   link: Buy this book
   close: Close navigation bar
   contact: Contact

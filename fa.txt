@@ -14,3 +14,4 @@ f0e0 envelope
 f108 desktop
 f02d book
 f0d7 caret-down
+f0da caret-right
