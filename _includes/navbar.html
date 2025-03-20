@@ -54,7 +54,7 @@
 
                   <ul class="list-unstyled mb-0">
                     {% for post in posts %}
-                      <li class="{{ forloop.last | value_unless: 'mb-3' }} py-12px">
+                      <li class="mb-12px pt-12px">
                         <a class="nav-link font-weight-bold white text-nowrap f-15px hover-white" href="{{ post.url | relative_url }}">{{ post.title }}</a>
                       </li>
                     {% endfor %}
