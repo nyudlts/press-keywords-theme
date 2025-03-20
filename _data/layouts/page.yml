@@ -7,7 +7,7 @@ title:
   help:
     en: 'Page title'
 content:
-  type: 'new_content'
+  type: 'markdown_content'
   label:
     en: 'Content'
   help:
@@ -16,7 +16,6 @@ book:
   type: 'new_belongs_to'
   filter:
     layout: 'book'
-  inverse: "introduction"
   label:
     en: 'Book'
   help:
