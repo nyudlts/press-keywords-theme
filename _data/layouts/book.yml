@@ -32,6 +32,8 @@ color:
     en: 'Color'
   help:
     en: 'Main color. (example: #730302)'
+  default:
+    en: "#d73c3c"
 contact:
   type: 'email'
   label:

@@ -8,14 +8,12 @@ title:
     en: 'Feature title'
 description:
   type: 'text'
-  required: true
   label:
     en: 'Book description'
   help:
     en: 'Description of the book. (example: African American Studies, Fourth Edition)'
 image:
   type: 'image'
-  required: true
   path:
     label:
       en: 'Image'
@@ -28,11 +26,12 @@ image:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
 color:
   type: 'color'
-  required: true
   label:
     en: 'Color'
   help:
     en: 'Main color'
+  default:
+    en: "#d73c3c"
 contact:
   type: 'email'
   label:
