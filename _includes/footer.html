@@ -8,7 +8,7 @@
   {% if current_book %}
     <div class="container mx-auto px-20px pt-30px">
       <nav>
-        <ul class="list-unstyled" id="menu-footer-nav">
+        <ul class="list-unstyled mb-0" id="menu-footer-nav">
           {% if current_book.about %}
             <li class="h6 f-14px">
               <a class="{{ current_color }}" href="{{ current_book.about.url | relative_url }}">{{ t.footer.about }}</a>
