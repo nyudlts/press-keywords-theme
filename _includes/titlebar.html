@@ -40,7 +40,7 @@
         </a>
       {% endif %}
 
-      {%- unless current_book.courses == empty -%}
+      {%- unless current_book.courses == empty or current_book.courses == null -%}
         {%- capture rightbar_class -%}
           text-nowrap mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %} d-flex align-items-center
         {%- endcapture -%}
