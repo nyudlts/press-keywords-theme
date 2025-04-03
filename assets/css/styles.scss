@@ -50,6 +50,7 @@ $sizes: (
   100vh: 100vh,
   260px: 260px,
   300px: 300px,
+  510px: 510px,
   574px: 574px,
   sidebar: 21.25rem,
   "30px": 30px,
@@ -181,7 +182,7 @@ If the separator is a ForkAwesome icon, define it as one.
 {% endif %}
 
 .letter-spacing {
-  letter-spacing: 3px;
+  letter-spacing: 2.8px;
 }
 
 .letter-spacing-h1 {
@@ -249,7 +250,7 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
-.letter-spacing {
+.letter-spacing-1 {
   letter-spacing: 1px;
 }
 
