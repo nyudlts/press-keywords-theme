@@ -82,7 +82,7 @@
           {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer' content=search_content -%}
 
           {%- include_cached toggler.html id="search" name="dropdown" type="radio" -%}
-          <div class="toggled position-absolute right-0 top-navbar-sm top-md-navbar w-100 w-md-574px">
+          <div class="toggled position-absolute right-0 top-navbar-sm top-md-navbar w-100 w-md-574px grow-vertically transition">
             <div class="text-left background-primary p-30px border-search">
               {% include_cached search.html t=t %}
             </div>
