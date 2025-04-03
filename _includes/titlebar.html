@@ -40,18 +40,20 @@
         </a>
       {% endif %}
 
-      {%- capture rightbar_class -%}
-        text-nowrap mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %} d-flex align-items-center
-      {%- endcapture -%}
+      {%- unless current_book.courses == empty -%}
+        {%- capture rightbar_class -%}
+          text-nowrap mb-0 text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %} d-flex align-items-center
+        {%- endcapture -%}
 
-      {%- capture rightbar_content -%}
-        {{ include.t.rightbar.title }}
-        <i class="fa fa-caret-right fa-fw f-24px" aria-hidden="true"></i>
+        {%- capture rightbar_content -%}
+          {{ include.t.rightbar.title }}
+          <i class="fa fa-caret-right fa-fw f-24px" aria-hidden="true"></i>
 
-        <span class="sr-only">{{ include.t.rightbar.accessibility }}</span>
-      {%- endcapture -%}
+          <span class="sr-only">{{ include.t.rightbar.accessibility }}</span>
+        {%- endcapture -%}
 
-      {% include toggler_label.html id='rightbar' content=rightbar_content class=rightbar_class %}
+        {% include toggler_label.html id='rightbar' content=rightbar_content class=rightbar_class %}
+      {%- endunless -%}
     </div>
   </div>
 </nav>
