@@ -151,6 +151,7 @@ $theme-colors: (
 @import "fork-awesome/scss/fork-awesome";
 @import "helpers";
 @import "toggler";
+@import "details";
 
 .background {
   background-position: center center;
@@ -258,4 +259,8 @@ a:hover {
 
 .rightbar-shadow {
   box-shadow: inset 15px -15px 45px -25px #000;
+}
+
+.open-sans {
+  font-family: 'Open Sans';
 }
