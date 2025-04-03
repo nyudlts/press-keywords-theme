@@ -41,16 +41,16 @@
             {% assign posts = site.posts | where: 'layout', layout %}
             {% if posts == empty %}{% continue %}{% endif %}
 
-            <div class="nav-item w-100 w-lg-auto px-30px">
+            <div class="nav-item w-100 w-lg-auto">
               <div class="nav-link px-0 mb-3 mb-md-0">
                 {%- capture toggler_content -%}
                   {{ t.navbar[layout] }}
                   <i class="fa fa-caret-down f-24px white ml-2" aria-hidden="true"></i>
                 {%- endcapture -%}
-                {%- include_cached toggler_label.html id=layout content=toggler_content class="white text-uppercase font-weight-bold h6 mb-0" -%}
+                {%- include_cached toggler_label.html id=layout content=toggler_content class="white text-uppercase font-weight-bold h6 mb-0 px-30px" -%}
 
                 {%- include_cached toggler.html id=layout name="dropdown" type="radio" -%}
-                <div class="toggled position-md-absolute px-3 pt-10px pb-14px background-primary grow-vertically z-index-navbar">
+                <div class="toggled position-md-absolute px-3 pt-10px pb-14px background-primary grow-vertically z-index-navbar w-510px">
 
                   <ul class="list-unstyled mb-0">
                     {% for post in posts %}
