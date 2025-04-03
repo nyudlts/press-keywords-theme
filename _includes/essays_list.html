@@ -16,7 +16,10 @@
       {% for essay in essays %}
         <li>
           <a class="{{ include.link_class }}" href="{{ essay.url | relative_url }}">
-            {{ essay.title }}, <em>{% include people.html people=essay.authors plain=true %}</em>
+            {{ essay.title }}
+            {%- unless include.group == include.t.rightbar.courses -%}
+              , <em>{% include people.html people=essay.authors plain=true %}</em>
+            {%- endunless -%}
           </a>
         </li>
       {% endfor %}
