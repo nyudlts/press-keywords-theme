@@ -38,7 +38,7 @@
             Generate dropdown menus recursively
           {% endcomment %}
           {% for layout in site.book_layouts -%}
-            {% assign posts = site.posts | where: 'layout', layout %}
+            {% assign posts = site.posts | where: 'layout', layout | sort: 'title' %}
             {% if posts == empty %}{% continue %}{% endif %}
 
             <div class="nav-item w-100 w-lg-auto">
