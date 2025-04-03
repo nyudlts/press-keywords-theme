@@ -51,7 +51,7 @@ layout: default
         {% include toggler_related.html id='leftbar' class=leftbar_class content=t.book.open_menu %}
 
         {% if page.link %}
-          <a href="{{ page.link | uri_escape }}" rel="noopener" target="_blank" class="m-0 mt-18px btn btn-outline-{{ current_color }} border-4px font-weight-bold px-40px py-15px d-block h2 f-18px font-weight-bold letter-spacing-1">
+          <a href="{{ page.link | uri_escape }}" rel="noopener" target="_blank" class="m-0 mt-18px btn btn-outline-{{ current_color }} border-4px font-weight-bold px-40px py-15px d-block h2 f-18px font-weight-bold letter-spacing-1 hover-white">
             {{ t.book.buy_the_book }}
           </a>
         {% endif %}
