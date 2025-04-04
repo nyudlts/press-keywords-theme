@@ -28,7 +28,7 @@ availability:
   help:
     en: 'Organizes essays between Web and Print'
   default:
-    es: ""
+    en: ""
   values:
     en:
       "": "Default"
