@@ -23,16 +23,7 @@ books:
     en: 'Books'
   help:
     en: 'Books this person is contributor of'
-essays:
-  type: 'new_has_and_belongs_to_many'
-  filter:
-    layout: "essay"
-  inverse: "authors"
-  label:
-    en: 'Essays'
-  help:
-    en: 'Essays this person is contributor of'
-pages:
+posts:
   type: 'new_has_and_belongs_to_many'
   filter:
     layout:
@@ -41,6 +32,7 @@ pages:
     - "course"
     - "about"
     - "rights"
+    - "essays"
   inverse: "authors"
   label:
     en: 'Pages'

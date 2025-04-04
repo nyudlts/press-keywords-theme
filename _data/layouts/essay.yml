@@ -16,7 +16,7 @@ authors:
   type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'person'
-  inverse: "essays"
+  inverse: "posts"
   label:
     en: 'Authors'
   help:

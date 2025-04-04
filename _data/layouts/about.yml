@@ -27,7 +27,7 @@ authors:
   type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'person'
-  inverse: "pages"
+  inverse: "posts"
   label:
     en: 'Authors'
   help:
