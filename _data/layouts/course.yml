@@ -38,12 +38,18 @@ permalink:
     en: 'Permalink'
   help:
     en: 'The book permalink'
-alternate_permalink:
+alternate_permalinks:
   type: 'new_array'
   label:
     en: 'Alternate permalink'
   help:
     en: 'The alternate permalink'
+migration_id:
+  type: 'number'
+  label:
+    en: 'Migration ID'
+  help:
+    en: ''
 draft:
   type: 'boolean'
   label:

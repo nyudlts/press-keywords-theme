@@ -6,6 +6,20 @@ title:
     en: 'Name'
   help:
     en: 'Full name. (example: )Marlon M. Bailey'
+first_name:
+  type: 'string'
+  required: true
+  label:
+    en: 'First name'
+  help:
+    en: 'First name. (example: )Marlon M.'
+last_name:
+  type: 'string'
+  required: true
+  label:
+    en: 'Last name'
+  help:
+    en: 'Last name. (example: )Bailey'
 content:
   type: 'markdown_content'
   label:
@@ -38,18 +52,30 @@ posts:
     en: 'Pages'
   help:
     en: 'Pages this person is contributor of'
+migration_id:
+  type: 'number'
+  label:
+    en: 'Migration ID'
+  help:
+    en: ''
 permalink:
   type: 'permalink'
   label:
     en: 'Permalink'
   help:
     en: 'The book permalink'
-alternate_permalink:
+alternate_permalinks:
   type: 'new_array'
   label:
     en: 'Alternate permalink'
   help:
     en: 'The alternate permalink'
+migration_id:
+  type: 'number'
+  label:
+    en: 'Migration ID'
+  help:
+    en: ''
 draft:
   type: 'boolean'
   label:
