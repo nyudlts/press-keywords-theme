@@ -32,8 +32,8 @@ availability:
   values:
     en:
       "": "Default"
-      Print: "Print Essays"
-      Web: "Web Essays"
+      Print Essays: "Print Essays"
+      Web Essays: "Web Essays"
 books:
   type: 'new_belongs_to'
   filter:
