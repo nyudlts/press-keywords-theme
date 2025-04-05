@@ -27,11 +27,8 @@ availability:
     en: 'Availability'
   help:
     en: 'Organizes essays between Web and Print'
-  default:
-    en: ""
   values:
     en:
-      "": "Default"
       Print Essays: "Print Essays"
       Web Essays: "Web Essays"
 books:
