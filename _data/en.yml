@@ -108,3 +108,4 @@ share:
     url: "mailto:?subject=%title&amp;body=%description%0A%0A%url"
     icon: envelope
 print_button: "Print"
+view_all_posts: "View all posts by "
