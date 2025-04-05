@@ -15,7 +15,7 @@ layout: default
     <a class="{{current_color}} h6 mb-0 stretched-link text-uppercase hover-{{ current_color }}" href="">{{t.print_button}}</a>
   </div>
 </div>
-<section class="container py-60px pl-20px pr-20px border-bottom">
+<section class="container py-60px pl-20px pr-20px border-bottom border-gray-light">
   {% if current_book %}
     {% include_cached leftbar.html current_book=current_book t=t %}
     {% include_cached rightbar.html current_book=current_book t=t %}
