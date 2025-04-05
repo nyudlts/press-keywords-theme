@@ -1,5 +1,20 @@
 <nav class="w-100 py-2 py-md-15px px-30px background-{{ include.current_book.slug }} container-fluid bd-titlebar z-index-zero">
-  <div class="row">
+  <div class="position-absolute w-100 left-0 order-first order-md-1 align-items-center d-flex justify-content-center">
+    <a class="text-decoration-none" href="{{ include.current_book.url }}">
+      <h1 class="h6 h5-md f-18px font-weight-light text-uppercase white my-2 my-md-0 text-center">
+        <span class="sr-only">
+          {{ site.title }}
+          {{ include.current_site_modifier }}
+        </span>
+
+        {{ include.current_page_modifier }}
+
+        {{ include.current_book.title }}
+      </h1>
+    </a>
+  </div>
+
+  <div class="row justify-content-between">
     <div class="col flex-grow-md-0 order-md-0 text-left d-flex align-items-center">
       {%- capture leftbar_content -%}
         <i aria-hidden="true" class="fa fa-fw fa-bars mr-1 f-30px"></i>
@@ -12,20 +27,7 @@
       {% include toggler_label.html id='leftbar' content=leftbar_content class='text-uppercase white h6 mb-0 font-weight-bold d-flex align-items-center' %}
     </div>
 
-    <div class="col-12 col-md order-first order-md-1 align-items-center d-flex justify-content-center">
-      <a class="text-decoration-none" href="{{ include.current_book.url }}">
-        <h1 class="h6 h5-md f-18px font-weight-light text-uppercase white my-2 my-md-0 text-center">
-          <span class="sr-only">
-            {{ site.title }}
-            {{ include.current_site_modifier }}
-          </span>
 
-          {{ include.current_page_modifier }}
-
-          {{ include.current_book.title }}
-        </h1>
-      </a>
-    </div>
 
     <div class="col flex-grow-md-0 order-md-2 text-right d-flex align-items-center justify-content-end">
       {% if current_book.link %}
