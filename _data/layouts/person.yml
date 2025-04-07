@@ -70,12 +70,6 @@ alternate_permalinks:
     en: 'Alternate permalink'
   help:
     en: 'The alternate permalink'
-migration_id:
-  type: 'number'
-  label:
-    en: 'Migration ID'
-  help:
-    en: ''
 draft:
   type: 'boolean'
   label:
