@@ -47,12 +47,12 @@
             href="{{ current_book.contributors.url | relative_url }}">{{ current_book.contributors.title }}</a></li>
       {% endunless %}
 
-      {% if current_book.acknowledgment %}
+      {% if current_book.acknowledgments %}
         <li>
           <a
             class="{{ main_link_class }}"
-            href="{{ current_book.acknowledgment.url | relative_url }}">
-            {{ current_book.acknowledgment.title }}
+            href="{{ current_book.acknowledgments.url | relative_url }}">
+            {{ current_book.acknowledgments.title }}
           </a>
         </li>
       {% endif %}

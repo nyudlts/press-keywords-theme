@@ -6,18 +6,20 @@ layout: content
 
 <article>
   <header>
-    <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
+    <h1 class="f-28px text-uppercase font-weight-bold {{ current_color }}">
       {{ t.person.by }}
       {{ page.title }}
     </h1>
 
-    <div class="background-gray border-top border-primary border-thick mt-24px p-20px my-4">
+    <div class="background-gray-light border-top border-gray-333 border-thick mt-24px py-18px px-20px my-4">
       <h2 class="h6 f-14px text-uppercase font-weight-bold">
         {{ t.person.about }}
         {{ page.title }}
       </h2>
 
-      {{ content }}
+      <div class="f-14px">
+        {{ content }}
+      </div>
     </div>
   </header>
 
@@ -26,7 +28,7 @@ layout: content
       <header class="position-relative">
         {%- include_cached icon.html t=t availability=post.availability color=post.book.slug -%}
 
-        <h1 class="h3 text-uppercase font-weight-bold">
+        <h1 class="f-28px text-uppercase font-weight-bold">
           <a class="{{ post.book.slug }} text-decoration-none" href="{{ post.url | relative_url }}" title="{{ t.person.bookmark }} {{ post.title }}" rel="bookmark">
             {{ post.title }}
           </a>

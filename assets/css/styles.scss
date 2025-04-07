@@ -11,8 +11,10 @@ $debug: {{ jekyll.environment | not: 'production' }};
 $gray-100: #efefef;
 $gray-600: #f3f3f3;
 $gray-800: #666;
+$gray-333: #333;
 $gray-share: #bdbdbd;
 $gray-breadcrumb: #444;
+$mobile-cart: #D93735;
 $link-hover-color: #333;
 $link-decoration: underline;
 $font-family-sans-serif: Georgia, Times New Roman, serif;
@@ -47,14 +49,18 @@ $container-max-widths: (
 
 $sizes: (
   10: 10%,
+  20: 20%,
+  90: 90%,
   100vh: 100vh,
+  209px: 209px,
   260px: 260px,
   300px: 300px,
   510px: 510px,
   574px: 574px,
   sidebar: 21.25rem,
   "30px": 30px,
-  auto: auto
+  auto: auto,
+  "fit-content": fit-content
 );
 
 /// These measurements were taken from the original design
@@ -65,12 +71,14 @@ $spacers: (
   "4px": 4px,
   "5px": 5px,
   "10px": 10px,
+  "11px": 11px,
   "12px": 12px,
   "14px": 14px,
   "15px": 15px,
   "18px": 18px,
   "20px": 20px,
   "24px": 24px,
+  "28px": 28px,
   "30px": 30px,
   "32px": 32px,
   "34px": 34px,
@@ -82,6 +90,7 @@ $spacers: (
   "60px": 60px,
   "70px": 70px,
   "73px": 73px,
+  "79px": 79px,
   6: 4.5rem,
   navbar: $navbar-height,
   navbar-sm: $navbar-sm-height,
@@ -110,7 +119,9 @@ $colors: (
   "gray-light": $gray-100,
   "primary": $primary,
   "transparent": transparent,
-  "gray-share": $gray-share
+  "gray-share": $gray-share,
+  "mobile-cart": $mobile-cart,
+  "gray-333": $gray-333
 );
 
 $theme-colors: (

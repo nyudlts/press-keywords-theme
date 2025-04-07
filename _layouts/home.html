@@ -6,7 +6,7 @@ layout: default
 {%- assign books = site.posts | where: 'layout', 'book' | sort: 'title' -%}
 {%- assign about = site.posts | find: 'url', '/about-this-site/' -%}
 
-<div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-30px py-5px">
+<div class="flex-shrink-1 d-none d-md-flex flex-row align-items-center justify-content-end pr-30px py-5px">
   <div class="d-flex justify-content-end">
     <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-primary print position-relative">
       <i class="fa fa-print white f-18px"></i>
@@ -18,11 +18,11 @@ layout: default
   {% endfor %}
 </div>
 
-<section tabindex="-1" id="content" role="main" class="container p-50px background-white my-45px">
+<section tabindex="-1" id="content" role="main" class="container p-30px p-md-45px background-white mt-79px mb-30px my-md-45px w-90">
   <header>
-    <h1 class="f-md-6 letter-spacing-h1 text-center text-uppercase primary">{{ site.title }}</h1>
+    <h1 class="f-34px f-md-6 letter-spacing-h1 text-center text-uppercase primary">{{ site.title }}</h1>
 
-    <div class="content primary">
+    <div class="content primary pb-32px">
       {% capture read_more %}
         <a class="site font-weight-bold" href="{{ about.url | relative_url }}">
           {{ t.home.read_more }}
@@ -38,7 +38,7 @@ layout: default
   </header>
 
   {% for book in books %}
-    <article id="{{ book.slug }}" class="position-relative d-flex flex-column flex-md-row pt-5 pb-55px">
+    <article id="{{ book.slug }}" class="position-relative d-flex flex-column flex-md-row pt-20px pb-55px">
       <div class="text-center position-relative">
         <img
           src="{{ book.image.path | thumbnail: 200 }}"
@@ -50,7 +50,7 @@ layout: default
       </div>
 
       <header class="pl-md-50px pt-10px">
-        <h1 class="text-uppercase font-weight-bold h4 mb-0 pb-1">
+        <h1 class="text-uppercase font-weight-bold f-24px mb-0 pb-1">
           <a
             class="{{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">

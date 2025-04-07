@@ -4,7 +4,7 @@ layout: default
 {%- include global_variables.html -%}
 {% include_cached titlebar.html current_book=current_book current_site_modifier=current_site_modifier current_page_modifier=current_page_modifier t=t %}
 
-<div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-3 pt-2">
+<div class="flex-shrink-1 d-none d-md-flex flex-row align-items-center justify-content-end pr-3 pt-2">
   <div class="d-flex justify-content-end">
     <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-{{current_color}} print position-relative">
       <i class="fa fa-print white f-18px"></i>
@@ -16,18 +16,30 @@ layout: default
   {% endfor %}
 </div>
 
-<section class="container p-45px background-white my-5">
+{% if current_book.link %}
+  <a
+    class="d-block d-md-none mobile-cart hover-mobile-cart text-decoration-none mr-12px my-15px text-right"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="{{ include.t.rightbar.link }}"
+    href="{{ current_book.link }}">
+    <i class="fa fa-shopping-cart fa-fw f-20px" aria-hidden="true"></i>
+    <span class="sr-only">{{ include.t.rightbar.link }}</span>
+  </a>
+{% endif %}
+
+<section class="container p-30px p-md-45px background-white mt-0 mt-md-45px mb-30px my-md-45px w-90">
   {% include_cached leftbar.html current_book=current_book t=t %}
   {% include_cached rightbar.html current_book=current_book t=t %}
 
   <article tabindex="-1" id="content" role="main">
     <header class="mb-30px">
       <h1 class="text-center text-uppercase {{ current_color }}">
-        <span class="d-block f-md-6 letter-spacing-h1">{{ site.title }} {{ current_site_modifier | remove: ':' }}</span>
-        <span class="d-block f-md-4 font-weight-bold">{{ current_page_modifier }} {{ page.description | default: page.title }}</span>
+        <span class="d-block f-34px f-md-6 letter-spacing-h1">{{ site.title }} {{ current_site_modifier | remove: ':' }}</span>
+        <span class="d-block f-12px f-md-4 font-weight-bold">{{ current_page_modifier }} {{ page.description | default: page.title }}</span>
       </h1>
 
-      <p class="h6 text-center text-uppercase font-weight-bold">
+      <p class="f-11px f-md-3 text-center text-uppercase font-weight-bold open-sans">
         {{ t.edit }}
         {% include people.html people=page.editors %}
       </p>
@@ -44,7 +56,7 @@ layout: default
         </a>
       {% endif %}
 
-      <div class="mx-auto w-260px text-uppercase mt-1 mb-32px">
+      <div class="mx-auto w-fit-content text-uppercase mt-3 mb-32px">
         {%- capture leftbar_class -%}
           btn btn-{{ current_color }} h6 m-0 font-weight-bold px-40px py-15px d-block f-18px font-weight-bold btn-hover-gray letter-spacing-1
         {%- endcapture -%}

@@ -8,11 +8,11 @@ layout: content
   <header class="mb-3 position-relative">
     {%- include_cached icon.html t=t availability=page.availability color=current_color -%}
 
-    <h1 class="h3 text-uppercase font-weight-bold {{ current_color }}">
+    <h1 class="f-28px text-uppercase font-weight-bold {{ current_color }}">
       {{ page.title }}
     </h1>
 
-    <div class="h6 text-uppercase font-weight-bold">
+    <div class="h6 f-14px text-uppercase font-weight-bold">
       {{ current_book.layout }}
 
       <a class="{{ current_color }}" href="{{ current_book.url | relative_url }}">
@@ -20,7 +20,7 @@ layout: content
       </a>
     </div>
 
-    <div class="h6 text-uppercase font-weight-bold">
+    <div class="h6 f-14px text-uppercase font-weight-bold">
       {{ t.essay.by }}
 
       {% include people.html people=page.authors %}
@@ -39,7 +39,7 @@ layout: content
     {% endif %}
   </div>
 
-  <footer class="text-uppercase font-weight-bold">
+  <footer class="text-uppercase font-weight-bold mb-32px">
     {% if page.works_cited and page.works_cited != empty %}
       <p class="mb-0"><a class="{{ current_color }} h6 font-weight-bold f-14px" href="{{ page.works_cited.url | relative_url }}">{{ page.works_cited.title }}</a></p>
     {% elsif current_book.works_cited.works_cited != empty %}

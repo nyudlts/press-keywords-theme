@@ -76,7 +76,7 @@
       <div class="nav-item">
         <div class="nav-link text-right">
           {%- capture search_content -%}
-            {{ t.navbar.search }}
+            <div class="d-none d-md-inline-flex">{{ t.navbar.search }}</div>
             <i class="fa fa-fw fa-search f-20px pl-1" aria-hidden="true"></i>
           {%- endcapture -%}
           {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer' content=search_content -%}

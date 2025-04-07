@@ -4,7 +4,7 @@
 
 <nav aria-label="{{ t.breadbar.title }}" class="w-100 {% unless site.book_layouts contains page.layout %}background-gray-light{% endunless %}">
   <div class="d-flex flex-column flex-md-row justify-content-between">
-    <ol class="breadcrumb text-uppercase flex-grow-1 pl-30px">
+    <ol class="d-none d-md-flex breadcrumb text-uppercase flex-grow-1 pl-30px">
       <li class="{{ item_class }} f-12px">
         <a href="{{ current_book.url }}" class="text-gray-breadcrumb text-decoration-none">{{ t.breadbar.home }}</a>
       </li>
@@ -23,10 +23,20 @@
       </li>
     </ol>
 
-    <div class="flex-shrink-1 d-flex flex-row align-items-center justify-content-end pr-3">
+    <div class="flex-shrink-1 d-none d-md-flex flex-row align-items-center justify-content-end pr-3">
       {% for share in t.share.items %}
         {% include share.html share=share page=page current_color=include.current_color %}
       {% endfor %}
     </div>
+
+    <a
+      class="d-block d-md-none mobile-cart hover-mobile-cart text-decoration-none mr-12px my-2 text-right {% unless current_book.link %}invisible{% endunless %}"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="{{ include.t.rightbar.link }}"
+      href="{{ current_book.link }}">
+      <i class="fa fa-shopping-cart fa-fw f-20px" aria-hidden="true"></i>
+      <span class="sr-only">{{ include.t.rightbar.link }}</span>
+    </a>
   </div>
 </nav>

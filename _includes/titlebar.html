@@ -1,7 +1,7 @@
-<nav class="w-100 py-2 py-md-15px px-30px background-{{ include.current_book.slug }} container-fluid bd-titlebar z-index-zero">
-  <div class="position-absolute w-100 left-0 order-first order-md-1 align-items-center d-flex justify-content-center">
+<nav class="w-100 py-2 py-md-15px px-10px px-md-30px background-{{ include.current_book.slug }} container-fluid bd-titlebar z-index-zero">
+  <div class="position-relative position-md-absolute w-100 left-0 order-first order-md-1 align-items-center d-flex justify-content-center h-100 top-0">
     <a class="text-decoration-none" href="{{ include.current_book.url }}">
-      <h1 class="h6 h5-md f-18px font-weight-light text-uppercase white my-2 my-md-0 text-center">
+      <h1 class="f-12px f-md-18px font-weight-light text-uppercase white my-5px my-md-2 my-md-0 text-center">
         <span class="sr-only">
           {{ site.title }}
           {{ include.current_site_modifier }}
@@ -24,7 +24,7 @@
         <span class="sr-only">{{ include.t.leftbar.accessibility }}</span>
       {%- endcapture -%}
 
-      {% include toggler_label.html id='leftbar' content=leftbar_content class='text-uppercase white h6 mb-0 font-weight-bold d-flex align-items-center' %}
+      {% include toggler_label.html id='leftbar' content=leftbar_content class='text-uppercase white f-14px f-md-3 open-sans mb-0 font-weight-bold d-flex align-items-center' %}
     </div>
 
 
@@ -32,7 +32,7 @@
     <div class="col flex-grow-md-0 order-md-2 text-right d-flex align-items-center justify-content-end">
       {% if current_book.link %}
         <a
-          class="white text-decoration-none mr-30px"
+          class="d-none d-md-block white text-decoration-none mr-30px"
           rel="noopener noreferrer"
           target="_blank"
           title="{{ include.t.rightbar.link }}"
@@ -44,7 +44,7 @@
 
       {%- unless current_book.courses == empty or current_book.courses == null -%}
         {%- capture rightbar_class -%}
-          text-nowrap text-uppercase white h6 mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %} d-flex align-items-center
+          text-nowrap text-uppercase white f-14px f-md-3 open-sans mb-0 font-weight-bold {% if current_book.courses == empty %}invisible{% endif %} d-flex align-items-center
         {%- endcapture -%}
 
         {%- capture rightbar_content -%}
