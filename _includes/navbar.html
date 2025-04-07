@@ -1,7 +1,7 @@
 {%- include global_variables.html -%}
 
 <div class="w-100 bd-navbar">
-  <nav class="navbar navbar-dark navbar-expand-lg background-primary d-flex flex-wrap flex-lg-nowrap justify-content-between py-1">
+  <nav class="navbar navbar-dark navbar-expand-lg background-primary d-flex flex-wrap flex-lg-nowrap justify-content-between">
     {% comment %}
       XXX: Starting from medium screens this element is absolutely
       positioned so it's always centered even if the left dropdown menu
@@ -69,12 +69,12 @@
         <div class="nav-link text-right px-15px px-md-30px">
           {%- capture search_content -%}
             <div class="d-none d-md-inline-flex">{{ t.navbar.search }}</div>
-            <i class="fa fa-fw fa-search f-20px pl-1" aria-hidden="true"></i>
+            <i class="fa fa-fw fa-search f-18px pl-1" aria-hidden="true"></i>
           {%- endcapture -%}
-          {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer d-flex' content=search_content -%}
+          {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold f-14px f-md-3 open-sans mb-0 cursor-pointer d-flex align-items-center py-5px' content=search_content -%}
 
           {%- include_cached toggler.html id="search" name="dropdown" type="radio" -%}
-          <div class="toggled position-absolute right-0 top-navbar-sm top-md-navbar w-100 w-md-574px grow-vertically transition">
+          <div class="toggled position-absolute right-0 w-100 w-md-574px grow-vertically transition">
             <div class="text-left background-primary p-30px border-search">
               {% include_cached search.html t=t %}
             </div>
