@@ -34,3 +34,32 @@ permalink:
     en: 'Permalink'
   help:
     en: 'The page permalink'
+migration_id:
+  type: 'number'
+  label:
+    en: 'Migration ID'
+  help:
+    en: ''
+alternate_permalinks:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'
