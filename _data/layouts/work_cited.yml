@@ -35,9 +35,9 @@ essays:
     layout: "essay"
   inverse: "works_cited"
   label:
-    en: 'Book'
+    en: 'Essays'
   help:
-    en: 'The book which the citation belongs'
+    en: 'The essays which the citation belongs'
 permalink:
   type: 'permalink'
   label:
