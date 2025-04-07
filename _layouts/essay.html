@@ -29,7 +29,7 @@ layout: content
 
   <div class="{{ content_color }}">
     {% if page.availability == site.default_availability %}
-      {{ page.excerpt | truncatewords: 200 }}
+      {{ page.excerpt | strip_html | truncatewords: 200 }}
 
       <div class="text-uppercase font-weight-bold open-sans f-14px">
         <p>{{ t.essay.page_found }} {{ page.page }} {{ t.essay.printed_volume }}</p>
