@@ -46,7 +46,7 @@ posts:
     - "course"
     - "about"
     - "rights"
-    - "essays"
+    - "essay"
   inverse: "authors"
   label:
     en: 'Pages'
