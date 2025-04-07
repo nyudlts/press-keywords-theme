@@ -1,7 +1,7 @@
 {%- include global_variables.html -%}
 
 <div class="w-100 bd-navbar">
-  <nav class="navbar navbar-dark navbar-expand-lg background-primary d-flex flex-wrap flex-md-nowrap justify-content-between py-1">
+  <nav class="navbar navbar-dark navbar-expand-lg background-primary d-flex flex-wrap flex-lg-nowrap justify-content-between py-1">
     {% comment %}
       XXX: Starting from medium screens this element is absolutely
       positioned so it's always centered even if the left dropdown menu
@@ -10,76 +10,68 @@
       The content is hidden for screen readers because the titlebar
       contains the full book title.
     {% endcomment %}
-    <div class="w-100 position-md-absolute navbar-brand text-uppercase text-center" aria-hidden="true">
-      <a href="{{ '/' | relative_url }}" class="position-relative h3 white mb-0 text-decoration-none letter-spacing z-index-dropdown hover-white">
+    <div class="w-100 position-lg-absolute navbar-brand text-uppercase text-center" aria-hidden="true">
+      <a href="{{ '/' | relative_url }}" class="position-relative f-28px open-sans white mb-0 text-decoration-none letter-spacing z-index-dropdown hover-white">
         {{ site.title }}
         {{ current_site_modifier | remove: ':' }}
       </a>
     </div>
 
     <div class="position-relative w-100 d-flex align-items-center justify-content-between">
-      {%- capture responsive_menu -%}
-        <span class="navbar-toggler-icon"></span>
-      {%- endcapture -%}
-      {% include_cached toggler_label.html id="responsive-menu" class="navbar-toggler" content=responsive_menu -%}
-      {% include_cached toggler.html id="responsive-menu" type="radio" -%}
+      <div class="navbar-nav d-flex flex-row align-items-center w-100">
+        <div class="nav-item">
+          <a class="nav-link px-15px px-md-30px mb-0 text-uppercase font-weight-bold f-14px f-md-3 open-sans white hover-white" href="{{ '/' | relative_url }}">
+            {{ t.navbar.home }}
+          </a>
+        </div>
 
-      <div class="toggled untoggled-md navbar-collapse position-absolute position-md-relative left-0 w-100 w-md-auto background-primary background-md-transparent overflow-y-scroll overflow-y-md-visible top-navbar-sm top-md-0 grow-vertically">
-        <div class="navbar-nav d-flex align-items-center pt-3 pt-md-0">
-          <div class="nav-item w-100 w-lg-auto">
-            <a class="nav-link px-30px mb-3 mb-md-0 text-uppercase font-weight-bold h6 white hover-white" href="{{ '/' | relative_url }}">
-              {{ t.navbar.home }}
-            </a>
-          </div>
+        {%- include_cached toggler.html id="close" name="dropdown" type="radio" -%}
 
-          {%- include_cached toggler.html id="close" name="dropdown" type="radio" -%}
+        {% comment %}
+          Generate dropdown menus recursively
+        {% endcomment %}
+        {% for layout in site.book_layouts -%}
+          {% assign posts = site.posts | where: 'layout', layout | sort: 'title' %}
+          {% if posts == empty %}{% continue %}{% endif %}
 
-          {% comment %}
-            Generate dropdown menus recursively
-          {% endcomment %}
-          {% for layout in site.book_layouts -%}
-            {% assign posts = site.posts | where: 'layout', layout | sort: 'title' %}
-            {% if posts == empty %}{% continue %}{% endif %}
+          <div class="nav-item">
+            <div class="nav-link px-0 mb-0">
+              {%- capture toggler_content -%}
+                {{ t.navbar[layout] }}
+                <i class="fa fa-caret-down f-20px white ml-2" aria-hidden="true"></i>
+              {%- endcapture -%}
+              {%- include_cached toggler_label.html id=layout content=toggler_content class="white text-uppercase font-weight-bold f-14px f-md-3 open-sans mb-0 px-15px px-md-30px d-flex align-items-center" -%}
 
-            <div class="nav-item w-100 w-lg-auto">
-              <div class="nav-link px-0 mb-3 mb-md-0">
-                {%- capture toggler_content -%}
-                  {{ t.navbar[layout] }}
-                  <i class="fa fa-caret-down f-24px white ml-2" aria-hidden="true"></i>
-                {%- endcapture -%}
-                {%- include_cached toggler_label.html id=layout content=toggler_content class="white text-uppercase font-weight-bold h6 mb-0 px-30px" -%}
+              {%- include_cached toggler.html id=layout name="dropdown" type="radio" -%}
+              <div class="toggled position-absolute px-3 pt-10px pb-14px background-primary grow-vertically z-index-navbar w-100 w-md-510px left-0 left-md-auto">
 
-                {%- include_cached toggler.html id=layout name="dropdown" type="radio" -%}
-                <div class="toggled position-md-absolute px-3 pt-10px pb-14px background-primary grow-vertically z-index-navbar w-510px">
+                <ul class="list-unstyled mb-0">
+                  {% for post in posts %}
+                    <li class="mb-12px pt-12px">
+                      <a class="nav-link font-weight-bold white text-nowrap f-15px hover-white" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
 
-                  <ul class="list-unstyled mb-0">
-                    {% for post in posts %}
-                      <li class="mb-12px pt-12px">
-                        <a class="nav-link font-weight-bold white text-nowrap f-15px hover-white" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-
-                {% comment %}
-                  Close the menu when touching outside it
-                {% endcomment %}
-                <div class="toggled position-fixed w-100 left-0 h-100vh" style="z-index: 0">
-                  {%- include_cached toggler_related.html id="close" class="w-100 h-100" -%}
-                </div>
+              {% comment %}
+                Close the menu when touching outside it
+              {% endcomment %}
+              <div class="toggled position-fixed w-100 left-0 h-100vh" style="z-index: 0">
+                {%- include_cached toggler_related.html id="close" class="w-100 h-100" -%}
               </div>
             </div>
-          {% endfor %}
-        </div>
+          </div>
+        {% endfor %}
       </div>
 
       <div class="nav-item">
-        <div class="nav-link text-right">
+        <div class="nav-link text-right px-15px px-md-30px">
           {%- capture search_content -%}
             <div class="d-none d-md-inline-flex">{{ t.navbar.search }}</div>
             <i class="fa fa-fw fa-search f-20px pl-1" aria-hidden="true"></i>
           {%- endcapture -%}
-          {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer' content=search_content -%}
+          {%- include_cached toggler_label.html id='search' class='white text-uppercase font-weight-bold h6 mb-0 cursor-pointer d-flex' content=search_content -%}
 
           {%- include_cached toggler.html id="search" name="dropdown" type="radio" -%}
           <div class="toggled position-absolute right-0 top-navbar-sm top-md-navbar w-100 w-md-574px grow-vertically transition">
@@ -95,14 +87,6 @@
             {%- include_cached toggler_related.html id="close" class="w-100 h-100 background-white-t3" -%}
           </div>
         </div>
-      </div>
-
-      {% comment %}
-        Close the menu when touching outside it
-      {% endcomment %}
-      <div class="toggled position-fixed w-100 left-0 h-100vh top-navbar-sm" style="z-index: 0">
-        {%- include_cached toggler_related.html id="responsive-menu-close" class="w-100 h-100" -%}
-        {% include_cached toggler.html id="responsive-menu-close" type="radio" name="responsive-menu" -%}
       </div>
     </div>
   </nav>

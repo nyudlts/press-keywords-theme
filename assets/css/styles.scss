@@ -89,12 +89,14 @@ $spacers: (
   "55px": 55px,
   "60px": 60px,
   "70px": 70px,
+  "71px": 71px,
   "73px": 73px,
   "79px": 79px,
   6: 4.5rem,
   navbar: $navbar-height,
   navbar-sm: $navbar-sm-height,
-  secondary-navbar-sm: $secondary-navbar-height-sm
+  secondary-navbar-sm: $secondary-navbar-height-sm,
+  auto: auto
 );
 
 $opacities: (
@@ -215,7 +217,7 @@ blockquote {
 .bd-titlebar {
   position: -webkit-sticky;
   position: sticky;
-  top: 36px;
+  top: 32px;
   z-index: 1071;
 }
 
