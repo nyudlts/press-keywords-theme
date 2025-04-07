@@ -9,10 +9,7 @@ layout: default
 
 <div class="flex-shrink-1 d-none d-md-flex flex-row align-items-center justify-content-end pr-3 pt-2">
   <div class="d-flex justify-content-end">
-    <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-{{current_color}} print position-relative">
-      <i class="fa fa-print white f-18px"></i>
-      <a class="{{current_color}} h6 mb-0 stretched-link text-uppercase hover-{{ current_color }}" href="">{{t.print_button}}</a>
-    </div>
+    {% include_cached print_button.html color=current_color text=t.print_button %}
   </div>
   {% for share in t.share.items %}
     {% include share.html share=share page=page current_color=include.current_color %}

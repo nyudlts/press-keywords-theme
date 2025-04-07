@@ -10,10 +10,7 @@ layout: default
 
 {% include breadbar.html current_book=current_book t=t current_color=current_color %}
 <div class="d-none d-md-flex justify-content-end mt-30px position-absolute right-0">
-  <div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-{{current_color}} print position-relative">
-    <i class="fa fa-print white f-18px"></i>
-    <a class="{{current_color}} h6 mb-0 stretched-link text-uppercase hover-{{ current_color }}" href="">{{t.print_button}}</a>
-  </div>
+  {% include_cached print_button.html color=current_color text=t.print_button %}
 </div>
 <section class="container p-20px py-md-60px px-20px">
   {% if current_book %}

@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center align-items-center rounded-circle h-30px w-30px mr-30px background-{{include.color}} print position-relative">
+  <i class="fa fa-print white f-18px"></i>
+  <button class="{{ include.color }} h6 m-0 p-0 background-transparent border-0 text-uppercase hover-{{ include.color }}" data-controller="print" data-action="print#print">
+    {{- include.text -}}
+  </button>
+</div>
