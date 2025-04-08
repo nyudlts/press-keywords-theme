@@ -7,7 +7,7 @@ title:
   help:
     en: 'Acknowledgment page title'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:

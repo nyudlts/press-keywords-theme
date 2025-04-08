@@ -50,7 +50,7 @@ editors:
   help:
     en: 'Book editors'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:

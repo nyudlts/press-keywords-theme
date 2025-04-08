@@ -13,7 +13,7 @@ authorship:
   help:
     en: 'Authors names. (example: Aaronson, Trevor)'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:

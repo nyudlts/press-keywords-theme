@@ -7,11 +7,11 @@ title:
   help:
     en: 'The essay full title. (example: Abolition)'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:
-    en: 'Essay full text' 
+    en: 'Essay full text'
 authors:
   type: 'new_has_and_belongs_to_many'
   filter:

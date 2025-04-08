@@ -49,9 +49,9 @@ posts:
     - "essay"
   inverse: "authors"
   label:
-    en: 'Pages'
+    en: 'Posts'
   help:
-    en: 'Pages this person is contributor of'
+    en: 'Posts this person is contributor of'
 migration_id:
   type: 'number'
   label:
