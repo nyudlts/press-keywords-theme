@@ -15,9 +15,9 @@ layout: default
   {% endfor %}
 </div>
 
-<section tabindex="-1" id="content" role="main" class="container p-30px p-md-45px background-white mt-79px mb-30px my-md-45px w-90">
+<section tabindex="-1" id="content" role="main" class="container p-30px p-md-45px background-white mt-79px mb-30px mt-md-45px mb-md-60px w-90">
   <header>
-    <h1 class="f-34px f-md-6 letter-spacing-h1 text-center text-uppercase primary">{{ site.title }}</h1>
+    <h1 class="f-34px f-md-6 letter-spacing-h1 text-center text-uppercase primary m-0">{{ site.title }}</h1>
 
     <div class="content primary pb-32px">
       {% capture read_more %}
@@ -27,9 +27,6 @@ layout: default
       {% endcapture %}
 
       {{ about.description | append: read_more }}
-      {% comment %}
-        Tuve que sacarle markdownify porque sino no no mostraba el read_more en la misma línea del parrafo
-      {% endcomment %}
     </div>
 
   </header>
@@ -49,7 +46,7 @@ layout: default
       <header class="pl-md-50px pt-10px">
         <h1 class="text-uppercase font-weight-bold f-24px mb-0 pb-1">
           <a
-            class="{{ book.slug }} text-decoration-none"
+            class="{{ book.slug }} hover-{{ book.slug }} text-decoration-none"
             href="{{ book.url | relative_url }}">
             {{ site.title }}
             {{ t[book.layout].modifier_included_in_site_title | default: t[book.layout].modifier_included_in_page_title }}

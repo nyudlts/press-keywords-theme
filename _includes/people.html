@@ -4,7 +4,7 @@
   {% for person in include.people %}
     <span class="author vcard">
       {% if forloop.last and include.people.size > 1 %}and{% endif %}
-      <a class="font-weight-bold url fn n {% if page.layout == 'home' %}{{ book.slug }}{% else %}{{ current_color }}{% endif %}" href="{{ person.url | relative_url }}" title="{{ t.view_all_posts }}{{ person.title }}">
+      <a class="font-weight-bold url fn n {% if page.layout == 'home' %}{{ book.slug }} hover-{{ book.slug }}{% else %}{{ current_color }}{% endif %}" href="{{ person.url | relative_url }}" title="{{ t.view_all_posts }}{{ person.title }}">
         {{- person.title -}}
       </a>{% if include.people.size > 2 %}{% unless forloop.last %}, {% endunless %}{% endif %}
     </span>
