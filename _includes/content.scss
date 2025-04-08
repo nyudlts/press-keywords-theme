@@ -16,6 +16,9 @@
   a {
     color: {{ include.page.color | default: site.color }};
     font-weight: bold;
+  }
+
+  .link-break p a {
     word-break: break-all;
   }
 }

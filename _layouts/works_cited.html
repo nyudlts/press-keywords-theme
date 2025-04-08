@@ -32,7 +32,7 @@ layout: content
 
 <div class="{{ content_color }} pt-3">
   {% for work_cited in works_cited %}
-    <article id="{{ work_cited.slug }}" class="px-3">
+    <article id="{{ work_cited.slug }}" class="px-3 link-break">
       {{ work_cited.content }}
     </article>
   {% endfor %}
