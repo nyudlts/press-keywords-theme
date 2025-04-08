@@ -5,21 +5,21 @@ title:
   label:
     en: 'Name'
   help:
-    en: 'Full name. (example: )Marlon M. Bailey'
+    en: 'Full name. (example: Marlon M. Bailey)'
 first_name:
   type: 'string'
   required: true
   label:
     en: 'First name'
   help:
-    en: 'First name. (example: )Marlon M.'
+    en: 'First name. (example: Marlon M.)'
 last_name:
   type: 'string'
   required: true
   label:
     en: 'Last name'
   help:
-    en: 'Last name. (example: )Bailey'
+    en: 'Last name. (example: Bailey)'
 content:
   type: 'plain_text'
   label:
