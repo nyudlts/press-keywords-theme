@@ -21,7 +21,7 @@ last_name:
   help:
     en: 'Last name. (example: )Bailey'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:
