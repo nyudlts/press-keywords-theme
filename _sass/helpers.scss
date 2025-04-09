@@ -181,3 +181,62 @@
     }
   }
 }
+
+.custom-checkbox {
+  .custom-control-label::before {
+    @include border-radius($custom-checkbox-indicator-border-radius);
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-image: url("/public/radio-bg.png");
+      background-color: white;
+      background-size: contain;
+      height: 18px;
+      width: 18px;
+      margin-top: -2px;
+    }
+  }
+
+  .custom-control-label::before {
+    width: 18px;
+    height: 18px;
+    border: 0;
+    margin-top: -2px;
+  }
+
+  .custom-control-input {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.custom-checkbox-list {
+  .custom-control-label::before {
+    @include border-radius($custom-checkbox-indicator-border-radius);
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-image: url("/public/checkbox-bg-white.png");
+      background-size: contain;
+      height: 18px;
+      width: 18px;
+      margin-top: -2px;
+    }
+  }
+
+  .custom-control-label::before {
+    width: 18px;
+    height: 18px;
+    border: 0;
+    margin-top: -2px;
+    background-color: #666;
+    border-color: #666;
+  }
+
+  .custom-control-input {
+    width: 18px;
+    height: 18px;
+  }
+}

@@ -30,9 +30,9 @@
 
       {%- include toggler.html id='filter' -%}
       <div class="toggled grow-vertically">
-        <ul class="list-unstyled p-3 background-white mb-0">
-          <li>
-            <div class="custom-control custom-checkbox">
+        <ul class="list-unstyled px-25px pb-25px background-white mb-0">
+          <li class="pt-20px">
+            <div class="custom-control custom-checkbox-list">
               <input class="custom-control-input" type="checkbox" id="searchlimit" name="searchlimit" data-action="search#all" data-name="cc_gs_sites[]" checked />
               <label class="custom-control-label" for="searchlimit">{{- t.search.all -}}</label>
             </div>
@@ -43,8 +43,8 @@
             {% if posts == empty %}{% continue %}{% endif %}
 
             {% for post in posts %}
-              <li>
-                <div class="custom-control custom-checkbox">
+              <li class="pt-20px">
+                <div class="custom-control custom-checkbox-list">
                   <input
                     class="custom-control-input"
                     data-action="search#some"
@@ -74,9 +74,9 @@
     </div>
   </div>
 
-  <div class="d-flex flex-column flex-md-row font-weight-bold f-15px">
-    <div class="py-2 pr-2">
-      <div class="custom-control custom-checkbox">
+  <div class="d-flex flex-column flex-md-row font-weight-bold f-15px py-20px">
+    <div class="pr-2">
+      <div class="custom-control custom-checkbox d-flex align-items-center">
         <input
           class="custom-control-input"
           type="radio"
@@ -92,8 +92,8 @@
       </div>
     </div>
 
-    <div class="py-2 pl-md-2 pr-2">
-      <div class="custom-control custom-checkbox">
+    <div class="pl-md-2 pr-2">
+      <div class="custom-control custom-checkbox d-flex align-items-center">
         <input
           class="custom-control-input"
           type="radio"
