@@ -37,7 +37,7 @@
 
       &.grow-vertically {
         max-height: 0;
-        transition: max-height 0.3s cubic-bezier(0,1,0,1) !important;
+        transition: max-height 0.8s cubic-bezier(0,1,0,1) !important;
       }
     }
   }
@@ -55,7 +55,7 @@
 
       &.grow-vertically {
         max-height: 9999px;
-        transition: max-height 0.3s cubic-bezier(1,0,1,0) !important;
+        transition: max-height 0.8s cubic-bezier(1,0,1,0) !important;
       }
     }
   }
@@ -80,7 +80,7 @@
 
         &.grow-vertically {
           max-height: 9999px !important;
-          transition: max-height 0.3s cubic-bezier(1,0,1,0) !important;
+          transition: max-height 0.8s cubic-bezier(1,0,1,0) !important;
         }
       }
     }
