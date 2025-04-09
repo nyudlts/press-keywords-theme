@@ -31,6 +31,7 @@ availability:
     en:
       Print Essays: "Print Essays"
       Web Essays: "Web Essays"
+      Essays: "Essays"
 books:
   type: 'new_belongs_to'
   filter:
