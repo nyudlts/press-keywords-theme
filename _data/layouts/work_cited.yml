@@ -17,7 +17,7 @@ content:
   label:
     en: 'Content'
   help:
-    en: 'Reference. (example: <em>The Terror Factory: Inside the FBI’s Manufactured...)'
+    en: 'Reference. (example: The Terror Factory: Inside the FBI’s Manufactured...)'
 books:
   type: 'new_has_and_belongs_to_many'
   filter:
