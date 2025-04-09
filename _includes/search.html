@@ -1,6 +1,7 @@
 {%- assign t = include.t -%}
 
 <form
+  class="row no-gutters"
   role="search"
   method="get"
   action="{{ site.search.url | relative_url }}"
@@ -10,71 +11,69 @@
   data-search-data-value="{{ '/data.json' | relative_url }}"
   data-search-index-value="{{ '/idx.json' | relative_url }}">
 
-  <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
-    <div class="w-100">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <div class="form-group mb-md-0 flex-grow-1 pr-md-2 w-100">
-          <label id="label-s" class="sr-only" for="s">{{ t.search.label }}</label>
-          <input type="text" class="form-control f-14px" name="s" id="s" placeholder="{{ t.search.placeholder }}" aria-labeledby="label-s" data-search-target="q" />
-        </div>
-
-        <div class="form-group mb-0 w-100">
-
-          {%- capture filter_content -%}
-            <small>{{ t.search.select }}</small>
-            <i class="fa fa-caret-down f-24px primary ml-2" aria-hidden="true"></i>
-          {%- endcapture -%}
-          {%- include toggler_label.html id='filter' class='form-control mb-0 f-14px d-flex align-items-center justify-content-between' content=filter_content -%}
-        </div>
+  <div class="col w-100 order-1">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="form-group mb-md-0 flex-grow-1 pr-md-2 w-100">
+        <label id="label-s" class="sr-only" for="s">{{ t.search.label }}</label>
+        <input type="text" class="form-control f-14px" name="s" id="s" placeholder="{{ t.search.placeholder }}" aria-labeledby="label-s" data-search-target="q" />
       </div>
 
-      {%- include toggler.html id='filter' -%}
-      <div class="toggled grow-vertically">
-        <ul class="list-unstyled px-25px pb-25px background-white mb-0">
-          <li class="pt-20px">
-            <div class="custom-control custom-checkbox-list">
-              <input class="custom-control-input" type="checkbox" id="searchlimit" name="searchlimit" data-action="search#all" data-name="cc_gs_sites[]" checked />
-              <label class="custom-control-label" for="searchlimit">{{- t.search.all -}}</label>
-            </div>
-          </li>
+      <div class="form-group mb-0 w-100">
 
-          {% for layout in site.book_layouts -%}
-            {% assign posts = site.posts | where: 'layout', layout %}
-            {% if posts == empty %}{% continue %}{% endif %}
-
-            {% for post in posts %}
-              <li class="pt-20px">
-                <div class="custom-control custom-checkbox-list">
-                  <input
-                    class="custom-control-input"
-                    data-action="search#some"
-                    data-name="searchlimit"
-                    type="checkbox"
-                    name="cc_gs_sites[]"
-                    id="searchsites-{{ post.slug }}"
-                    value="{{ post.slug }}"
-                    checked />
-                  <label class="custom-control-label" for="searchsites-{{ post.slug }}">
-                    {{- site.title }}
-                    {{ t[layout].modifier_included_in_site_title | default: t[layout].modifier_included_in_page_title }}
-                    {{ post.title -}}
-                  </label>
-                </div>
-              </li>
-            {% endfor %}
-          {% endfor %}
-        </ul>
+        {%- capture filter_content -%}
+          <small>{{ t.search.select }}</small>
+          <i class="fa fa-caret-down f-24px primary ml-2" aria-hidden="true"></i>
+        {%- endcapture -%}
+        {%- include toggler_label.html id='filter' class='form-control mb-0 f-14px d-flex align-items-center justify-content-between' content=filter_content -%}
       </div>
     </div>
 
-    <div>
-      <button class="btn border-0 background-primary pl-0 pl-md-10px" type="submit">
-        <span class="h6 text-decoration-underline white font-weight-bold f-15px">{{ t.search.submit }}</span>
-      </button>
+    {%- include toggler.html id='filter' -%}
+    <div class="toggled grow-vertically">
+      <ul class="list-unstyled p-25px background-white mb-0">
+        <li class="">
+          <div class="custom-control custom-checkbox-list">
+            <input class="custom-control-input" type="checkbox" id="searchlimit" name="searchlimit" data-action="search#all" data-name="cc_gs_sites[]" checked />
+            <label class="custom-control-label" for="searchlimit">{{- t.search.all -}}</label>
+          </div>
+        </li>
+
+        {% for layout in site.book_layouts -%}
+          {% assign posts = site.posts | where: 'layout', layout %}
+          {% if posts == empty %}{% continue %}{% endif %}
+
+          {% for post in posts %}
+            <li>
+              <div class="custom-control custom-checkbox-list">
+                <input
+                  class="custom-control-input"
+                  data-action="search#some"
+                  data-name="searchlimit"
+                  type="checkbox"
+                  name="cc_gs_sites[]"
+                  id="searchsites-{{ post.slug }}"
+                  value="{{ post.slug }}"
+                  checked />
+                <label class="custom-control-label" for="searchsites-{{ post.slug }}">
+                  {{- site.title }}
+                  {{ t[layout].modifier_included_in_site_title | default: t[layout].modifier_included_in_page_title }}
+                  {{ post.title -}}
+                </label>
+              </div>
+            </li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 
-  <div class="d-flex flex-column flex-md-row font-weight-bold f-15px py-20px">
+  <div class="col-auto order-3 order-md-2">
+    <button class="btn border-0 background-primary pl-0 pl-md-10px" type="submit">
+      <span class="h6 text-decoration-underline white font-weight-bold f-18px f-md-15px">{{ t.search.submit }}</span>
+    </button>
+  </div>
+
+  <div class="col-12 d-md-flex order-2 order-md-3 font-weight-bold f-15px py-20px">
     <div class="pr-2">
       <div class="custom-control custom-checkbox d-flex align-items-center">
         <input
@@ -92,7 +91,7 @@
       </div>
     </div>
 
-    <div class="pl-md-2 pr-2">
+    <div class="pl-md-2 pr-2 pt-15px pt-md-0">
       <div class="custom-control custom-checkbox d-flex align-items-center">
         <input
           class="custom-control-input"
