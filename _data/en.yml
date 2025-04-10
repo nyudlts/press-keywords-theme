@@ -8,7 +8,7 @@ details: "&#9654;"
 icons:
   print-essays: book
   web-essays: desktop
-  default: book
+  default: desktop
 leftbar:
   title: Essays
   home: Home
