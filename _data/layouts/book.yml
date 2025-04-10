@@ -124,6 +124,15 @@ works_cited:
     en: 'Works cited'
   help:
     en: 'Bibliography pages'
+extra_contributors:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout: 'person'
+  inverse: "publications"
+  label:
+    en: 'Extra contributors'
+  help:
+    en: 'Book extra contributors'
 permalink:
   type: 'permalink'
   label:

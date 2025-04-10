@@ -52,6 +52,17 @@ posts:
     en: 'Posts'
   help:
     en: 'Posts this person is contributor of'
+publications:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout:
+    - "feature"
+    - "book"
+  inverse: "extra_contributors"
+  label:
+    en: 'Publication'
+  help:
+    en: 'Publication this person is extra contributor of'
 migration_id:
   type: 'number'
   label:
