@@ -23,15 +23,6 @@ book:
     en: 'Book'
   help:
     en: 'Book the rights page belongs to'
-authors:
-  type: 'new_has_and_belongs_to_many'
-  filter:
-    layout: 'person'
-  inverse: "posts"
-  label:
-    en: 'Authors'
-  help:
-    en: 'List of authors'
 permalink:
   type: 'permalink'
   label:
