@@ -60,9 +60,9 @@ publications:
     - "book"
   inverse: "extra_contributors"
   label:
-    en: 'Publication'
+    en: 'Publications'
   help:
-    en: 'Publication this person is extra contributor of'
+    en: 'Publications this person is extra contributor of'
 migration_id:
   type: 'number'
   label:
