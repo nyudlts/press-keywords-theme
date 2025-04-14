@@ -33,7 +33,7 @@ $breadcrumb-divider: "{{ t.breadbar.separator }}";
 $breadcrumb-item-padding: 10px;
 $navbar-height: 24px;
 $navbar-sm-height: 48px;
-$secondary-navbar-height-sm: 135px;
+$secondary-navbar-height-sm: 134px;
 $input-placeholder-color: $gray-800;
 $body-bg: {{ site.background_color | default: "#ffffff" }};
 $primary: {{ site.primary_color | default: "#666666" }};
