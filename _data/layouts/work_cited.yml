@@ -44,7 +44,7 @@ permalink:
     en: 'Permalink'
   help:
     en: 'The book permalink'
-alternate_permalinks:
+alternate-permalinks:
   type: 'new_array'
   label:
     en: 'Alternate permalink'
