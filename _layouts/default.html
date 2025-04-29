@@ -9,7 +9,7 @@
     <meta name="color-scheme" content="light"/>
     <meta name="referrer" content="strict-origin-when-cross-origin"/>
 
-    {% if page.layout == 'work_cited' and jekyll.environment == 'production '%}
+    {% if page.layout == 'work_cited' %}
       {%- assign url = page.book.works_cited.url | absolute_url | append: '#' | append: page.slug -%}
       <meta http-equiv="refresh" content="0;url={{ url }}" />
     {% endif %}

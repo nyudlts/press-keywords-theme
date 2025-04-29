@@ -83,6 +83,17 @@
     }
 
     @each $color, $rgb in $colors {
+      .background#{$infix}-#{$color}-target {
+        &:target {
+          background-color: $rgb !important;
+          color: $white;
+          scroll-margin-top: 100px;
+        }
+      }
+    }
+
+
+    @each $color, $rgb in $colors {
       .background#{$infix}-#{$color} {
         background-color: $rgb !important;
 
