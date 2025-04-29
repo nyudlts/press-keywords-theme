@@ -25,4 +25,12 @@
   &.about h3 strong {
     font-size: 14px;
   }
+
+  p {
+    margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

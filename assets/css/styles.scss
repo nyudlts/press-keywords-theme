@@ -39,7 +39,7 @@ $body-bg: {{ site.background_color | default: "#ffffff" }};
 $primary: {{ site.primary_color | default: "#666666" }};
 $enable-responsive-font-sizes: true;
 $transition-base: all 0.2s cubic-bezier(0.75, 0, 0.25, 1);
-$paragraph-margin-bottom: 2rem;
+$paragraph-margin-bottom: 0;
 $enable-shadows: false;
 
 $container-max-widths: (
