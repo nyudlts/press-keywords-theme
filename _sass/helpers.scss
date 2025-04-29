@@ -92,7 +92,6 @@
       }
     }
 
-
     @each $color, $rgb in $colors {
       .background#{$infix}-#{$color} {
         background-color: $rgb !important;

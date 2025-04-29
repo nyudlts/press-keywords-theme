@@ -31,7 +31,7 @@ layout: content
     {% if page.availability == site.default_availability %}
       {{ page.excerpt | strip_html | truncatewords: 200 }}
 
-      <div class="text-uppercase font-weight-bold open-sans f-14px">
+      <div class="text-uppercase font-weight-bold open-sans f-14px mb-32px">
         <p>{{ t.essay.page_found }} {{ page.page }} {{ t.essay.printed_volume }}</p>
       </div>
     {% else %}

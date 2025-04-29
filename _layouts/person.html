@@ -11,20 +11,20 @@ layout: content
       {{ page.title }}
     </h1>
 
-    <div class="background-gray-light border-top border-gray-333 border-thick mt-24px py-18px px-20px my-4">
+    <div class="background-gray-light border-top border-gray-333 border-1 mt-24px py-18px px-20px my-4">
       <h2 class="h6 f-14px text-uppercase font-weight-bold m-0">
         {{ t.person.about }}
         {{ page.title }}
       </h2>
 
-      <div class="f-14px">
+      <div class="f-14px pb-32px">
         {{ content }}
       </div>
     </div>
   </header>
 
   {% for post in page.posts %}
-    <article class="border-top pt-3">
+    <article class="border-top border-gray-light pt-3">
       <header class="position-relative">
         {%- include_cached icon.html t=t availability=post.availability color=post.book.slug -%}
 
@@ -47,7 +47,7 @@ layout: content
         </div>
       </div>
 
-      <div class="content-{{ post.book.slug }}">
+      <div class="content-{{ post.book.slug }} mb-32px">
         {{ post.excerpt | markdownify }}
       </div>
     </article>
