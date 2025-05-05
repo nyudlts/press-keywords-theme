@@ -24,13 +24,15 @@
         </li>
       {% endif %}
 
-      {% for availability in availabilities %}
+      {% for name in t.leftbar.availabilities %}
+        {% assign availability = availabilities | find: "name", name %}
+
+        {% if availability == nil %}{% continue %}{% endif %}
+
         {% include_cached essays_list.html group=availability.name essays=availability.items link_class=link_class main_link_class=main_link_class t=include.t %}
       {% endfor %}
 
-      {% unless availabilities_names contains all_essays %}
-        {% include_cached essays_list.html group=all_essays essays=current_book.essays link_class=link_class main_link_class=main_link_class t=include.t%}
-      {% endunless %}
+      {% include_cached essays_list.html group=all_essays essays=current_book.essays link_class=link_class main_link_class=main_link_class t=include.t%}
 
       {% unless current_book.works_cited.works_cited == empty %}
         <li>
