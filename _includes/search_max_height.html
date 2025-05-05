@@ -1,0 +1,7 @@
+{%- assign max_height = 50 | plus: 24 -%}
+{%- for layout in site.book_layouts -%}
+  {%- assign posts = site.posts | where: 'layout', layout -%}
+  {%- if posts == empty %}{% continue %}{% endif -%}
+  {%- assign max_height = posts | size | times: 24 | plus: max_height -%}
+{%- endfor -%}
+{{- max_height -}}
