@@ -57,7 +57,7 @@ essays:
   type: 'new_has_many'
   filter:
     layout: 'essay'
-  inverse: "books"
+  inverse: "book"
   label:
     en: 'Essays'
   help:

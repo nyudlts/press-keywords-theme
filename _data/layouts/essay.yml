@@ -32,7 +32,7 @@ availability:
       Print Essays: "Print Essays"
       Web Essays: "Web Essays"
       Essays: "Essays"
-books:
+book:
   type: 'new_belongs_to'
   filter:
     layout:
