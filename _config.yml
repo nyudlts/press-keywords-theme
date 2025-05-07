@@ -1,4 +1,5 @@
 title: Keywords
+description: The books in the Keywords series collect essays by authors across the humanities and social sciences
 url: "https://keywords.sutty.local:4000"
 #baseurl: /keywords
 # TODO: Change to the timezone on the server
@@ -23,7 +24,6 @@ plugins:
 - jekyll-linked-posts
 - jekyll-lunr
 - jekyll-alternate-permalinks
-- jekyll-feed
 - jekyll-images
 # Fields indexed.  Fields that are also linked fields are sub-indexed.
 #
