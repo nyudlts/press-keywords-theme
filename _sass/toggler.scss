@@ -27,6 +27,7 @@
 
     & ~ .toggled {
       visibility: hidden;
+      opacity: 0;
 
       .grow-horizontally {
         width: 0 !important;
@@ -36,8 +37,7 @@
       }
 
       &.grow-vertically {
-        max-height: 0;
-        transition: max-height 0.8s cubic-bezier(0,1,0,1) !important;
+        max-height: 0 !important;
       }
     }
   }
@@ -51,12 +51,8 @@
 
     & ~ .toggled {
       visibility: inherit;
+      opacity: 1;
       z-index: 1;
-
-      &.grow-vertically {
-        max-height: 9999px;
-        transition: max-height 0.8s cubic-bezier(1,0,1,0) !important;
-      }
     }
   }
 
@@ -77,11 +73,7 @@
     .toggler {
       & ~ .untoggled#{$infix} {
         visibility: visible !important;
-
-        &.grow-vertically {
-          max-height: 9999px !important;
-          transition: max-height 0.8s cubic-bezier(1,0,1,0) !important;
-        }
+        opacity: 1;
       }
     }
   }

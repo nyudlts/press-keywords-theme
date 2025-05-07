@@ -11,7 +11,7 @@
   {% endcapture %}
   {%- include_cached toggler_label.html id=toggler_id class=include.main_link_class content=toggler_label_content %}
 
-  <div class="toggled grow-vertically">
+  <div class="toggled grow-vertically transition" style="max-height: {{ essays | size | times: 64 }}px">
     <ul class="list-unstyled">
       {% for essay in essays %}
         <li>

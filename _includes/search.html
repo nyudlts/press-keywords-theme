@@ -1,4 +1,5 @@
 {%- assign t = include.t -%}
+{%- assign max_height = include.max_height -%}
 
 <form
   class="row no-gutters"
@@ -29,7 +30,7 @@
     </div>
 
     {%- include toggler.html id='filter' -%}
-    <div class="toggled grow-vertically">
+    <div class="toggled grow-vertically transition" style="max-height: {{ max_height }}px">
       <ul class="list-unstyled p-25px background-white mb-0">
         <li class="">
           <div class="custom-control custom-checkbox-list">
