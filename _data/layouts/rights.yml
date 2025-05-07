@@ -3,49 +3,44 @@ title:
   type: 'string'
   required: true
   label:
-    en: 'Title'
+    en: 'Rights title'
   help:
-    en: 'Page title'
+    en: 'Rights page title'
 content:
   type: 'plain_text'
   label:
     en: 'Content'
   help:
-    en: 'Page contents'
+    en: 'Rights page contents'
 book:
   type: 'new_belongs_to'
   filter:
-    layout: 'book'
+    layout:
+    - 'book'
+    - "feature"
+  inverse: "rights"
   label:
     en: 'Book'
   help:
-    en: 'Book the page belongs to'
-authors:
-  type: 'new_has_many'
-  filter:
-    layout: 'person'
-  label:
-    en: 'Authors'
-  help:
-    en: 'List of authors'
+    en: 'Book the rights page belongs to'
 permalink:
-  type: 'string'
+  type: 'permalink'
   label:
     en: 'Permalink'
   help:
-    en: 'The page permalink'
+    en: 'The book permalink'
+alternate-permalinks:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
 migration_id:
   type: 'number'
   label:
     en: 'Migration ID'
   help:
     en: ''
-alternate_permalinks:
-  type: 'new_array'
-  label:
-    en: 'Alternate permalink'
-  help:
-    en: 'The alternate permalink'
 draft:
   type: 'boolean'
   label:

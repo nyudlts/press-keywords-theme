@@ -14,6 +14,9 @@ leftbar:
   home: Home
   close: Close navigation bar
   accessibility: (Touch to open table of contents)
+  availabilities:
+  - Web Essays
+  - Print Essays
 rightbar:
   title: Courses
   link: Buy this book

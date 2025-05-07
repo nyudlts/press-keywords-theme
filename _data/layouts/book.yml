@@ -1,23 +1,26 @@
 ---
 title:
   type: 'string'
+  required: true
   label:
-    en: 'Book'
+    en: 'Book title'
   help:
     en: 'Title of the book. (example: African American Studies)'
 description:
   type: 'text'
+  required: true
   label:
-    en: 'Description'
+    en: 'Book description'
   help:
     en: 'Description of the book. (example: African American Studies, Fourth Edition)'
 image:
   type: 'image'
+  required: true
   path:
     label:
       en: 'Image'
     help:
-      en: 'Book image'
+      en: 'Book cover'
   description:
     label:
       en: 'Image description'
@@ -29,6 +32,8 @@ color:
     en: 'Color'
   help:
     en: 'Main color. (example: #730302)'
+  default:
+    en: "#d73c3c"
 contact:
   type: 'email'
   label:
@@ -36,27 +41,29 @@ contact:
   help:
     en: 'Contact address on the right side menu'
 editors:
-  type: 'has_many'
-  filtro:
+  type: 'new_has_and_belongs_to_many'
+  filter:
     layout: 'person'
+  inverse: "books"
   label:
     en: 'Editors'
   help:
-    en: 'Editors'
+    en: 'Book editors'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:
     en: 'Introduction, as read on Home'
 essays:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
     layout: 'essay'
+  inverse: "book"
   label:
     en: 'Essays'
   help:
-    en: 'Essays'
+    en: 'Related essays'
 link:
   type: 'url'
   label:
@@ -64,42 +71,100 @@ link:
   help:
     en: 'Link to NYU Press'
 introduction:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'introduction'
+  inverse: "book"
   label:
     en: 'Introduction'
   help:
     en: 'Introduction page'
 acknowledgments:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'acknowledgment'
+  inverse: "book"
   label:
     en: 'Acknowledgments'
   help:
     en: 'Acknowledgments page'
 courses:
-  type: 'has_many'
+  type: 'new_has_many'
   filter:
-    layout: 'page'
+    layout: 'course'
+  inverse: "book"
   label:
     en: 'Courses'
   help:
     en: 'In the classroom pages'
 about:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'about'
+  inverse: "book"
   label:
     en: 'About'
   help:
     en: 'About page'
 rights:
-  type: 'has_one'
+  type: 'new_has_one'
   filter:
-    layout: 'page'
+    layout: 'rights'
+  inverse: "book"
   label:
     en: 'Rights'
   help:
     en: 'Licensing page'
+works_cited:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout: 'work_cited'
+  inverse: "books"
+  label:
+    en: 'Works cited'
+  help:
+    en: 'Bibliography pages'
+extra_contributors:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout: 'person'
+  inverse: "publications"
+  label:
+    en: 'Extra contributors'
+  help:
+    en: 'Book extra contributors'
+permalink:
+  type: 'permalink'
+  label:
+    en: 'Permalink'
+  help:
+    en: 'The book permalink'
+alternate-permalinks:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
+migration_id:
+  type: 'number'
+  label:
+    en: 'Migration ID'
+  help:
+    en: ''
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'

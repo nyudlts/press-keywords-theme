@@ -7,37 +7,48 @@ title:
   help:
     en: 'The essay full title. (example: Abolition)'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:
-    en: 'Essay full text' 
+    en: 'Essay full text'
 authors:
-  type: 'has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'person'
+  inverse: "posts"
   label:
     en: 'Authors'
   help:
     en: 'List of authors'
 availability:
-  type: 'predefined_value'
+  type: 'new_predefined_value'
   label:
     en: 'Availability'
   help:
     en: 'Organizes essays between Web and Print'
+  values:
+    en:
+      Print Essays: "Print Essays"
+      Web Essays: "Web Essays"
+      All Essays: "All Essays"
+      Essays: "Essays"
 book:
-  type: 'belongs_to'
+  type: 'new_belongs_to'
   filter:
-    layout: 'book'
+    layout:
+    - 'book'
+    - "feature"
+  inverse: "essays"
   label:
     en: 'Book'
   help:
     en: 'Book the essay is published on'
 works_cited:
-  type: 'has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'work_cited'
+  inverse: "essays"
   label:
     en: 'Works cited'
   help:
@@ -49,8 +60,37 @@ page:
   help:
     en: 'Page on the printed book'
 permalink:
-  type: 'string'
+  type: 'permalink'
   label:
     en: 'Permalink'
   help:
-    en: 'The essay permalink'
+    en: 'The book permalink'
+alternate-permalinks:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
+migration_id:
+  type: 'number'
+  label:
+    en: 'Migration ID'
+  help:
+    en: ''
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'

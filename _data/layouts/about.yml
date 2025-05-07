@@ -3,49 +3,53 @@ title:
   type: 'string'
   required: true
   label:
-    en: 'Title'
+    en: 'About title'
   help:
-    en: 'Page title'
+    en: 'About page title'
 content:
   type: 'plain_text'
   label:
     en: 'Content'
   help:
-    en: 'Page contents'
+    en: 'About page contents'
 book:
   type: 'new_belongs_to'
   filter:
-    layout: 'book'
+    layout:
+    - 'book'
+    - "feature"
+  inverse: "about"
   label:
     en: 'Book'
   help:
-    en: 'Book the page belongs to'
+    en: 'Book the about page belongs to'
 authors:
-  type: 'new_has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'person'
+  inverse: "posts"
   label:
     en: 'Authors'
   help:
     en: 'List of authors'
 permalink:
-  type: 'string'
+  type: 'permalink'
   label:
     en: 'Permalink'
   help:
-    en: 'The page permalink'
+    en: 'The book permalink'
+alternate-permalinks:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalink'
+  help:
+    en: 'The alternate permalink'
 migration_id:
   type: 'number'
   label:
     en: 'Migration ID'
   help:
     en: ''
-alternate_permalinks:
-  type: 'new_array'
-  label:
-    en: 'Alternate permalink'
-  help:
-    en: 'The alternate permalink'
 draft:
   type: 'boolean'
   label:

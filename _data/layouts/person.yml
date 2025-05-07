@@ -1,41 +1,100 @@
 ---
 title:
   type: 'string'
+  required: true
   label:
     en: 'Name'
   help:
-    en: 'Full name. (example: )Marlon M. Bailey'
+    en: 'Full name. (example: Marlon M. Bailey)'
+first_name:
+  type: 'string'
+  required: true
+  label:
+    en: 'First name'
+  help:
+    en: 'First name. (example: Marlon M.)'
+last_name:
+  type: 'string'
+  required: true
+  label:
+    en: 'Last name'
+  help:
+    en: 'Last name. (example: Bailey)'
 content:
-  type: 'markdown_content'
+  type: 'plain_text'
   label:
     en: 'Content'
   help:
     en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
-  type: 'has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
-    layout: 'book'
+    layout:
+    - 'book'
+    - "feature"
+  inverse: "editors"
   label:
     en: 'Books'
   help:
     en: 'Books this person is contributor of'
 posts:
-  type: 'has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
-    layout: 'post'
+    layout:
+    - "introduction"
+    - "acknowledgment"
+    - "course"
+    - "about"
+    - "rights"
+    - "essay"
+  inverse: "authors"
   label:
     en: 'Posts'
   help:
-    en: 'Posts the person is linked to, filled automatically by the CMS or Jekyll plugin'
+    en: 'Posts this person is contributor of'
+publications:
+  type: 'new_has_and_belongs_to_many'
+  filter:
+    layout:
+    - "feature"
+    - "book"
+  inverse: "extra_contributors"
+  label:
+    en: 'Publications'
+  help:
+    en: 'Publications this person is extra contributor of'
+migration_id:
+  type: 'number'
+  label:
+    en: 'Migration ID'
+  help:
+    en: ''
 permalink:
-  type: 'string'
+  type: 'permalink'
   label:
     en: 'Permalink'
   help:
-    en: 'The person permalink'
-alternate-permalink:
-  type: 'array'
+    en: 'The book permalink'
+alternate-permalinks:
+  type: 'new_array'
   label:
-    en: 'Alternate permalinks'
+    en: 'Alternate permalink'
   help:
-    en: 'The person alternate permalinks'
+    en: 'The alternate permalink'
+draft:
+  type: 'boolean'
+  label:
+    es: 'Borrador'
+    en: 'Draft'
+  help:
+    es: 'Este artículo aun no está listo para publicar'
+    en: "This post isn't ready to be published yet"
+order:
+  type: 'order'
+  required: true
+  label:
+    es: 'Orden'
+    en: 'Order'
+  help:
+    es: 'La posición del artículo en la lista de artículos'
+    en: 'The post position in the posts list'
