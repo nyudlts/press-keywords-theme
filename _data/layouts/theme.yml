@@ -1,0 +1,431 @@
+---
+title:
+  type: "string"
+  required: true
+  label:
+    en: "Title"
+  help:
+    en: "The name you want to give to this customization"
+favicon:
+  type: 'image'
+  required: true
+  path:
+    label:
+      en: 'Favicon'
+    help:
+      en: 'Favicon image'
+  description:
+    label:
+      en: 'Image description'
+    help:
+      en: 'Describe the image for accesibility purposes and for indexation in search engines'
+background_image:
+  type: 'image'
+  required: true
+  path:
+    label:
+      en: 'Background image'
+    help:
+      en: ''
+  description:
+    label:
+      en: 'Image description'
+    help:
+      en: 'Describe the image for accesibility purposes and for indexation in search engines'
+  default:
+    en:
+      path: "/public/tools.jpg"
+      description: "Tools"
+font_family_sans_serif:
+  type: "predefined_value"
+  label:
+    en: "Select a typography for the site"
+  help:
+    en: "If you'd like us to add support for a typography, please send us an e-mail"
+  default:
+    en: ""
+  values:
+    en:
+      "": "Default"
+      Georgia: "Georgia"
+      Times New Roman: "Times New Roman"
+      serif: "serif"
+font_family_monospace:
+  type: "predefined_value"
+  label:
+    en: "Select a monospace typography for the site"
+  help:
+    en: ""
+  default:
+    en: ""
+  values:
+    en:
+      "": "Default"
+      Roboto Mono, monospace: "Roboto Mono"
+      Liberation Mono, monospace: "Liberation Mono"
+headings_font_family:
+  type: "predefined_value"
+  label:
+    en: "Select a typography for headings"
+  help:
+    en: "If you'd us to add support for a typography, please send us an e-mail"
+  default:
+    en: ""
+  values:
+    en:
+      Open Sans: "Open Sans"
+      Helvetica: "Helvetica"
+      Arial: "Arial"
+      sans-serif: "sans-serif"
+enable_rounded:
+  type: "boolean"
+  label:
+    en: "Rounded corners"
+  help:
+    en: "For buttons, form inputs, etc."
+  default:
+    en: false
+enable_shadows:
+  type: "boolean"
+  label:
+    en: "Shadows"
+  help:
+    en: "Shadows behind elements"
+  default:
+    en: false
+enable_responsive_font_sizes:
+  type: "boolean"
+  label:
+    en: "Enable responsive font sizes"
+  help:
+    en: ""
+  default:
+    en: true
+body_bg:
+  type: "color"
+  label:
+    en: "Background color"
+  help:
+    en: "Site's background color"
+  default:
+    en: "#FFFFFF"
+body_color:
+  type: "color"
+  label:
+    en: "Text color"
+  help:
+    en: ""
+  default:
+    en: "#000000"
+primary:
+  type: "color"
+  label:
+    en: "Primary color"
+  help:
+    en: "Highlights certain elements"
+  default:
+    en: "#666666"
+secondary:
+  type: "color"
+  label:
+    en: "Secondary color"
+  help:
+    en: "Highlights certain elements"
+  default:
+    en: "#6c757d"
+link_color:
+  type: "color"
+  label:
+    en: "Link color"
+  help:
+    en: ""
+  default:
+    en: "#007bff"
+link_hover_color:
+  type: "color"
+  label:
+    en: "Link color when selected"
+  help:
+    en: ""
+  default:
+    en: "#333333"
+link_decoration:
+  type: "predefined_value"
+  label:
+    en: "Link decoration"
+  help:
+    en: ""
+  default:
+    en: "underline"
+  values:
+    en:
+      underline: "underline"
+      none: "none"
+h1_font_size:
+  type: "string"
+  label:
+    en: "Height for first level headings"
+  help:
+    en: ""
+  default:
+    en: "2.5rem"
+h2_font_size:
+  type: "string"
+  label:
+    en: "Height for second level headings"
+  help:
+    en: ""
+  default:
+    en: "2rem"
+h3_font_size:
+  type: "string"
+  label:
+    en: "Height for third level headings"
+  help:
+    en: ""
+  default:
+    en: "1.75rem"
+h4_font_size:
+  type: "string"
+  label:
+    en: "Height for fourth level headings"
+  help:
+    en: ""
+  default:
+    en: "1.5rem"
+h5_font_size:
+  type: "string"
+  label:
+    en: "Height for fifth level headings"
+  help:
+    en: ""
+  default:
+    en: "1.25rem"
+h6_font_size:
+  type: "string"
+  label:
+    en: "Height for sixth level headings"
+  help:
+    en: ""
+  default:
+    en: "1rem"
+mark_bg:
+  type: "color"
+  label:
+    en: "Highlight color"
+  help:
+    en: "Default color for highlighted text"
+  default:
+    en: "#fcf8e3"
+navbar_light_color:
+  type: "color"
+  label:
+    en: "Navigation bar item color"
+  help:
+    en: "Text and icons"
+  default:
+    en: "#ced4da"
+navbar_light_hover_color:
+  type: "color"
+  label:
+    en: "Navigation bar item color when selected"
+  help:
+    en: "Text and icons"
+  default:
+    en: "#6c757d"
+navbar_light_active_color:
+  type: "color"
+  label:
+    en: "Navigation bar item color when active"
+  help:
+    en: "Text and icons"
+  default:
+    en: "#212529"
+navbar_height:
+  type: "string"
+  label:
+    en: "Navigation bar height"
+  help:
+    en: ""
+  default:
+    en: "24px"
+navbar_sm_height:
+  type: "string"
+  label:
+    en: "Navigation bar sm height"
+  help:
+    en: ""
+  default:
+    en: "48px"
+secondary_navbar_height_sm:
+  type: "string"
+  label:
+    en: "Secondary navigation bar sm height"
+  help:
+    en: ""
+  default:
+    en: "134px"
+input_placeholder_color:
+  type: "color"
+  label:
+    en: "Input placeholder color"
+  help:
+    en: ""
+  default:
+    en: "$gray-800"
+gray_100:
+  type: "color"
+  label:
+    en: "Author bio background color"
+  help:
+    en: ""
+  default:
+    en: "#efefef"
+gray_333:
+  type: "color"
+  label:
+    en: "Author bio border color"
+  help:
+    en: ""
+  default:
+    en: "#333333"
+gray_share:
+  type: "color"
+  label:
+    en: "Share icons color"
+  help:
+    en: ""
+  default:
+    en: "#bdbdbd"
+gray_breadcrumb:
+  type: "color"
+  label:
+    en: "Breadcrumb bar text color"
+  help:
+    en: ""
+  default:
+    en: "#444444"
+mobile_cart:
+  type: "color"
+  label:
+    en: "Mobile cart icon color"
+  help:
+    en: ""
+  default:
+    en: "#D93735"
+navbar_padding_y:
+  type: "string"
+  label:
+    en: "Navbar padding y axis"
+  help:
+    en: ""
+  default:
+    en: "0"
+navbar_padding_x:
+  type: "string"
+  label:
+    en: "Navbar padding x axis"
+  help:
+    en: ""
+  default:
+    en: "0"
+nav_link_padding_y:
+  type: "string"
+  label:
+    en: "Nav link padding y axis"
+  help:
+    en: ""
+  default:
+    en: "0"
+nav_link_padding_x:
+  type: "string"
+  label:
+    en: "Nav link padding x axis"
+  help:
+    en: ""
+  default:
+    en: "2rem"
+breadcrumb_margin_bottom:
+  type: "string"
+  label:
+    en: "Breadcrumb margin bottom"
+  help:
+    en: ""
+  default:
+    en: "0"
+breadcrumb_bg:
+  type: "color"
+  label:
+    en: "Breadcrumb background color"
+  help:
+    en: ""
+  default:
+    en: "transparent"
+breadcrumb_divider_color:
+  type: "color"
+  label:
+    en: "Breadcrumb divider color"
+  help:
+    en: ""
+  default:
+    en: "$gray-800"
+breadcrumb_active_color:
+  type: "color"
+  label:
+    en: "Breadcrumb active color"
+  help:
+    en: ""
+  default:
+    en: "$gray-800"
+breadcrumb_divider:
+  type: "string"
+  label:
+    en: "Breadcrumb divider"
+  help:
+    en: ""
+  default:
+    en: "t.breadbar.separator"
+breadcrumb_item_padding:
+  type: "string"
+  label:
+    en: "Breadcrumb item padding"
+  help:
+    en: ""
+  default:
+    en: "10px"
+transition_base:
+  type: "string"
+  label:
+    en: "Transition base"
+  help:
+    en: ""
+  default:
+    en: "all 0.2s cubic-bezier(0.75, 0, 0.25, 1)"
+paragraph_margin_bottom:
+  type: "string"
+  label:
+    en: "Paragraph margin bottom"
+  help:
+    en: ""
+  default:
+    en: "0"
+testing:
+  type: "boolean"
+  label:
+    en: "Testing"
+  help:
+    en: "When activated, shows screen information for testing"
+  default:
+    en: false
+draft:
+  type: "boolean"
+  label:
+    en: "Draft"
+  help:
+    en: 'By activating "Draft", this content will remain available on the dashboard, but will not be published on the site when you tap "Publish all changes" (other content which does not have this option selected will).'
+order:
+  type: "order"
+  label:
+    en: "Order"
+  help:
+    en: "Position in list of posts"
