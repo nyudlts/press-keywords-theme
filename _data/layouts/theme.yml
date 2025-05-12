@@ -19,6 +19,10 @@ favicon:
       en: 'Image description'
     help:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
+  default:
+    en:
+      path: "/public/favicon.png"
+      description: "Favicon"
 background_image:
   type: 'image'
   required: true
@@ -43,13 +47,10 @@ font_family_sans_serif:
   help:
     en: "If you'd like us to add support for a typography, please send us an e-mail"
   default:
-    en: ""
+    en: "Georgia, Times New Roman, serif"
   values:
     en:
-      "": "Default"
-      Georgia: "Georgia"
-      Times New Roman: "Times New Roman"
-      serif: "serif"
+      Georgia, Times New Roman, serif: "Georgia, Times New Roman, serif"
 font_family_monospace:
   type: "predefined_value"
   label:
@@ -70,13 +71,10 @@ headings_font_family:
   help:
     en: "If you'd us to add support for a typography, please send us an e-mail"
   default:
-    en: ""
+    en: "Open Sans, Helvetica, Arial, sans-serif"
   values:
     en:
-      Open Sans: "Open Sans"
-      Helvetica: "Helvetica"
-      Arial: "Arial"
-      sans-serif: "sans-serif"
+      Open Sans, Helvetica, Arial, sans-serif: "Open Sans, Helvetica, Arial, sans-serif"
 enable_rounded:
   type: "boolean"
   label:
