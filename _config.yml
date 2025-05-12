@@ -74,3 +74,5 @@ analytics:
   anonymize_ip: true
   tag_manager: GTM-TRVMLPF
 default_availability: Print Essays
+ignored_layouts:
+- theme
