@@ -1,4 +1,5 @@
 {%- include global_variables.html -%}
+{%- assign theme = site.posts | find: 'layout', 'theme' -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang }}" dir="{{ site.dir }}">
   <head>
@@ -29,9 +30,17 @@
     {% include_cached preload_font.html font='assets/fonts/opensans/v20/mem5YaGs126MiZpBA-UN7rgOUuhs-subset.woff2' %}
     {% include_cached preload_font.html font='assets/fonts/opensans/v20/mem5YaGs126MiZpBA-UN_r8OUuhs-subset.woff2' %}
 
-    <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
-    <link rel="alternate icon" href="public/favicon.ico">
-    <link rel="mask-icon" href="public/favicon.svg" color="white">
+    {% for apple_touch_size in site.data.favicon_sizes.apple_touch_sizes %}
+      <link rel="apple-touch-icon" sizes="{{ apple_touch_size }}x{{ apple_touch_size }}" href="{{ theme.favicon.path | thumbnail: apple_touch_size, apple_touch_size | uri_escape }}">
+    {% endfor %}
+
+    {% for chrome_icon_size in site.data.favicon_sizes.chrome_icon_sizes %}
+      <link rel="icon" type="image/png" sizes="{{ chrome_icon_size }}x{{chrome_icon_size }}" href="{{ theme.favicon.path | thumbnail: chrome_icon_size , chrome_icon_size | uri_escape }}">
+    {% endfor %}
+
+    {% for msapplication_size in site.data.favicon_sizes.msapplication_sizes %}
+      <meta name="msapplication-TileImage" content="{{ theme.favicon.path | thumbnail: msapplication_size , msapplication_size | uri_escape }}">
+    {% endfor %}
 
     {% if jekyll.environment == 'production' %}
       {% seo %}
