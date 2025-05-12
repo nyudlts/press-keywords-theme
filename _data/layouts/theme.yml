@@ -407,14 +407,6 @@ paragraph_margin_bottom:
     en: ""
   default:
     en: "0"
-testing:
-  type: "boolean"
-  label:
-    en: "Testing"
-  help:
-    en: "When activated, shows screen information for testing"
-  default:
-    en: false
 draft:
   type: "boolean"
   label:
