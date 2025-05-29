@@ -270,7 +270,7 @@ input_placeholder_color:
   help:
     en: ""
   default:
-    en: "$gray-800"
+    en: "#666666"
 gray_100:
   type: "color"
   label:
@@ -366,7 +366,7 @@ breadcrumb_divider_color:
   help:
     en: ""
   default:
-    en: "$gray-800"
+    en: "#666666"
 breadcrumb_active_color:
   type: "color"
   label:
@@ -374,7 +374,7 @@ breadcrumb_active_color:
   help:
     en: ""
   default:
-    en: "$gray-800"
+    en: "#666666"
 breadcrumb_divider:
   type: "string"
   label:
@@ -382,7 +382,7 @@ breadcrumb_divider:
   help:
     en: ""
   default:
-    en: "t.breadbar.separator"
+    en: "\\f105"
 breadcrumb_item_padding:
   type: "string"
   label:
