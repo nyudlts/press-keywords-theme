@@ -1,4 +1,3 @@
----
 title:
   type: 'string'
   required: true
@@ -7,7 +6,7 @@ title:
   help:
     en: 'Rights page title'
 content:
-  type: 'plain_text'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
@@ -16,8 +15,8 @@ book:
   type: 'new_belongs_to'
   filter:
     layout:
-    - 'book'
-    - "feature"
+      - 'book'
+      - "feature"
   inverse: "rights"
   label:
     en: 'Book'

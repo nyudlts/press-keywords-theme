@@ -1,4 +1,3 @@
----
 title:
   type: 'string'
   required: true
@@ -21,7 +20,7 @@ last_name:
   help:
     en: 'Last name. (example: Bailey)'
 content:
-  type: 'plain_text'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
@@ -30,8 +29,8 @@ books:
   type: 'new_has_and_belongs_to_many'
   filter:
     layout:
-    - 'book'
-    - "feature"
+      - 'book'
+      - "feature"
   inverse: "editors"
   label:
     en: 'Books'
@@ -41,12 +40,12 @@ posts:
   type: 'new_has_and_belongs_to_many'
   filter:
     layout:
-    - "introduction"
-    - "acknowledgment"
-    - "course"
-    - "about"
-    - "rights"
-    - "essay"
+      - "introduction"
+      - "acknowledgment"
+      - "course"
+      - "about"
+      - "rights"
+      - "essay"
   inverse: "authors"
   label:
     en: 'Posts'
@@ -56,8 +55,8 @@ publications:
   type: 'new_has_and_belongs_to_many'
   filter:
     layout:
-    - "feature"
-    - "book"
+      - "feature"
+      - "book"
   inverse: "extra_contributors"
   label:
     en: 'Publications'

@@ -7,7 +7,7 @@ title:
   help:
     en: 'About page title'
 content:
-  type: 'plain_text'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
