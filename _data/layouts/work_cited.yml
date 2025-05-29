@@ -1,4 +1,3 @@
----
 title:
   type: 'string'
   required: true
@@ -13,7 +12,7 @@ authorship:
   help:
     en: 'Authors names. (example: Aaronson, Trevor)'
 content:
-  type: 'plain_text'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
@@ -22,8 +21,8 @@ books:
   type: 'new_has_and_belongs_to_many'
   filter:
     layout:
-    - 'book'
-    - "feature"
+      - 'book'
+      - "feature"
   inverse: "works_cited"
   label:
     en: 'Book'

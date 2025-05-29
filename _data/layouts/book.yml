@@ -1,4 +1,3 @@
----
 title:
   type: 'string'
   required: true
@@ -50,7 +49,7 @@ editors:
   help:
     en: 'Book editors'
 content:
-  type: 'plain_text'
+  type: 'new_content'
   label:
     en: 'Content'
   help:
