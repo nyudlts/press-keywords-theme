@@ -15,8 +15,9 @@ leftbar:
   close: Close navigation bar
   accessibility: (Touch to open table of contents)
   availabilities:
-  - Web Essays
-  - Print Essays
+    - Web Essays
+    - Print Essays
+    - Essays
 rightbar:
   title: Courses
   link: Buy this book
@@ -98,17 +99,17 @@ navbar:
   search: 'Search'
 share:
   items:
-  - title: Share this page on Facebook
-    url: "https://www.facebook.com/sharer/sharer.php?u=%url&amp;t=%title%0A%0A%description"
-    icon: facebook
-  - title: Share this page on Twitter
-    url: "https://twitter.com/intent/tweet?url=%url&amp;text=%title%0A%0A%description&amp;hashtags=%tags"
-    icon: twitter
-  - title: Share this page on Google Plus
-    url: "https://plus.google.com/share?url=%url"
-    icon: google-plus
-  - title: Email this page
-    url: "mailto:?subject=%title&amp;body=%description%0A%0A%url"
-    icon: envelope
+    - title: Share this page on Facebook
+      url: "https://www.facebook.com/sharer/sharer.php?u=%url&amp;t=%title%0A%0A%description"
+      icon: facebook
+    - title: Share this page on Twitter
+      url: "https://twitter.com/intent/tweet?url=%url&amp;text=%title%0A%0A%description&amp;hashtags=%tags"
+      icon: twitter
+    - title: Share this page on Google Plus
+      url: "https://plus.google.com/share?url=%url"
+      icon: google-plus
+    - title: Email this page
+      url: "mailto:?subject=%title&amp;body=%description%0A%0A%url"
+      icon: envelope
 print_button: "Print"
 view_all_posts: "View all posts by "
