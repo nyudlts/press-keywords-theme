@@ -37,6 +37,7 @@ alternate_permalinks:
     en: 'The alternate permalink'
 migration_id:
   type: 'number'
+  writable: 'once'
   label:
     en: 'Migration ID'
   help:

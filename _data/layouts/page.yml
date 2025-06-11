@@ -36,6 +36,7 @@ permalink:
     en: 'The page permalink'
 migration_id:
   type: 'number'
+  writable: 'once'
   label:
     en: 'Migration ID'
   help:

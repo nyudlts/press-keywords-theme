@@ -65,6 +65,7 @@ publications:
     en: 'Publications this person is extra contributor of'
 migration_id:
   type: 'number'
+  writable: 'once'
   label:
     en: 'Migration ID'
   help:
