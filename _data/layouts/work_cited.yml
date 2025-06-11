@@ -18,8 +18,8 @@ content:
     en: 'Content'
   help:
     en: 'Reference. (example: The Terror Factory: Inside the FBI’s Manufactured...)'
-books:
-  type: 'new_has_and_belongs_to_many'
+book:
+  type: 'new_belongs_to'
   filter:
     layout:
       - 'book'

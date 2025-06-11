@@ -27,12 +27,11 @@ content:
   help:
     en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
-  type: 'new_has_and_belongs_to_many'
+  type: 'new_has_to_many'
   filter:
     layout:
       - 'book'
       - "feature"
-  inverse: "editors"
   label:
     en: 'Books'
   help:
@@ -52,17 +51,6 @@ posts:
     en: 'Posts'
   help:
     en: 'Posts this person is contributor of'
-publications:
-  type: 'new_has_and_belongs_to_many'
-  filter:
-    layout:
-      - "feature"
-      - "book"
-  inverse: "extra_contributors"
-  label:
-    en: 'Publications'
-  help:
-    en: 'Publications this person is extra contributor of'
 migration_id:
   type: 'number'
   writable: 'once'

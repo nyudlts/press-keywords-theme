@@ -44,10 +44,9 @@ book:
   help:
     en: 'Book the essay is published on'
 works_cited:
-  type: 'new_has_and_belongs_to_many'
+  type: 'new_has_many'
   filter:
     layout: 'work_cited'
-  inverse: "essays"
   label:
     en: 'Works cited'
   help:
