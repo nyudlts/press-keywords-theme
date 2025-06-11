@@ -29,15 +29,6 @@ book:
     en: 'Book'
   help:
     en: 'The book which the citation belongs'
-essays:
-  type: 'new_has_and_belongs_to_many'
-  filter:
-    layout: "essay"
-  inverse: "works_cited"
-  label:
-    en: 'Essays'
-  help:
-    en: 'The essays which the citation belongs'
 permalink:
   type: 'permalink'
   label:

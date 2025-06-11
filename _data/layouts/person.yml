@@ -44,7 +44,6 @@ posts:
       - "acknowledgment"
       - "course"
       - "about"
-      - "rights"
       - "essay"
   inverse: "authors"
   label:
