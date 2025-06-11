@@ -62,7 +62,7 @@ permalink:
   label:
     en: 'Permalink'
   help:
-    en: 'The book permalink'
+    en: 'The person permalink'
 alternate_permalinks:
   type: 'new_array'
   label:

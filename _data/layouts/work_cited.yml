@@ -11,7 +11,7 @@ authorship:
   label:
     en: 'Authorship'
   help:
-    en: 'Authors names. (example: Aaronson, Trevor)'
+    en: 'Authors names for alphabetical order. (example: Aaronson, Trevor)'
 content:
   type: 'new_content'
   label:
