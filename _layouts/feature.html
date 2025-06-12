@@ -22,7 +22,10 @@ Features behave like books.
     <div class="wrapper">
       <article class="{{ book.slug }}">
         <h1>Keywords Now <span>{{ page.description | default: page.title }}</span></h1>
-        <h2>Edited by {% include people.html people=page.editors %}</h2>
+
+        {% unless page.editors == empty %}
+          <h2>Edited by {% include people.html people=page.editors %}</h2>
+        {% endunless %}
 
         {{ content }}
 
