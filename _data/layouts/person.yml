@@ -27,7 +27,7 @@ content:
   help:
     en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
-  type: 'new_has_to_many'
+  type: 'new_has_many'
   filter:
     layout:
       - 'book'
