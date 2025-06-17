@@ -118,7 +118,7 @@ works_cited:
   type: 'new_has_many'
   filter:
     layout: 'work_cited'
-  inverse: "books"
+  inverse: "book"
   label:
     en: 'Works cited'
   help:
