@@ -32,10 +32,6 @@ background_image:
       en: 'Image description'
     help:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
-  default:
-    en:
-      path: "/public/tools.jpg"
-      description: "Tools"
 font_family_sans_serif:
   type: "predefined_value"
   label:
