@@ -8,7 +8,6 @@ title:
     en: "The name you want to give to this customization"
 favicon:
   type: 'image'
-  required: true
   path:
     label:
       en: 'Favicon'
@@ -21,7 +20,6 @@ favicon:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
 background_image:
   type: 'image'
-  required: true
   path:
     label:
       en: 'Background image'
