@@ -403,9 +403,3 @@ draft:
     en: "Draft"
   help:
     en: 'By activating "Draft", this content will remain available on the dashboard, but will not be published on the site when you tap "Publish all changes" (other content which does not have this option selected will).'
-order:
-  type: "order"
-  label:
-    en: "Order"
-  help:
-    en: "Position in list of posts"
