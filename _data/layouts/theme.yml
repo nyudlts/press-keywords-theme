@@ -19,10 +19,6 @@ favicon:
       en: 'Image description'
     help:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
-  default:
-    en:
-      path: "/public/favicon.png"
-      description: "Favicon"
 background_image:
   type: 'image'
   required: true
