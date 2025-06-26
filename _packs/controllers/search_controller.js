@@ -89,7 +89,7 @@ export default class extends Controller {
       // Find the first paragraph with a match or return the first
       // paragraph by default.  Discard the full content.
       const ps = results[i]?.content?.split("\n") || []
-      const p = (ps.find(p => p.match(match)) || ps[0])
+      const p = (ps.find(p => p.match(match)) || ps[0]) || ""
 
       results[i].title = results[i]?.title?.replaceAll(match, "<mark>$<q></mark>")
       results[i].content = this.markdown(p, q)
