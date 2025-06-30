@@ -57,6 +57,13 @@
             <label for="searchsites-{{ book.slug }}">Keywords for {{ book.title }}</label>
           </li>
         {% endfor %}
+
+        {% for feature in features %}
+          <li>
+            <input data-action="search#some" data-name="searchlimit" type="checkbox" name="cc_gs_sites[]" id="searchsites-{{ feature.slug }}" value="{{ feature.slug }}" checked />
+            <label for="searchsites-{{ feature.slug }}">Keywords Now: {{ feature.title }}</label>
+          </li>
+        {% endfor %}
       </ul>
 
       <ul class="searchlimits">
