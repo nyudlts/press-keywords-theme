@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+#search {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
 .site body,
 .site a.button,
 .site .button,
