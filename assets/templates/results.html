@@ -10,7 +10,14 @@
 
         <div class="meta-info">
           {% if post.book %}
-            <div class="book_name">book <a href="{{ post.book.id | prepend: relative_url | replace: '//', '/' }}">Keywords for {{ post.book.title }}</a></div>
+            <div class="book_name">book <a href="{{ post.book.id | prepend: relative_url | replace: '//', '/' }}">Keywords
+                {% if post.book.layout == 'book' %}
+                  for
+                {% endif %}
+                {% if post.book.layout == 'feature' %}
+                  Now:
+                {% endif %}
+                {{ post.book.title }}</a></div>
           {% endif %}
 
           {% for person in people %}
