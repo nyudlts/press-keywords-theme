@@ -1,0 +1,31 @@
+title:
+  type: string
+  required: true
+  label:
+    es: Título
+    en: Title
+  help:
+    es: ''
+    en: ''
+books:
+  type: 'has_many'
+  filter:
+    layout: 'book'
+  inverse: 'person'
+  label:
+    es: 'Editores'
+    en: 'Editors'
+  help:
+    es: '' 
+    en: ''
+pages:
+  type: 'has_many'
+  filter:
+    layout: 'page'
+  inverse: 'person'
+  label:
+    es: 'Páginas'
+    en: 'Pages'
+  help:
+    es: '' 
+    en: ''

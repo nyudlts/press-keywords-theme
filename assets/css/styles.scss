@@ -121,7 +121,7 @@ $colors: (
 {% endfor %}
   "site": {{ site.color }},
   "black": #000,
-  "gray-light": $gray-100,
+  "gray-light": $gray-share,
   "primary": $primary,
   "transparent": transparent,
   "gray-share": $gray-share,
