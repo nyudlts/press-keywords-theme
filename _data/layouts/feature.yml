@@ -1,4 +1,3 @@
----
 title:
   type: 'string'
   required: true
@@ -53,7 +52,7 @@ content:
   help:
     en: 'Introduction, as read on Home'
 essays:
-  type: 'new_has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'essay'
   inverse: "book"
