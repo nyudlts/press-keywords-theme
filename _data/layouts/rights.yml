@@ -1,3 +1,4 @@
+---
 title:
   type: 'string'
   required: true
@@ -31,7 +32,7 @@ permalink:
 alternate_permalinks:
   type: 'new_array'
   label:
-    en: 'Alternate permalink'
+    en: 'Alternate permalinks'
   help:
     en: 'The alternate permalink'
 migration_id:

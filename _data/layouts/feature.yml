@@ -1,3 +1,4 @@
+---
 title:
   type: 'string'
   required: true
@@ -6,6 +7,7 @@ title:
   help:
     en: 'Feature title'
 description:
+  type: 'string'
   type: 'text'
   label:
     en: 'Book description'
@@ -38,9 +40,10 @@ contact:
   help:
     en: 'Contact email'
 editors:
-  type: 'new_has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
     layout: 'person'
+  inverse: "books"
   label:
     en: 'Editors'
   help:
@@ -124,6 +127,7 @@ extra_contributors:
   type: 'new_has_many'
   filter:
     layout: 'person'
+  inverse: 'publications'
   label:
     en: 'Extra contributors'
   help:
@@ -137,9 +141,9 @@ permalink:
 alternate_permalinks:
   type: 'new_array'
   label:
-    en: 'Alternate permalink'
+    en: 'Alternate permalinks'
   help:
-    en: 'The alternate permalink'
+    en: ''
 migration_id:
   type: 'number'
   writable: 'once'

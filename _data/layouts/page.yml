@@ -1,3 +1,4 @@
+---
 title:
   type: 'string'
   required: true
@@ -33,6 +34,12 @@ permalink:
     en: 'Permalink'
   help:
     en: 'The page permalink'
+alternate_permalinks:
+  type: 'new_array'
+  label:
+    en: 'Alternate permalinks'
+  help:
+    en: 'The alternate permalink'
 migration_id:
   type: 'number'
   writable: 'once'
@@ -40,12 +47,6 @@ migration_id:
     en: 'Migration ID'
   help:
     en: ''
-alternate_permalinks:
-  type: 'new_array'
-  label:
-    en: 'Alternate permalink'
-  help:
-    en: 'The alternate permalink'
 draft:
   type: 'boolean'
   label:

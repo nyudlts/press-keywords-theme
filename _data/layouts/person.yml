@@ -1,3 +1,4 @@
+---
 title:
   type: 'string'
   required: true
@@ -26,16 +27,16 @@ content:
   help:
     en: 'Bio. (example: Associate Professor of Women and Gender Studies...)'
 books:
-  type: 'new_has_many'
+  type: 'new_has_and_belongs_to_many'
   filter:
     layout:
       - 'book'
       - "feature"
   inverse: "editors"
   label:
-    en: 'Books'
+    en: 'Books and features'
   help:
-    en: 'Books this person is contributor of'
+    en: 'Books this person is editor of'
 posts:
   type: 'new_has_and_belongs_to_many'
   filter:
@@ -44,7 +45,6 @@ posts:
       - "acknowledgment"
       - "course"
       - "about"
-      - "rights"
       - "essay"
   inverse: "authors"
   label:
@@ -78,7 +78,7 @@ permalink:
 alternate_permalinks:
   type: 'new_array'
   label:
-    en: 'Alternate permalink'
+    en: 'Alternate permalinks'
   help:
     en: 'The alternate permalink'
 draft:

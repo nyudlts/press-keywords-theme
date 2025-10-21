@@ -40,7 +40,7 @@ font_family_sans_serif:
     en: "Georgia, Times New Roman, serif"
   values:
     en:
-      Georgia, Times New Roman, serif: "Georgia, Times New Roman, serif"
+      'Georgia, "Times New Roman", serif': "Georgia, Times New Roman, serif"
 font_family_monospace:
   type: "predefined_value"
   label:
@@ -52,8 +52,8 @@ font_family_monospace:
   values:
     en:
       "": "Default"
-      Roboto Mono, monospace: "Roboto Mono"
-      Liberation Mono, monospace: "Liberation Mono"
+      '"Roboto Mono", monospace': "Roboto Mono"
+      '"Liberation Mono", monospace': "Liberation Mono"
 headings_font_family:
   type: "predefined_value"
   label:
@@ -64,7 +64,7 @@ headings_font_family:
     en: "Open Sans, Helvetica, Arial, sans-serif"
   values:
     en:
-      Open Sans, Helvetica, Arial, sans-serif: "Open Sans, Helvetica, Arial, sans-serif"
+      '"Open Sans", Helvetica, Arial, sans-serif': "Open Sans, Helvetica, Arial, sans-serif"
 enable_rounded:
   type: "boolean"
   label:
