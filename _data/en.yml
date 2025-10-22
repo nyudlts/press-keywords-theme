@@ -39,7 +39,6 @@ print:
 feature:
   modifier_included_in_site_title: 'Now:'
   open_menu: 'Read the essays'
-  all_essays: 'Essays'
 book:
   modifier_included_in_page_title: 'for'
   open_menu: 'Read the essays'
