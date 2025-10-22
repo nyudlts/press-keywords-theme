@@ -48,7 +48,7 @@ layout: content
       </div>
 
       <div class="content-{{ post.book.slug }} mb-32px">
-        {{ post.excerpt | markdownify }}
+        {{ post.content | strip_html | truncatewords: 200 }}
       </div>
     </article>
   {% endfor %}
