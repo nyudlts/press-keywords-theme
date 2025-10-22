@@ -31,18 +31,18 @@ background_image:
     help:
       en: 'Describe the image for accesibility purposes and for indexation in search engines'
 font_family_sans_serif:
-  type: "predefined_value"
+  type: "new_predefined_value"
   label:
     en: "Select a typography for the site"
   help:
     en: "If you'd like us to add support for a typography, please send us an e-mail"
   default:
-    en: "Georgia, Times New Roman, serif"
+    en: 'Georgia, "Times New Roman", serif'
   values:
     en:
       'Georgia, "Times New Roman", serif': "Georgia, Times New Roman, serif"
 font_family_monospace:
-  type: "predefined_value"
+  type: "new_predefined_value"
   label:
     en: "Select a monospace typography for the site"
   help:
@@ -55,7 +55,7 @@ font_family_monospace:
       '"Roboto Mono", monospace': "Roboto Mono"
       '"Liberation Mono", monospace': "Liberation Mono"
 headings_font_family:
-  type: "predefined_value"
+  type: "new_predefined_value"
   label:
     en: "Select a typography for headings"
   help:
@@ -138,7 +138,7 @@ link_hover_color:
   default:
     en: "#333333"
 link_decoration:
-  type: "predefined_value"
+  type: "new_predefined_value"
   label:
     en: "Link decoration"
   help:
@@ -277,6 +277,22 @@ gray_333:
     en: ""
   default:
     en: "#333333"
+gray_600:
+  type: "color"
+  label:
+    en: "Gray 600"
+  help:
+    en: ""
+  default:
+    en: "#f3f3f3"
+gray_800:
+  type: "color"
+  label:
+    en: "Gray 800"
+  help:
+    en: ""
+  default:
+    en: "#666666"
 gray_share:
   type: "color"
   label:
@@ -341,14 +357,6 @@ breadcrumb_margin_bottom:
     en: ""
   default:
     en: "0"
-breadcrumb_bg:
-  type: "color"
-  label:
-    en: "Breadcrumb background color"
-  help:
-    en: ""
-  default:
-    en: "transparent"
 breadcrumb_divider_color:
   type: "color"
   label:
