@@ -365,14 +365,6 @@ breadcrumb_active_color:
     en: ""
   default:
     en: "#666666"
-breadcrumb_divider:
-  type: "string"
-  label:
-    en: "Breadcrumb divider"
-  help:
-    en: ""
-  default:
-    en: "\f105"
 breadcrumb_item_padding:
   type: "string"
   label:

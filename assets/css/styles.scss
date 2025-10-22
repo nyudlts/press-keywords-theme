@@ -44,8 +44,6 @@ $enable-shadows: false;
 
 {{ site.posts | find: "layout", "theme" | yaml_to_scss: site.data.layouts.theme }}
 
-$breadcrumb-divider: quote($breadcrumb-divider);
-
 $container-max-widths: (
   lg: 820px,
   xl: 821px
