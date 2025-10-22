@@ -372,7 +372,7 @@ breadcrumb_divider:
   help:
     en: ""
   default:
-    en: "\\f105"
+    en: "\f105"
 breadcrumb_item_padding:
   type: "string"
   label:

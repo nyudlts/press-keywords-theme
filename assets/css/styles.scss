@@ -29,7 +29,7 @@ $breadcrumb-margin-bottom: 0;
 $breadcrumb-bg: transparent;
 $breadcrumb-divider-color: $gray-800;
 $breadcrumb-active-color: $gray-800;
-$breadcrumb-divider: "{{ t.breadbar.separator }}";
+$breadcrumb-divider: quote("{{ t.breadbar.separator }}");
 $breadcrumb-item-padding: 10px;
 $navbar-height: 24px;
 $navbar-sm-height: 48px;
@@ -43,6 +43,8 @@ $paragraph-margin-bottom: 0;
 $enable-shadows: false;
 
 {{ site.posts | find: "layout", "theme" | yaml_to_scss: site.data.layouts.theme }}
+
+$breadcrumb-divider: quote($breadcrumb-divider);
 
 $container-max-widths: (
   lg: 820px,
