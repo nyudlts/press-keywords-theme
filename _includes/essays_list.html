@@ -1,5 +1,11 @@
 {% assign essays = include.essays | sort: 'title' %}
 {% assign toggler_id = include.group | slugify | append: '-details' %}
+{% assign authors = 0 %}
+{% for essay in essays %}
+  {% if essay.authors.size > 1 %}
+    {% assign authors = essay.authors | size | plus: authors %}
+  {% endif %}
+{% endfor %}
 
 <li>
   {%- include_cached toggler.html id=toggler_id -%}
@@ -11,7 +17,7 @@
   {% endcapture %}
   {%- include_cached toggler_label.html id=toggler_id class=include.main_link_class content=toggler_label_content %}
 
-  <div class="toggled grow-vertically transition" style="max-height: {{ essays | size | times: 64 }}px">
+  <div class="toggled grow-vertically transition" style="max-height: {{ essays | size | plus: authors | times: 64 }}px">
     <ul class="list-unstyled">
       {% for essay in essays %}
         <li>
