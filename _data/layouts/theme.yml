@@ -300,7 +300,7 @@ gray_share:
   help:
     en: ""
   default:
-    en: "#bdbdbd"
+    en: "#f3f3f3"
 gray_breadcrumb:
   type: "color"
   label:
