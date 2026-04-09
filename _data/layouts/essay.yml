@@ -34,7 +34,7 @@ availability:
       All Essays: "All Essays"
       Essays: "Essays"
 book:
-  type: 'new_has_and_belongs_to_many'
+  type: 'new_belongs_to'
   filter:
     layout:
       - 'book'
