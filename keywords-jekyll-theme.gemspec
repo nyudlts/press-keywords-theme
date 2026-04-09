@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
   }
 
   spec.add_runtime_dependency 'jekyll', '~> 4.2.0'
-  spec.add_runtime_dependency 'jekyll-linked-posts', '~>0.3'
+  spec.add_runtime_dependency 'jekyll-linked-posts', '~>0.6.0'
   spec.add_runtime_dependency 'jekyll-lunr', '~>0.3'
   spec.add_runtime_dependency 'sutty-liquid'
   spec.add_runtime_dependency 'pry'
