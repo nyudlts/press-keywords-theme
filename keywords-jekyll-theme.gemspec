@@ -51,4 +51,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jekyll-alternate-permalinks'
   spec.add_runtime_dependency 'jekyll-images'
   spec.add_runtime_dependency 'jekyll-data'
+  spec.add_runtime_dependency 'jekyll-locales'
 end
